@@ -6,3 +6,4 @@ coverage/
 npm-debug.log
 .eslintcache
 .idea
+docs/.cache/
