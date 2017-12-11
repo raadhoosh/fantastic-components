@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Input from '../src/Input/Input';
 import Icon from '../src/Icon/Icon';
+import Button from '../src/Button/Button';
 
 
 class App extends Component {
@@ -13,6 +14,15 @@ class App extends Component {
         <Icon
           iconClass={'user'}
           foreColor={'#f00'}
+        />
+        <br/>
+        <Button
+          label={'تست'}
+          secondary
+          onClick={() => {
+            alert("hello")
+          }}
+          rtl
         />
       </div>
 
