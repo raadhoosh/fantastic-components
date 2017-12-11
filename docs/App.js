@@ -22,7 +22,6 @@ class App extends Component {
           onClick={() => {
             alert("hello")
           }}
-          rtl
         />
       </div>
 
