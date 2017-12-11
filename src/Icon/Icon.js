@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import 'font-awesome/css/font-awesome.css'
-import I from './style'
+import IconWrapper from './style'
 
 class Icon extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Icon extends Component {
     } = this.props;
 
     return (
-      <I
+      <IconWrapper
         {...this.props}
         onClick={this.props.onClick}
         className={`fa fa-${iconClass}`}
