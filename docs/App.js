@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Input from '../src/Input/Input';
+import Icon from '../src/Icon/Icon';
+
 
 class App extends Component {
   render() {
@@ -7,7 +9,13 @@ class App extends Component {
       <div>
         App...
         <Input color={'red'} backgroundColor={'gray'}/>
+        <br/>
+        <Icon
+          iconClass={'user'}
+          foreColor={'#f00'}
+        />
       </div>
+
     );
   }
 }
