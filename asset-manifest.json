@@ -1,8 +1,13 @@
 {
-  "catalog.css": "static/catalog.8959638e.css",
-  "catalog.css.map": "static/catalog.8959638e.css.map",
-  "catalog.js": "static/catalog.88d1f4cc.js",
-  "catalog.js.map": "static/catalog.88d1f4cc.js.map",
-  "manifest.js": "static/manifest.cb176996.js",
-  "manifest.js.map": "static/manifest.cb176996.js.map"
+  "catalog.css": "static/catalog.89ccdfd0.css",
+  "catalog.css.map": "static/catalog.89ccdfd0.css.map",
+  "catalog.js": "static/catalog.ce49bb27.js",
+  "catalog.js.map": "static/catalog.ce49bb27.js.map",
+  "manifest.js": "static/manifest.028204f4.js",
+  "manifest.js.map": "static/manifest.028204f4.js.map",
+  "static/media/fontawesome-webfont.eot": "static/media/fontawesome-webfont.674f50d2.eot",
+  "static/media/fontawesome-webfont.svg?v=4.7.0": "static/media/fontawesome-webfont.912ec66d.svg",
+  "static/media/fontawesome-webfont.ttf?v=4.7.0": "static/media/fontawesome-webfont.b06871f2.ttf",
+  "static/media/fontawesome-webfont.woff2?v=4.7.0": "static/media/fontawesome-webfont.af7ae505.woff2",
+  "static/media/fontawesome-webfont.woff?v=4.7.0": "static/media/fontawesome-webfont.fee66e71.woff"
 }
