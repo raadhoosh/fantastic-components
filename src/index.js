@@ -2,4 +2,5 @@
 module.exports = {
   Input: require('./Input/Input').default,
   Icon: require('./Icon/Icon').default,
+  Label: require('./Label/Label').default,
 };
