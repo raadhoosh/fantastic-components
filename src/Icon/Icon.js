@@ -1,7 +1,6 @@
-
-import React, {Component} from 'react';
-import 'font-awesome/css/font-awesome.css';
-import IconWrapper from './style';
+import React, { Component } from 'react';
+import 'font-awesome/css/font-awesome.css'
+import IconWrapper from './style'
 
 
 class Icon extends Component {
