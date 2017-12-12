@@ -16,7 +16,7 @@ function getColor(props) {
     foreColor,
     theme
   } = props;
-  let ForeC='#000';
+  let ForeC = '#000';
   if (primary) {
     ForeC = theme.primaryColor;
   }
@@ -52,10 +52,6 @@ function getColor(props) {
 const Label = styled.label`
         font-family: ${(props) => props.theme.fontFamily};
          color:${(props) => getColor(props)};
-         direction:  ${ ((props) => props.rtl || props.theme.rtl ) ? 'rtl' : 'ltr' };
-         ${
-        props => props.pointer ?
-    ` cursor: pointer;`
-    : ``
-  }`;
+         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+         ${(props) => props.pointer ? 'cursor: pointer;' : ''}`;
 export default Label;

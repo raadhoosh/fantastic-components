@@ -173,7 +173,7 @@ const Important = styled.span`
          color: ${(props) => props.theme.danger.bgColor};
               `;
 const Section = styled.section`    
-         direction:  ${ ((props) => props.rtl || ((props) => props.theme.rtl)) ? 'rtl' : 'ltr' };
+      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
               `;
 
 

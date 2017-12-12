@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-function getBgColorColor(props) {
+function getBgColor(props) {
   const {
     primary,
     secondary,
@@ -48,7 +48,7 @@ function getBgColorColor(props) {
   return bgC;
 }
 
-function getforColorColor(props) {
+function getforColor(props) {
   const {
     primary,
     secondary,
@@ -90,7 +90,7 @@ function getforColorColor(props) {
   return ForeC;
 }
 
-function getBorderColorColor(props) {
+function getBorderColor(props) {
   const {
     primary,
     secondary,
@@ -142,15 +142,15 @@ const InputWrapper = styled.input`
               padding: 6px 12px;
               font-size: 14px;
               line-height: 1.42857143;
-              color: ${(props) => getforColorColor(props)};
-              background-color: ${(props) => getBgColorColor(props)};
+              color: ${(props) => getforColor(props)};
+              background-color: ${(props) => getBgColor(props)};
               background-image: none;
               border: 1px solid #ccc;
               border-radius: 4px;              
               box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
               transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
                &:focus{
-                 border-color: ${(props) => getBorderColorColor(props)};
+                 border-color: ${(props) => getBorderColor(props)};
                  outline: 0;
                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
                };
@@ -167,7 +167,7 @@ const Label = styled.label`
               font-size: 75%;
               font-weight: bold;
               line-height: 1;
-              color:  ${(props) => getforColorColor(props)};             
+              color:  ${(props) => getforColor(props)};             
               white-space: nowrap;
               vertical-align: baseline;
               border-radius: .25em;
@@ -182,7 +182,7 @@ const Important = styled.span`
 
 const Section = styled.section`  
          position:relative;
-         direction:  ${ ((props) => props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };        
+      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
            i{                    
           color:${(props) => props.theme.danger.bgColor};
           position: absolute;

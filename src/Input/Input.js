@@ -1,8 +1,8 @@
-import React from 'react';
-import {InputWrapper, Label, Alert, Important, Section} from './style';
+import React, { Component } from 'react';
+import { InputWrapper, Label, Alert, Important, Section } from './style';
 import Icon from '../Icon/Icon';
 
-class Input extends React.Component {
+class Input extends Component {
   render() {
     const {
       label,

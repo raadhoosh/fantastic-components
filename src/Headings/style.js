@@ -51,38 +51,38 @@ function getColor(props) {
   const H1Wrapper = styled.h1`
       font-family: ${(props) => props.theme.fontFamily};
       color:${(props) => getColor(props)};  
-      direction:  ${ ((props) => props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
     `;
 
 
 const H2Wrapper = styled.h2`
       font-family: ${(props) => props.theme.fontFamily};
       color:${(props) => getColor(props)};
-      direction:  ${ ((props) => props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
     `;
 
 const H3Wrapper = styled.h3`
       font-family: ${(props) => props.theme.fontFamily};
       color:${(props) => getColor(props)};   
-      direction:  ${ ((props) => props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
     `;
 
 
 const H4Wrapper = styled.h4`
       font-family: ${(props) => props.theme.fontFamily};
       color:${(props) => getColor(props)};    
-      direction:  ${ ((props) => props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+     direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
     `;
 
 const H5Wrapper = styled.h5`
       font-family: ${(props) => props.theme.fontFamily};
       color:${(props) => getColor(props)}; 
-      direction:  ${ ((props) => props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
     `;
 
 const H6Wrapper = styled.h6`
       font-family: ${(props) => props.theme.fontFamily};
       color:${(props) => getColor(props)};    
-      direction:  ${ ((props) => props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+     direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
     `;
 export { H1Wrapper, H2Wrapper, H3Wrapper, H4Wrapper, H5Wrapper, H6Wrapper };

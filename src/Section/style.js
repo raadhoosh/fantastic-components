@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-function getBgColorColor(props) {
+function getBgColor(props) {
   const {
     primary,
     secondary,
@@ -17,8 +17,6 @@ function getBgColorColor(props) {
     bgColor
   } = props;
   let bgC = theme.default.primaryForeColor;
-
-
   if (primary) {
     bgC = theme.primary.bgColor;
   }
@@ -48,7 +46,7 @@ function getBgColorColor(props) {
   return bgC;
 }
 
-function getforColorColor(props) {
+function getforColor(props) {
   const {
     primary,
     secondary,
@@ -61,36 +59,36 @@ function getforColorColor(props) {
     foreColor
   } = props;
   let ForeC = theme.default.foreColor;
-
   if (primary) {
-    ForeC = theme.primaryColor;
+    ForeC = theme.primary.foreColor;
   }
   else if (secondary) {
-    ForeC = theme.secondaryColor;
+    ForeC = theme.secondary.foreColor;
   }
   else if (info) {
-    ForeC = theme.infoColor;
+    ForeC = theme.info.foreColor;
   }
   else if (warning) {
-    ForeC = theme.warningColor;
+    ForeC = theme.warning.foreColor;
   }
   else if (danger) {
-    ForeC = theme.dangerColor;
+    ForeC = theme.danger.foreColor;
   }
   else if (success) {
-    ForeC = theme.successColor;
+    ForeC = theme.success.foreColor;
   }
   else if (inverse) {
-    ForeC = theme.inverseColor;
+    ForeC = theme.inverse.foreColor;
   }
 
   if (foreColor) {
     ForeC = foreColor;
   }
+
   return ForeC;
 }
 
-function getBorderColorColor(props) {
+function getBorderColor(props) {
   const {
     primary,
     secondary,
@@ -135,34 +133,28 @@ function getBorderColorColor(props) {
 }
 
 
-const CheckBoxWrapper = styled.input`
-        margin: 10px 3px 10px 3px;
-        width: 17px;
-        height: 17px;   
-        position: relative;
-        top: 4px;
-        margin-left:7px;
-        cursor: pointer;
-        background-color: ${(props) => getBgColorColor(props)};
-        color:  ${(props) => getforColorColor(props)};
-        border-color:   ${(props) => getBorderColorColor(props)};
-        `;
+const DivWrapper = styled.div`        
+          font-family: ${(props) => props.theme.fontFamily};             
+          background-color:  ${(props) => getBgColor(props)};
+          color:  ${(props) => getforColor(props)};
+          border-color:  ${(props) => getBorderColor(props)};        
+        ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
 
 
-const Label = styled.label`  
-    cursor: pointer; 
-              `;
-
-const Section = styled.section`  
-         position:relative;
-         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
-           i{                    
-          color:${(props) => props.theme.danger.bgColor};
-          position: absolute;
-          left: ${(props) => props.theme.rtl ? 'auto' : '10px' }; 
-          right: ${(props) => props.theme.rtl ? '10px' : 'auto' };          
-          bottom: 6px;
-          }       
+const SectionWrapper = styled.section` 
+            font-family: ${(props) => props.theme.fontFamily};  
+            background-color: ${(props) => getBgColor(props)};
+            color: ${(props) => getforColor(props)};  
+            border-color:  ${(props) => getBorderColor(props)};
+            direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
            `;
 
-export { CheckBoxWrapper, Label ,Section};
+
+const ArticleWrapper = styled.article`        
+          font-family: ${(props) => props.theme.fontFamily};               
+          background-color: ${(props) => getBgColor(props)};
+          color: ${(props) => getforColor(props)};  
+          border-color:  ${(props) => getBorderColor(props)};
+          ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
+
+export { DivWrapper, SectionWrapper, ArticleWrapper };

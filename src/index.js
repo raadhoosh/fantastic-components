@@ -15,4 +15,7 @@ module.exports = {
   H4: require('./Headings/H4').default,
   H5: require('./Headings/H5').default,
   H6: require('./Headings/H6').default,
+  Article: require('./Section/Article').default,
+  Div: require('./Section/Div').default,
+  Section: require('./Section/Section').default
 };
