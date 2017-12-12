@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-function getBgColorColor(props) {
+function getBgColor(props) {
   const {
     primary,
     secondary,
@@ -48,7 +48,7 @@ function getBgColorColor(props) {
   return bgC;
 }
 
-function getforColorColor(props) {
+function getColor(props) {
   const {
     primary,
     secondary,
@@ -90,7 +90,7 @@ function getforColorColor(props) {
   return ForeC;
 }
 
-function getBorderColorColor(props) {
+function getBorderColor(props) {
   const {
     primary,
     secondary,
@@ -143,9 +143,9 @@ const CheckBoxWrapper = styled.input`
         top: 4px;
         margin-left:7px;
         cursor: pointer;
-        background-color: ${(props) => getBgColorColor(props)};
-        color:  ${(props) => getforColorColor(props)};
-        border-color:   ${(props) => getBorderColorColor(props)};
+        background-color: ${(props) => getBgColor(props)};
+        color:  ${(props) => getColor(props)};
+        border-color:   ${(props) => getBorderColor(props)};
         `;
 
 

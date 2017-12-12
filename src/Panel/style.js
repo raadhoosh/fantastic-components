@@ -17,6 +17,8 @@ function getBgColor(props) {
     bgColor
   } = props;
   let bgC = theme.default.primaryForeColor;
+
+
   if (primary) {
     bgC = theme.primary.bgColor;
   }
@@ -88,7 +90,7 @@ function getColor(props) {
   return ForeC;
 }
 
-function getBorderColor(props) {
+function getBorder(props) {
   const {
     primary,
     secondary,
@@ -133,28 +135,43 @@ function getBorderColor(props) {
 }
 
 
-const DivWrapper = styled.div`        
-          font-family: ${(props) => props.theme.fontFamily};             
-          background-color:  ${(props) => getBgColor(props)};
-          color:  ${(props) => getColor(props)};
-          border-color:  ${(props) => getBorderColor(props)};        
-        ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
+const Wrapper = styled.div`    
+  background-color: #ffffff;
+  border: 1px solid ${(props) => getBorder(props)};
+  border-radius: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)`;
 
 
-const SectionWrapper = styled.section` 
-            font-family: ${(props) => props.theme.fontFamily};  
-            background-color: ${(props) => getBgColor(props)};
-            color: ${(props) => getColor(props)};  
-            border-color:  ${(props) => getBorderColor(props)};
-            direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
+
+const Heading = styled.div`  
+  font-family: ${(props) => props.theme.fontFamily};
+  direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: -1;
+  border-top-right-radius: -1;
+  padding: 8px 12px;
+  color: ${(props) => getColor(props)};
+  background-color:${(props) => getBgColor(props)};
+  border-color:  ${(props) => getBorder(props)}; 
+              `;
+const Footer = styled.div` 
+  font-family: ${(props) => props.theme.fontFamily};
+  direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
+  border-top: 1px solid #dddddd;
+  color: ${(props) => getColor(props)};
+  background-color:${(props) => getBgColor(props)};
+  border-color:  ${(props) => getBorder(props)}; 
+  border-bottom-left-radius: -1;
+  border-bottom-right-radius: -1;
+  padding: 10px 15px; 
+  
+              `;
+
+const Body = styled.div`  
+       font-family: ${(props) => props.theme.fontFamily};
+      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
+      padding: 15px;       
            `;
 
-
-const ArticleWrapper = styled.article`        
-          font-family: ${(props) => props.theme.fontFamily};               
-          background-color: ${(props) => getBgColor(props)};
-          color: ${(props) => getColor(props)};  
-          border-color:  ${(props) => getBorderColor(props)};
-          ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
-
-export { DivWrapper, SectionWrapper, ArticleWrapper };
+export { Wrapper, Body, Footer, Heading };

@@ -48,7 +48,7 @@ function getBgColor(props) {
   return bgC;
 }
 
-function getforColor(props) {
+function getColor(props) {
   const {
     primary,
     secondary,
@@ -141,7 +141,7 @@ const TextAriaWrapper = styled.textarea`
               padding: 6px 12px;
               font-size: 14px;
               line-height: 1.42857143;
-              color: ${(props) => getforColor(props)};   
+              color: ${(props) => getColor(props)};   
               background-color:  ${(props) => getBgColor(props)};
               background-image: none;
               border: 1px solid  ${(props) => getBorder(props)};   
@@ -162,7 +162,7 @@ const Label = styled.label`
               font-size: 75%;
               font-weight: bold;
               line-height: 1;
-              color:  ${(props) => getforColor(props)};             
+              color:  ${(props) => getColor(props)};             
               white-space: nowrap;
               vertical-align: baseline;
               border-radius: .25em;

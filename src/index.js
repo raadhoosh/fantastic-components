@@ -25,4 +25,9 @@ module.exports = {
   Modal: require('./Modal/Modal').default,
   Row: require('./Row/Row').default,
   Col: require('./Col/Col').default,
+  Modal: require('./Modal/Modal').default,
+  Row: require('./Row/Row').default,
+  Breadcrumb: require('./Breadcrumb/Breadcrumb').default,
+  P: require('./Text/P').default,
+  Panel: require('./Panel/Panel').default
 };
