@@ -22,4 +22,6 @@ module.exports = {
   Li: require('./List/Li').default,
   Span: require('./Text/Span').default,
   P: require('./Text/P').default
+  Modal: require('./Modal/Modal').default,
+  Row: require('./Row/Row').default,
 };

@@ -11,7 +11,7 @@ class Icon extends Component {
   render() {
     const {
       iconClass,
-      style
+      rtl
     } = this.props;
 
     return (
@@ -20,7 +20,6 @@ class Icon extends Component {
         onClick={this.props.onClick}
         className={`fa fa-${iconClass}`}
         aria-hidden="true"
-        style={style}
       />
     );
   }

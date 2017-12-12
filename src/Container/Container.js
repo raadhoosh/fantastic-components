@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ContainerWrapper from './Style'
+import ContainerWrapper from './Style';
 
 class Container extends Component {
 
