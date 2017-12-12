@@ -4,7 +4,8 @@ import Icon from '../src/Icon/Icon';
 import Button from '../src/Button/Button';
 import Image from '../src/Image/Img';
 import Container from '../src/Container/Container';
-import Modal from '../src/Modal/Modal'
+import Modal from '../src/Modal/Modal';
+import Row from '../src/Row/Row';
 
 import img from './commons/img.jpg';
 
@@ -57,6 +58,9 @@ class App extends Component {
         <br/>
         <Container>
           test Container
+          <Row>
+            test row
+          </Row>
         </Container>
         <div>
           <Modal isOpen={this.state.isOpen}
@@ -73,6 +77,7 @@ class App extends Component {
                   primary
                   onClick={this.openModal}
           />
+
         </div>
       </div>
 

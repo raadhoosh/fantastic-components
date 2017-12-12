@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 
 function getColor(props) {
@@ -10,7 +9,7 @@ function getColor(props) {
   let ForeC;
   if (foreColor) {
     ForeC = foreColor;
-  }else {
+  } else {
     ForeC = theme.primaryForeColor;
   }
   return ForeC;
@@ -47,7 +46,8 @@ const Header = styled.header`
           
           i{
            padding: 0;
-           margin: 3px;
+           margin: 3px;    
+           float: ${(props) => (props.rtl || props.theme.rtl) ? 'left' : 'right' };          
           }
         `;
 
@@ -76,6 +76,7 @@ const ModalBox = styled.div`
         margin: 10px auto;
         background: #fff;
         max-width: 800px;
+        direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
         `;
 
 const ModalBody = styled.div`

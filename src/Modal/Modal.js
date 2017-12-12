@@ -96,7 +96,7 @@ class Modal extends Component {
                       xxsmall
                       color="#fff"
                       onClick={this.onClose}
-                      style={{cursor: 'pointer',float:'right'}}
+                      style={{cursor: 'pointer'}}
                     />
                 }
 

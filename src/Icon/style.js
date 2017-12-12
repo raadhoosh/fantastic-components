@@ -77,7 +77,7 @@ const I = styled.i`
          color:${(props) => getColor(props)};  
          font-size:${(props) => getSize(props)}px !important;          
          display: inline-block;  
-         float: ${((props) => props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };      
+         float: ${(props) => (props.rtl || props.theme.rtl) ? 'right' : 'left' };     
          
          ${
     props => props.devider ?
