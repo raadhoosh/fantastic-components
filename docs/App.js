@@ -7,6 +7,7 @@ import Container from '../src/Container/Container';
 import Modal from '../src/Modal/Modal';
 import Row from '../src/Row/Row';
 import Breadcrumb from '../src/Breadcrumb/Breadcrumb';
+import Panel from '../src/Panel/Panel';
 import img from './commons/img.jpg';
 
 
@@ -50,9 +51,33 @@ class App extends Component {
     ];
     return (
       <div>
+        <Panel header="Header" footer="Footer" warning>
+          <Button
+            label={'تست'}
+            secondary
+            onClick={() => {
+              alert("hello")
+            }}
+          />
+          <br/>
+          <Image
+            src={img}
+          />
+          <br/>
+          <Container>
+            test Container
+            <Row>
+              test row
+            </Row>
+          </Container>
+        </Panel>
+        <br/>
+        <Panel header="Header" footer="Footer" secondary>
+
+
         <Breadcrumb items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
         App...
-        <Input color={'red'} backgroundColor={'gray'}/>
+        <Input primary/>
         <br/>
         <Icon
           iconClass={'user'}
@@ -94,6 +119,7 @@ class App extends Component {
           />
 
         </div>
+        </Panel>
       </div>
 
     );
