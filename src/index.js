@@ -8,5 +8,5 @@ module.exports = {
   Container: require('./Container/Container').default,
   Modal: require('./Modal/Modal').default,
   Row: require('./Row/Row').default,
-
+  Col: require('./Col/Col').default,
 };

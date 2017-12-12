@@ -6,6 +6,7 @@ import Image from '../src/Image/Img';
 import Container from '../src/Container/Container';
 import Modal from '../src/Modal/Modal';
 import Row from '../src/Row/Row';
+import Col from '../src/Col/Col';
 
 import img from './commons/img.jpg';
 
@@ -60,6 +61,9 @@ class App extends Component {
           test Container
           <Row>
             test row
+            <Col>
+              test Col
+            </Col>
           </Row>
         </Container>
         <div>
@@ -81,8 +85,8 @@ class App extends Component {
         </div>
       </div>
 
-    );
+  );
   }
-}
+  }
 
-export default App;
+  export default App;
