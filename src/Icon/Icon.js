@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import 'font-awesome/css/font-awesome.css'
-import IconWrapper from './style'
+
+import React, {Component} from 'react';
+import 'font-awesome/css/font-awesome.css';
+import IconWrapper from './style';
+
 
 class Icon extends Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class Icon extends Component {
   render() {
     const {
       iconClass,
-      style
+      rtl
     } = this.props;
 
     return (
@@ -20,7 +22,6 @@ class Icon extends Component {
         onClick={this.props.onClick}
         className={`fa fa-${iconClass}`}
         aria-hidden="true"
-        style={style}
       />
     );
   }

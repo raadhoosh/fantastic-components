@@ -46,7 +46,7 @@ function getBgColor(props) {
   return bgC;
 }
 
-function getforColor(props) {
+function getColor(props) {
   const {
     primary,
     secondary,
@@ -136,7 +136,7 @@ function getBorderColor(props) {
 const DivWrapper = styled.div`        
           font-family: ${(props) => props.theme.fontFamily};             
           background-color:  ${(props) => getBgColor(props)};
-          color:  ${(props) => getforColor(props)};
+          color:  ${(props) => getColor(props)};
           border-color:  ${(props) => getBorderColor(props)};        
         ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
 
@@ -144,7 +144,7 @@ const DivWrapper = styled.div`
 const SectionWrapper = styled.section` 
             font-family: ${(props) => props.theme.fontFamily};  
             background-color: ${(props) => getBgColor(props)};
-            color: ${(props) => getforColor(props)};  
+            color: ${(props) => getColor(props)};  
             border-color:  ${(props) => getBorderColor(props)};
             direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
            `;
@@ -153,7 +153,7 @@ const SectionWrapper = styled.section`
 const ArticleWrapper = styled.article`        
           font-family: ${(props) => props.theme.fontFamily};               
           background-color: ${(props) => getBgColor(props)};
-          color: ${(props) => getforColor(props)};  
+          color: ${(props) => getColor(props)};  
           border-color:  ${(props) => getBorderColor(props)};
           ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
 
