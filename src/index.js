@@ -17,5 +17,7 @@ module.exports = {
   H6: require('./Headings/H6').default,
   Article: require('./Section/Article').default,
   Div: require('./Section/Div').default,
-  Section: require('./Section/Section').default
+  Section: require('./Section/Section').default,
+  Ul: require('./List/Ul').default,
+  Li: require('./List/Li').default
 };
