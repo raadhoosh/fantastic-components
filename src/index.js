@@ -5,7 +5,7 @@ module.exports = {
   TextAria: require('./TextAria/TextAria').default,
   CheckBox: require('./CheckBox/CheckBox').default,
   Icon: require('./Icon/Icon').default,
-  Label: require('./Label/Label').default,
+  Label: require('./Text/Label').default,
   Button: require('./Button/Button').default,
   Image: require('./Image/Img').default,
   Container: require('./Container/Container').default,
@@ -19,5 +19,7 @@ module.exports = {
   Div: require('./Section/Div').default,
   Section: require('./Section/Section').default,
   Ul: require('./List/Ul').default,
-  Li: require('./List/Li').default
+  Li: require('./List/Li').default,
+  Span: require('./Text/Span').default,
+  P: require('./Text/P').default
 };

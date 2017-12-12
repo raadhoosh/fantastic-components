@@ -44,14 +44,25 @@ function getColor(props) {
   }
   return ForeC;
 
-};
+}
 
 
-
-
-const Label = styled.label`
+const PWrapper = styled.p`
         font-family: ${(props) => props.theme.fontFamily};
          color:${(props) => getColor(props)};
          direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
          ${(props) => props.pointer ? 'cursor: pointer;' : ''}`;
-export default Label;
+
+const SpanWrapper = styled.span`
+        font-family: ${(props) => props.theme.fontFamily};
+         color:${(props) => getColor(props)};
+         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+         ${(props) => props.pointer ? 'cursor: pointer;' : ''}`;
+
+const LabelWrapper = styled.label`
+        font-family: ${(props) => props.theme.fontFamily};
+         color:${(props) => getColor(props)};
+         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+         ${(props) => props.pointer ? 'cursor: pointer;' : ''}`;
+
+export { PWrapper, SpanWrapper, LabelWrapper };
