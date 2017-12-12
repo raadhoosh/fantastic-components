@@ -2,6 +2,7 @@
 module.exports = {
   Input: require('./Input/Input').default,
   SelectInput: require('./SelectInput/SelectInput').default,
+  TextAria: require('./TextAria/TextAria').default,
   Icon: require('./Icon/Icon').default,
   Label: require('./Label/Label').default,
   Button: require('./Button/Button').default,
