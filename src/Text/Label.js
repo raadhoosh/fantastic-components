@@ -1,5 +1,5 @@
 import React from 'react';
-import LabelWrapper from './style';
+import { LabelWrapper } from './style';
 
 class Label extends React.Component {
   render() {

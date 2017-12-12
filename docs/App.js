@@ -58,10 +58,27 @@ class App extends Component {
         />
         <br/>
         <Container>
-          test Container
           <Row>
-            test row
-            <Col>
+            <Col
+              lg4
+              sm3
+              md3
+              bgColor={"#ddd"}
+            >
+              test Col
+            </Col>
+            <Col
+              lg4
+              sm3
+              md3
+            >
+              test Col
+            </Col>
+            <Col
+              lg4
+              sm3
+              md3
+            >
               test Col
             </Col>
           </Row>
@@ -70,9 +87,8 @@ class App extends Component {
           <Modal isOpen={this.state.isOpen}
                  onClose={() => this.closeModal()}
                  title="title"
-                 iconTitle="fa fa-envelope"
+                 iconTitle="envelope"
                  Btn1Label="yes"
-                 allowClose={true}
                  footerChildren={<div><b>footer</b></div>}
           >
 
@@ -85,8 +101,8 @@ class App extends Component {
         </div>
       </div>
 
-  );
+    );
   }
-  }
+}
 
-  export default App;
+export default App;
