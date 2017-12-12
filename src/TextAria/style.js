@@ -90,7 +90,7 @@ function getforColor(props) {
   return ForeC;
 }
 
-function getBorderColor(props) {
+function getBorder(props) {
   const {
     primary,
     secondary,
@@ -135,30 +135,25 @@ function getBorderColor(props) {
 }
 
 
-const InputWrapper = styled.input`    
-              display: block;
-              width: 100%;
-              height: 34px;
+const TextAriaWrapper = styled.textarea`    
+             
+              width: 100%;              
               padding: 6px 12px;
               font-size: 14px;
               line-height: 1.42857143;
-              color: ${(props) => getforColor(props)};
-              background-color: ${(props) => getBgColor(props)};
+              color: ${(props) => getforColor(props)};   
+              background-color:  ${(props) => getBgColor(props)};
               background-image: none;
-              border: 1px solid #ccc;
-              border-radius: 4px;              
+              border: 1px solid  ${(props) => getBorder(props)};   
+              border-radius: 4px;         
               box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+              height: auto;
               transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
                &:focus{
-                 border-color: ${(props) => getBorderColor(props)};
-                 outline: 0;
-                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-               };
-                     ${props => props.icon ?
-`  padding-right: ${ (props.theme.rtl) ? '30px' : 'auto' };
-            padding-left: ${ (props.theme.rtl) ? '30px' : 'auto' }; `
-  : ``
-  }    
+                border-color: ${(props) => getBorder(props)};   
+                outline: 0;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+               }
               `;
 
 
@@ -182,14 +177,15 @@ const Important = styled.span`
 
 const Section = styled.section`  
          position:relative;
-      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
+         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
+         
            i{                    
           color:${(props) => props.theme.danger.bgColor};
           position: absolute;
-          left: ${(props) => props.theme.rtl ? 'auto' : '10px' }; 
-          right: ${(props) => props.theme.rtl ? '10px' : 'auto' };          
+          left: ${(props) => props.theme.rtl ? 'auto' : '10px'}; 
+          right: ${(props) => props.theme.rtl ? '10px' : 'auto'};          
           bottom: 6px;
           }       
            `;
 
-export { InputWrapper, Section, Important, Alert, Label };
+export { TextAriaWrapper, Section, Important, Alert, Label };

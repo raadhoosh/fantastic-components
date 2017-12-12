@@ -17,8 +17,6 @@ function getBgColor(props) {
     bgColor
   } = props;
   let bgC = theme.default.primaryForeColor;
-
-
   if (primary) {
     bgC = theme.primary.bgColor;
   }
@@ -135,61 +133,28 @@ function getBorderColor(props) {
 }
 
 
-const InputWrapper = styled.input`    
-              display: block;
-              width: 100%;
-              height: 34px;
-              padding: 6px 12px;
-              font-size: 14px;
-              line-height: 1.42857143;
-              color: ${(props) => getforColor(props)};
-              background-color: ${(props) => getBgColor(props)};
-              background-image: none;
-              border: 1px solid #ccc;
-              border-radius: 4px;              
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-              transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-               &:focus{
-                 border-color: ${(props) => getBorderColor(props)};
-                 outline: 0;
-                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-               };
-                     ${props => props.icon ?
-`  padding-right: ${ (props.theme.rtl) ? '30px' : 'auto' };
-            padding-left: ${ (props.theme.rtl) ? '30px' : 'auto' }; `
-  : ``
-  }    
-              `;
+const DivWrapper = styled.div`        
+          font-family: ${(props) => props.theme.fontFamily};             
+          background-color:  ${(props) => getBgColor(props)};
+          color:  ${(props) => getforColor(props)};
+          border-color:  ${(props) => getBorderColor(props)};        
+        ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
 
 
-const Label = styled.label`  
-              padding: .2em .6em .3em;
-              font-size: 75%;
-              font-weight: bold;
-              line-height: 1;
-              color:  ${(props) => getforColor(props)};             
-              white-space: nowrap;
-              vertical-align: baseline;
-              border-radius: .25em;
-              `;
-
-const Alert = styled.div`    
-         color: ${(props) => props.theme.danger.bgColor};
-              `;
-const Important = styled.span`    
-         color: ${(props) => props.theme.danger.bgColor};
-              `;
-
-const Section = styled.section`  
-         position:relative;
-      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
-           i{                    
-          color:${(props) => props.theme.danger.bgColor};
-          position: absolute;
-          left: ${(props) => props.theme.rtl ? 'auto' : '10px' }; 
-          right: ${(props) => props.theme.rtl ? '10px' : 'auto' };          
-          bottom: 6px;
-          }       
+const SectionWrapper = styled.section` 
+            font-family: ${(props) => props.theme.fontFamily};  
+            background-color: ${(props) => getBgColor(props)};
+            color: ${(props) => getforColor(props)};  
+            border-color:  ${(props) => getBorderColor(props)};
+            direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
            `;
 
-export { InputWrapper, Section, Important, Alert, Label };
+
+const ArticleWrapper = styled.article`        
+          font-family: ${(props) => props.theme.fontFamily};               
+          background-color: ${(props) => getBgColor(props)};
+          color: ${(props) => getforColor(props)};  
+          border-color:  ${(props) => getBorderColor(props)};
+          ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
+
+export { DivWrapper, SectionWrapper, ArticleWrapper };

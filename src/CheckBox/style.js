@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-function getBgColor(props) {
+function getBgColorColor(props) {
   const {
     primary,
     secondary,
@@ -48,7 +48,7 @@ function getBgColor(props) {
   return bgC;
 }
 
-function getforColor(props) {
+function getforColorColor(props) {
   const {
     primary,
     secondary,
@@ -61,36 +61,36 @@ function getforColor(props) {
     foreColor
   } = props;
   let ForeC = theme.default.foreColor;
+
   if (primary) {
-    ForeC = theme.primary.foreColor;
+    ForeC = theme.primaryColor;
   }
   else if (secondary) {
-    ForeC = theme.secondary.foreColor;
+    ForeC = theme.secondaryColor;
   }
   else if (info) {
-    ForeC = theme.info.foreColor;
+    ForeC = theme.infoColor;
   }
   else if (warning) {
-    ForeC = theme.warning.foreColor;
+    ForeC = theme.warningColor;
   }
   else if (danger) {
-    ForeC = theme.danger.foreColor;
+    ForeC = theme.dangerColor;
   }
   else if (success) {
-    ForeC = theme.success.foreColor;
+    ForeC = theme.successColor;
   }
   else if (inverse) {
-    ForeC = theme.inverse.foreColor;
+    ForeC = theme.inverseColor;
   }
 
   if (foreColor) {
     ForeC = foreColor;
   }
-
   return ForeC;
 }
 
-function getBorderColor(props) {
+function getBorderColorColor(props) {
   const {
     primary,
     secondary,
@@ -135,54 +135,27 @@ function getBorderColor(props) {
 }
 
 
-const InputWrapper = styled.input`    
-              display: block;
-              width: 100%;
-              height: 34px;
-              padding: 6px 12px;
-              font-size: 14px;
-              line-height: 1.42857143;
-              color: ${(props) => getforColor(props)};
-              background-color: ${(props) => getBgColor(props)};
-              background-image: none;
-              border: 1px solid #ccc;
-              border-radius: 4px;              
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-              transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-               &:focus{
-                 border-color: ${(props) => getBorderColor(props)};
-                 outline: 0;
-                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-               };
-                     ${props => props.icon ?
-`  padding-right: ${ (props.theme.rtl) ? '30px' : 'auto' };
-            padding-left: ${ (props.theme.rtl) ? '30px' : 'auto' }; `
-  : ``
-  }    
-              `;
+const CheckBoxWrapper = styled.input`
+        margin: 10px 3px 10px 3px;
+        width: 17px;
+        height: 17px;   
+        position: relative;
+        top: 4px;
+        margin-left:7px;
+        cursor: pointer;
+        background-color: ${(props) => getBgColorColor(props)};
+        color:  ${(props) => getforColorColor(props)};
+        border-color:   ${(props) => getBorderColorColor(props)};
+        `;
 
 
 const Label = styled.label`  
-              padding: .2em .6em .3em;
-              font-size: 75%;
-              font-weight: bold;
-              line-height: 1;
-              color:  ${(props) => getforColor(props)};             
-              white-space: nowrap;
-              vertical-align: baseline;
-              border-radius: .25em;
-              `;
-
-const Alert = styled.div`    
-         color: ${(props) => props.theme.danger.bgColor};
-              `;
-const Important = styled.span`    
-         color: ${(props) => props.theme.danger.bgColor};
+    cursor: pointer; 
               `;
 
 const Section = styled.section`  
          position:relative;
-      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
+         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
            i{                    
           color:${(props) => props.theme.danger.bgColor};
           position: absolute;
@@ -192,4 +165,4 @@ const Section = styled.section`
           }       
            `;
 
-export { InputWrapper, Section, Important, Alert, Label };
+export { CheckBoxWrapper, Label ,Section};
