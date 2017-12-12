@@ -3,52 +3,7 @@
  */
 import styled from 'styled-components';
 
-
-function getBgColorColor(props) {
-  const {
-    primary,
-    secondary,
-    info,
-    warning,
-    danger,
-    success,
-    inverse,
-    theme,
-    bgColor
-  } = props;
-  let bgC = theme.default.primaryForeColor;
-
-
-  if (primary) {
-    bgC = theme.primary.bgColor;
-  }
-  else if (secondary) {
-    bgC = theme.secondary.bgColor;
-  }
-  else if (info) {
-    bgC = theme.info.bgColor;
-  }
-  else if (warning) {
-    bgC = theme.warning.bgColor;
-  }
-  else if (danger) {
-    bgC = theme.danger.bgColor;
-  }
-  else if (success) {
-    bgC = theme.success.bgColor;
-  }
-  else if (inverse) {
-    bgC = theme.inverse.bgColor;
-  }
-
-  if (bgColor) {
-    bgC = bgColor;
-  }
-
-  return bgC;
-}
-
-function getforColorColor(props) {
+function getColor(props) {
   const {
     primary,
     secondary,
@@ -60,7 +15,8 @@ function getforColorColor(props) {
     theme,
     foreColor
   } = props;
-  let ForeC = theme.default.foreColor;
+
+  let ForeC;
   if (primary) {
     ForeC = theme.primary.foreColor;
   }
@@ -86,11 +42,54 @@ function getforColorColor(props) {
   if (foreColor) {
     ForeC = foreColor;
   }
-
   return ForeC;
+
 }
 
-function getBorderColorColor(props) {
+
+function getBgColor(props) {
+  const {
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    inverse,
+    theme,
+    bgColor
+  } = props;
+
+  let bgC;
+  if (primary) {
+    bgC = theme.primary.bgColor;
+  }
+  else if (secondary) {
+    bgC = theme.secondary.bgColor;
+  }
+  else if (info) {
+    bgC = theme.info.bgColor;
+  }
+  else if (warning) {
+    bgC = theme.warning.bgColor;
+  }
+  else if (danger) {
+    bgC = theme.danger.bgColor;
+  }
+  else if (success) {
+    bgC = theme.success.bgColor;
+  }
+  else if (inverse) {
+    bgC = theme.inverse.bgColor;
+  }
+
+  if (bgColor) {
+    bgC = bgColor;
+  }
+  return bgC;
+}
+
+function getBorderC(props) {
   const {
     primary,
     secondary,
@@ -102,9 +101,8 @@ function getBorderColorColor(props) {
     theme,
     borderColor
   } = props;
-  let BorderC = theme.default.borderColor;
 
-
+  let BorderC;
   if (primary) {
     BorderC = theme.primary.borderColor;
   }
@@ -130,44 +128,39 @@ function getBorderColorColor(props) {
   if (borderColor) {
     BorderC = borderColor;
   }
-
   return BorderC;
 }
 
 
-const InputWrapper = styled.input`    
+const SelectWrapper = styled.select`    
               display: block;
               width: 100%;
               height: 34px;
               padding: 6px 12px;
               font-size: 14px;
               line-height: 1.42857143;
-              color: ${(props) => getforColorColor(props)};
-              background-color: ${(props) => getBgColorColor(props)};
+              color:${(props) => getColor(props)};
+              background-color:${(props) => getBgColor(props)}; 
               background-image: none;
-              border: 1px solid #ccc;
-              border-radius: 4px;              
+              border: 1px solid ${(props) => getBorderC(props)};
+              border-radius: 4px;         
               box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+              height: auto; 
               transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
                &:focus{
-                 border-color: ${(props) => getBorderColorColor(props)};
-                 outline: 0;
-                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-               };
-                     ${props => props.icon ?
-`  padding-right: ${ (props.theme.rtl) ? '30px' : 'auto' };
-            padding-left: ${ (props.theme.rtl) ? '30px' : 'auto' }; `
-  : ``
-  }    
+                border-color: ${(props) => getBorderC(props)};
+                outline: 0;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+               }
               `;
-
-
-const Label = styled.label`  
+const Label = styled.label`    
+             display: inline;
               padding: .2em .6em .3em;
               font-size: 75%;
               font-weight: bold;
               line-height: 1;
-              color:  ${(props) => getforColorColor(props)};             
+              color:${(props) => getColor(props)};
+              text-align: center;
               white-space: nowrap;
               vertical-align: baseline;
               border-radius: .25em;
@@ -179,17 +172,9 @@ const Alert = styled.div`
 const Important = styled.span`    
          color: ${(props) => props.theme.danger.bgColor};
               `;
+const Section = styled.section`    
+         direction:  ${ ((props) => props.rtl || ((props) => props.theme.rtl)) ? 'rtl' : 'ltr' };
+              `;
 
-const Section = styled.section`  
-         position:relative;
-         direction:  ${ ((props) => props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };        
-           i{                    
-          color:${(props) => props.theme.danger.bgColor};
-          position: absolute;
-          left: ${(props) => props.theme.rtl ? 'auto' : '10px' }; 
-          right: ${(props) => props.theme.rtl ? '10px' : 'auto' };          
-          bottom: 6px;
-          }       
-           `;
 
-export { InputWrapper, Section, Important, Alert, Label };
+export { SelectWrapper, Label, Alert, Important, Section };

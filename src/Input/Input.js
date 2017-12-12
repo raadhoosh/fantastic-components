@@ -1,11 +1,35 @@
 import React from 'react';
-import styled from 'styled-components';
-import style from './style';
+import {InputWrapper, Label, Alert, Important, Section} from './style';
+import Icon from '../Icon/Icon';
 
-const InputWrapper=styled.input`${style}`;
-
-const Input = (props) => {
-  return <InputWrapper style={{color:`${props.color}`, backgroundColor:`${props.backgroundColor}`}}/>
-};
+class Input extends React.Component {
+  render() {
+    const {
+      label,
+      errorText,
+      style,
+      important,
+      icon
+    } = this.props;
+    return (
+      <Section style={style}>
+        {
+        label &&
+        <Label>
+          {label}
+          {
+            important && <Important>*</Important>
+          }
+        </Label>
+      }
+        {
+          icon && <Icon iconClass={icon}/>
+        }
+        <InputWrapper {...this.props}/>
+        {errorText && <Alert>{errorText}</Alert>}
+      </Section>
+    );
+  }
+}
 
 export default Input;
