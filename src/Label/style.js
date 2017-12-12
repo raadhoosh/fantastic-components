@@ -51,12 +51,11 @@ function getColor(props) {
 
 const Label = styled.label`
         font-family: ${(props) => props.theme.fontFamily};
-         color:${(props) => getColor(props)};       
+         color:${(props) => getColor(props)};
+         direction:  ${ ((props) => props.rtl || props.theme.rtl ) ? 'rtl' : 'ltr' };
          ${
         props => props.pointer ?
     ` cursor: pointer;`
     : ``
   }`;
-
-
 export default Label;
