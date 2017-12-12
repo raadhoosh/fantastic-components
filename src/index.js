@@ -6,4 +6,7 @@ module.exports = {
   Button: require('./Button/Button').default,
   Image: require('./Image/Img').default,
   Container: require('./Container/Container').default,
+  Modal: require('./Modal/Modal').default,
+  Row: require('./Row/Row').default,
+
 };

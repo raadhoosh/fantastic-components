@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Image from './style'
+import Image from './style';
 
 class Img extends React.Component {
     render() {
