@@ -136,7 +136,7 @@ function getBorder(props) {
 
 
 const TextAriaWrapper = styled.textarea`    
-             
+              box-sizing: border-box; 
               width: 100%;              
               padding: 6px 12px;
               font-size: 14px;
@@ -154,10 +154,17 @@ const TextAriaWrapper = styled.textarea`
                 outline: 0;
                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
                }
+               
+                ${props => props.icon ?
+                `padding-${props.theme.rtl ? 'right' : 'left'}:30px;`
+                : `10px`
+  }
+               
               `;
 
 
-const Label = styled.label`  
+const Label = styled.label` 
+              box-sizing: border-box;  
               padding: .2em .6em .3em;
               font-size: 75%;
               font-weight: bold;
@@ -168,24 +175,27 @@ const Label = styled.label`
               border-radius: .25em;
               `;
 
-const Alert = styled.div`    
+const Alert = styled.div`  
+         box-sizing: border-box;   
          color: ${(props) => props.theme.danger.bgColor};
               `;
-const Important = styled.span`    
+const Important = styled.span` 
+         box-sizing: border-box;    
          color: ${(props) => props.theme.danger.bgColor};
               `;
 
 const Section = styled.section`  
+         box-sizing: border-box; 
          position:relative;
          direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
          
-           i{                    
-          color:${(props) => props.theme.danger.bgColor};
-          position: absolute;
-          left: ${(props) => props.theme.rtl ? 'auto' : '10px'}; 
-          right: ${(props) => props.theme.rtl ? '10px' : 'auto'};          
-          bottom: 6px;
+           i{   
+              box-sizing: border-box;                  
+              color:${(props) => props.theme.danger.bgColor};
+              position: absolute;
+              ${(props) => (props.rtl || props.theme.rtl) ? 'right:10px' : 'left: 10px'};            
+              top: ${(props) => (props.label) ? '29px' : '5px'  }; 
           }       
            `;
 
-export { TextAriaWrapper, Section, Important, Alert, Label };
+export {TextAriaWrapper, Section, Important, Alert, Label};

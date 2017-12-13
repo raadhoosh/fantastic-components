@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Input from '../src/Input/Input';
+import TextAria from '../src/TextAria/TextAria';
 import Icon from '../src/Icon/Icon';
 import Button from '../src/Button/Button';
 import Image from '../src/Image/Img';
@@ -10,6 +11,7 @@ import Col from '../src/Col/Col';
 import Breadcrumb from '../src/Breadcrumb/Breadcrumb';
 import Panel from '../src/Panel/Panel';
 import img from './commons/img.jpg';
+
 
 
 class App extends Component {
@@ -78,7 +80,13 @@ class App extends Component {
 
         <Breadcrumb items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
         App...
-        <Input primary/>
+        <Input
+          icon={'user'}
+        />
+        <br/>
+          <TextAria
+          icon={'user'}
+        />
         <br/>
         <Icon
           iconClass={'user'}

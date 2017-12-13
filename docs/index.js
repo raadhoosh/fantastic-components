@@ -8,7 +8,7 @@ import 'font-awesome/css/font-awesome.css'
 
 let mountNode = document.getElementById("app");
 ReactDOM.render(
-  <ThemeProvider theme={ThemeRtl}>
+  <ThemeProvider theme={ThemeLtr}>
     <App/>
   </ThemeProvider>
   , mountNode);
