@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ButtonWrapper from './style';
 import Icon from '../Icon/Icon';
+import Spinner from '../Spinner/Spinner';
 
 class Button extends Component {
   constructor(props, context) {
@@ -9,17 +10,9 @@ class Button extends Component {
     this.onBtnClick = this.onBtnClick.bind(this);
   }
 
-  onBtnClick() {
-    const {onClick, value, id} = this.props;
-    if (value && id)
-      onClick(id, value);
-    else if (id)
-      onClick(id);
-    else if (value)
-      onClick(value);
-    else {
-      onClick();
-    }
+  onBtnClick(e) {
+    const {onClick} = this.props;
+    onClick(e);
   }
 
 
@@ -46,9 +39,9 @@ class Button extends Component {
         {...this.props}
         type="submit"
         className={className}
-        nativeOnClick={(e) => {
+        onClick={(e) => {
           if (!this.spanClicked)
-            this.onBtnClick();
+            this.onBtnClick(e);
           this.spanClicked = false;
         }}
         style={style}
@@ -57,13 +50,13 @@ class Button extends Component {
         large
       >
         {spinner ?
-          <Spinner/> :
+          <Spinner spin="spinner" /> :
           icon ?
             <Icon iconClass={icon} devider={icon && label}
-                  nativeOnClick={(e) => {
+                  onClick={(e) => {
                     this.spanClicked = true;
                     e.target.value = value;
-                    this.onBtnClick();
+                    this.onBtnClick(e)
                   }}
             />
             : null
