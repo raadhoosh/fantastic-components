@@ -30,5 +30,6 @@ module.exports = {
   Search: require('./Search/Search').default,
   Spinner: require('./Spinner/Spinner').default,
   Pagination: require('./Pagination/Pagination').default,
-  Table: require('./Table/Table').default
+  Table: require('./Table/Table').default,
+  Notify: require('./Notify/Notify').default
 };
