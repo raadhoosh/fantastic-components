@@ -77,7 +77,9 @@ class App extends Component {
 
         <Breadcrumb items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
         App...
-        <Input primary/>
+        <Input
+          icon={'user'}
+        />
         <br/>
         <Icon
           iconClass={'user'}

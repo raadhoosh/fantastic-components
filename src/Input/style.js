@@ -135,34 +135,37 @@ function getBorderColor(props) {
 }
 
 
-const InputWrapper = styled.input`    
-              display: block;
-              width: 100%;
-              height: 34px;
-              padding: 6px 12px;
-              font-size: 14px;
-              line-height: 1.42857143;
-              color: ${(props) => getColor(props)};
-              background-color: ${(props) => getBgColor(props)};
-              background-image: none;
-              border: 1px solid #ccc;
-              border-radius: 4px;              
-              box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-              transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+const InputWrapper = styled.input` 
+                box-sizing: border-box;   
+                display: block;
+                width: 100%;
+                height: 34px;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: ${(props) => getColor(props)};
+                background-color: ${(props) => getBgColor(props)};
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;              
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                
                &:focus{
                  border-color: ${(props) => getBorderColor(props)};
                  outline: 0;
                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
                };
                      ${props => props.icon ?
-`  padding-right: ${ (props.theme.rtl) ? '30px' : 'auto' };
-            padding-left: ${ (props.theme.rtl) ? '30px' : 'auto' }; `
-  : ``
+                      `padding-${props.theme.rtl ? 'right' : 'left'}:30px;`
+                      : `10px`
   }    
               `;
 
 
 const Label = styled.label`  
+              box-sizing: border-box; 
+              box-sizing: border-box;
               padding: .2em .6em .3em;
               font-size: 75%;
               font-weight: bold;
@@ -173,23 +176,27 @@ const Label = styled.label`
               border-radius: .25em;
               `;
 
-const Alert = styled.div`    
+const Alert = styled.div` 
+         box-sizing: border-box; 
+         box-sizing: border-box;   
          color: ${(props) => props.theme.danger.bgColor};
               `;
-const Important = styled.span`    
+const Important = styled.span`  
+         box-sizing: border-box;  
          color: ${(props) => props.theme.danger.bgColor};
               `;
 
 const Section = styled.section`  
+         box-sizing: border-box; 
+         height: 34px;
          position:relative;
-      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
+        direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
            i{                    
           color:${(props) => props.theme.danger.bgColor};
-          position: absolute;
-          left: ${(props) => props.theme.rtl ? 'auto' : '10px' }; 
-          right: ${(props) => props.theme.rtl ? '10px' : 'auto' };          
-          bottom: 6px;
+          position: absolute;         
+          ${(props) => (props.theme.rtl) ? 'right:10px' : 'left: 10px'};           
+          bottom: 10%;
           }       
            `;
 
-export { InputWrapper, Section, Important, Alert, Label };
+export {InputWrapper, Section, Important, Alert, Label};
