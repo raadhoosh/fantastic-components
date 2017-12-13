@@ -143,7 +143,6 @@ const Wrapper = styled.div`
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)`;
 
 
-
 const Heading = styled.div`  
   font-family: ${(props) => props.theme.fontFamily};
   direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
