@@ -3,6 +3,7 @@ import { InputWrapper, Label, Alert, Important, Section } from './style';
 import Icon from '../Icon/Icon';
 
 class Input extends Component {
+	
   render() {
     const {
       label,
