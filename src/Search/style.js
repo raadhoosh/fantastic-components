@@ -7,6 +7,7 @@ import styled from 'styled-components';
 const OutoCompelete = styled.div`        
      margin: 0;
      position: relative;
+     box-sizing: border-box;
       `;
 const OutoCompeleteMenu = styled.div`        
         background: white;
@@ -22,6 +23,7 @@ const OutoCompeleteMenu = styled.div`
         width: 100%;
         visibility: visible;
         z-index: 100;
+        box-sizing: border-box;
       `;
 
 const OutoCompeleteWrap = styled.div`        
@@ -29,10 +31,12 @@ const OutoCompeleteWrap = styled.div`
         width: 100%;
         margin-top: 0;
         padding: 0;
+        box-sizing: border-box;
       `;
 const OutoCompeleteItems = styled.ul`        
        margin: 0;
        padding: 0.1rem;
+       box-sizing: border-box;
       `;
 
 const OutoCompeleteItem = styled.li`        
@@ -40,6 +44,7 @@ const OutoCompeleteItem = styled.li`
           display: flex;
           list-style: none;
           margin: 0;
+          box-sizing: border-box;
           padding: 0.2rem;
           &:hover.visited{
            background-color: #ebebeb;

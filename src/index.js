@@ -26,5 +26,6 @@ module.exports = {
   Breadcrumb: require('./Breadcrumb/Breadcrumb').default,
   P: require('./Text/P').default,
   Panel: require('./Panel/Panel').default,
-  Search: require('./Search/Search').default
+  Search: require('./Search/Search').default,
+  Spinner: require('./Spinner/Spinner').default
 };

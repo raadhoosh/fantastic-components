@@ -139,6 +139,7 @@ const Wrapper = styled.div`
   background-color: #ffffff;
   border: 1px solid ${(props) => getBorder(props)};
   border-radius: 0;
+  box-sizing: border-box;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)`;
 
@@ -150,6 +151,7 @@ const Heading = styled.div`
   border-top-left-radius: -1;
   border-top-right-radius: -1;
   padding: 8px 12px;
+  box-sizing: border-box;
   color: ${(props) => getColor(props)};
   background-color:${(props) => getBgColor(props)};
   border-color:  ${(props) => getBorder(props)}; 
@@ -158,6 +160,7 @@ const Footer = styled.div`
   font-family: ${(props) => props.theme.fontFamily};
   direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
   border-top: 1px solid #dddddd;
+  box-sizing: border-box;
   color: ${(props) => getColor(props)};
   background-color:${(props) => getBgColor(props)};
   border-color:  ${(props) => getBorder(props)}; 
@@ -169,6 +172,7 @@ const Footer = styled.div`
 
 const Body = styled.div`  
        font-family: ${(props) => props.theme.fontFamily};
+       box-sizing: border-box;
       direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
       padding: 15px;       
            `;
