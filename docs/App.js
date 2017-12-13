@@ -17,6 +17,7 @@ import Tr from '../src/TableBasic/Tr/Tr';
 import Th from '../src/TableBasic/Th/Th';
 import Td from '../src/TableBasic/Td/Td';
 import Tbody from '../src/TableBasic/Tbody/Tbody';
+import Link from '../src/Link/Link'
 
 
 class App extends Component {
@@ -192,6 +193,11 @@ class App extends Component {
           </Tr>
           </Tbody>
         </Table>
+
+        <br/>
+        <Link
+          to={'https://www.google.ch/?gfe_rd=cr&dcr=0&ei=ZRwxWougIanCXtrEuJgO&gws_rd=cr'}
+        />
       </div>
 
     );

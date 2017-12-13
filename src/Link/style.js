@@ -1,7 +1,5 @@
-/**
- * Created by Programmer1 on 12/4/2017.
- */
 import styled from 'styled-components';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 function getColor(props) {
   const {
@@ -131,21 +129,9 @@ function getBorderC(props) {
   return BorderC;
 };
 
-const Div = styled.div`
-            overflow-x: auto;
-            overflow-y: hidden;  
-            padding: 1px;   
-    `;
-const TableWrapper = styled.table`
-                font-family: ${(props) => props.theme.fontFamily};
-                color:${(props) => getColor(props)};
-                background-color:${(props) => getBgColor(props)};
-                width: 100%;
-                max-width: 100%;
-                margin-bottom: 20px;
-                border-collapse: collapse;
-                min-width: 360px;                   
-    `;
+const LinkWrapper = styled(Link)`       
+         color:${(props) => getColor(props)};
+         background-color:${(props) => getBgColor(props)};
+        `;
 
-
-export {Div, TableWrapper};
+export default LinkWrapper;
