@@ -48,17 +48,19 @@ class Modal extends Component {
       Btn1 = (<Button label={Btn1Label}
                       onClick={Btn1action}
                       spinner={spinnerBtn1}
-                      bType={Btn1Type}/>);
+                      primary={Btn1Type}
+
+      />);
     }
     if (Btn2action) {
       Btn2 = (<Button label={Btn2Label}
                       onClick={Btn2action}
-                      bType={Btn2Type}/>);
+                      secondary={Btn2Type}/>);
     }
     if (Btn3action) {
       Btn3 = (<Button label={Btn3Label}
                       onClick={Btn3action}
-                      bType={Btn3Type}/>);
+                      info={Btn3Type}/>);
     }
     if (BtnHelpAction) {
       BtnHelp = (
@@ -105,9 +107,7 @@ class Modal extends Component {
                 {children}
               </ModalBody>
               {
-                (Btn1 || Btn2 || Btn3 || BtnHelp || footerChildren) && <Footer
-                  className='footer'
-                >
+                (Btn1 || Btn2 || Btn3 || BtnHelp || footerChildren) && <Footer>
                   {Btn1}
                   {Btn2}
                   {Btn3}
