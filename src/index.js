@@ -27,5 +27,6 @@ module.exports = {
   P: require('./Text/P').default,
   Panel: require('./Panel/Panel').default,
   Search: require('./Search/Search').default,
-  Spinner: require('./Spinner/Spinner').default
+  Spinner: require('./Spinner/Spinner').default,
+  Pagination: require('./Pagination/Pagination').default
 };
