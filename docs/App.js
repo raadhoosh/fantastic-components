@@ -6,6 +6,7 @@ import Image from '../src/Image/Img';
 import Container from '../src/Container/Container';
 import Modal from '../src/Modal/Modal';
 import Row from '../src/Row/Row';
+import Col from '../src/Col/Col';
 import Breadcrumb from '../src/Breadcrumb/Breadcrumb';
 import Panel from '../src/Panel/Panel';
 import img from './commons/img.jpg';
@@ -97,18 +98,37 @@ class App extends Component {
         />
         <br/>
         <Container>
-          test Container
           <Row>
-            test row
+            <Col
+              lg4
+              sm3
+              md3
+              bgColor={"#ddd"}
+            >
+              test Col
+            </Col>
+            <Col
+              lg4
+              sm3
+              md3
+            >
+              test Col
+            </Col>
+            <Col
+              lg4
+              sm3
+              md3
+            >
+              test Col
+            </Col>
           </Row>
         </Container>
         <div>
           <Modal isOpen={this.state.isOpen}
                  onClose={() => this.closeModal()}
                  title="title"
-                 iconTitle="fa fa-envelope"
+                 iconTitle="envelope"
                  Btn1Label="yes"
-                 allowClose={true}
                  footerChildren={<div><b>footer</b></div>}
           >
 
