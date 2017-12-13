@@ -135,46 +135,42 @@ function getBorder(props) {
 }
 
 
-const Wrapper = styled.div`    
-  background-color: #ffffff;
-  border: 1px solid ${(props) => getBorder(props)};
-  border-radius: 0;
-  box-sizing: border-box;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)`;
+const Ul = styled.ul`
+      list-style:none;
+             li{
+          float:right;
+          cursor:pointer;         
+          border-radius: 3px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px;
+          margin: 1px 2px;
+          padding: 5px 10px;
+          display: inline-block;
+          border-top: 1px solid #fff;
+          text-decoration: none;
+          color: #717171;        
+          text-shadow: white 0 1px 0;
+          background-color: #f5f5f5;
+          background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#eaeaea));
+          background-image: -webkit-linear-gradient(top, #f9f9f9, #eaeaea);
+         }        
+         .active{
+          box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px;
+          border-top: 1px solid ${(props) => getBorder(props)};
+          background-color: ${(props) => getBgColor(props)};
+          color:${(props) => getColor(props)};
+          background-image: -webkit-linear-gradient(top,${(props) => getBgColor(props)},${(props) => getBgColor(props)});
+         }
+    `;
 
 
-const Heading = styled.div`  
-  font-family: ${(props) => props.theme.fontFamily};
-  direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
-  border-bottom: 1px solid transparent;
-  border-top-left-radius: -1;
-  border-top-right-radius: -1;
-  padding: 8px 12px;
-  box-sizing: border-box;
-  color: ${(props) => getColor(props)};
-  background-color:${(props) => getBgColor(props)};
-  border-color:  ${(props) => getBorder(props)}; 
+const PaginationWrapper = styled.nav`  
+            direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
+            display: flex;
+            padding-left: 0; 
+            list-style: none; 
+           
               `;
-const Footer = styled.div` 
-  font-family: ${(props) => props.theme.fontFamily};
-  direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
-  border-top: 1px solid #dddddd;
-  box-sizing: border-box;
-  color: ${(props) => getColor(props)};
-  background-color:${(props) => getBgColor(props)};
-  border-color:  ${(props) => getBorder(props)}; 
-  border-bottom-left-radius: -1;
-  border-bottom-right-radius: -1;
-  padding: 10px 15px; 
-  
-              `;
 
-const Body = styled.div`  
-       font-family: ${(props) => props.theme.fontFamily};
-       box-sizing: border-box;
-      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
-      padding: 15px;       
-           `;
 
-export { Wrapper, Body, Footer, Heading };
+
+export { Ul, PaginationWrapper };

@@ -29,5 +29,8 @@ module.exports = {
   Row: require('./Row/Row').default,
   Breadcrumb: require('./Breadcrumb/Breadcrumb').default,
   P: require('./Text/P').default,
-  Panel: require('./Panel/Panel').default
+  Panel: require('./Panel/Panel').default,
+  Search: require('./Search/Search').default,
+  Spinner: require('./Spinner/Spinner').default,
+  Pagination: require('./Pagination/Pagination').default
 };
