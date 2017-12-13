@@ -1,12 +1,12 @@
 import React from 'react';
-
-import { BreadcrumbWrapper, Li, Ol } from './style';
+import BreadcrumbStyled from './BreadcrumbStyled';
+import OlStyled from './OlStyled';
+import LiStyled from './LiStyled';
 
 class Breadcrumb extends React.Component {
   render() {
 
-
-    const { items } = this.props;
+    const {items} = this.props;
     const elements = [];
     for (let i = 0; i < items.length - 1; i++) {
       elements.push(items[i]);
@@ -14,20 +14,22 @@ class Breadcrumb extends React.Component {
     const lastElement = items[items.length - 1];
 
     return (
-      <BreadcrumbWrapper {...this.props}>
-        <Ol>
+      <BreadcrumbStyled {...this.props}>
+        <OlStyled>
           {elements.map((item, index) => {
             return (
-              <Li
+              <LiStyled
                 key={index}
-                onClick={() => { this.props.returnPath(item.path); } } >
-                  {item.name}
-              </Li>
+                onClick={() => {
+                  this.props.returnPath(item.path);
+                } }>
+                {item.name}
+              </LiStyled>
             );
           })}
-          <Li >{lastElement.name}</Li>
-        </Ol>
-      </BreadcrumbWrapper>
+          <LiStyled >{lastElement.name}</LiStyled>
+        </OlStyled>
+      </BreadcrumbStyled>
     );
   }
 }
