@@ -31,5 +31,6 @@ module.exports = {
   Spinner: require('./Spinner/Spinner').default,
   Pagination: require('./Pagination/Pagination').default,
   Table: require('./Table/Table').default,
-  Notify: require('./Notify/Notify').default
+  Notify: require('./Notify/Notify').default,
+  Upload: require('./Upload/Upload').default
 };
