@@ -17,7 +17,8 @@ import Tr from '../src/TableBasic/Tr/Tr';
 import Th from '../src/TableBasic/Th/Th';
 import Td from '../src/TableBasic/Td/Td';
 import Tbody from '../src/TableBasic/Tbody/Tbody';
-import Link from '../src/Link/Link'
+import ButtonToggle from '../src/ButtonToggle/ButtonToggle'
+
 
 
 class App extends Component {
@@ -25,10 +26,18 @@ class App extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      cheeseIsReady: true
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleCheeseChange = this.handleCheeseChange.bind(this);
+  }
+
+  handleCheeseChange(event) {
+    this.setState({
+      cheeseIsReady:!this.state.cheeseIsReady
+    })
   }
 
   openModal() {
@@ -58,6 +67,43 @@ class App extends Component {
         path: '/vbvgb'
       }
     ];
+
+    let mainItems = [
+      {
+        link: '/home',
+        title: 'home',
+        subItems: []
+      },
+      {
+        link: '/about',
+        title: 'about',
+        subItems: [
+          {
+            link: '/home',
+            title: 'ccc'
+          }
+        ]
+      },
+      {
+        link: '/contact',
+        title: 'contact',
+        subItems: [
+          {
+            link: '/home',
+            title: 'ccc'
+          },
+          {
+            link: '/home',
+            title: 'ccc'
+          },
+          {
+            link: '/home',
+            title: 'ccc'
+          }
+        ]
+      }
+    ];
+
     return (
       <div>
         <Panel header="Header" footer="Footer" warning>
@@ -193,11 +239,17 @@ class App extends Component {
           </Tr>
           </Tbody>
         </Table>
-
         <br/>
-        <Link
-          to={'https://www.google.ch/?gfe_rd=cr&dcr=0&ei=ZRwxWougIanCXtrEuJgO&gws_rd=cr'}
-        />
+        <br/>
+        <div>
+          <ButtonToggle
+            id='cheese-status'
+            defaultChecked={this.state.cheeseIsReady}
+            onChange={this.handleCheeseChange.bind(this)}/>
+          <label htmlFor='cheese-status'>Adjacent label tag</label>
+        </div>
+        <br/>
+        <br/>
       </div>
 
     );

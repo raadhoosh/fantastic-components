@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+/**
+ * Created by Programmer1 on 12/14/2017.
+ */
 
-function getColor(props) {
+export function getBgColor(props) {
   const {
     primary,
     secondary,
@@ -10,55 +11,12 @@ function getColor(props) {
     danger,
     success,
     inverse,
-    foreColor,
-    theme
+    theme,
+    bgColor
   } = props;
-
-  let ForeC;
-  if (primary) {
-    ForeC = theme.primary.foreColor;
-  }
-  else if (secondary) {
-    ForeC = theme.secondary.foreColor;
-  }
-  else if (info) {
-    ForeC = theme.info.foreColor;
-  }
-  else if (warning) {
-    ForeC = theme.warning.foreColor;
-  }
-  else if (danger) {
-    ForeC = theme.danger.foreColor;
-  }
-  else if (success) {
-    ForeC = theme.success.foreColor;
-  }
-  else if (inverse) {
-    ForeC = theme.inverse.foreColor;
-  }
-
-  if (foreColor) {
-    ForeC = foreColor;
-  }
-  return ForeC;
-
-};
+  let bgC = '';
 
 
-function getBgColor(props) {
-  const {
-    primary,
-    secondary,
-    info,
-    warning,
-    danger,
-    success,
-    inverse,
-    bgColor,
-    theme
-  } = props;
-
-  let bgC;
   if (primary) {
     bgC = theme.primary.bgColor;
   }
@@ -84,10 +42,11 @@ function getBgColor(props) {
   if (bgColor) {
     bgC = bgColor;
   }
-  return bgC;
-};
 
-function getBorderC(props) {
+  return bgC;
+}
+
+export function getColor(props) {
   const {
     primary,
     secondary,
@@ -96,11 +55,55 @@ function getBorderC(props) {
     danger,
     success,
     inverse,
-    borderColor,
-    theme
+    theme,
+    foreColor
   } = props;
+  debugger;
+  let ForeC = theme.default.foreColor;
 
-  let BorderC;
+  if (primary) {
+    ForeC = theme.primaryColor;
+  }
+  else if (secondary) {
+    ForeC = theme.secondaryColor;
+  }
+  else if (info) {
+    ForeC = theme.infoColor;
+  }
+  else if (warning) {
+    ForeC = theme.warningColor;
+  }
+  else if (danger) {
+    ForeC = theme.dangerColor;
+  }
+  else if (success) {
+    ForeC = theme.successColor;
+  }
+  else if (inverse) {
+    ForeC = theme.inverseColor;
+  }
+
+  if (foreColor) {
+    ForeC = foreColor;
+  }
+  return ForeC;
+}
+
+export function getBorderColor(props) {
+  const {
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    inverse,
+    theme,
+    borderColor
+  } = props;
+  let BorderC = theme.default.borderColor;
+
+
   if (primary) {
     BorderC = theme.primary.borderColor;
   }
@@ -126,12 +129,6 @@ function getBorderC(props) {
   if (borderColor) {
     BorderC = borderColor;
   }
+
   return BorderC;
-};
-
-const LinkWrapper = styled(Link)`       
-         color:${(props) => getColor(props)};
-         background-color:${(props) => getBgColor(props)};
-        `;
-
-export default LinkWrapper;
+}

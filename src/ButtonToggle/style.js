@@ -1,5 +1,8 @@
+/**
+ * Created by Programmer1 on 12/4/2017.
+ */
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+
 
 function getColor(props) {
   const {
@@ -11,7 +14,7 @@ function getColor(props) {
     success,
     inverse,
     foreColor,
-    theme
+    theme,
   } = props;
 
   let ForeC;
@@ -129,9 +132,107 @@ function getBorderC(props) {
   return BorderC;
 };
 
-const LinkWrapper = styled(Link)`       
-         color:${(props) => getColor(props)};
-         background-color:${(props) => getBgColor(props)};
-        `;
+function paddingX(props) {
+  const {
+    xSmall,
+    small,
+    large
+  } = props;
 
-export default LinkWrapper;
+  let paddingX = '20px';
+  if (xSmall) {
+    paddingX = '3px';
+  }
+  else if (small) {
+    paddingX = '10px';
+  }
+  else if (large) {
+    paddingX = '25px';
+  }
+
+  return paddingX;
+};
+
+function paddingY(props) {
+  const {
+    xSmall,
+    small,
+    large
+  } = props;
+
+
+  let paddingY = '10px';
+  if (xSmall) {
+    paddingY = '3px';
+  }
+  else if (small) {
+    paddingY = '5px';
+  }
+  else if (large) {
+    paddingY = '10px';
+  }
+
+  return paddingY;
+};
+
+function marginX(props) {
+  const {
+    xSmall,
+    small,
+    large
+  } = props;
+
+  let marginX = '5px';
+
+  if (xSmall) {
+    marginX = '2px';
+  }
+  else if (small) {
+    marginX = '3px';
+  }
+  else if (large) {
+    marginX = '8px';
+  }
+
+  return marginX;
+};
+
+function marginY(props) {
+  const {
+    xSmall,
+    small,
+    large
+  } = props;
+
+  let marginY = '3px';
+
+  if (xSmall) {
+    marginY = '2px';
+  }
+  else if (small) {
+    marginY = '3px';
+  }
+  else if (large) {
+    marginY = '5px';
+  }
+
+  return marginY;
+};
+
+const Button = styled.button`
+      color:${(props) => getColor(props)};
+      background-color:${(props) => getBgColor(props)};      
+      cursor:pointer;
+      border:  1px solid ${(props) => getBorderC(props)};
+      border-radius:2px;
+      outline: none; 
+      transition:all 0.3s ease;
+      font-family: ${(props) => props.theme.fontFamily}; 
+      padding: ${(props) => paddingY(props)} ${(props) => paddingX(props)};   
+      margin: ${(props) => marginY(props)} ${(props) => marginX(props)};
+      font-size: ${(props) => props.large ? '1.2rem' : (props.xSmall ? '0.5rem' : '1rem')};      
+            
+     `;
+
+
+export default Button;
