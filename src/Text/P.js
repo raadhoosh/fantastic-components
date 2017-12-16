@@ -1,12 +1,12 @@
 import React from 'react';
-import { PWrapper } from './style';
+import PStyled from './PStyled';
 
 class P extends React.Component {
   render() {
     const { children } = this.props;
 
     return (
-      <PWrapper {...this.props}>{children}</PWrapper>
+      <PStyled {...this.props}>{children}</PStyled>
     );
   }
 }

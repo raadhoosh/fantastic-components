@@ -3,7 +3,12 @@
  */
 import React from 'react';
 import Icon from '../Icon/Icon';
-import { SelectWrapper, Label, Alert, Important, Section } from './style';
+
+import SelectInputStyled from './SelectInputStyled';
+import Label from './LabelStyled';
+import Section from './SectionStyled';
+import Important from './ImportantStyled';
+import Alert from './AlertStyled';
 
 class SelectInput extends React.Component {
   render() {
@@ -22,20 +27,20 @@ class SelectInput extends React.Component {
     } = this.props;
 
     return (
-      <Section style={style}>
+      <Section style={style} {...this.props}>
         {
           label &&
-          <Label>
+          <Label {...this.props}>
             {label}
             {
-              important && <Important>*</Important>
+              important && <Important {...this.props}>*</Important>
             }
           </Label>
         }
         {
           icon && <Icon iconClass={icon}/>
         }
-        <SelectWrapper
+        <SelectInputStyled
           name={name}
           value={value}
           onChange={onChange}
@@ -46,8 +51,8 @@ class SelectInput extends React.Component {
             return <option key={ index } value={option.value}>{option.text}</option>;
           })
           }
-        </SelectWrapper>
-        {errorText && <Alert>{errorText}</Alert>}
+        </SelectInputStyled>
+        {errorText && <Alert {...this.props}>{errorText}</Alert>}
 
       </Section>
     );
