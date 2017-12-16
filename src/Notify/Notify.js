@@ -2,7 +2,11 @@
  * Created by Programmer1 on 7/19/2017.
  */
 import React, { Component } from 'react';
-import { NotifyContainer, NotifyItem, NotifyTitle } from './style';
+
+import NotifyContainer from './NotifyContainerStyled';
+import NotifyItem from './NotifyItemStyled';
+import NotifyTitle from './NotifyTitleStyled';
+
 export default class Notify extends Component {
 
   constructor() {

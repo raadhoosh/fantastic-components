@@ -1,12 +1,12 @@
 import React from 'react';
-import { SpanWrapper } from './style';
+import SpanStyled from './SpanStyled';
 
 class Span extends React.Component {
   render() {
     const { children } = this.props;
 
     return (
-      <SpanWrapper {...this.props}>{children}</SpanWrapper>
+      <SpanStyled {...this.props}>{children}</SpanStyled>
     );
   }
 }

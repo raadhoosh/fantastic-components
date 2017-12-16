@@ -1,12 +1,12 @@
 import React from 'react';
-import { LabelWrapper } from './style';
+import LabelStyled from './LabelStyled';
 
 class Label extends React.Component {
   render() {
     const { children } = this.props;
 
     return (
-      <LabelWrapper {...this.props}>{children}</LabelWrapper>
+      <LabelStyled {...this.props}>{children}</LabelStyled>
     );
   }
 }

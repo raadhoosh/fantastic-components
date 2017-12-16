@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InputStyled from './TextInputStyled';
+import InputStyled from './SelectInputStyled';
 import Label from './LabelStyled';
 import Section from './SectionStyled';
 import Important from './ImportantStyled';

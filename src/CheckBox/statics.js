@@ -1,10 +1,8 @@
 /**
- * Created by Programmer1 on 12/4/2017.
+ * Created by Programmer1 on 12/14/2017.
  */
-import styled from 'styled-components';
 
-
-function getBgColor(props) {
+export function getBgColor(props) {
   const {
     primary,
     secondary,
@@ -16,7 +14,9 @@ function getBgColor(props) {
     theme,
     bgColor
   } = props;
-  let bgC = theme.default.primaryForeColor;
+  let bgC = '';
+
+
   if (primary) {
     bgC = theme.primary.bgColor;
   }
@@ -46,7 +46,7 @@ function getBgColor(props) {
   return bgC;
 }
 
-function getColor(props) {
+export function getColor(props) {
   const {
     primary,
     secondary,
@@ -59,36 +59,36 @@ function getColor(props) {
     foreColor
   } = props;
   let ForeC = theme.default.foreColor;
+
   if (primary) {
-    ForeC = theme.primary.foreColor;
+    ForeC = theme.primaryColor;
   }
   else if (secondary) {
-    ForeC = theme.secondary.foreColor;
+    ForeC = theme.secondaryColor;
   }
   else if (info) {
-    ForeC = theme.info.foreColor;
+    ForeC = theme.infoColor;
   }
   else if (warning) {
-    ForeC = theme.warning.foreColor;
+    ForeC = theme.warningColor;
   }
   else if (danger) {
-    ForeC = theme.danger.foreColor;
+    ForeC = theme.dangerColor;
   }
   else if (success) {
-    ForeC = theme.success.foreColor;
+    ForeC = theme.successColor;
   }
   else if (inverse) {
-    ForeC = theme.inverse.foreColor;
+    ForeC = theme.inverseColor;
   }
 
   if (foreColor) {
     ForeC = foreColor;
   }
-
   return ForeC;
 }
 
-function getBorderColor(props) {
+export function getBorderColor(props) {
   const {
     primary,
     secondary,
@@ -132,29 +132,45 @@ function getBorderColor(props) {
   return BorderC;
 }
 
+export function getIconColor(props) {
+  const {
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    inverse,
+    foreColor,
+    theme,
+  } = props;
 
-const DivWrapper = styled.div`        
-          font-family: ${(props) => props.theme.fontFamily};             
-          background-color:  ${(props) => getBgColor(props)};
-          color:  ${(props) => getColor(props)};
-          border-color:  ${(props) => getBorderColor(props)};        
-        ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
+  let ForeC;
+  if (primary) {
+    ForeC = theme.primary.foreColor;
+  }
+  else if (secondary) {
+    ForeC = theme.secondary.foreColor;
+  }
+  else if (info) {
+    ForeC = theme.info.foreColor;
+  }
+  else if (warning) {
+    ForeC = theme.warning.foreColor;
+  }
+  else if (danger) {
+    ForeC = theme.danger.foreColor;
+  }
+  else if (success) {
+    ForeC = theme.success.foreColor;
+  }
+  else if (inverse) {
+    ForeC = theme.inverse.foreColor;
+  }
 
+  if (foreColor) {
+    ForeC = foreColor;
+  }
+  return ForeC;
 
-const SectionWrapper = styled.section` 
-            font-family: ${(props) => props.theme.fontFamily};  
-            background-color: ${(props) => getBgColor(props)};
-            color: ${(props) => getColor(props)};  
-            border-color:  ${(props) => getBorderColor(props)};
-            direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
-           `;
-
-
-const ArticleWrapper = styled.article`        
-          font-family: ${(props) => props.theme.fontFamily};               
-          background-color: ${(props) => getBgColor(props)};
-          color: ${(props) => getColor(props)};  
-          border-color:  ${(props) => getBorderColor(props)};
-          ${(props) => props.inLine ? 'display: inline-block;' : 'block'}`;
-
-export { DivWrapper, SectionWrapper, ArticleWrapper };
+};
