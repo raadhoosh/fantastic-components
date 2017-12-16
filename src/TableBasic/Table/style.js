@@ -138,7 +138,8 @@ const Div = styled.div`
     `;
 const TableWrapper = styled.table`
                 font-family: ${(props) => props.theme.fontFamily};
-                color:${(props) => getColor(props)}; 
+                color:${(props) => getColor(props)};
+                background-color:${(props) => getBgColor(props)};
                 width: 100%;
                 max-width: 100%;
                 margin-bottom: 20px;

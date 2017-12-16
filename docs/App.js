@@ -13,10 +13,35 @@ import Panel from '../src/Panel/Panel';
 import CheckBox from '../src/CheckBox/CheckBox';
 import SelectInput from '../src/SelectInput/SelectInput';
 import img from './commons/img.jpg';
-
+import Table from '../src/TableBasic/Table/Table';
+import Thead from "../src/TableBasic/Thead/Thead";
+import Tr from '../src/TableBasic/Tr/Tr';
+import Th from '../src/TableBasic/Th/Th';
+import Td from '../src/TableBasic/Td/Td';
+import Tbody from '../src/TableBasic/Tbody/Tbody';
+import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
+import ReactLink from '../src/Link/Link';
+import Menu from '../src/Menu/Menu';
 import Upload from '../src/Upload/Upload';
 import ToolTip from '../src/ToolTip/ToolTip';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+)
+
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+)
 
 class App extends Component {
 
@@ -24,6 +49,17 @@ class App extends Component {
     super(props, context);
     this.state = {
       isOpen: false,
+      cheeseIsReady: true
+    };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.handleCheeseChange = this.handleCheeseChange.bind(this);
+  }
+
+  handleCheeseChange(event) {
+    this.setState({
+      cheeseIsReady: !this.state.cheeseIsReady
+    })
       isLiked: false
     };
     this.openModal = this.openModal.bind(this);
@@ -62,6 +98,33 @@ class App extends Component {
         path: '/vbvgb'
       }
     ];
+
+    let mainItems = [
+      {
+        link: '/home',
+        title: 'home',
+        subItems: []
+      },
+      {
+        link: '/about',
+        title: 'about',
+        subItems: [
+          {
+            link: '/home',
+            title: 'ccc'
+          },
+          {
+            link: '/home',
+            title: 'ccc'
+          },
+          {
+            link: '/home',
+            title: 'ccc'
+          }
+        ]
+      }
+    ];
+
     let items=[
       {
         text:'text 1',
@@ -193,8 +256,70 @@ class App extends Component {
         <br/>
         <br/>
         <br/>
+        <Table>
+          <Thead
+            color={'#ff0'}
+          >
+          <Tr
+            primary
+          >
+            <Th>
+              title
+            </Th>
+            <Th>
+              title
+            </Th>
+          </Tr>
+          </Thead>
+          <Tbody>
+          <Tr>
+            <Td>
+              text
+            </Td>
+            <Td>
+              text
+            </Td>
+          </Tr>
+          <Tr>
+            <Td>
+              text
+            </Td>
+            <Td>
+              text
+            </Td>
+          </Tr>
+          </Tbody>
+        </Table>
+        <br/>
+        <br/>
+        <div>
+          <ButtonToggle
+            id='cheese-status'
+            defaultChecked={this.state.cheeseIsReady}
+            onChange={this.handleCheeseChange.bind(this)}/>
+          <label htmlFor='cheese-status'>Adjacent label tag</label>
+        </div>
+        <br/>
+        <br/>
+        <Router>
+          <div>
+            <ul>
+              <li><ReactLink
+                to="/"
+                icon={'home'}
+              >Home</ReactLink></li>
+              <li><Link to="/about">About</Link></li>
+            </ul>
+            <hr/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/about" component={About}/>
+          </div>
+        </Router>
+        <Menu
+          mainItems={mainItems}
+          style={{marginBottom:'400px'}}
+        />
         <Upload primary label="file select" important errorText="error in select file"/>
-
       </div>
 
     );

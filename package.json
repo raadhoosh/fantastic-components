@@ -88,6 +88,8 @@
   ],
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "prop-types": "^15.6.0",
+    "react-router-dom": "^4.2.2",
     "styled-components": "^2.2.4"
   }
 }
