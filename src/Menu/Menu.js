@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
 import Ul from '../List/Ul';
 import Li from '../List/Li';
-import './rhMenuStyle.css';
 import ReactLink from '../Link/Link';
 import Div from './MenuStyled';
-import MenuItemStyled from './MenuItemStyled';
-
 
 class MenuItem extends Component {
   render() {
 
-    const {Right, link, title, subItems, language, bgColor, foreColor, theme, icon} = this.props;
+    const {Right, link, title, subItems, language, bgColor, foreColor, icon} = this.props;
 
     let target = '';
     let linkUrl = link;
@@ -90,12 +87,9 @@ class Menu extends Component {
   render() {
 
     const {
-      theme,
       mainItems,
       right,
       language,
-      bgColor,
-      foreColor,
       icon
     } = this.props;
 
@@ -129,8 +123,6 @@ class Menu extends Component {
                     link={mainItem.link}
                     subItems={mainItem.subItems}
                     language={language}
-                    /*bgColor={bgC}
-                    foreColor={C}*/
                     icon={iconClass}
                   />
                 );

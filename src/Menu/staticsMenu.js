@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import defaultTheme from '../defaultTheme';
 
 function getColor(props) {
   const {
@@ -9,8 +9,10 @@ function getColor(props) {
   let ForeC;
   if (foreColor) {
     ForeC = foreColor;
-  } else {
+  } else if (props.theme){
     ForeC = theme.primary.foreColor;
+  }else {
+    ForeC = defaultTheme.primary.foreColor;
   }
   return ForeC;
 
@@ -31,12 +33,4 @@ function getBgColor(props) {
   return bgC;
 };
 
-const MenuItemStyled = styled.button`
-      color:${(props) => getColor(props)};
-      background-color:${(props) => getBgColor(props)};      
-      cursor:pointer;      
-      font-family: ${(props) => props.theme.fontFamily};             
-           
-     `;
-
-export default MenuItemStyled;
+export {getColor, getBgColor};

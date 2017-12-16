@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{Component} from 'react';
 import PropTypes from 'prop-types';
 import styled, {withTheme} from 'styled-components';
 import {lighten, darken} from 'polished';
@@ -15,7 +15,7 @@ import {
     RhsButton
 } from '../../RHSC'
 
-class RhMenuItem extends React.Component {
+class RhMenuItem extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -116,7 +116,7 @@ class RhMenuItem extends React.Component {
 
 }
 
-class RhMenuResponsive extends React.Component {
+class RhMenuResponsive extends Component {
 
     constructor(props) {
         super(props);

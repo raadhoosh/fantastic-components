@@ -94,7 +94,21 @@ class App extends Component {
       },
       {
         link: '/about',
-        title: 'about'
+        title: 'about',
+        subItems: [
+          {
+            link: '/home',
+            title: 'ccc'
+          },
+          {
+            link: '/home',
+            title: 'ccc'
+          },
+          {
+            link: '/home',
+            title: 'ccc'
+          }
+        ]
       }
     ];
 
@@ -260,6 +274,7 @@ class App extends Component {
         </Router>
         <Menu
           mainItems={mainItems}
+          style={{marginBottom:'400px'}}
         />
       </div>
 
