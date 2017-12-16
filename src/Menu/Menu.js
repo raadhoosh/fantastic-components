@@ -1,13 +1,13 @@
-import React ,{Component} from 'react';
+import React, {Component} from 'react';
 import Ul from '../List/Ul';
 import Li from '../List/Li';
 import './rhMenuStyle.css';
+import ReactLink from '../Link/Link';
+import Div from './MenuStyled';
+import MenuItemStyled from './MenuItemStyled';
 
-import {
-  RhLink
-} from '../../RhComponents';
 
-class Item extends Component {
+class MenuItem extends Component {
   render() {
 
     const {Right, link, title, subItems, language, bgColor, foreColor, theme, icon} = this.props;
@@ -31,7 +31,7 @@ class Item extends Component {
 
     return (
       <Li style={{float: {Right}}}>
-        <RhLink
+        <ReactLink
           to={(linkUrl) ? linkUrl : '#'}
           target={target}
           bgColor={bgColor}
@@ -39,7 +39,7 @@ class Item extends Component {
           icon={(hasChild) ? icon : ''}
         >
           {title}
-        </RhLink>
+        </ReactLink>
         {
           hasChild &&
           <Ul>
@@ -129,12 +129,11 @@ class Menu extends Component {
                     link={mainItem.link}
                     subItems={mainItem.subItems}
                     language={language}
-                    bgColor={bgC}
-                    foreColor={C}
+                    /*bgColor={bgC}
+                    foreColor={C}*/
                     icon={iconClass}
                   />
-
-                )
+                );
               })
             }
 

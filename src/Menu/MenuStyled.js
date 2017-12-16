@@ -20,7 +20,7 @@ const Div = styled.div`
                     display: none;
                     top: 100%;
                       ${
-  (this.props.theme.rtl)
+  ((props) => props.theme.rtl)
     ? 'right : 0'
     : 'left:0'
   };           
@@ -40,7 +40,7 @@ const Div = styled.div`
                }
              
              nav > ul > li {
-               float: ${(this.props.theme.rtl) ? 'right' : 'left' } !important;
+               float: ${(props) => (props.theme.rtl) ? 'right' : 'left' } !important;
              }
           
           	a {
@@ -51,7 +51,7 @@ const Div = styled.div`
                	
                	i{
                	${
-  theme.rtl
+  ((props) => props.theme.rtl)
     ? 'float : left'
     : 'float : right'
   }; 

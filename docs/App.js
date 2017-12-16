@@ -17,9 +17,27 @@ import Tr from '../src/TableBasic/Tr/Tr';
 import Th from '../src/TableBasic/Th/Th';
 import Td from '../src/TableBasic/Td/Td';
 import Tbody from '../src/TableBasic/Tbody/Tbody';
-import ButtonToggle from '../src/ButtonToggle/ButtonToggle'
+import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
+import ReactLink from '../src/Link/Link';
+import Menu from '../src/Menu/Menu';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+)
+
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+)
 
 class App extends Component {
 
@@ -36,7 +54,7 @@ class App extends Component {
 
   handleCheeseChange(event) {
     this.setState({
-      cheeseIsReady:!this.state.cheeseIsReady
+      cheeseIsReady: !this.state.cheeseIsReady
     })
   }
 
@@ -76,31 +94,7 @@ class App extends Component {
       },
       {
         link: '/about',
-        title: 'about',
-        subItems: [
-          {
-            link: '/home',
-            title: 'ccc'
-          }
-        ]
-      },
-      {
-        link: '/contact',
-        title: 'contact',
-        subItems: [
-          {
-            link: '/home',
-            title: 'ccc'
-          },
-          {
-            link: '/home',
-            title: 'ccc'
-          },
-          {
-            link: '/home',
-            title: 'ccc'
-          }
-        ]
+        title: 'about'
       }
     ];
 
@@ -250,6 +244,23 @@ class App extends Component {
         </div>
         <br/>
         <br/>
+        <Router>
+          <div>
+            <ul>
+              <li><ReactLink
+                to="/"
+                icon={'home'}
+              >Home</ReactLink></li>
+              <li><Link to="/about">About</Link></li>
+            </ul>
+            <hr/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/about" component={About}/>
+          </div>
+        </Router>
+        <Menu
+          mainItems={mainItems}
+        />
       </div>
 
     );
