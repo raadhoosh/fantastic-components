@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Icon from '../Icon/Icon';
-import LinkStyle from './style';
+import LinkStyled from './LinkStyled';
 
 class LinkWrapper extends Component {
   render() {
 
-    const {to, target, noUnderline, color, theme, bgColor, icon} = this.props;
+    const {to, target, noUnderline, icon} = this.props;
     let Target = '';
     let linkUrl = to;
     if (to.toLowerCase().startsWith(`http://${window.location.host}`)) {
@@ -17,13 +17,14 @@ class LinkWrapper extends Component {
     if (target) {
       Target = '_blank';
     }
+
     let textDecoration = "underline";
     if (noUnderline) {
       textDecoration = "none !important";
     }
 
     return (
-      <LinkStyle
+      <LinkStyled
         to={linkUrl} target={Target}
         onClick={this.props.onClick}
         {...this.props}
@@ -33,7 +34,7 @@ class LinkWrapper extends Component {
           style={{padding: '2px 5px'}}
         />
         {this.props.children}
-      </LinkStyle>
+      </LinkStyled>
     );
   }
 }
