@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Ul, PaginationWrapper } from './style';
+import Ul from './UlStyled';
+import PaginationStyled from './PaginationStyled';
 
 /**
  * ## Constants
@@ -146,7 +147,7 @@ class Pagination extends React.Component {
     const titles = this.getTitles.bind(this);
 
     return (
-      <PaginationWrapper {...this.props}>
+      <PaginationStyled {...this.props}>
         <Ul {...this.props}>
           <Page
             key="btn-first-page"
@@ -186,7 +187,7 @@ class Pagination extends React.Component {
             onClick={this.handleLastPage}
           >{titles('last')}</Page>
         </Ul>
-      </PaginationWrapper>
+      </PaginationStyled>
     );
   }
 }

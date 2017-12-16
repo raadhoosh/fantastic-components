@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { H2Wrapper } from './style';
+import H2Styled from './H2Styled';
 
 class H2 extends Component {
   render() {
     return (
-      <H2Wrapper
+      <H2Styled
         {...this.props}
-      >{this.props.children}</H2Wrapper>
+      >{this.props.children}</H2Styled>
     );
   }
 }

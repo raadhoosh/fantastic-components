@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { H1Wrapper } from './style';
+import H1Styled from './H1Styled';
 
 class H1 extends Component {
 
@@ -7,9 +7,9 @@ class H1 extends Component {
 const{ children } = this.props;
 
     return (
-      <H1Wrapper
+      <H1Styled
         {...this.props}
-      >{children}</H1Wrapper>
+      >{children}</H1Styled>
     );
   }
 }

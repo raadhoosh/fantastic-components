@@ -1,11 +1,11 @@
 import React from 'react';
-import { SectionWrapper } from './style';
+import SectionStyled from './SectionStyled';
 
 class Section extends React.Component {
   render() {
     const { children } = this.props;
 
-    return (<SectionWrapper {...this.props}>{children}</SectionWrapper>);
+    return (<SectionStyled {...this.props}>{children}</SectionStyled>);
   }
 }
 

@@ -1,10 +1,8 @@
 /**
- * Created by Programmer1 on 12/4/2017.
+ * Created by Programmer1 on 12/14/2017.
  */
-import styled from 'styled-components';
 
-
-function getBgColor(props) {
+export function getBgColor(props) {
   const {
     primary,
     secondary,
@@ -16,7 +14,7 @@ function getBgColor(props) {
     theme,
     bgColor
   } = props;
-  let bgC = theme.default.primaryForeColor;
+  let bgC = '';
 
 
   if (primary) {
@@ -48,7 +46,7 @@ function getBgColor(props) {
   return bgC;
 }
 
-function getColor(props) {
+export function getColor(props) {
   const {
     primary,
     secondary,
@@ -90,7 +88,7 @@ function getColor(props) {
   return ForeC;
 }
 
-function getBorderColor(props) {
+export function getBorderColor(props) {
   const {
     primary,
     secondary,
@@ -134,35 +132,45 @@ function getBorderColor(props) {
   return BorderC;
 }
 
+export function getIconColor(props) {
+  const {
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    inverse,
+    foreColor,
+    theme,
+  } = props;
 
-const CheckBoxWrapper = styled.input`
-        margin: 10px 3px 10px 3px;
-        width: 17px;
-        height: 17px;   
-        position: relative;
-        top: 4px;
-        margin-left:7px;
-        cursor: pointer;
-        background-color: ${(props) => getBgColor(props)};
-        color:  ${(props) => getColor(props)};
-        border-color:   ${(props) => getBorderColor(props)};
-        `;
+  let ForeC;
+  if (primary) {
+    ForeC = theme.primary.foreColor;
+  }
+  else if (secondary) {
+    ForeC = theme.secondary.foreColor;
+  }
+  else if (info) {
+    ForeC = theme.info.foreColor;
+  }
+  else if (warning) {
+    ForeC = theme.warning.foreColor;
+  }
+  else if (danger) {
+    ForeC = theme.danger.foreColor;
+  }
+  else if (success) {
+    ForeC = theme.success.foreColor;
+  }
+  else if (inverse) {
+    ForeC = theme.inverse.foreColor;
+  }
 
+  if (foreColor) {
+    ForeC = foreColor;
+  }
+  return ForeC;
 
-const Label = styled.label`  
-    cursor: pointer; 
-              `;
-
-const Section = styled.section`  
-         position:relative;
-         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };     
-           i{                    
-          color:${(props) => props.theme.danger.bgColor};
-          position: absolute;
-          left: ${(props) => props.theme.rtl ? 'auto' : '10px' }; 
-          right: ${(props) => props.theme.rtl ? '10px' : 'auto' };          
-          bottom: 6px;
-          }       
-           `;
-
-export { CheckBoxWrapper, Label ,Section};
+};

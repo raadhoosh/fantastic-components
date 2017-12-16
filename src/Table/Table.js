@@ -3,8 +3,14 @@ import Button from '../Button/Button';
 import Pagination from '../Pagination/Pagination';
 import Modal from '../Modal/Modal';
 
-import {Th, Tr, Thead, Td, Div, TableWrapper} from './style';
 
+
+import Th from './ThStyled';
+import Tr from './TrStyled';
+import Thead from './TheadStyled';
+import Td from './TdStyled';
+import WrapperStyled from './WrapperStyled';
+import TableStyled from './TableStyled';
 
 class Table extends Component {
   constructor(props, context) {
@@ -269,11 +275,11 @@ class Table extends Component {
     }
 
     return (
-      <Div {...this.props}>
-        <TableWrapper style={{tableLayout: "fixed"}} {...this.props}>
+      <WrapperStyled {...this.props}>
+        <TableStyled style={{tableLayout: "fixed"}} {...this.props}>
           {header}
           {rows}
-        </TableWrapper>
+        </TableStyled>
         {this.props.rowsCount > this.props.pageSize &&
         <Pagination total={totalSize}
                     current={this.state.current}
@@ -292,7 +298,7 @@ class Table extends Component {
         }
 
         {dlg}
-      </Div>
+      </WrapperStyled>
     );
   }
 }
