@@ -47,8 +47,7 @@ const Div = styled.div`
                         top: 0;
                                }       
              }                         
-         
-         
+                  
      	    li   {
                	 width:100%;                	           	 
                	 display:block;   
