@@ -41,6 +41,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.0.2",
     "eslint-plugin-react": "^7.4.0",
+    "font-awesome": "^4.7.0",
     "gh-pages": "^1.0.0",
     "git-prepush-hook": "^1.0.2",
     "jest": "^21.2.1",
@@ -86,6 +87,9 @@
     "test"
   ],
   "dependencies": {
+    "font-awesome": "^4.7.0",
+    "prop-types": "^15.6.0",
+    "react-router-dom": "^4.2.2",
     "styled-components": "^2.2.4"
   }
 }
