@@ -13,35 +13,11 @@ import Panel from '../src/Panel/Panel';
 import CheckBox from '../src/CheckBox/CheckBox';
 import SelectInput from '../src/SelectInput/SelectInput';
 import img from './commons/img.jpg';
-import Table from '../src/TableBasic/Table/Table';
-import Thead from "../src/TableBasic/Thead/Thead";
-import Tr from '../src/TableBasic/Tr/Tr';
-import Th from '../src/TableBasic/Th/Th';
-import Td from '../src/TableBasic/Td/Td';
-import Tbody from '../src/TableBasic/Tbody/Tbody';
-import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
-import ReactLink from '../src/Link/Link';
-import Menu from '../src/Menu/Menu';
+
+
 import Upload from '../src/Upload/Upload';
 import ToolTip from '../src/ToolTip/ToolTip';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-)
+import TagEditor from '../src/TagEditor/TagEditor';
 
 class App extends Component {
 
@@ -49,28 +25,28 @@ class App extends Component {
     super(props, context);
     this.state = {
       isOpen: false,
-      cheeseIsReady: true
+      cheeseIsReady: true,
+      tags: [],
+      Tags: [
+        {id: 0, value: 'ruby'},
+        {id: 1, value: 'javascript'},
+        {id: 2, value: 'lua'},
+        {id: 3, value: 'go'},
+        {id: 4, value: 'julia'}
+      ]
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.handleCheeseChange = this.handleCheeseChange.bind(this);
+
   }
 
-  handleCheeseChange(event) {
-    this.setState({
-      cheeseIsReady: !this.state.cheeseIsReady
-    })
-      isLiked: false
-    };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick () {
+
+  handleClick() {
     this.setState({
       isLiked: !this.state.isLiked
     });
   }
+
   openModal() {
     this.setState({
       isOpen: true
@@ -125,25 +101,53 @@ class App extends Component {
       }
     ];
 
-    let items=[
+    let items = [
       {
-        text:'text 1',
-        value:0
+        text: 'text 1',
+        value: 0
       },
       {
-        text:'text 2',
-        value:1
+        text: 'text 2',
+        value: 1
       }
 
     ]
     const label = this.state.isLiked ? "Hey, thanks!" : "Tip: Gimme a thumbs up!";
     return (
       <div>
-        <CheckBox label="cheack box 1"  primary/>
+        <TagEditor
+          primary
+          suggestionList={this.state.Tags}
+          tags={this.state.tags}
+          onValueChanged={(e) => {
+          }}
+          onSuggestionClick={(e) => {
+
+          }}
+          showSearchButtom={false}
+          onChangeTag={(value, tags) => {
+            let arraytags = [];
+            for (let i = 0; i < tags.length; i++) {
+              let obj = {
+                id: tags[i].id,
+                value: tags[i].value
+              };
+              arraytags.push(obj);
+            }
+            this.setState({
+              Tags: value,
+              tags: arraytags
+            });
+          }}
+          label={'لیست برچسب ها'}
+          important
+          errorText={this.error_tags}
+        />
+        <CheckBox label="cheack box 1" primary/>
         <SelectInput options={items} primary label=" select 1 " icon="bars"/>
         <ToolTip label={label} secondary delayTime={500} position="bottom">
-          <div  onClick={this.handleClick}>
-           <label>Like</label>
+          <div onClick={this.handleClick}>
+            <label>Like</label>
           </div>
         </ToolTip>
         <Panel header="Header" footer="Footer" warning>
@@ -167,10 +171,10 @@ class App extends Component {
           </Container>
         </Panel>
         <br/>
-        <Panel header="Header"  secondary>
+        <Panel header="Header" secondary>
 
 
-          <Breadcrumb primary rtl items={BreadcrumbList} returnPath={(path) => console.log('path', path)} />
+          <Breadcrumb primary rtl items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
           App...
           <Input
             icon={'user'}
@@ -256,69 +260,15 @@ class App extends Component {
         <br/>
         <br/>
         <br/>
-        <Table>
-          <Thead
-            color={'#ff0'}
-          >
-          <Tr
-            primary
-          >
-            <Th>
-              title
-            </Th>
-            <Th>
-              title
-            </Th>
-          </Tr>
-          </Thead>
-          <Tbody>
-          <Tr>
-            <Td>
-              text
-            </Td>
-            <Td>
-              text
-            </Td>
-          </Tr>
-          <Tr>
-            <Td>
-              text
-            </Td>
-            <Td>
-              text
-            </Td>
-          </Tr>
-          </Tbody>
-        </Table>
+
         <br/>
         <br/>
         <div>
-          <ButtonToggle
-            id='cheese-status'
-            defaultChecked={this.state.cheeseIsReady}
-            onChange={this.handleCheeseChange.bind(this)}/>
+
           <label htmlFor='cheese-status'>Adjacent label tag</label>
         </div>
         <br/>
         <br/>
-        <Router>
-          <div>
-            <ul>
-              <li><ReactLink
-                to="/"
-                icon={'home'}
-              >Home</ReactLink></li>
-              <li><Link to="/about">About</Link></li>
-            </ul>
-            <hr/>
-            <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-          </div>
-        </Router>
-        <Menu
-          mainItems={mainItems}
-          style={{marginBottom:'400px'}}
-        />
         <Upload primary label="file select" important errorText="error in select file"/>
       </div>
 

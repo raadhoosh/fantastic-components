@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-import {getColor, getBgColor, getBorderColor} from './statics';
+import {getColor , getBorderColor} from './statics';
 
 const TextAriaStyled = styled.input` 
                 box-sizing: border-box;   
@@ -15,7 +15,7 @@ const TextAriaStyled = styled.input`
                 font-size: 14px;
                 line-height: 1.42857143;
                 color: ${(props) => getColor(props)};
-                background-color: ${(props) => getBgColor(props)};
+               
                 background-image: none;
                 border: 1px solid #ccc;
                 border-radius: 4px;              
