@@ -123,7 +123,7 @@ class App extends Component {
         <br/>
         <Panel header="Header" footer="Footer" warning>
           <Button
-            label={'تست'}
+            label={'test'}
             secondary
             onClick={() => {
               alert("hello")
@@ -161,7 +161,7 @@ class App extends Component {
           />
           <br/>
           <Button
-            label={'تست'}
+            label={'test'}
             secondary
             onClick={() => {
               alert("hello")

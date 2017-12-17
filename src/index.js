@@ -40,7 +40,7 @@ module.exports = {
   Tr: require('./TableBasic/Tr/Tr').default,
   Td: require('./TableBasic/Td/Td').default,
   Tbody: require('./TableBasic/Tbody/Tbody').default,
-  Link: require('./Link/Link').default,
+  ReactLink: require('./Link/Link').default,
   Menu: require('./Menu/Menu').default,
   MenuResponsive: require('./Menu/MenuResponsive').default,
   ButtonToggle: require('./ButtonToggle/ButtonToggle').default,
