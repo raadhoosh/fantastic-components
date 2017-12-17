@@ -33,7 +33,6 @@ module.exports = {
   Table: require('./Table/Table').default,
   Notify: require('./Notify/Notify').default,
   Upload: require('./Upload/Upload').default,
-
   TableBasic: require('./TableBasic/Table/Table').default,
   Thead: require('./TableBasic/Thead/Thead').default,
   Th: require('./TableBasic/Th/Th').default,
@@ -41,9 +40,6 @@ module.exports = {
   Td: require('./TableBasic/Td/Td').default,
   Tbody: require('./TableBasic/Tbody/Tbody').default,
   Link: require('./Link/Link').default,
-  Menu: require('./Menu/Menu').default,
-  MenuResponsive: require('./Menu/MenuResponsive').default,
-  ButtonToggle: require('./ButtonToggle/ButtonToggle').default,
   TagEditor: require('./TagEditor/TagEditor').default,
   Drawer: require('./Drawer/Drawer').default,
   DrawerIcon: require('./Drawer/DrawerIcon').default,
