@@ -40,5 +40,7 @@ module.exports = {
   Td: require('./TableBasic/Td/Td').default,
   Tbody: require('./TableBasic/Tbody/Tbody').default,
   Link: require('./Link/Link').default,
-  TagEditor: require('./TagEditor/TagEditor').default
+  TagEditor: require('./TagEditor/TagEditor').default,
+  Drawer: require('./Drawer/Drawer').default,
+  DrawerIcon: require('./Drawer/DrawerIcon').default
 };
