@@ -42,5 +42,7 @@ module.exports = {
   Link: require('./Link/Link').default,
   TagEditor: require('./TagEditor/TagEditor').default,
   Drawer: require('./Drawer/Drawer').default,
-  DrawerIcon: require('./Drawer/DrawerIcon').default
+  DrawerIcon: require('./Drawer/DrawerIcon').default,
+  Radio: require('./Radio/Radio').default,
+  RadioGroup: require('./RadioGroup/RadioGroup').default
 };

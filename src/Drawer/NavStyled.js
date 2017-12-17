@@ -5,7 +5,9 @@ import styled from 'styled-components';
 import { getBgColor, getBorderColor  } from './statics';
 
 const NavStyled = styled.nav`    
-        max-width: 300px;
+ 
+        
+        maxWidth: 300px;
         height: 100%;
         background: #FFF;
         box-shadow: 2px 0 12px rgba(0,0,0,0.4);
@@ -13,7 +15,7 @@ const NavStyled = styled.nav`
         will-change: transform;
         flex-direction: column;
         float:${(props) => (props.theme.rtl || props.openFromRight) ? 'right' : 'left'} ;
-        border: 2px solid ${(props) => getBorderColor(props)};
+         border: 1px solid ${(props) => getBorderColor(props)};
         
               `;
 export default NavStyled;
