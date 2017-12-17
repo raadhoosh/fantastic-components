@@ -149,7 +149,6 @@ function paddingX(props) {
   else if (large) {
     paddingX = '25px';
   }
-
   return paddingX;
 };
 
