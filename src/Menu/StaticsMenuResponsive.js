@@ -48,7 +48,7 @@ function getBgColor(props) {
   } else if (props.theme) {
     bgC = theme.primaryColor;
   } else {
-    ForeC = defaultTheme.primaryColor;
+    bgC = defaultTheme.primaryColor;
   }
   return bgC;
 };
