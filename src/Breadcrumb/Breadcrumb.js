@@ -15,19 +15,21 @@ class Breadcrumb extends React.Component {
 
     return (
       <BreadcrumbStyled {...this.props}>
-        <OlStyled>
+        <OlStyled {...this.props}>
           {elements.map((item, index) => {
             return (
               <LiStyled
                 key={index}
                 onClick={() => {
                   this.props.returnPath(item.path);
-                } }>
+                } }
+                {...this.props}
+              >
                 {item.name}
               </LiStyled>
             );
           })}
-          <LiStyled >{lastElement.name}</LiStyled>
+          <LiStyled {...this.props}>{lastElement.name}</LiStyled>
         </OlStyled>
       </BreadcrumbStyled>
     );

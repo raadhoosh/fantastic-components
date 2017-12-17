@@ -53,11 +53,14 @@ class Button extends Component {
           <Spinner spin="spinner" /> :
           icon ?
             <Icon iconClass={icon} devider={icon && label}
+
                   onClick={(e) => {
                     this.spanClicked = true;
                     e.target.value = value;
                     this.onBtnClick(e)
                   }}
+
+
             />
             : null
         }

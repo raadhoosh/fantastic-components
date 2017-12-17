@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { InputWrapper, Label, Alert, Important, Section } from './style';
+import InputStyled from './TextInputStyled';
+import Label from './LabelStyled';
+import Section from './SectionStyled';
+import Important from './ImportantStyled';
+import Alert from './AlertStyled';
 import Icon from '../Icon/Icon';
 
 class Input extends Component {
@@ -12,21 +16,21 @@ class Input extends Component {
       icon
     } = this.props;
     return (
-      <Section style={style}>
+      <Section style={style} {...this.props}>
         {
         label &&
-        <Label>
+        <Label {...this.props}>
           {label}
           {
-            important && <Important>*</Important>
+            important && <Important {...this.props}>*</Important>
           }
         </Label>
       }
         {
-          icon && <Icon iconClass={icon}/>
+          icon && <Icon iconClass={icon} {...this.props}/>
         }
-        <InputWrapper {...this.props}/>
-        {errorText && <Alert>{errorText}</Alert>}
+        <InputStyled {...this.props}/>
+        {errorText && <Alert {...this.props}>{errorText}</Alert>}
       </Section>
     );
   }

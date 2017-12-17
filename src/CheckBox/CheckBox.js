@@ -1,5 +1,8 @@
 import React from 'react';
-import { CheckBoxWrapper, Label, Section } from './style';
+import CheckBoxStyled from './CheckBoxStyled';
+import Label from './LabelStyled';
+import Section from './SectionStyled';
+
 
 
 class CheckBox extends React.Component {
@@ -9,9 +12,9 @@ class CheckBox extends React.Component {
       children
     } = this.props;
     return (
-    <Section>
-      <Label>
-        <CheckBoxWrapper
+    <Section {...this.props}>
+      <Label {...this.props}>
+        <CheckBoxStyled
           type="checkbox"
           {...this.props}
         />

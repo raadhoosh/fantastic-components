@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getColor } from './statics';
 
 const LiStyled = styled.li` 
           font-family: ${(props) => props.theme.fontFamily};
@@ -20,7 +21,7 @@ const LiStyled = styled.li`
            &:first-child:before {      
            content: "\\f009";     
            padding-left: 10px;      
-           color: ${props => props.theme.primaryColor};}                  
+           color: ${props => getColor(props)};}                  
            &:before, &:after{
            font: normal normal normal 16px/1 FontAwesome;
            cursor: pointer
