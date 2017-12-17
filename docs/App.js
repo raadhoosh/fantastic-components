@@ -10,8 +10,6 @@ import Row from '../src/Row/Row';
 import Col from '../src/Col/Col';
 import Breadcrumb from '../src/Breadcrumb/Breadcrumb';
 import Panel from '../src/Panel/Panel';
-import CheckBox from '../src/CheckBox/CheckBox';
-import SelectInput from '../src/SelectInput/SelectInput';
 import img from './commons/img.jpg';
 import Table from '../src/TableBasic/Table/Table';
 import Thead from "../src/TableBasic/Thead/Thead";
@@ -22,8 +20,7 @@ import Tbody from '../src/TableBasic/Tbody/Tbody';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import ReactLink from '../src/Link/Link';
 import Menu from '../src/Menu/Menu';
-import Upload from '../src/Upload/Upload';
-import ToolTip from '../src/ToolTip/ToolTip';
+import MenuResponsiv from '../src/Menu/MenuResponsive';
 
 import {
   BrowserRouter as Router,
@@ -60,17 +57,8 @@ class App extends Component {
     this.setState({
       cheeseIsReady: !this.state.cheeseIsReady
     })
-      isLiked: false
-    };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
-  handleClick () {
-    this.setState({
-      isLiked: !this.state.isLiked
-    });
-  }
+
   openModal() {
     this.setState({
       isOpen: true
@@ -125,27 +113,14 @@ class App extends Component {
       }
     ];
 
-    let items=[
-      {
-        text:'text 1',
-        value:0
-      },
-      {
-        text:'text 2',
-        value:1
-      }
-
-    ]
-    const label = this.state.isLiked ? "Hey, thanks!" : "Tip: Gimme a thumbs up!";
     return (
       <div>
-        <CheckBox label="cheack box 1"  primary/>
-        <SelectInput options={items} primary label=" select 1 " icon="bars"/>
-        <ToolTip label={label} secondary delayTime={500} position="bottom">
-          <div  onClick={this.handleClick}>
-           <label>Like</label>
-          </div>
-        </ToolTip>
+        <MenuResponsiv
+          mainItems={mainItems}
+          style={{marginBottom: '400px'}}
+        />
+        <br/>
+        <br/>
         <Panel header="Header" footer="Footer" warning>
           <Button
             label={'تست'}
@@ -167,25 +142,17 @@ class App extends Component {
           </Container>
         </Panel>
         <br/>
-        <Panel header="Header"  secondary>
+        <Panel header="Header" footer="Footer" secondary>
 
 
-          <Breadcrumb primary rtl items={BreadcrumbList} returnPath={(path) => console.log('path', path)} />
+          <Breadcrumb items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
           App...
           <Input
             icon={'user'}
-            primary
-            label="text aria 1"
-            important
-            errorText="  teact arai a"
           />
           <br/>
           <TextAria
             icon={'user'}
-            secondary
-            label="text aria 1"
-            important
-            errorText="  teact arai a"
           />
           <br/>
           <Icon
@@ -243,11 +210,8 @@ class App extends Component {
             </Modal>
             <Button label="open modal"
                     primary
-                    icon="user"
-                    rtl
                     onClick={this.openModal}
             />
-
 
           </div>
         </Panel>
@@ -307,8 +271,10 @@ class App extends Component {
               <li><ReactLink
                 to="/"
                 icon={'home'}
+                foreColor={'#f00'}
               >Home</ReactLink></li>
-              <li><Link to="/about">About</Link></li>
+              <li><ReactLink to="/about">About</ReactLink>
+              </li>
             </ul>
             <hr/>
             <Route exact path="/" component={Home}/>
@@ -317,9 +283,8 @@ class App extends Component {
         </Router>
         <Menu
           mainItems={mainItems}
-          style={{marginBottom:'400px'}}
+          style={{marginBottom: '400px'}}
         />
-        <Upload primary label="file select" important errorText="error in select file"/>
       </div>
 
     );
