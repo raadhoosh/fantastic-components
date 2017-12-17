@@ -1,17 +1,25 @@
 import styled from 'styled-components';
 import {getFloat, getColor, getBgColor, getBorderC} from './StaticsMenuResponsive';
 import defaultTheme from '../defaultTheme';
+import Button from '../Button/Button';
 
 const Div = styled.div` 
+             *{
+              box-sizing: border-box;
+              } 
           z-index: 9;
-          float: ${(props) => getFloat(props)};                                 
+          float: ${(props) => getFloat(props)};
+          display: none;  
+           @media (max-width: 768px) {
+           display: block;  
+            }                               
                  
              nav.menuSimple{             
      @media (max-width: 768px) {  
              width:100%;
-             transition: all 0.5s ease-in;
+             transition: all 0.2s ease-in;
              position:absolute;
-             top:70px;
+             top:30px;
              left:0; 
              overflow-y: auto;  
              max-height: 90vh;               
@@ -19,20 +27,23 @@ const Div = styled.div`
              
            ul{           
             width:100%;  
-            transition:all 0.4s ease-in;                 
+            transition:all 0.2s ease-in;                 
             overflow: hidden;
+            list-style: none;
+            margin: 0;
+            padding: 0; 
             padding-top:20px;                                  
                      
                   i.fa-sort-asc {
-                        display:block;
+                        display:block;                        
                         ${
-  (props) => props.left
-    ? 'left : 10px;'
-    : 'right:10px'
-  };                       
-                        font-size: 40px;
+  (props) => props.theme.rtl
+    ? 'right : 5px;'
+    : 'left:5px;'
+  };            
+                        font-size: 40px !important;
                         position: absolute;                        
-                        color:props => color ? color :(props.theme ? props.theme.primary : defaultTheme.primary); 
+                       	color:${(props) => props.color ? props.color : (props.theme ? props.theme.primaryColor : defaultTheme.primaryColor)}; 
                         top: 0;
                                }       
              }                         
@@ -82,8 +93,7 @@ const Div = styled.div`
              
             .sfShow {
                 visibility: visible;
-                opacity: 1;
-                transition: all 0.5s ease-in;
+                opacity: 1;               
               };
              } 
                	
@@ -91,7 +101,11 @@ const Div = styled.div`
 
 
 const ButtonBox = styled.div`       
-         display:none;      
+         display:none; 
+         
+         i{
+           padding: 0 !important;
+         }     
        
         @media (max-width: 768px) {  
            display:block;
@@ -118,6 +132,8 @@ const Overlay = styled.div`
          z-index: 9;
 
 `;
+const ButtonWrapper = styled(Button)`
+      	color:${(props) => props.color ? props.color : (props.theme ? props.theme.primaryColor : defaultTheme.primaryColor)};   
+`;
 
-
-export {Div, ButtonBox, Overlay};
+export {Div, ButtonBox, Overlay, ButtonWrapper};
