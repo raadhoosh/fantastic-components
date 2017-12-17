@@ -10,14 +10,35 @@ import Row from '../src/Row/Row';
 import Col from '../src/Col/Col';
 import Breadcrumb from '../src/Breadcrumb/Breadcrumb';
 import Panel from '../src/Panel/Panel';
-import CheckBox from '../src/CheckBox/CheckBox';
-import SelectInput from '../src/SelectInput/SelectInput';
 import img from './commons/img.jpg';
+import Table from '../src/TableBasic/Table/Table';
+import Thead from "../src/TableBasic/Thead/Thead";
+import Tr from '../src/TableBasic/Tr/Tr';
+import Th from '../src/TableBasic/Th/Th';
+import Td from '../src/TableBasic/Td/Td';
+import Tbody from '../src/TableBasic/Tbody/Tbody';
+import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
+import ReactLink from '../src/Link/Link';
+import Menu from '../src/Menu/Menu';
+import MenuResponsiv from '../src/Menu/MenuResponsive';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
-import Upload from '../src/Upload/Upload';
-import ToolTip from '../src/ToolTip/ToolTip';
-import TagEditor from '../src/TagEditor/TagEditor';
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+)
+
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+)
 
 class App extends Component {
 
@@ -25,26 +46,17 @@ class App extends Component {
     super(props, context);
     this.state = {
       isOpen: false,
-      cheeseIsReady: true,
-      tags: [],
-      Tags: [
-        {id: 0, value: 'ruby'},
-        {id: 1, value: 'javascript'},
-        {id: 2, value: 'lua'},
-        {id: 3, value: 'go'},
-        {id: 4, value: 'julia'}
-      ]
+      cheeseIsReady: true
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-
+    this.handleCheeseChange = this.handleCheeseChange.bind(this);
   }
 
-
-  handleClick() {
+  handleCheeseChange(event) {
     this.setState({
-      isLiked: !this.state.isLiked
-    });
+      cheeseIsReady: !this.state.cheeseIsReady
+    })
   }
 
   openModal() {
@@ -101,55 +113,14 @@ class App extends Component {
       }
     ];
 
-    let items = [
-      {
-        text: 'text 1',
-        value: 0
-      },
-      {
-        text: 'text 2',
-        value: 1
-      }
-
-    ]
-    const label = this.state.isLiked ? "Hey, thanks!" : "Tip: Gimme a thumbs up!";
     return (
       <div>
-        <TagEditor
-          primary
-          suggestionList={this.state.Tags}
-          tags={this.state.tags}
-          onValueChanged={(e) => {
-          }}
-          onSuggestionClick={(e) => {
-
-          }}
-          showSearchButtom={false}
-          onChangeTag={(value, tags) => {
-            let arraytags = [];
-            for (let i = 0; i < tags.length; i++) {
-              let obj = {
-                id: tags[i].id,
-                value: tags[i].value
-              };
-              arraytags.push(obj);
-            }
-            this.setState({
-              Tags: value,
-              tags: arraytags
-            });
-          }}
-          label={'لیست برچسب ها'}
-          important
-          errorText={this.error_tags}
+        <MenuResponsiv
+          mainItems={mainItems}
+          style={{marginBottom: '400px'}}
         />
-        <CheckBox label="cheack box 1" primary/>
-        <SelectInput options={items} primary label=" select 1 " icon="bars"/>
-        <ToolTip label={label} secondary delayTime={500} position="bottom">
-          <div onClick={this.handleClick}>
-            <label>Like</label>
-          </div>
-        </ToolTip>
+        <br/>
+        <br/>
         <Panel header="Header" footer="Footer" warning>
           <Button
             label={'تست'}
@@ -171,25 +142,17 @@ class App extends Component {
           </Container>
         </Panel>
         <br/>
-        <Panel header="Header" secondary>
+        <Panel header="Header" footer="Footer" secondary>
 
 
-          <Breadcrumb primary rtl items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
+          <Breadcrumb items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
           App...
           <Input
             icon={'user'}
-            primary
-            label="text aria 1"
-            important
-            errorText="  teact arai a"
           />
           <br/>
           <TextAria
             icon={'user'}
-            secondary
-            label="text aria 1"
-            important
-            errorText="  teact arai a"
           />
           <br/>
           <Icon
@@ -247,11 +210,8 @@ class App extends Component {
             </Modal>
             <Button label="open modal"
                     primary
-                    icon="user"
-                    rtl
                     onClick={this.openModal}
             />
-
 
           </div>
         </Panel>
@@ -260,16 +220,71 @@ class App extends Component {
         <br/>
         <br/>
         <br/>
-
+        <Table>
+          <Thead
+            color={'#ff0'}
+          >
+          <Tr
+            primary
+          >
+            <Th>
+              title
+            </Th>
+            <Th>
+              title
+            </Th>
+          </Tr>
+          </Thead>
+          <Tbody>
+          <Tr>
+            <Td>
+              text
+            </Td>
+            <Td>
+              text
+            </Td>
+          </Tr>
+          <Tr>
+            <Td>
+              text
+            </Td>
+            <Td>
+              text
+            </Td>
+          </Tr>
+          </Tbody>
+        </Table>
         <br/>
         <br/>
         <div>
-
+          <ButtonToggle
+            id='cheese-status'
+            defaultChecked={this.state.cheeseIsReady}
+            onChange={this.handleCheeseChange.bind(this)}/>
           <label htmlFor='cheese-status'>Adjacent label tag</label>
         </div>
         <br/>
         <br/>
-        <Upload primary label="file select" important errorText="error in select file"/>
+        <Router>
+          <div>
+            <ul>
+              <li><ReactLink
+                to="/"
+                icon={'home'}
+                foreColor={'#f00'}
+              >Home</ReactLink></li>
+              <li><ReactLink to="/about">About</ReactLink>
+              </li>
+            </ul>
+            <hr/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/about" component={About}/>
+          </div>
+        </Router>
+        <Menu
+          mainItems={mainItems}
+          style={{marginBottom: '400px'}}
+        />
       </div>
 
     );
