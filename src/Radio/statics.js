@@ -16,7 +16,6 @@ export function getBgColor(props) {
   } = props;
   let bgC = '';
 
-
   if (primary) {
     bgC = theme.primary.bgColor;
   }

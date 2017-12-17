@@ -45,12 +45,9 @@ export class RadioGroup extends React.Component {
     const {
       label,
       name,
-      className,
       inline,
       children,
-
       items,
-
       primary,
       secondary,
       info,
@@ -58,7 +55,6 @@ export class RadioGroup extends React.Component {
       danger,
       success,
       inverse,
-
     } = this.props;
 
     return (

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import {getColor} from './statics';
 
 
+
 const Label = styled.label` 
               box-sizing: border-box;  
              cursor: pointer;

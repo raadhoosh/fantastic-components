@@ -23,7 +23,6 @@ class Radio extends React.Component {
       checked,index
     }=this.props;
 
-
     return (
       <Label {...this.props} >
         <RadioStyled

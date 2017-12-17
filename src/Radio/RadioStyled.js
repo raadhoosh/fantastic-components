@@ -4,7 +4,6 @@
 import styled from 'styled-components';
 import {getColor} from './statics';
 
-
 const RadioStyled = styled.input` 
           margin: 3px 3px 5px 3px;
           width: 17px;

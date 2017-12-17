@@ -36,3 +36,4 @@ export function getColor(props) {
   }
   return lblC;
 }
+
