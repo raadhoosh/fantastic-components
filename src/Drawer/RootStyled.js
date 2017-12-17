@@ -4,14 +4,14 @@
 import styled from 'styled-components';
 
 
-const RootStyled = styled.aside`    
-        left: 0;
+const RootStyled = styled.aside`              
         top: 0;
         width: 100%;
         height: 100%;
         position: fixed;
         overflow: hidden;
-        z-index: 8;
+        z-index: 8;     
+        ${(props) => (props.theme.rtl || props.openFromRight) ? 'right:0' : 'lef:0'}
      
               `;
 export default RootStyled;

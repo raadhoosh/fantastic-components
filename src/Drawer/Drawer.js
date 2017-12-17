@@ -91,15 +91,17 @@ class Drawer extends React.Component {
     const { showNav } = this.state;
 
     return (
-      <Root style={{ pointerEvents: showNav ? 'auto' : 'none' }}>
+      <Root style={{ pointerEvents: showNav ? 'auto' : 'none' }} {...this.props}>
         <Overly style={{ opacity: showNav ? 1 : 0 }}
-             onClick={this.hideNav}/>
+             onClick={this.hideNav} />
         <Nav style={styles.nav}
              onTransitionEnd={(e) => { e.target.style.transition = 'none'}}
              onTouchStart={this.onTouchStart}
              onTouchMove={this.onTouchMove}
              onTouchEnd={this.onTouchEnd}
-             innerRef={nav => { this.nav = nav }}>
+             innerRef={nav => { this.nav = nav }}
+             {...this.props}
+        >
           <Title {...this.props}>{ this.props.title || 'Navigation'}</Title>
           { this.props.children }
         </Nav>

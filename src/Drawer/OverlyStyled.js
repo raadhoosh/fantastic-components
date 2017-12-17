@@ -8,9 +8,10 @@ const OverlyStyled = styled.div`
         width: 100%;
         height: 100%;
         top: 0px;
-        left: 0px;         
+        ${(props) => (props.theme.rtl || props.openFromRight) ? 'right:0' : 'lef:0'};         
         transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
         will-change: opacity;
+    
         
               `;
 export default OverlyStyled;
