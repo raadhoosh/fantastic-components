@@ -1,7 +1,7 @@
 /**
  * Created by Programmer1 on 12/14/2017.
  */
-
+import defaultTheme from '../defaultTheme';
 export function getColor(props) {
   const {
     primary,
@@ -14,7 +14,7 @@ export function getColor(props) {
     foreColor,
     theme
   } = props;
-  let ForeC = '#000';
+  let ForeC =  defaultTheme.default.foreColor;
   if (primary) {
     ForeC = theme.primaryColor;
   }

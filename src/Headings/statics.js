@@ -1,7 +1,7 @@
 /**
  * Created by Programmer1 on 12/14/2017.
  */
-
+import defaultTheme from '../defaultTheme';
 export function getColor(props) {
   const {
     primary,
@@ -15,7 +15,7 @@ export function getColor(props) {
     color
   } = props;
 
-  let C;
+  let C = defaultTheme.default.foreColor;
   if (color)
     C = color;
   else {

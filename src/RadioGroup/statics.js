@@ -1,6 +1,7 @@
 /**
  * Created by Programmer1 on 12/17/2017.
  */
+import defaultTheme from '../defaultTheme';
 export function getColor(props) {
   const {
     primary,
@@ -11,8 +12,9 @@ export function getColor(props) {
     success,
     inverse,
     theme,
+    color
   } = props;
-  let lblC = theme.darkForeColor;
+  let lblC = defaultTheme.darkForeColor;
   if (primary) {
     lblC = theme.primaryColor;
   }
@@ -33,6 +35,9 @@ export function getColor(props) {
   }
   else if (inverse) {
     lblC = theme.inverseColor;
+  }
+  else if (color) {
+    lblC = color;
   }
   return lblC;
 }
