@@ -33,7 +33,6 @@ module.exports = {
   Table: require('./Table/Table').default,
   Notify: require('./Notify/Notify').default,
   Upload: require('./Upload/Upload').default,
-
   TableBasic: require('./TableBasic/Table/Table').default,
   Thead: require('./TableBasic/Thead/Thead').default,
   Th: require('./TableBasic/Th/Th').default,
@@ -46,5 +45,7 @@ module.exports = {
   ButtonToggle: require('./ButtonToggle/ButtonToggle').default,
   TagEditor: require('./TagEditor/TagEditor').default,
   Drawer: require('./Drawer/Drawer').default,
-  DrawerIcon: require('./Drawer/DrawerIcon').default
+  DrawerIcon: require('./Drawer/DrawerIcon').default,
+  Radio: require('./Radio/Radio').default,
+  RadioGroup: require('./RadioGroup/RadioGroup').default,
 };

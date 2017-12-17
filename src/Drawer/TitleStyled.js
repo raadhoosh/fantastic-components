@@ -15,5 +15,6 @@ const TitleStyled = styled.div`
          height: 80px;
          padding: 22px;
          width:200px;
+            direction:${(props) => (props.theme.rtl || props.openFromRight) ? 'rtl' : 'ltr'} ;
               `;
 export default TitleStyled;
