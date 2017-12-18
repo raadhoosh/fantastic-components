@@ -2,6 +2,7 @@
  * Created by Programmer1 on 12/14/2017.
  */
 import defaultTheme from '../defaultTheme';
+
 export function getColor(props) {
   const {
     primary,
@@ -12,37 +13,41 @@ export function getColor(props) {
     success,
     inverse,
     foreColor,
-    theme
+    theme,
   } = props;
-  let ForeC = defaultTheme.default.foreColor;
-  if (primary) {
-    ForeC = theme.primaryColor;
-  }
-  else if (secondary) {
-    ForeC = theme.secondaryColor;
-  }
-  else if (info) {
-    ForeC = theme.infoColor;
-  }
-  else if (warning) {
-    ForeC = theme.warningColor;
-  }
-  else if (danger) {
-    ForeC = theme.dangerColor;
-  }
-  else if (success) {
-    ForeC = theme.successColor;
-  }
-  else if (inverse) {
-    ForeC = theme.inverseColor;
-  }
 
+  let ForeC;
   if (foreColor) {
     ForeC = foreColor;
   }
+  else if (primary) {
+    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+  }
+  else if (secondary) {
+    ForeC = (theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
+  }
+  else if (info) {
+    ForeC = (theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
+  }
+  else if (warning) {
+    ForeC = (theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
+  }
+  else if (danger) {
+    ForeC = (theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
+  }
+  else if (success) {
+    ForeC = (theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
+  }
+  else if (inverse) {
+    ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
+  }
+  else {
+    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+  }
+
   return ForeC;
 
-}
+};
 
 export function getSize(props) {
   const {

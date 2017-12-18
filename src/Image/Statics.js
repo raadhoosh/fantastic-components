@@ -15,33 +15,33 @@ function getBorderC(props) {
 
   let BorderC;
   if (primary) {
-    BorderC = theme.primary.borderColor;
+    BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
   else if (secondary) {
-    BorderC = theme.secondary.borderColor;
+    BorderC = (theme) ? theme.secondary.borderColor : defaultTheme.secondary.borderColor;
   }
   else if (info) {
-    BorderC = theme.info.borderColor;
+    BorderC = (theme) ? theme.info.borderColor : defaultTheme.info.borderColor;
   }
   else if (warning) {
-    BorderC = theme.warning.borderColor;
+    BorderC = (theme) ? theme.warning.borderColor : defaultTheme.warning.borderColor;
   }
   else if (danger) {
-    BorderC = theme.danger.borderColor;
+    BorderC = (theme) ? theme.danger.borderColor : defaultTheme.danger.borderColor;
   }
   else if (success) {
-    BorderC = theme.success.borderColor;
+    BorderC = (theme) ? theme.success.borderColor : defaultTheme.success.borderColor;
   }
   else if (inverse) {
-    BorderC = theme.inverse.borderColor;
+    BorderC = (theme) ? theme.inverse.borderColor : defaultTheme.inverse.borderColor;
   }
 
   if (borderColor) {
     BorderC = borderColor;
   } else {
-    BorderC = defaultTheme.primary.borderColor;
+    BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
   return BorderC;
 };
 
-export {getBorderC};
+export {getColor, getBgColor, getBorderC};

@@ -1,4 +1,4 @@
-import defaultTheme from '../defaultTheme';
+import defaultTheme from '../../defaultTheme';
 
 function getColor(props) {
   const {
@@ -85,7 +85,7 @@ function getBgColor(props) {
   if (bgColor) {
     bgC = bgColor;
   } else {
-    bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
+    bgC = (theme) ? theme.secondary.bgColor : defaultTheme.secondary.bgColor;
   }
   return bgC;
 };
@@ -134,91 +134,4 @@ function getBorderC(props) {
   return BorderC;
 };
 
-function paddingX(props) {
-  const {
-    xSmall,
-    small,
-    large
-  } = props;
-
-  let paddingX = '20px';
-  if (xSmall) {
-    paddingX = '3px';
-  }
-  else if (small) {
-    paddingX = '10px';
-  }
-  else if (large) {
-    paddingX = '25px';
-  }
-  return paddingX;
-};
-
-function paddingY(props) {
-  const {
-    xSmall,
-    small,
-    large
-  } = props;
-
-
-  let paddingY = '10px';
-  if (xSmall) {
-    paddingY = '3px';
-  }
-  else if (small) {
-    paddingY = '5px';
-  }
-  else if (large) {
-    paddingY = '10px';
-  }
-
-  return paddingY;
-};
-
-function marginX(props) {
-  const {
-    xSmall,
-    small,
-    large
-  } = props;
-
-  let marginX = '5px';
-
-  if (xSmall) {
-    marginX = '2px';
-  }
-  else if (small) {
-    marginX = '3px';
-  }
-  else if (large) {
-    marginX = '8px';
-  }
-
-  return marginX;
-};
-
-function marginY(props) {
-  const {
-    xSmall,
-    small,
-    large
-  } = props;
-
-  let marginY = '3px';
-
-  if (xSmall) {
-    marginY = '2px';
-  }
-  else if (small) {
-    marginY = '3px';
-  }
-  else if (large) {
-    marginY = '5px';
-  }
-
-  return marginY;
-};
-
-
-export {getColor, getBgColor, getBorderC, paddingX, paddingY, marginX, marginY};
+export {getColor, getBgColor, getBorderC};

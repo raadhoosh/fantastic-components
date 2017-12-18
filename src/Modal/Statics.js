@@ -14,33 +14,34 @@ function getColor(props) {
   } = props;
 
   let ForeC;
-  if (primary) {
-    ForeC = theme.primary.foreColor;
-  }
-  else if (secondary) {
-    ForeC = theme.secondary.foreColor;
-  }
-  else if (info) {
-    ForeC = theme.info.foreColor;
-  }
-  else if (warning) {
-    ForeC = theme.warning.foreColor;
-  }
-  else if (danger) {
-    ForeC = theme.danger.foreColor;
-  }
-  else if (success) {
-    ForeC = theme.success.foreColor;
-  }
-  else if (inverse) {
-    ForeC = theme.inverse.foreColor;
-  }
-
   if (foreColor) {
     ForeC = foreColor;
-  } else {
-    ForeC = defaultTheme.defaultColorForeColor;
   }
+  else if (primary) {
+    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+  }
+  else if (secondary) {
+    ForeC = (theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
+  }
+  else if (info) {
+    ForeC = (theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
+  }
+  else if (warning) {
+    ForeC = (theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
+  }
+  else if (danger) {
+    ForeC = (theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
+  }
+  else if (success) {
+    ForeC = (theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
+  }
+  else if (inverse) {
+    ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
+  }
+  else {
+    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+  }
+
   return ForeC;
 
 };
@@ -60,31 +61,31 @@ function getBgColor(props) {
 
   let bgC;
   if (primary) {
-    bgC = theme.primary.bgColor;
+    bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
   }
   else if (secondary) {
-    bgC = theme.secondary.bgColor;
+    bgC = (theme) ? theme.secondary.bgColor : defaultTheme.secondary.foreColor;
   }
   else if (info) {
-    bgC = theme.info.bgColor;
+    bgC = (theme) ? theme.info.bgColor : defaultTheme.info.bgColor;
   }
   else if (warning) {
-    bgC = theme.warning.bgColor;
+    bgC = (theme) ? theme.warning.bgColor : defaultTheme.warning.bgColor;
   }
   else if (danger) {
-    bgC = theme.danger.bgColor;
+    bgC = (theme) ? theme.danger.bgColor : defaultTheme.danger.bgColor;
   }
   else if (success) {
-    bgC = theme.success.bgColor;
+    bgC = (theme) ? theme.success.bgColor : defaultTheme.success.bgColor;
   }
   else if (inverse) {
-    bgC = theme.inverse.bgColor;
+    bgC = (theme) ? theme.inverse.bgColor : defaultTheme.inverse.bgColor;
   }
 
   if (bgColor) {
     bgC = bgColor;
   } else {
-    bgC = defaultTheme.primary.bgColor;
+    bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
   }
   return bgC;
 };
@@ -104,31 +105,31 @@ function getBorderC(props) {
 
   let BorderC;
   if (primary) {
-    BorderC = theme.primary.borderColor;
+    BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
   else if (secondary) {
-    BorderC = theme.secondary.borderColor;
+    BorderC = (theme) ? theme.secondary.borderColor : defaultTheme.secondary.borderColor;
   }
   else if (info) {
-    BorderC = theme.info.borderColor;
+    BorderC = (theme) ? theme.info.borderColor : defaultTheme.info.borderColor;
   }
   else if (warning) {
-    BorderC = theme.warning.borderColor;
+    BorderC = (theme) ? theme.warning.borderColor : defaultTheme.warning.borderColor;
   }
   else if (danger) {
-    BorderC = theme.danger.borderColor;
+    BorderC = (theme) ? theme.danger.borderColor : defaultTheme.danger.borderColor;
   }
   else if (success) {
-    BorderC = theme.success.borderColor;
+    BorderC = (theme) ? theme.success.borderColor : defaultTheme.success.borderColor;
   }
   else if (inverse) {
-    BorderC = theme.inverse.borderColor;
+    BorderC = (theme) ? theme.inverse.borderColor : defaultTheme.inverse.borderColor;
   }
 
   if (borderColor) {
     BorderC = borderColor;
   } else {
-    BorderC = defaultTheme.primary.borderColor;
+    BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
   return BorderC;
 };

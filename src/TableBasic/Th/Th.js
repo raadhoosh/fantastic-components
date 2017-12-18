@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ThWrapper from './style';
+import ThStyled from './ThStyled';
 
 class Th extends Component {
   render() {
@@ -8,13 +8,13 @@ class Th extends Component {
     } = this.props;
 
     return (
-      <ThWrapper
+      <ThStyled
         {...this.props}
       >
         {
           children
         }
-      </ThWrapper>
+      </ThStyled>
     );
   }
 }

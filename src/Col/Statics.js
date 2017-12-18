@@ -9,10 +9,8 @@ function getBgColor(props) {
   let bgC;
   if (bgColor) {
     bgC = bgColor;
-  } else if (props.theme) {
-    bgC = theme.primaryForeColor;
   } else {
-    bgC = defaultTheme.primaryColor;
+    bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
   }
   return bgC;
 };

@@ -134,91 +134,50 @@ function getBorderC(props) {
   return BorderC;
 };
 
-function paddingX(props) {
+function getIconColor(props) {
   const {
-    xSmall,
-    small,
-    large
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    inverse,
+    foreColor,
+    theme,
   } = props;
 
-  let paddingX = '20px';
-  if (xSmall) {
-    paddingX = '3px';
+  let ForeC;
+  if (foreColor) {
+    ForeC = foreColor;
   }
-  else if (small) {
-    paddingX = '10px';
+  else if (primary) {
+    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
   }
-  else if (large) {
-    paddingX = '25px';
+  else if (secondary) {
+    ForeC = (theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
   }
-  return paddingX;
+  else if (info) {
+    ForeC = (theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
+  }
+  else if (warning) {
+    ForeC = (theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
+  }
+  else if (danger) {
+    ForeC = (theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
+  }
+  else if (success) {
+    ForeC = (theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
+  }
+  else if (inverse) {
+    ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
+  }
+  else {
+    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+  }
+
+  return ForeC;
+
 };
 
-function paddingY(props) {
-  const {
-    xSmall,
-    small,
-    large
-  } = props;
-
-
-  let paddingY = '10px';
-  if (xSmall) {
-    paddingY = '3px';
-  }
-  else if (small) {
-    paddingY = '5px';
-  }
-  else if (large) {
-    paddingY = '10px';
-  }
-
-  return paddingY;
-};
-
-function marginX(props) {
-  const {
-    xSmall,
-    small,
-    large
-  } = props;
-
-  let marginX = '5px';
-
-  if (xSmall) {
-    marginX = '2px';
-  }
-  else if (small) {
-    marginX = '3px';
-  }
-  else if (large) {
-    marginX = '8px';
-  }
-
-  return marginX;
-};
-
-function marginY(props) {
-  const {
-    xSmall,
-    small,
-    large
-  } = props;
-
-  let marginY = '3px';
-
-  if (xSmall) {
-    marginY = '2px';
-  }
-  else if (small) {
-    marginY = '3px';
-  }
-  else if (large) {
-    marginY = '5px';
-  }
-
-  return marginY;
-};
-
-
-export {getColor, getBgColor, getBorderC, paddingX, paddingY, marginX, marginY};
+export {getColor, getBgColor, getBorderC ,getIconColor};

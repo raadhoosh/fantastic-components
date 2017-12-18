@@ -1,4 +1,5 @@
-import defaultTheme from '../defaultTheme';
+import defaultTheme from '../../defaultTheme';
+
 
 function getColor(props) {
   const {
@@ -46,27 +47,48 @@ function getColor(props) {
 
 };
 
-function getSize(props) {
+function getBgColor(props) {
   const {
-    xxsmall,
-    xsmall,
-    small,
-    medium,
-    larg,
-    xlarg,
-    xxlarg,
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    inverse,
+    bgColor,
+    theme
   } = props;
 
-  let size = 16;
-  if (xxsmall) size = 16;
-  else if (xsmall) size = 24;
-  else if (small) size = 32;
-  else if (medium) size = 48;
-  else if (larg) size = 64;
-  else if (xlarg) size = 72;
-  else if (xxlarg) size = 96;
+  let bgC;
+  if (primary) {
+    bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
+  }
+  else if (secondary) {
+    bgC = (theme) ? theme.secondary.bgColor : defaultTheme.secondary.foreColor;
+  }
+  else if (info) {
+    bgC = (theme) ? theme.info.bgColor : defaultTheme.info.bgColor;
+  }
+  else if (warning) {
+    bgC = (theme) ? theme.warning.bgColor : defaultTheme.warning.bgColor;
+  }
+  else if (danger) {
+    bgC = (theme) ? theme.danger.bgColor : defaultTheme.danger.bgColor;
+  }
+  else if (success) {
+    bgC = (theme) ? theme.success.bgColor : defaultTheme.success.bgColor;
+  }
+  else if (inverse) {
+    bgC = (theme) ? theme.inverse.bgColor : defaultTheme.inverse.bgColor;
+  }
 
-  return size;
+  if (bgColor) {
+    bgC = bgColor;
+  } else {
+    bgC = (theme) ? theme.secondary.bgColor : defaultTheme.secondary.bgColor;
+  }
+  return bgC;
 };
 
-export {getColor, getSize};
+export {getColor, getBgColor};

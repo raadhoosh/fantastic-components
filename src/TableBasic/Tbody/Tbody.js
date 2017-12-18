@@ -1,20 +1,20 @@
-import React from 'react';
-import TbodyWrapper from './style'
+import React ,{Component} from 'react';
+import TbodyStyled from './TbodyStyled';
 
-class Tbody extends React.Component {
+class Tbody extends Component {
   render() {
     const {
       children
     } = this.props;
 
     return (
-      <TbodyWrapper
+      <TbodyStyled
         {...this.props}
       >
         {
           children
         }
-      </TbodyWrapper>
+      </TbodyStyled>
     )
   }
 }

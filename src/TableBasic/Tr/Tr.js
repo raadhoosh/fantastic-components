@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TrWrapper from './style';
+import TrStyled from './TrStyled';
 
 class Tr extends Component {
   render() {
@@ -8,14 +8,14 @@ class Tr extends Component {
     } = this.props;
 
     return (
-      <TrWrapper
+      <TrStyled
         {...this.props}
       >
         {
           children
         }
-      </TrWrapper>
-    )
+      </TrStyled>
+    );
   }
 }
 
