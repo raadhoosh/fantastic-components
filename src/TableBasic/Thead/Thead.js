@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TheadWrapper from './style';
+import TheadStyled from './TheadStyled';
 
 class Thead extends Component {
   render() {
@@ -8,13 +8,13 @@ class Thead extends Component {
     } = this.props;
 
     return (
-      <TheadWrapper
+      <TheadStyled
         {...this.props}
       >
         {
           children
         }
-      </TheadWrapper>
+      </TheadStyled>
     )
   }
 }

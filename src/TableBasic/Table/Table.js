@@ -1,25 +1,28 @@
 import React, {Component} from 'react';
-import {Div, TableWrapper} from './style';
+import TableWrapperStyled from './TableWrapperStyled';
+import TableStyled from './TableStyled';
 
-class Table extends Component {
-  render() {
-    const {
-      children
-    } = this.props;
+class Table extends Component{
 
-    return (
-      <Div>
-        < TableWrapper
-          {...this.props}
-        >
-          {
-            children
-          }
-        </TableWrapper>
+render()
+{
+  const {
+    children
+  } = this.props;
 
-      </Div>
-    )
-  }
+  return (
+    <TableWrapperStyled>
+      <TableStyled
+        {...this.props}
+      >
+        {
+          children
+        }
+      </TableStyled>
+
+    </TableWrapperStyled>
+  )
+}
 }
 
 export default Table;

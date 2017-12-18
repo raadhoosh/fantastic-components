@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 const OverlayStyled = styled.div`
+
+         *{
+          box-sizing: border-box;
+         }
+
+        box-sizing: border-box;      
         position: fixed;
         width: 100%;
         height: 100%;

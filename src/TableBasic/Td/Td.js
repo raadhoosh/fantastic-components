@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TdWrrapper from './style';
+import TdStyled from './TdStyled';
 
 class Td extends Component {
   render() {
@@ -8,13 +8,13 @@ class Td extends Component {
     } = this.props;
 
     return (
-      <TdWrrapper
+      <TdStyled
         {...this.props}
       >
         {
           children
         }
-      </TdWrrapper>
+      </TdStyled>
     )
   }
 }

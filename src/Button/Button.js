@@ -57,7 +57,7 @@ class Button extends Component {
                   onClick={(e) => {
                     this.spanClicked = true;
                     e.target.value = value;
-                    this.onBtnClick(e)
+                    this.onBtnClick(e);
                   }}
 
 
@@ -67,7 +67,7 @@ class Button extends Component {
         {label}
         {children}
       </ButtonStyled>
-    )
+    );
   }
 }
 
