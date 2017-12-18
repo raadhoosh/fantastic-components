@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.css'
-import IconWrapper from './style'
+import IconStyled from './IconStyled';
 
 
 class Icon extends Component {
@@ -16,7 +16,7 @@ class Icon extends Component {
     } = this.props;
 
     return (
-      <IconWrapper
+      <IconStyled
         {...this.props}
         onClick={this.props.onClick}
         className={`fa fa-${iconClass}`}
