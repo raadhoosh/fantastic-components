@@ -7,8 +7,8 @@ import styled from 'styled-components';
 const BodyStyled = styled.div`    
       font-family: ${(props) => props.theme.fontFamily};
        box-sizing: border-box;
-      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
-      padding: 15px;       
+       direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
+       padding: 15px;       
            `;
 
 export default BodyStyled;

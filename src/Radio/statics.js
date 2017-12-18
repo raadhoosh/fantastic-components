@@ -1,7 +1,7 @@
 /**
  * Created by Programmer1 on 12/14/2017.
  */
-
+import defaultTheme from '../defaultTheme';
 export function getBgColor(props) {
   const {
     primary,
@@ -14,7 +14,7 @@ export function getBgColor(props) {
     theme,
     bgColor
   } = props;
-  let bgC = '';
+  let bgC = defaultTheme.default.bgColor;
 
   if (primary) {
     bgC = theme.primary.bgColor;
@@ -57,7 +57,7 @@ export function getColor(props) {
     theme,
     foreColor
   } = props;
-  let ForeC = theme.default.foreColor;
+  let ForeC = defaultTheme.default.foreColor;
 
   if (primary) {
     ForeC = theme.primaryColor;
@@ -99,7 +99,7 @@ export function getBorderColor(props) {
     theme,
     borderColor
   } = props;
-  let BorderC = theme.default.borderColor;
+  let BorderC = defaultTheme.default.borderColor;
 
 
   if (primary) {
@@ -141,10 +141,10 @@ export function getIconColor(props) {
     success,
     inverse,
     foreColor,
-    theme,
+    theme
   } = props;
 
-  let ForeC;
+  let ForeC= defaultTheme.default.foreColor;
   if (primary) {
     ForeC = theme.primary.foreColor;
   }

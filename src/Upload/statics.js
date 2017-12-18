@@ -1,10 +1,8 @@
 /**
- * Created by Programmer1 on 12/4/2017.
+ * Created by Programmer1 on 12/14/2017.
  */
-import styled from 'styled-components';
-
-
-function getBgColor(props) {
+import defaultTheme from '../defaultTheme';
+export function getBgColor(props) {
   const {
     primary,
     secondary,
@@ -16,7 +14,7 @@ function getBgColor(props) {
     theme,
     bgColor
   } = props;
-  let bgC = theme.default.primaryForeColor;
+  let bgC = defaultTheme.default.bgColor;
 
 
   if (primary) {
@@ -47,7 +45,8 @@ function getBgColor(props) {
 
   return bgC;
 }
-function getColor(props) {
+
+export function getColor(props) {
   const {
     primary,
     secondary,
@@ -56,10 +55,11 @@ function getColor(props) {
     danger,
     success,
     inverse,
-    foreColor,
-    theme
+    theme,
+    foreColor
   } = props;
-  let ForeC = '#000';
+  let ForeC = defaultTheme.default.foreColor;
+
   if (primary) {
     ForeC = theme.primaryColor;
   }
@@ -86,10 +86,9 @@ function getColor(props) {
     ForeC = foreColor;
   }
   return ForeC;
-
 }
 
-function getBorderColor(props) {
+export function getBorderColor(props) {
   const {
     primary,
     secondary,
@@ -101,9 +100,7 @@ function getBorderColor(props) {
     theme,
     borderColor
   } = props;
-  let BorderC = theme.default.borderColor;
-
-
+  let BorderC = defaultTheme.default.borderColor;
   if (primary) {
     BorderC = theme.primary.borderColor;
   }
@@ -133,44 +130,45 @@ function getBorderColor(props) {
   return BorderC;
 }
 
+export function getIconColor(props) {
+  const {
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    inverse,
+    foreColor,
+    theme,
+  } = props;
 
-const UploadWrapper = styled.div`        
-        border: 1px dashed ${(props) => getBorderColor(props)};
-        border-radius: 5px;
-        
-        padding: 20px;
-        background-image: linear-gradient(135deg,rgba(0,0,0,.03)25%,transparent 25%,transparent 50%,rgba(0,0,0,.03)50%,rgba(0,0,0,.03)75%,transparent 75%,transparent);
-        background-size: 100%;
-        width: 300px;
-        height: 60px;
-     
-         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
-      `;
+  let ForeC = defaultTheme.default.foreColor;
+  if (primary) {
+    ForeC = theme.primary.foreColor;
+  }
+  else if (secondary) {
+    ForeC = theme.secondary.foreColor;
+  }
+  else if (info) {
+    ForeC = theme.info.foreColor;
+  }
+  else if (warning) {
+    ForeC = theme.warning.foreColor;
+  }
+  else if (danger) {
+    ForeC = theme.danger.foreColor;
+  }
+  else if (success) {
+    ForeC = theme.success.foreColor;
+  }
+  else if (inverse) {
+    ForeC = theme.inverse.foreColor;
+  }
 
+  if (foreColor) {
+    ForeC = foreColor;
+  }
+  return ForeC;
 
-const Input = styled.input`        
-        border: 1px dashed  ${(props) => getBorderColor(props)};
-        height: 2em;
-        transition: all 0.5s;
-        width: 80%;
-      
-      `;
-const Label = styled.label` 
-              box-sizing: border-box;  
-              padding: .2em .6em .3em;
-              font-size: 75%;
-              font-weight: bold;
-              line-height: 1;
-              color:${(props) => getColor(props)};
-              white-space: nowrap;
-              vertical-align: baseline;
-              border-radius: .25em;
-              `;
-const Alert = styled.div`    
-         color: ${(props) => props.theme.danger.bgColor};
-              `;
-const Important = styled.span`    
-       color: ${(props) => props.theme.danger.bgColor};
-              `;
-
-export { Input, UploadWrapper, Important, Alert, Label };
+}

@@ -15,8 +15,6 @@ export function getBgColor(props) {
     bgColor
   } = props;
   let bgC = defaultTheme.default.bgColor;
-
-
   if (primary) {
     bgC = theme.primary.bgColor;
   }
@@ -39,7 +37,7 @@ export function getBgColor(props) {
     bgC = theme.inverse.bgColor;
   }
 
-  if (bgColor) {
+  if (bgColor !== undefined) {
     bgC = bgColor;
   }
 
@@ -47,6 +45,7 @@ export function getBgColor(props) {
 }
 
 export function getColor(props) {
+  debugger
   const {
     primary,
     secondary,
@@ -82,7 +81,7 @@ export function getColor(props) {
     ForeC = theme.inverseColor;
   }
 
-  if (foreColor) {
+  if (foreColor !== undefined) {
     ForeC = foreColor;
   }
   return ForeC;
@@ -101,8 +100,6 @@ export function getBorderColor(props) {
     borderColor
   } = props;
   let BorderC = defaultTheme.default.borderColor;
-
-
   if (primary) {
     BorderC = theme.primary.borderColor;
   }
@@ -125,10 +122,9 @@ export function getBorderColor(props) {
     BorderC = theme.inverse.borderColor;
   }
 
-  if (borderColor) {
+  if (borderColor !== undefined) {
     BorderC = borderColor;
   }
 
   return BorderC;
 }
-
