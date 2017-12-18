@@ -1,4 +1,21 @@
-import styled from 'styled-components';
+import defaultTheme from '../defaultTheme';
+
+function getBgColor(props) {
+  const {
+    bgColor,
+    theme
+  } = props;
+
+  let bgC;
+  if (bgColor) {
+    bgC = bgColor;
+  } else if (props.theme) {
+    bgC = theme.primaryForeColor;
+  } else {
+    bgC = defaultTheme.primaryColor;
+  }
+  return bgC;
+};
 
 function getSm(props) {
   const {
@@ -281,43 +298,4 @@ function getLg(props) {
   }
 };
 
-function getBgColor(props) {
-  const {
-    bgColor
-  } = props;
-
-  let bgC;
-  if (bgColor) {
-    bgC = bgColor;
-  }
-  return bgC;
-};
-
-const Col = styled.div`          
-          position: relative;
-          width: 100%;
-          min-height: 1px;
-          padding-right: 15px;
-          padding-left: 15px; 
-          box-sizing: border-box;
-          background-color:${(props) => getBgColor(props)}; 
-                   
-          @media (min-width: 576px) {    
-              padding-right: 15px;      
-              padding-left: 15px; } 
-          @media (min-width: 768px) 
-              padding-right: 15px;
-              padding-left: 15px; } 
-          @media (min-width: 992px) 
-              padding-right: 15px;
-              padding-left: 15px; } 
-          @media (min-width: 1200px) 
-              padding-right: 15px;
-              padding-left: 15px; } } 
-             
-             ${(props) => getSm(props)};             
-             ${(props) => getMd(props)};             
-             ${(props) => getLg(props)};             
-               `;
-
-export default Col;
+export {getLg, getMd, getSm, getBgColor};

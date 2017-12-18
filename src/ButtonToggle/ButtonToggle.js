@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Check from './check';
 import X from './x';
 import {pointerCoord} from './util';
+import InputStyled from './ButtonToggleStyled';
 
 import './style/style.css';
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Input = styled.input` 
+const InputStyled = styled.input` 
              *{
                box-sizing: border-box;
               } 
@@ -15,4 +15,4 @@ const Input = styled.input`
                       	
          `;
 
-export {Input};
+export {InputStyled};
