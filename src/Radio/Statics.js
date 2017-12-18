@@ -45,28 +45,4 @@ function getColor(props) {
   return ForeC;
 
 };
-
-function getSize(props) {
-  const {
-    xxsmall,
-    xsmall,
-    small,
-    medium,
-    larg,
-    xlarg,
-    xxlarg,
-  } = props;
-
-  let size = 16;
-  if (xxsmall) size = 16;
-  else if (xsmall) size = 24;
-  else if (small) size = 32;
-  else if (medium) size = 48;
-  else if (larg) size = 64;
-  else if (xlarg) size = 72;
-  else if (xxlarg) size = 96;
-
-  return size;
-};
-
-export {getColor, getSize};
+export default getColor;
