@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import RowWrapper from './style';
+import RowStyled from './RowStyled';
 
 class Row extends Component {
 
@@ -11,13 +11,13 @@ class Row extends Component {
     } = this.props;
 
     return (
-      <RowWrapper
+      <RowStyled
         className={className}
         style={style}
         {...this.props}
       >
         {children}
-      </RowWrapper>
+      </RowStyled>
     );
   }
 }

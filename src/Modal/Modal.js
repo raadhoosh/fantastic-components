@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
-import {Header, Footer, ModalBox, ModalBody, Overlay} from './style';
+import HeaderStyled from './HeaderStyled';
+import FooterStyled from './FooterStyled';
+import OverlayStyled from './OverlayStyled';
+import ModalBodyStyle from './ModalBodyStyle';
+import ModalStyled from './ModalStyled';
 
 class Modal extends Component {
   constructor(props) {
@@ -69,17 +73,16 @@ class Modal extends Component {
         </button>);
     }
 
-
     return (
       <div>
         <div>
-          <Overlay
+          <OverlayStyled
             onClick={this.onClose}
           >
-            <ModalBox
+            <ModalStyled
               onClick={() => this.bodyClicked = true}
             >
-              <Header className='header'>
+              <HeaderStyled className='header'>
                 <Icon
                   color='#fff'
                   iconClass={icon}
@@ -102,26 +105,25 @@ class Modal extends Component {
                     />
                 }
 
-              </Header>
-              <ModalBody>
+              </HeaderStyled>
+              <ModalBodyStyle>
                 {children}
-              </ModalBody>
+              </ModalBodyStyle>
               {
-                (Btn1 || Btn2 || Btn3 || BtnHelp || footerChildren) && <Footer>
+                (Btn1 || Btn2 || Btn3 || BtnHelp || footerChildren) && <FooterStyled>
                   {Btn1}
                   {Btn2}
                   {Btn3}
                   {footerChildren}
                   {BtnHelp}
-
-                </Footer>
+                </FooterStyled>
               }
 
-            </ModalBox>
-          </Overlay>
+            </ModalStyled>
+          </OverlayStyled>
         </div>
       </div>
-    )
+    );
   }
 }
 

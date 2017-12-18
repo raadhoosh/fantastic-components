@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-let Row = styled.div`            
+const RowStyled = styled.div`            
           display: flex;
           flex-wrap: wrap;
           margin-right: -15px;
@@ -21,4 +21,4 @@ let Row = styled.div`
               margin-left: -15px; }         
        `;
 
-export default Row;
+export default RowStyled;

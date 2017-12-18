@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ButtonWrapper from './style';
+import ButtonStyled from './ButtonStyled';
 import Icon from '../Icon/Icon';
 import Spinner from '../Spinner/Spinner';
 
@@ -35,7 +35,7 @@ class Button extends Component {
     }
 
     return (
-      <ButtonWrapper
+      <ButtonStyled
         {...this.props}
         type="submit"
         className={className}
@@ -66,7 +66,7 @@ class Button extends Component {
         }
         {label}
         {children}
-      </ButtonWrapper>
+      </ButtonStyled>
     )
   }
 }

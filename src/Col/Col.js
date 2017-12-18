@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ColWrapper from './style';
+import ColStyled from './ColStyled';
 
 class Col extends Component {
 
@@ -9,13 +9,13 @@ class Col extends Component {
     } = this.props;
 
     return (
-      <ColWrapper
+      <ColStyled
         className={className}
         style={style}
         {...this.props}
       >
         {children}
-      </ColWrapper>
+      </ColStyled>
     );
   }
 }
