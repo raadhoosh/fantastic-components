@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Input, UploadWrapper, Important, Alert, Label } from './style';
+
+import Input from './InputStyled';
+import UploadWrapper from './UploadWrapperStyled';
+import Important from './ImportantStyled';
+import Alert from './AlertStyled';
+import Label from './LabelStyled';
 
 
 class Upload extends Component {

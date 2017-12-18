@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import { getBorderColor } from './statics';
 
+
 const WrapperStyled = styled.div`    
   background-color: #ffffff;
   border: 1px solid ${(props) => getBorderColor(props)};

@@ -22,7 +22,7 @@ class Panel extends React.Component {
            {header}
           </Heading>
         }
-        <Body>
+        <Body {...this.props}>
           {children}
         </Body>
         {
