@@ -45,5 +45,6 @@ module.exports = {
   DrawerIcon: require('./Drawer/DrawerIcon').default,
   Radio: require('./Radio/Radio').default,
   RadioGroup: require('./RadioGroup/RadioGroup').default,
-  
+  Tab: require('./Tab/Tab').default,
+
 };
