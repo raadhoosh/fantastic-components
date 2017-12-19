@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import RowStyled from './RowStyled';
+import RowStyled from './style/RowStyled';
 
 class Row extends Component {
 

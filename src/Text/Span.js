@@ -1,5 +1,5 @@
 import React from 'react';
-import SpanStyled from './SpanStyled';
+import SpanStyled from './style/SpanStyled';
 
 class Span extends React.Component {
   render() {

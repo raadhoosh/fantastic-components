@@ -4,14 +4,14 @@
 /**
  * Created by Programmer1 on 12/12/2017.
  */
-import React from 'react';
-import { LIWrapper } from './style';
+import React ,{Component} from 'react';
+import LiStyled from './style/LIStyled';
 
-class LI extends React.Component {
+class LI extends Component {
   render() {
     const { children } = this.props;
 
-    return (<LIWrapper {...this.props}>{children}</LIWrapper>);
+    return (<LiStyled {...this.props}>{children}</LiStyled>);
   }
 }
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import H5Styled from './H5Styled'
+import H5Styled from './style/H5Styled'
 
 class H5 extends Component {
 

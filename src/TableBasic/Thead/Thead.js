@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TheadStyled from './TheadStyled';
+import TheadStyled from './style/TheadStyled';
 
 class Thead extends Component {
   render() {

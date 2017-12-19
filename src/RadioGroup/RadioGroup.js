@@ -3,7 +3,7 @@ import React from 'react';
 import Radio from '../Radio/Radio';
 import H5 from '../Headings/H5';
 
-import Wrapper from './WrapperStyled';
+import Wrapper from './style/WrapperStyled';
 
 export class RadioGroup extends React.Component {
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ButtonStyled from './ButtonStyled';
+import ButtonStyled from './style/ButtonStyled';
 import Icon from '../Icon/Icon';
 import Spinner from '../Spinner/Spinner';
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import Input from '../Input/Input';
 import OutsideAlerter from '../OutsideAlerter/OutsideAlerter';
-import OutoCompelete from './OutoCompeleteStyled';
-import OutoCompeleteMenu from './OutoCompeleteMenuStyled';
-import OutoCompeleteWrap from './OutoCompeleteWrapStyled';
-import OutoCompeleteItems from './UlStyled';
-import OutoCompeleteItem from './LiStyled';
+import OutoCompelete from './style/OutoCompeleteStyled';
+import OutoCompeleteMenu from './style/OutoCompeleteMenuStyled';
+import OutoCompeleteWrap from './style/OutoCompeleteWrapStyled';
+import OutoCompeleteItems from './style/UlStyled';
+import OutoCompeleteItem from './style/LiStyled';
 class Search extends React.Component {
   constructor(props, context) {
     super(props, context);

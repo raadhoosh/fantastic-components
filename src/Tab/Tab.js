@@ -3,8 +3,8 @@
  */
 import React, {Component} from 'react';
 import TabLabels from './TabLabels';
-import Wrapper from './WrapperStyled';
-import Content from './ContentStyled';
+import Wrapper from './style/WrapperStyled';
+import Content from './style/ContentStyled';
 class Tab extends Component {
   constructor(props, context) {
     super(props, context);

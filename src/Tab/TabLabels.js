@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TabLabel from './TabLabel';
-import UL from './UlStyled';
+import UL from './style/UlStyled';
 class TabLabels extends Component {
 
   render() {

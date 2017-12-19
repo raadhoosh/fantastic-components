@@ -1,5 +1,5 @@
 import React from 'react';
-import PStyled from './PStyled';
+import PStyled from './style/PStyled';
 
 class P extends React.Component {
   render() {

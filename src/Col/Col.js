@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ColStyled from './ColStyled';
+import ColStyled from './style/ColStyled';
 
 class Col extends Component {
 

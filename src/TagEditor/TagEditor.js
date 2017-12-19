@@ -3,11 +3,11 @@ import React from 'react';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import OutsideAlerter from '../OutsideAlerter/OutsideAlerter';
-import OutoCompelete from './OutoCompeleteStyled';
-import OutoCompeleteMenu from './OutoCompeleteMenuStyled';
-import OutoCompeleteWrap from './OutoCompeleteWrapStyled';
-import Ul from './UlStyled';
-import LI from './LiStyled';
+import OutoCompelete from './style/OutoCompeleteStyled';
+import OutoCompeleteMenu from './style/OutoCompeleteMenuStyled';
+import OutoCompeleteWrap from './style/OutoCompeleteWrapStyled';
+import Ul from './style/UlStyled';
+import LI from './style/LiStyled';
 
 class TagEditor extends React.Component {
   constructor(props, context) {

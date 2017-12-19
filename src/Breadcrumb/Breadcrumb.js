@@ -1,7 +1,7 @@
 import React from 'react';
-import BreadcrumbStyled from './BreadcrumbStyled';
-import OlStyled from './OlStyled';
-import LiStyled from './LiStyled';
+import BreadcrumbStyled from './style/BreadcrumbStyled';
+import OlStyled from './style/OlStyled';
+import LiStyled from './style/LiStyled';
 
 class Breadcrumb extends React.Component {
   render() {

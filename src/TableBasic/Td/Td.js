@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TdStyled from './TdStyled';
+import TdStyled from './style/TdStyled';
 
 class Td extends Component {
   render() {

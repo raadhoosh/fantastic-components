@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ContainerWrapper from './Style';
+import ContainerStyled from './style/ContainerStyled';
 
 class Container extends Component {
 
@@ -7,13 +7,13 @@ class Container extends Component {
     const {className, children, style} = this.props;
 
     return (
-      <ContainerWrapper
+      <ContainerStyled
         className={className}
         style={style}
         {...this.props}
       >
         {children}
-      </ContainerWrapper>
+      </ContainerStyled>
     );
   }
 }

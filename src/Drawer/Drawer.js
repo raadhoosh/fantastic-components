@@ -1,8 +1,8 @@
 import React from 'react';
-import Root from './RootStyled';
-import Nav from './NavStyled';
-import Title from './TitleStyled';
-import Overly from './OverlyStyled';
+import Root from './style/RootStyled';
+import Nav from './style/NavStyled';
+import Title from './style/TitleStyled';
+import Overly from './style/OverlyStyled';
 class Drawer extends React.Component {
 
   constructor(props, context) {

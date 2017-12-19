@@ -2,7 +2,7 @@
  * Created by Programmer1 on 12/12/2017.
  */
 import React from 'react';
-import DivStyled from './DivStyled';
+import DivStyled from './style/DivStyled';
 
 class Div extends React.Component {
   render() {

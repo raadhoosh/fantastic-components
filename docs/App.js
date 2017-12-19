@@ -22,11 +22,10 @@ import Tr from '../src/TableBasic/Tr/Tr';
 import Th from '../src/TableBasic/Th/Th';
 import Td from '../src/TableBasic/Td/Td';
 import Tbody from '../src/TableBasic/Tbody/Tbody';
-import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import ReactLink from '../src/Link/Link';
+import Slider from '../src/Slider/Slider';
 import Menu from '../src/Menu/Menu';
 import MenuResponsiv from '../src/Menu/MenuResponsive';
-
 
 const Home = () => (
   <div>
@@ -113,6 +112,12 @@ class App extends Component {
       }
     ];
 
+    const items = [
+      {id: 1, content: (<div style={{ backgroundColor:'lightgray', height:200 } } > Contetnt 1</div>)},
+      {id: 2, content: (<div style={{ backgroundColor:'gray', height:200}}> Content 2</div>) },
+      { id: 3, content: (<div style={{ backgroundColor:'darkgray', height:200}}> Content 3</div>)}];
+
+
     return (
       <div>
         <MenuResponsiv
@@ -121,6 +126,16 @@ class App extends Component {
         />
         <br/>
         <br/>
+        <Container>
+          <Row>
+            <Col lg3>
+              <Slider interval={20000} items={items} dots />
+            </Col>
+            <Col lg9>
+              <Slider autoPlay interval={20000} items={items}  />
+            </Col>
+          </Row>
+        </Container>
         <Panel header="Header" footer="Footer" warning>
           <Button
             label={'test'}
@@ -256,26 +271,24 @@ class App extends Component {
         </Table>
         <br/>
         <br/>
-        <div>
-          <ButtonToggle
-            id='cheese-status'
-            defaultChecked={this.state.cheeseIsReady}
-            onChange={this.handleCheeseChange.bind(this)}/>
-          <label htmlFor='cheese-status'>Adjacent label tag</label>
-        </div>
+
         <br/>
         <br/>
         <Router>
           <div>
             <ul>
-              <li><ReactLink
-                to="/"
-                icon={'home'}
-                foreColor={'#f00'}
-              >Home</ReactLink></li>
-              <li><ReactLink to="/about">About</ReactLink>
-              </li>
-            </ul>
+            <li>
+              <ReactLink
+              to="/"
+              icon={'home'}
+              color={'#f00'}
+            >Home
+              </ReactLink>
+            </li>
+            <li>
+              <ReactLink to="/about">About</ReactLink>
+            </li>
+          </ul>
             <hr/>
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>

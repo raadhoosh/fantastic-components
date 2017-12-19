@@ -1,5 +1,5 @@
 import React from 'react';
-import LabelStyled from './LabelStyled';
+import LabelStyled from './style/LabelStyled';
 
 class Label extends React.Component {
   render() {

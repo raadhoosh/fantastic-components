@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.css';
-import SpinnerWrapper from './SpinnerStyled';
+import SpinnerWrapper from './style/SpinnerStyled';
 
 
 class Spinner extends Component {

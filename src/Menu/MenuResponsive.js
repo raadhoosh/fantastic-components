@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Div, ButtonBox, Overlay, ButtonWrapper} from './MenuResponsiveStyle';
+import {Div, ButtonBox, Overlay, ButtonWrapper} from './style/MenuResponsiveStyle';
 import LinkStyled from '../Link/Link';
 import Icon from '../Icon/Icon';
 import Ul from '../List/Ul';
@@ -67,7 +67,7 @@ class MenuItem extends Component {
             : (<LinkStyled
               to={(!hasChild) ? linkUrl : ''}
               target={target}
-              bgColor={bgColor}
+              bgcolor={bgColor}
               color={foreColor}
             >
               {title}

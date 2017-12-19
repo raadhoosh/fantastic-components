@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import InputStyled from './SelectInputStyled';
-import Label from './LabelStyled';
-import Section from './SectionStyled';
-import Important from './ImportantStyled';
-import Alert from './AlertStyled';
+import InputStyled from './style/SelectInputStyled';
+import Label from './style/LabelStyled';
+import Section from './style/SectionStyled';
+import Important from './style/ImportantStyled';
+import Alert from './style/AlertStyled';
 import Icon from '../Icon/Icon';
 
 class Input extends Component {

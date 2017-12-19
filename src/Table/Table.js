@@ -5,12 +5,12 @@ import Modal from '../Modal/Modal';
 
 
 
-import Th from './ThStyled';
-import Tr from './TrStyled';
-import Thead from './TheadStyled';
-import Td from './TdStyled';
-import WrapperStyled from './WrapperStyled';
-import TableStyled from './TableStyled';
+import Th from './style/ThStyled';
+import Tr from './style/TrStyled';
+import Thead from './style/TheadStyled';
+import Td from './style/TdStyled';
+import WrapperStyled from './style/WrapperStyled';
+import TableStyled from './style/TableStyled';
 
 class Table extends Component {
   constructor(props, context) {
