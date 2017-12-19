@@ -49,5 +49,6 @@ module.exports = {
   Radio: require('./Radio/Radio').default,
   RadioGroup: require('./RadioGroup/RadioGroup').default,
   Tab: require('./Tab/Tab').default,
+  Slider: require('./Slider/Slider').default
 
 };
