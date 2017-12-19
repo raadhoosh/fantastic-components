@@ -1,9 +1,6 @@
-/**
- * Created by Programmer1 on 12/14/2017.
- */
 import defaultTheme from '../defaultTheme';
 
-export function getColor(props) {
+function getColor(props) {
   const {
     primary,
     secondary,
@@ -42,14 +39,14 @@ export function getColor(props) {
     ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
   }
   else {
-    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+    ForeC = (theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
   }
 
   return ForeC;
 
 };
 
-export function getSize(props) {
+function getSize(props) {
   const {
     xxsmall,
     xsmall,
@@ -71,3 +68,5 @@ export function getSize(props) {
 
   return size;
 }
+
+export {getColor, getSize};

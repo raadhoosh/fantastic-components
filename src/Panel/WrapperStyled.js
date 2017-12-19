@@ -3,7 +3,7 @@
  */
 import styled from 'styled-components';
 
-import { getBorderColor } from './statics';
+import { getBorderColor } from './Statics';
 
 
 const WrapperStyled = styled.div`    

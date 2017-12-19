@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-import { getColor, getBorderColor, getBgColor } from './statics';
+import { getColor, getBorderColor, getBgColor } from './Statics';
 
 const ArticleStyled = styled.article`        
           font-family: ${(props) => props.theme.fontFamily};               

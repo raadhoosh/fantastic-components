@@ -2,7 +2,7 @@
  * Created by Programmer1 on 12/4/2017.
  */
 import styled from 'styled-components';
-import { getIconColor  } from './statics';
+import { getIconColor  } from './Statics';
 
 
 const Section = styled.section`  

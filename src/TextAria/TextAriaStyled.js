@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-import { getColor, getBorderColor  } from './statics';
+import { getColor, getBorderColor  } from './Statics';
 
 const TextAriaWrapper = styled.textarea`    
               box-sizing: border-box; 

@@ -3,7 +3,7 @@
  */
 import styled from 'styled-components';
 
-import {getColor, getBorderColor, getBgColor} from './statics';
+import {getBorderColor} from './Statics';
 
 
 const ContentStyled = styled.div`

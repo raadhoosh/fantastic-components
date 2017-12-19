@@ -90,7 +90,7 @@ function getBgColor(props) {
   return bgC;
 };
 
-function getBorderC(props) {
+function getBorderColor(props) {
   const {
     primary,
     secondary,
@@ -221,4 +221,4 @@ function marginY(props) {
 };
 
 
-export {getColor, getBgColor, getBorderC, paddingX, paddingY, marginX, marginY};
+export {getColor, getBgColor, getBorderColor, paddingX, paddingY, marginX, marginY};

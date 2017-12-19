@@ -3,8 +3,7 @@
  */
 import styled from 'styled-components';
 
-import { getColor, getBorderColor, getBgColor } from './statics';
-debugger;
+import {getBorderColor} from './Statics';
 
 const LIStyled = styled.li`
       font-family: ${(props) => props.theme.fontFamily};    

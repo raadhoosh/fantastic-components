@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-import {getColor, getBorderColor, getBgColor} from './statics';
+import {getColor} from './Statics';
 
 const LabelStyled = styled.label`
         font-family: ${(props) => props.theme.fontFamily};

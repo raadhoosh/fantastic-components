@@ -1,13 +1,13 @@
 import styled, { keyframes } from 'styled-components';
-import {  getBgColor } from './statics';
+import { getBgColor } from './Statics';
 
 const fade = keyframes`
   0%,
   80%,
   100% {
   border-radius: 12px;
-    height: 4em;
-  4em"}
+    height: 4em; 
+    } 
   40% {
     box-shadow: 0 -2em;
     height: 5em;

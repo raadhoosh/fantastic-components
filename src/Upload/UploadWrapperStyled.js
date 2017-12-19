@@ -2,7 +2,8 @@
  * Created by Programmer1 on 12/17/2017.
  */
 import styled from 'styled-components';
-import{ getBorderColor } from './statics';
+import { getBorderColor } from './Statics';
+
 const UploadWrapperStyled = styled.div`        
         border: 1px dashed ${(props) => getBorderColor(props)};
         border-radius: 5px;       

@@ -39,7 +39,53 @@ function getColor(props) {
     ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
   }
   else {
+    ForeC = (theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
+  }
+
+  return ForeC;
+
+};
+
+function getIconColor(props) {
+  const {
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    inverse,
+    foreColor,
+    theme,
+  } = props;
+
+  let ForeC;
+  if (foreColor) {
+    ForeC = foreColor;
+  }
+  else if (primary) {
     ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+  }
+  else if (secondary) {
+    ForeC = (theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
+  }
+  else if (info) {
+    ForeC = (theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
+  }
+  else if (warning) {
+    ForeC = (theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
+  }
+  else if (danger) {
+    ForeC = (theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
+  }
+  else if (success) {
+    ForeC = (theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
+  }
+  else if (inverse) {
+    ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
+  }
+  else {
+    ForeC = (theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
   }
 
   return ForeC;
@@ -90,7 +136,7 @@ function getBgColor(props) {
   return bgC;
 };
 
-function getBorderC(props) {
+function getBorderColor(props) {
   const {
     primary,
     secondary,
@@ -104,6 +150,9 @@ function getBorderC(props) {
   } = props;
 
   let BorderC;
+  if (borderColor) {
+    BorderC = borderColor;
+  }
   if (primary) {
     BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
@@ -125,59 +174,10 @@ function getBorderC(props) {
   else if (inverse) {
     BorderC = (theme) ? theme.inverse.borderColor : defaultTheme.inverse.borderColor;
   }
-
-  if (borderColor) {
-    BorderC = borderColor;
-  } else {
+  else {
     BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
   return BorderC;
 };
 
-function getIconColor(props) {
-  const {
-    primary,
-    secondary,
-    info,
-    warning,
-    danger,
-    success,
-    inverse,
-    foreColor,
-    theme,
-  } = props;
-
-  let ForeC;
-  if (foreColor) {
-    ForeC = foreColor;
-  }
-  else if (primary) {
-    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
-  }
-  else if (secondary) {
-    ForeC = (theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
-  }
-  else if (info) {
-    ForeC = (theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
-  }
-  else if (warning) {
-    ForeC = (theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
-  }
-  else if (danger) {
-    ForeC = (theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
-  }
-  else if (success) {
-    ForeC = (theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
-  }
-  else if (inverse) {
-    ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
-  }
-  else {
-    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
-  }
-
-  return ForeC;
-
-};
-
-export {getColor, getBgColor, getBorderC ,getIconColor};
+export {getColor, getBgColor, getBorderColor, getIconColor};

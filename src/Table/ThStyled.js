@@ -3,7 +3,7 @@
  */
 import styled from 'styled-components';
 
-import { getColor, getBgColor } from './statics';
+import { getColor, getBgColor } from './Statics';
 
 const ThStyled = styled.th` 
          color: ${(props) => getColor(props)} !important;

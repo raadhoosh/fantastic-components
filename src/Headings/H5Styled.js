@@ -3,9 +3,7 @@
  */
 import styled from 'styled-components';
 
-import { getColor } from './statics';
-
-
+import { getColor } from './Statics';
 
 const H5Styled = styled.h5`
       font-family: ${(props) => props.theme.fontFamily};

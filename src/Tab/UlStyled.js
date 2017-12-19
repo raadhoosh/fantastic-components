@@ -3,9 +3,6 @@
  */
 import styled from 'styled-components';
 
-import { getColor } from './statics';
-
-
 const UlStyled = styled.ul`
       font-size: 20px;
        box-sizing: border-box; 

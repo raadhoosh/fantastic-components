@@ -51,7 +51,7 @@ function getBgColor(props) {
   return bgC;
 };
 
-function getBorderC(props) {
+function getBorderColor(props) {
   const {
     borderColor,
     theme
@@ -69,4 +69,4 @@ function getBorderC(props) {
   return BorderC;
 };
 
-export {getFloat, getColor, getBgColor, getBorderC};
+export {getFloat, getColor, getBgColor, getBorderColor};

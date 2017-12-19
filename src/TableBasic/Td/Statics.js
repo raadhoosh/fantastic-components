@@ -90,7 +90,7 @@ function getBgColor(props) {
   return bgC;
 };
 
-function getBorderC(props) {
+function getBorderColor(props) {
   const {
     primary,
     secondary,
@@ -134,4 +134,4 @@ function getBorderC(props) {
   return BorderC;
 };
 
-export {getColor, getBgColor, getBorderC};
+export {getColor, getBgColor, getBorderColor};

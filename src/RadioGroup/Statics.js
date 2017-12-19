@@ -1,6 +1,6 @@
 import defaultTheme from '../defaultTheme';
 
-export default function getColor(props) {
+function getColor(props) {
   const {
     primary,
     secondary,
@@ -45,5 +45,4 @@ export default function getColor(props) {
   return ForeC;
 
 };
-
-
+export default getColor;

@@ -10,7 +10,7 @@ function getBgColor(props) {
   if (bgColor) {
     bgC = bgColor;
   } else {
-    bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
+    bgC = (theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
   }
   return bgC;
 };

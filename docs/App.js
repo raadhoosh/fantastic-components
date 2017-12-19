@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 import Input from '../src/Input/Input';
 import TextAria from '../src/TextAria/TextAria';
 import Icon from '../src/Icon/Icon';
@@ -10,9 +15,9 @@ import Row from '../src/Row/Row';
 import Col from '../src/Col/Col';
 import Breadcrumb from '../src/Breadcrumb/Breadcrumb';
 import Panel from '../src/Panel/Panel';
-import img from './commons/img.jpg';
+import img from '../docs/commons/img.jpg';
 import Table from '../src/TableBasic/Table/Table';
-import Thead from "../src/TableBasic/Thead/Thead";
+import Thead from '../src/TableBasic/Thead/Thead';
 import Tr from '../src/TableBasic/Tr/Tr';
 import Th from '../src/TableBasic/Th/Th';
 import Td from '../src/TableBasic/Td/Td';
@@ -22,11 +27,6 @@ import ReactLink from '../src/Link/Link';
 import Menu from '../src/Menu/Menu';
 import MenuResponsiv from '../src/Menu/MenuResponsive';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
 const Home = () => (
   <div>

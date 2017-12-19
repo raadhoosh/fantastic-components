@@ -2,7 +2,8 @@
  * Created by Programmer1 on 12/17/2017.
  */
 import styled from 'styled-components';
-import{ getColor } from './statics';
+import{ getColor } from './Statics';
+
 const LabelStyled = styled.label` 
               box-sizing: border-box;  
               padding: .2em .6em .3em;

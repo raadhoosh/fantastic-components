@@ -3,11 +3,7 @@
  */
 import styled from 'styled-components';
 
-import { getColor, getBorderColor, getBgColor } from './statics';
-
-
-const WrapperStyled = styled.div`
- 
+const WrapperStyled = styled.div` 
       direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
      `;
 

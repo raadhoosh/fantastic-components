@@ -2,7 +2,7 @@
  * Created by Programmer1 on 12/16/2017.
  */
 import styled from 'styled-components';
-import { getColor, getBgColor, getBorderColor  } from './statics';
+import { getColor, getBgColor, getBorderColor  } from './Statics';
 
 const NotifyItemStyled = styled.div`    
              width: 250px;      

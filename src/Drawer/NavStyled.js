@@ -2,7 +2,7 @@
  * Created by Programmer1 on 12/16/2017.
  */
 import styled from 'styled-components';
-import { getBgColor, getBorderColor  } from './statics';
+import {getBorderColor  } from './statics';
 
 const NavStyled = styled.nav`    
  

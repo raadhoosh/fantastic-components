@@ -3,8 +3,6 @@
  */
 import styled from 'styled-components';
 
-import { getBorderColor } from './statics';
-
 const TdStyled = styled.td` 
       overflow-x:auto;
       overflow-y: hidden; 

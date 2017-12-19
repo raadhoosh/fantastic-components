@@ -2,7 +2,6 @@ import React from 'react';
 
 import Input from '../Input/Input';
 import Button from '../Button/Button';
-import Icon from '../Icon/Icon';
 import OutsideAlerter from '../OutsideAlerter/OutsideAlerter';
 import OutoCompelete from './OutoCompeleteStyled';
 import OutoCompeleteMenu from './OutoCompeleteMenuStyled';

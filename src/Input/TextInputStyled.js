@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-import {getColor , getBorderColor} from './statics';
+import {getColor, getBorderColor} from './Statics';
 
 const TextAriaStyled = styled.input` 
                 box-sizing: border-box;   
@@ -15,9 +15,8 @@ const TextAriaStyled = styled.input`
                 font-size: 14px;
                 line-height: 1.42857143;
                 color: ${(props) => getColor(props)};
-               
-                background-image: none;
-                border: 1px solid #ccc;
+                border: 1px solid  ${(props) => getBorderColor(props)};
+                background-image: none;                
                 border-radius: 4px;              
                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
                 transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -27,7 +26,7 @@ const TextAriaStyled = styled.input`
                  outline: 0;
                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
                };
-                     ${props => props.icon ?
+                     ${(props) => props.icon ?
   `padding-${props.theme.rtl ? 'right' : 'left'}:30px;`
   : `10px`
   }    

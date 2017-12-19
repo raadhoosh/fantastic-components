@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {getFloat, getColor, getBgColor, getBorderC} from './StaticsMenuResponsive';
+import {getFloat, getColor, getBgColor, getBorderColor} from './StaticsMenuResponsive';
 import defaultTheme from '../defaultTheme';
 import Button from '../Button/Button';
 
@@ -72,7 +72,7 @@ const Div = styled.div`
                	background-color:${(props) => getBgColor(props)};
                	
                	transition:all 0.2s ease-in;
-               	border-bottom:1px solid ${(props) => getBorderC(props)};               	            	
+               	border-bottom:1px solid ${(props) => getBorderColor(props)};               	            	
                	
                	&:hover{               	 
                	 background-color:${(props) => getBgColor(props)};               	 

@@ -3,7 +3,7 @@
  */
 import styled from 'styled-components';
 
-import { getColor } from './statics';
+import { getColor } from './Statics';
 
 
 const H1Styled = styled.h1`

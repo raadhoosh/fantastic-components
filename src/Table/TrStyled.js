@@ -3,7 +3,7 @@
  */
 import styled from 'styled-components';
 
-import { getColor, getBgColor, getBorderColor } from './statics';
+import { getColor, getBgColor, getBorderColor } from './Statics';
 
 const WrapperStyled = styled.tr`  
           color: ${(props) => getColor(props)} !important;
