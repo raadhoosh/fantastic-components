@@ -16,35 +16,26 @@ function getColor(props) {
   let ForeC;
   if (foreColor) {
     ForeC = foreColor;
-  }
-  else if (primary) {
+  } else if (primary) {
     ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
-  }
-  else if (secondary) {
+  } else if (secondary) {
     ForeC = (theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
-  }
-  else if (info) {
+  } else if (info) {
     ForeC = (theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
-  }
-  else if (warning) {
+  } else if (warning) {
     ForeC = (theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
-  }
-  else if (danger) {
+  } else if (danger) {
     ForeC = (theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
-  }
-  else if (success) {
+  } else if (success) {
     ForeC = (theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
-  }
-  else if (inverse) {
+  } else if (inverse) {
     ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
-  }
-  else {
+  } else {
     ForeC = (theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
   }
 
   return ForeC;
-
-};
+}
 
 function getBgColor(props) {
   const {
@@ -64,29 +55,23 @@ function getBgColor(props) {
     bgC = bgColor;
   } else if (primary) {
     bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
-  }
-  else if (secondary) {
+  } else if (secondary) {
     bgC = (theme) ? theme.secondary.bgColor : defaultTheme.secondary.foreColor;
-  }
-  else if (info) {
+  } else if (info) {
     bgC = (theme) ? theme.info.bgColor : defaultTheme.info.bgColor;
-  }
-  else if (warning) {
+  } else if (warning) {
     bgC = (theme) ? theme.warning.bgColor : defaultTheme.warning.bgColor;
-  }
-  else if (danger) {
+  } else if (danger) {
     bgC = (theme) ? theme.danger.bgColor : defaultTheme.danger.bgColor;
-  }
-  else if (success) {
+  } else if (success) {
     bgC = (theme) ? theme.success.bgColor : defaultTheme.success.bgColor;
-  }
-  else if (inverse) {
+  } else if (inverse) {
     bgC = (theme) ? theme.inverse.bgColor : defaultTheme.inverse.bgColor;
   } else {
     bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
   }
   return bgC;
-};
+}
 
 function getBorderColor(props) {
   const {
@@ -106,30 +91,23 @@ function getBorderColor(props) {
     BorderC = borderColor;
   } else if (primary) {
     BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
-  }
-  else if (secondary) {
+  } else if (secondary) {
     BorderC = (theme) ? theme.secondary.borderColor : defaultTheme.secondary.borderColor;
-  }
-  else if (info) {
+  } else if (info) {
     BorderC = (theme) ? theme.info.borderColor : defaultTheme.info.borderColor;
-  }
-  else if (warning) {
+  } else if (warning) {
     BorderC = (theme) ? theme.warning.borderColor : defaultTheme.warning.borderColor;
-  }
-  else if (danger) {
+  } else if (danger) {
     BorderC = (theme) ? theme.danger.borderColor : defaultTheme.danger.borderColor;
-  }
-  else if (success) {
+  } else if (success) {
     BorderC = (theme) ? theme.success.borderColor : defaultTheme.success.borderColor;
-  }
-  else if (inverse) {
+  } else if (inverse) {
     BorderC = (theme) ? theme.inverse.borderColor : defaultTheme.inverse.borderColor;
-  }
-  else {
+  } else {
     BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
   return BorderC;
-};
+}
 
 function paddingX(props) {
   const {
@@ -141,15 +119,13 @@ function paddingX(props) {
   let paddingX = '20px';
   if (xSmall) {
     paddingX = '3px';
-  }
-  else if (small) {
+  } else if (small) {
     paddingX = '10px';
-  }
-  else if (large) {
+  } else if (large) {
     paddingX = '25px';
   }
   return paddingX;
-};
+}
 
 function paddingY(props) {
   const {
@@ -162,16 +138,13 @@ function paddingY(props) {
   let paddingY = '10px';
   if (xSmall) {
     paddingY = '3px';
-  }
-  else if (small) {
+  } else if (small) {
     paddingY = '5px';
-  }
-  else if (large) {
+  } else if (large) {
     paddingY = '10px';
   }
-
   return paddingY;
-};
+}
 
 function marginX(props) {
   const {
@@ -181,19 +154,15 @@ function marginX(props) {
   } = props;
 
   let marginX = '5px';
-
   if (xSmall) {
     marginX = '2px';
-  }
-  else if (small) {
+  } else if (small) {
     marginX = '3px';
-  }
-  else if (large) {
+  } else if (large) {
     marginX = '8px';
   }
-
   return marginX;
-};
+}
 
 function marginY(props) {
   const {
@@ -203,19 +172,14 @@ function marginY(props) {
   } = props;
 
   let marginY = '3px';
-
   if (xSmall) {
     marginY = '2px';
-  }
-  else if (small) {
+  } else if (small) {
     marginY = '3px';
-  }
-  else if (large) {
+  } else if (large) {
     marginY = '5px';
   }
-
   return marginY;
-};
-
+}
 
 export {getColor, getBgColor, getBorderColor, paddingX, paddingY, marginX, marginY};

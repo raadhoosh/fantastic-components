@@ -103,7 +103,7 @@ function getBgColor(props) {
   } else if (inverse) {
     bgC = (theme) ? theme.inverse.bgColor : defaultTheme.inverse.bgColor;
   } else {
-    bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
+    bgC = (theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
   }
   return bgC;
 }

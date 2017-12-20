@@ -13,7 +13,7 @@ function getBgColor(props) {
     bgC = (theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
   }
   return bgC;
-};
+}
 
 function getSm(props) {
   const {
@@ -106,7 +106,7 @@ function getSm(props) {
              max-width: 100%; }
              `;
   }
-};
+}
 
 function getMd(props) {
   const {
@@ -199,7 +199,7 @@ function getMd(props) {
               max-width: 100%; }
              `;
   }
-};
+}
 
 function getLg(props) {
   const {
@@ -294,6 +294,6 @@ function getLg(props) {
                 }
              `;
   }
-};
+}
 
 export {getLg, getMd, getSm, getBgColor};

@@ -25,7 +25,6 @@ module.exports = {
   Modal: require('./Modal/Modal').default,
   Row: require('./Row/Row').default,
   Col: require('./Col/Col').default,
-  Breadcrumb: require('./Breadcrumb/Breadcrumb').default,
   Panel: require('./Panel/Panel').default,
   Search: require('./Search/Search').default,
   Spinner: require('./Spinner/Spinner').default,

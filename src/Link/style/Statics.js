@@ -9,42 +9,33 @@ function getColor(props) {
     danger,
     success,
     inverse,
-    color,
-    theme,
+    foreColor,
+    theme
   } = props;
 
   let ForeC;
-  if (color) {
-    ForeC = color;
-  }
-  else if (primary) {
+  if (foreColor) {
+    ForeC = foreColor;
+  } else if (primary) {
     ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
-  }
-  else if (secondary) {
+  } else if (secondary) {
     ForeC = (theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
-  }
-  else if (info) {
+  } else if (info) {
     ForeC = (theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
-  }
-  else if (warning) {
+  } else if (warning) {
     ForeC = (theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
-  }
-  else if (danger) {
+  } else if (danger) {
     ForeC = (theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
-  }
-  else if (success) {
+  } else if (success) {
     ForeC = (theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
-  }
-  else if (inverse) {
+  } else if (inverse) {
     ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
-  }
-  else {
+  } else {
     ForeC = (theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
   }
 
   return ForeC;
-
-};
+}
 
 function getIconColor(props) {
   const {
@@ -55,42 +46,33 @@ function getIconColor(props) {
     danger,
     success,
     inverse,
-    color,
-    theme,
+    foreColor,
+    theme
   } = props;
 
   let ForeC;
-  if (color) {
-    ForeC = color;
-  }
-  else if (primary) {
+  if (foreColor) {
+    ForeC = foreColor;
+  } else if (primary) {
     ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
-  }
-  else if (secondary) {
+  } else if (secondary) {
     ForeC = (theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
-  }
-  else if (info) {
+  } else if (info) {
     ForeC = (theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
-  }
-  else if (warning) {
+  } else if (warning) {
     ForeC = (theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
-  }
-  else if (danger) {
+  } else if (danger) {
     ForeC = (theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
-  }
-  else if (success) {
+  } else if (success) {
     ForeC = (theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
-  }
-  else if (inverse) {
+  } else if (inverse) {
     ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
-  }
-  else {
+  } else {
     ForeC = (theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
   }
 
   return ForeC;
-
-};
+}
 
 function getBgColor(props) {
   const {
@@ -101,38 +83,32 @@ function getBgColor(props) {
     danger,
     success,
     inverse,
-    bgcolor,
+    bgColor,
     theme
   } = props;
 
   let bgC;
-  if (bgcolor) {
-    bgC = bgcolor;
+  if (bgColor) {
+    bgC = bgColor;
   } else if (primary) {
     bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
-  }
-  else if (secondary) {
+  } else if (secondary) {
     bgC = (theme) ? theme.secondary.bgColor : defaultTheme.secondary.foreColor;
-  }
-  else if (info) {
+  } else if (info) {
     bgC = (theme) ? theme.info.bgColor : defaultTheme.info.bgColor;
-  }
-  else if (warning) {
+  } else if (warning) {
     bgC = (theme) ? theme.warning.bgColor : defaultTheme.warning.bgColor;
-  }
-  else if (danger) {
+  } else if (danger) {
     bgC = (theme) ? theme.danger.bgColor : defaultTheme.danger.bgColor;
-  }
-  else if (success) {
+  } else if (success) {
     bgC = (theme) ? theme.success.bgColor : defaultTheme.success.bgColor;
-  }
-  else if (inverse) {
+  } else if (inverse) {
     bgC = (theme) ? theme.inverse.bgColor : defaultTheme.inverse.bgColor;
   } else {
-    bgC = (theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
+    bgC = (theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
   }
   return bgC;
-};
+}
 
 function getBorderColor(props) {
   const {
@@ -152,29 +128,22 @@ function getBorderColor(props) {
     BorderC = borderColor;
   } else if (primary) {
     BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
-  }
-  else if (secondary) {
+  } else if (secondary) {
     BorderC = (theme) ? theme.secondary.borderColor : defaultTheme.secondary.borderColor;
-  }
-  else if (info) {
+  } else if (info) {
     BorderC = (theme) ? theme.info.borderColor : defaultTheme.info.borderColor;
-  }
-  else if (warning) {
+  } else if (warning) {
     BorderC = (theme) ? theme.warning.borderColor : defaultTheme.warning.borderColor;
-  }
-  else if (danger) {
+  } else if (danger) {
     BorderC = (theme) ? theme.danger.borderColor : defaultTheme.danger.borderColor;
-  }
-  else if (success) {
+  } else if (success) {
     BorderC = (theme) ? theme.success.borderColor : defaultTheme.success.borderColor;
-  }
-  else if (inverse) {
+  } else if (inverse) {
     BorderC = (theme) ? theme.inverse.borderColor : defaultTheme.inverse.borderColor;
-  }
-  else {
+  } else {
     BorderC = (theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
   return BorderC;
-};
+}
 
 export {getColor, getBgColor, getBorderColor, getIconColor};
