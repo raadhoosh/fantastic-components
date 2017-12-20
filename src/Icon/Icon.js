@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.css'
 import IconStyled from './style/IconStyled';
-
+import PropTypes from 'prop-types';
 
 class Icon extends Component {
   constructor(props) {
@@ -25,5 +25,9 @@ class Icon extends Component {
     );
   }
 }
+
+Icon.propTypes = {
+  iconClass: PropTypes.string
+};
 
 export default Icon;
