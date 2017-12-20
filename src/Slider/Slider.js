@@ -3,11 +3,11 @@
  */
 
 import React from 'react';
-import SliderStyled from './SliderStyled';
+import SliderStyled from './style/SliderStyled';
 import SliderContent from './SliderContent';
-import DotStyled from './DotStyled';
-import PrevButton from './PrevButtonStyled';
-import NextButton from './NextButtonStyled';
+import DotStyled from './style/DotStyled';
+import PrevButton from './style/PrevButtonStyled';
+import NextButton from './style/NextButtonStyled';
 
 
 class Slider extends React.Component {

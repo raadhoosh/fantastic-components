@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
-import HeaderStyled from './HeaderStyled';
-import FooterStyled from './FooterStyled';
-import OverlayStyled from './OverlayStyled';
-import ModalBodyStyle from './ModalBodyStyle';
-import ModalStyled from './ModalStyled';
+import HeaderStyled from './style/HeaderStyled';
+import FooterStyled from './style/FooterStyled';
+import OverlayStyled from './style/OverlayStyled';
+import ModalBodyStyle from './style/ModalBodyStyle';
+import ModalStyled from './style/ModalStyled';
 
 class Modal extends Component {
   constructor(props) {

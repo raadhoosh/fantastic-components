@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Icon from '../Icon/Icon';
-import LinkStyled from './LinkStyled';
+import LinkStyled from './style/LinkStyled';
 
 class LinkWrapper extends Component {
   render() {
 
-    const {to, target, noUnderline, icon} = this.props;
+    const {to, target, noUnderline, icon, color} = this.props;
     let Target = '';
     let linkUrl = to;
     if (to.toLowerCase().startsWith(`http://${window.location.host}`)) {
@@ -27,6 +27,7 @@ class LinkWrapper extends Component {
       <LinkStyled
         to={linkUrl} target={Target}
         onClick={this.props.onClick}
+        color={color}
         {...this.props}
       >
         <Icon

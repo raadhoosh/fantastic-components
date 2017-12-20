@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LI from './LIStyled';
+import LI from './style/LIStyled';
 class TabLabel extends Component {
 
 

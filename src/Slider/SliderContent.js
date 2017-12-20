@@ -7,7 +7,7 @@
 
 import React from 'react';
 
-import SliderContentStyled from './SliderContentStyled';
+import SliderContentStyled from './style/SliderContentStyled';
 
 
 class SliderContent extends React.Component {

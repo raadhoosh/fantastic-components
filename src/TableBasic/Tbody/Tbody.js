@@ -1,5 +1,5 @@
 import React ,{Component} from 'react';
-import TbodyStyled from './TbodyStyled';
+import TbodyStyled from './style/TbodyStyled';
 
 class Tbody extends Component {
   render() {

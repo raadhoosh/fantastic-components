@@ -3,9 +3,9 @@
  */
 import React, { Component } from 'react';
 
-import NotifyContainer from './NotifyContainerStyled';
-import NotifyItem from './NotifyItemStyled';
-import NotifyTitle from './NotifyTitleStyled';
+import NotifyContainer from './style/NotifyContainerStyled';
+import NotifyItem from './style/NotifyItemStyled';
+import NotifyTitle from './style/NotifyTitleStyled';
 
 export default class Notify extends Component {
 

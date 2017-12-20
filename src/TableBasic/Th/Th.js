@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ThStyled from './ThStyled';
+import ThStyled from './style/ThStyled';
 
 class Th extends Component {
   render() {

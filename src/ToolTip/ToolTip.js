@@ -2,7 +2,7 @@
  * Created by Programmer1 on 12/14/2017.
  */
 import React from 'react';
-import ToolTipStyled from './ToolTipStyled';
+import ToolTipStyled from './style/ToolTipStyled';
 
 class Tooltip extends React.Component {
   constructor () {

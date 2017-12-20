@@ -1,13 +1,12 @@
-import React from 'react';
-
+import React ,{Component} from 'react';
 import Icon from '../Icon/Icon';
-import TextAriaStyled from './TextAriaStyled';
-import Label from './LabelStyled';
-import Section from './SectionStyled';
-import Important from './ImportantStyled';
-import Alert from './AlertStyled';
+import TextAriaStyled from './style/TextAriaStyled';
+import Label from './style/LabelStyled';
+import Section from './style/SectionStyled';
+import Important from './style/ImportantStyled';
+import Alert from './style/AlertStyled';
 
-class TextAria extends React.Component {
+class TextAria extends Component {
   render() {
     const {
       label,

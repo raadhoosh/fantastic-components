@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionStyled from './SectionStyled';
+import SectionStyled from './style/SectionStyled';
 
 class Section extends React.Component {
   render() {

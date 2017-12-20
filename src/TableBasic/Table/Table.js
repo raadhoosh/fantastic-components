@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import TableWrapperStyled from './TableWrapperStyled';
-import TableStyled from './TableStyled';
+import TableWrapperStyled from './style/TableWrapperStyled';
+import TableStyled from './style/TableStyled';
 
 class Table extends Component{
 

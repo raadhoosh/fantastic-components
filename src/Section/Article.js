@@ -5,7 +5,7 @@
  * Created by Programmer1 on 12/12/2017.
  */
 import React from 'react';
-import ArticleStyled from './ArticleStyled';
+import ArticleStyled from './style/ArticleStyled';
 
 class Article extends React.Component {
   render() {

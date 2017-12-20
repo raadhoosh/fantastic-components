@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-import Wrapper from './WrapperStyled';
-import Body from './BodyStyled';
-import Footer from './FooterStyled';
-import Heading from './HeadingStyled';
+import Wrapper from './style/WrapperStyled';
+import Body from './style/BodyStyled';
+import Footer from './style/FooterStyled';
+import Heading from './style/HeadingStyled';
 
 
 class Panel extends React.Component {

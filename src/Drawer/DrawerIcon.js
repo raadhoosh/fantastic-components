@@ -1,5 +1,5 @@
 import React from 'react';
-import Svg from './SvgStyled';
+import Svg from './style/SvgStyled';
 
 class DrawerIcon extends React.Component {
   render() {

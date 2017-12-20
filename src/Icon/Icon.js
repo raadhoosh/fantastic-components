@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.css'
-import IconStyled from './IconStyled';
+import IconStyled from './style/IconStyled';
 
 
 class Icon extends Component {

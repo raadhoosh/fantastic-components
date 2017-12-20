@@ -5,13 +5,13 @@
  * Created by Programmer1 on 12/12/2017.
  */
 import React from 'react';
-import { ULWrapper } from './style';
+import UlStyled from './style/Ulstyled';
 
 class UL extends React.Component {
   render() {
     const { children } = this.props;
 
-    return (<ULWrapper {...this.props}>{children}</ULWrapper>);
+    return (<UlStyled {...this.props}>{children}</UlStyled>);
   }
 }
 

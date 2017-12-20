@@ -1,7 +1,7 @@
 
 import React from 'react';
-import Ul from './UlStyled';
-import PaginationStyled from './PaginationStyled';
+import Ul from './style/UlStyled';
+import PaginationStyled from './style/PaginationStyled';
 
 /**
  * ## Constants

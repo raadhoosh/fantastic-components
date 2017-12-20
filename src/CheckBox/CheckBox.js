@@ -1,7 +1,7 @@
 import React from 'react';
-import CheckBoxStyled from './CheckBoxStyled';
-import Label from './LabelStyled';
-import Section from './SectionStyled';
+import CheckBoxStyled from './style/CheckBoxStyled';
+import Label from './style/LabelStyled';
+import Section from './style/SectionStyled';
 
 
 

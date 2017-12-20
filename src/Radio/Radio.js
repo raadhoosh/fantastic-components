@@ -1,6 +1,6 @@
 import React from 'react';
-import Label from './LabelStyled';
-import RadioStyled from './RadioStyled';
+import Label from './style/LabelStyled';
+import RadioStyled from './style/RadioStyled';
 class Radio extends React.Component {
   constructor(props, context) {
     super(props, context);

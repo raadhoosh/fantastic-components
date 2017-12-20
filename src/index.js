@@ -42,7 +42,6 @@ module.exports = {
   ReactLink: require('./Link/Link').default,
   Menu: require('./Menu/Menu').default,
   MenuResponsive: require('./Menu/MenuResponsive').default,
-  ButtonToggle: require('./ButtonToggle/ButtonToggle').default,
   TagEditor: require('./TagEditor/TagEditor').default,
   Drawer: require('./Drawer/Drawer').default,
   DrawerIcon: require('./Drawer/DrawerIcon').default,

@@ -4,11 +4,11 @@
 import React from 'react';
 import Icon from '../Icon/Icon';
 
-import SelectInputStyled from './SelectInputStyled';
-import Label from './LabelStyled';
-import Section from './SectionStyled';
-import Important from './ImportantStyled';
-import Alert from './AlertStyled';
+import SelectInputStyled from './style/SelectInputStyled';
+import Label from './style/LabelStyled';
+import Section from './style/SectionStyled';
+import Important from './style/ImportantStyled';
+import Alert from './style/AlertStyled';
 
 class SelectInput extends React.Component {
   render() {

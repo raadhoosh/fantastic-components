@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import H2Styled from './H2Styled';
+import H2Styled from './style/H2Styled';
 
 class H2 extends Component {
   render() {

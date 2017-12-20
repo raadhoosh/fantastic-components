@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import H1Styled from './H1Styled';
+import H1Styled from './style/H1Styled';
 
 class H1 extends Component {
 

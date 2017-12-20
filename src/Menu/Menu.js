@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Ul from '../List/Ul';
 import Li from '../List/Li';
 import ReactLink from '../Link/Link';
-import Div from './MenuStyled';
+import Div from './style/MenuStyled';
 
 class MenuItem extends Component {
   render() {
@@ -31,7 +31,7 @@ class MenuItem extends Component {
         <ReactLink
           to={(linkUrl) ? linkUrl : '#'}
           target={target}
-          bgColor={bgColor}
+          bgcolor={bgColor}
           color={foreColor}
           icon={(hasChild) ? icon : ''}
         >
