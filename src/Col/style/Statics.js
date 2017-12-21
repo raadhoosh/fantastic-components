@@ -2,6 +2,13 @@ import defaultTheme from '../../defaultTheme';
 
 function getBgColor(props) {
   const {
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    inverse,
     bgColor,
     theme
   } = props;
@@ -9,8 +16,22 @@ function getBgColor(props) {
   let bgC;
   if (bgColor) {
     bgC = bgColor;
+  } else if (primary) {
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
+  } else if (secondary) {
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.bgColor : defaultTheme.secondary.bgColor;
+  } else if (info) {
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.info.bgColor : defaultTheme.info.bgColor;
+  } else if (warning) {
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.warning.bgColor : defaultTheme.warning.bgColor;
+  } else if (danger) {
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.danger.bgColor : defaultTheme.danger.bgColor;
+  } else if (success) {
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.success.bgColor : defaultTheme.success.bgColor;
+  } else if (inverse) {
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.bgColor : defaultTheme.inverse.bgColor;
   } else {
-    bgC = (theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
   }
   return bgC;
 }

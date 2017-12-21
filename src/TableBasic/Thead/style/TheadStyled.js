@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-import {getColor} from './Statics';
+import getColor from './Statics';
 
 const TheadStyled = styled.thead`
                 font-family: ${(props) => props.theme.fontFamily};

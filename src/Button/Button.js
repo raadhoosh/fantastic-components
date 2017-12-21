@@ -13,7 +13,7 @@ class Button extends Component {
 
   onBtnClick(e) {
     const {onClick} = this.props;
-    onClick(e);
+    onClick && onClick(e);
   }
 
 
@@ -40,7 +40,7 @@ class Button extends Component {
         {...this.props}
         type="submit"
         className={className}
-        onClick={(e) => {
+        onClick = {(e) => {
           if (!this.spanClicked)
             this.onBtnClick(e);
           this.spanClicked = false;
