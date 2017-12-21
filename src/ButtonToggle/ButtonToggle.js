@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Check from './check';
 import X from './x';
 import {pointerCoord} from './util';
-import InputStyled from './style/ButtonToggleStyled';
+import InputStyled from './style/InputStyled';
 
 import './style/style.css';
 
@@ -155,11 +155,9 @@ class ButtonToggle extends Component {
         </div>
         <div className='react-toggle-thumb'/>
 
-        <input
+        <InputStyled
           {...this.props}
-          ref={ref => {
-            this.input = ref
-          }}
+          innerRef={x => { this.input = x }}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           className='react-toggle-screenreader-only'

@@ -43,7 +43,7 @@ const Div = styled.div`
   };            
                         font-size: 40px !important;
                         position: absolute;                        
-                       	color:${(props) => props.color ? props.color : (props.theme ? props.theme.primaryColor : defaultTheme.primaryColor)}; 
+                       	color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primaryColor : defaultTheme.primaryColor)};  
                         top: 0;
                                }       
              }                         
@@ -78,6 +78,17 @@ const Div = styled.div`
                	 background-color:${(props) => getBgColor(props)};               	 
                	 color:${(props) => getColor(props)};
                     }
+               	}
+               	
+               	span{
+               	 	i{
+               	${
+  (props) => props.theme.rtl
+    ? 'float : left'
+    : 'float : right'
+  }; 
+               	color:${(props) => getColor(props)} !important;         
+               	}
                	}
 }
        	            	              	          	
@@ -132,10 +143,10 @@ const Overlay = styled.div`
 
 `;
 const ButtonWrapper = styled(Button)`
-      	color:${(props) => props.color ? props.color : (props.theme ? props.theme.primaryColor : defaultTheme.primaryColor)}; 
+      	color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primaryColor : defaultTheme.primaryColor)}; 
       	
       	 i{
-      	 color:${(props) => props.color ? props.color : (props.theme ? props.theme.primaryColor : defaultTheme.primaryColor)};   
+      	 color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primaryColor : defaultTheme.primaryColor)};   
       	 }  
 `;
 

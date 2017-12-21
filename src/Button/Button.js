@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import ButtonStyled from './style/ButtonStyled';
 import Icon from '../Icon/Icon';
 import Spinner from '../Spinner/Spinner';
@@ -12,7 +13,7 @@ class Button extends Component {
 
   onBtnClick(e) {
     const {onClick} = this.props;
-    onClick(e);
+    onClick && onClick(e);
   }
 
 
@@ -39,7 +40,7 @@ class Button extends Component {
         {...this.props}
         type="submit"
         className={className}
-        onClick={(e) => {
+        onClick = {(e) => {
           if (!this.spanClicked)
             this.onBtnClick(e);
           this.spanClicked = false;
@@ -70,6 +71,38 @@ class Button extends Component {
     );
   }
 }
+
+Button.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  onClick: PropTypes.func,
+  id: PropTypes.number,
+  value: PropTypes.object,
+
+  label: PropTypes.string,
+  icon: PropTypes.string,
+  spinner: PropTypes.bool,
+  hover: PropTypes.bool,
+
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
+  inverse: PropTypes.bool,
+
+  xSmall: PropTypes.bool,
+  small: PropTypes.bool,
+  large: PropTypes.bool,
+
+  style: PropTypes.object,
+  className: PropTypes.string,
+
+  borderColor: PropTypes.string,
+  bgColor: PropTypes.string,
+  foreColor: PropTypes.string,
+  theme: PropTypes.object
+};
 
 export default Button;
 

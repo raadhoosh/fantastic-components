@@ -27,10 +27,8 @@ function getColor(props) {
   let ForeC;
   if (foreColor) {
     ForeC = foreColor;
-  } else if (props.theme) {
-    ForeC = theme.primary.foreColor;
   } else {
-    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
   }
   return ForeC;
 
@@ -46,7 +44,7 @@ function getBgColor(props) {
   if (bgColor) {
     bgC = bgColor;
   } else {
-    bgC = (theme) ? theme.primaryColor : defaultTheme.primaryForeColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
   }
   return bgC;
 };
@@ -60,11 +58,8 @@ function getBorderColor(props) {
   let BorderC;
   if (borderColor) {
     BorderC = borderColor;
-  } else if (props.theme) {
-    BorderC = theme.primaryColor;
-    ;
   } else {
-    BorderC = defaultTheme.primaryColor;
+    BorderC = (Object.keys(theme).length > 0 && theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
   return BorderC;
 };

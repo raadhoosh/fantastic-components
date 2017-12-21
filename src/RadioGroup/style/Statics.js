@@ -17,23 +17,24 @@ function getColor(props) {
   if (foreColor) {
     ForeC = foreColor;
   } else if (primary) {
-    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
   } else if (secondary) {
-    ForeC = (theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
   } else if (info) {
-    ForeC = (theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
   } else if (warning) {
-    ForeC = (theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
   } else if (danger) {
-    ForeC = (theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
   } else if (success) {
-    ForeC = (theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
   } else if (inverse) {
-    ForeC = (theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
   } else {
-    ForeC = (theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
   }
 
   return ForeC;
 }
+
 export default getColor;

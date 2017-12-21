@@ -113,9 +113,9 @@ class App extends Component {
     ];
 
     const items = [
-      {id: 1, content: (<div style={{ backgroundColor:'lightgray', height:200 } } > Contetnt 1</div>)},
-      {id: 2, content: (<div style={{ backgroundColor:'gray', height:200}}> Content 2</div>) },
-      { id: 3, content: (<div style={{ backgroundColor:'darkgray', height:200}}> Content 3</div>)}];
+      {id: 1, content: (<div style={{backgroundColor: 'lightgray', height: 200}}> Contetnt 1</div>)},
+      {id: 2, content: (<div style={{backgroundColor: 'gray', height: 200}}> Content 2</div>)},
+      {id: 3, content: (<div style={{backgroundColor: 'darkgray', height: 200}}> Content 3</div>)}];
 
 
     return (
@@ -129,17 +129,17 @@ class App extends Component {
         <Container>
           <Row>
             <Col lg3>
-              <Slider interval={20000} items={items} dots />
+              <Slider interval={20000} items={items} dots/>
             </Col>
             <Col lg9>
-              <Slider autoPlay interval={20000} items={items}  />
+              <Slider autoPlay interval={20000} items={items}/>
             </Col>
           </Row>
         </Container>
         <Panel header="Header" footer="Footer" warning>
           <Button
             label={'test'}
-            secondary
+            primary
             onClick={() => {
               alert("hello")
             }}
@@ -277,18 +277,18 @@ class App extends Component {
         <Router>
           <div>
             <ul>
-            <li>
-              <ReactLink
-              to="/"
-              icon={'home'}
-              color={'#f00'}
-            >Home
-              </ReactLink>
-            </li>
-            <li>
-              <ReactLink to="/about">About</ReactLink>
-            </li>
-          </ul>
+              <li>
+                <ReactLink
+                  to="/"
+                  icon={'home'}
+                  color={'#f00'}
+                >Home
+                </ReactLink>
+              </li>
+              <li>
+                <ReactLink to="/about">About</ReactLink>
+              </li>
+            </ul>
             <hr/>
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
