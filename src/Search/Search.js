@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Input from '../Input/Input';
 import OutsideAlerter from '../OutsideAlerter/OutsideAlerter';
 import OutoCompelete from './style/OutoCompeleteStyled';
@@ -6,7 +7,7 @@ import OutoCompeleteMenu from './style/OutoCompeleteMenuStyled';
 import OutoCompeleteWrap from './style/OutoCompeleteWrapStyled';
 import OutoCompeleteItems from './style/UlStyled';
 import OutoCompeleteItem from './style/LiStyled';
-class Search extends React.Component {
+class Search extends Component {
   constructor(props, context) {
     super(props, context);
     this.onType = this.onType.bind(this);
@@ -166,5 +167,19 @@ class Search extends React.Component {
   }
 }
 
+Search.propTypes = {
+  suggestionList: PropTypes.array.isRequired,
+  onKeyPress: PropTypes.func,
+  onSearch: PropTypes.func,
+  onSuggestionClick: PropTypes.func,
+  onValueChanged: PropTypes.func,
+  async: PropTypes.bool,
+  delayMillis: PropTypes.number,
+  suggestionCount: PropTypes.number,
+  minCharsToSearch: PropTypes.number,
+  showSearchButtom: PropTypes.bool,
+  label: PropTypes.string,
+  important: PropTypes.bool
+};
 
 export default Search ;

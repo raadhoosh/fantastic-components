@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import Input from './style/InputStyled';
 import UploadWrapper from './style/UploadWrapperStyled';
 import Important from './style/ImportantStyled';
@@ -170,5 +170,16 @@ class Upload extends Component {
     );
   }
 }
+
+Upload.propTypes = {
+  returnFile: PropTypes.func,
+  title:PropTypes.string,
+  errorText:PropTypes.string,
+  important:PropTypes.bool
+};
+
+Upload.defaultProps = {
+  title: "select  file"
+};
 
 export default Upload;

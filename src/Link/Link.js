@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
 import LinkStyled from './style/LinkStyled';
 
@@ -40,5 +41,14 @@ class LinkWrapper extends Component {
   }
 }
 
+LinkWrapper.propTypes = {
+  noUnderline: PropTypes.bool,
+  theme: PropTypes.object,
+  color: PropTypes.string,
+  bgColor: PropTypes.string,
+  icon: PropTypes.string,
+  to: PropTypes.string,
+  target: PropTypes.bool
+};
 
 export default LinkWrapper;

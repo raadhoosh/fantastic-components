@@ -275,5 +275,4 @@ class TagEditor extends React.Component {
   }
 }
 
-
 export default TagEditor;

@@ -1,11 +1,11 @@
-import React from 'react';
-
+import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 import Radio from '../Radio/Radio';
 import H5 from '../Headings/H5';
 
 import Wrapper from './style/WrapperStyled';
 
-export class RadioGroup extends React.Component {
+export class RadioGroup extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -110,6 +110,23 @@ export class RadioGroup extends React.Component {
   }
 }
 
+RadioGroup.propTypes = {
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  onItemSelected: PropTypes.func,
+  name: PropTypes.string,
+  className: PropTypes.string,
+  inline: PropTypes.bool,
+  selectedValue:PropTypes.object,
+  items:PropTypes.array,
 
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
+  inverse: PropTypes.bool
+};
 
 export default RadioGroup;

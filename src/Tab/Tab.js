@@ -1,7 +1,5 @@
-/**
- * Created by Programmer1 on 12/18/2017.
- */
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import TabLabels from './TabLabels';
 import Wrapper from './style/WrapperStyled';
 import Content from './style/ContentStyled';
@@ -40,4 +38,12 @@ class Tab extends Component {
     );
   }
 }
+
+Tab.propTypes = {
+  tabs: PropTypes.array,
+  style: PropTypes.object,
+  labelListStyle: PropTypes.object,
+  currentTab: PropTypes.number
+};
+
 export default Tab;

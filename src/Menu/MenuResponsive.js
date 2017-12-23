@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Div, ButtonBox, Overlay, ButtonWrapper} from './style/MenuResponsiveStyle';
 import LinkStyled from '../Link/Link';
 import Icon from '../Icon/Icon';
@@ -189,5 +190,18 @@ class MenuResponsive extends Component {
     );
   }
 }
+
+MenuResponsive.propTypes = {
+  mainItems: PropTypes.array.isRequired,
+  bgColor: PropTypes.string,
+  foreColor: PropTypes.string,
+  iconClass: PropTypes.string,
+  iconArrow: PropTypes.string,
+  icon: PropTypes.string,
+  right: PropTypes.string,
+  left: PropTypes.string,
+  rtl: PropTypes.bool,
+  theme: PropTypes.object
+};
 
 export default MenuResponsive;

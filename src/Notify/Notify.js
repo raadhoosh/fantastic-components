@@ -1,23 +1,20 @@
-/**
- * Created by Programmer1 on 7/19/2017.
- */
-import React, { Component } from 'react';
-
+import React, {Component} from 'react';
 import NotifyContainer from './style/NotifyContainerStyled';
 import NotifyItem from './style/NotifyItemStyled';
 import NotifyTitle from './style/NotifyTitleStyled';
 
-export default class Notify extends Component {
-
+class Notify extends Component {
   constructor() {
     super();
     this.wasMounted = true;
-    this.key       = 0;
-    this.state     = {};
+    this.key = 0;
+    this.state = {};
   }
-  componentWillUpdate(){
+
+  componentWillUpdate() {
     this.style = this._setStyle();
   }
+
   componentWillUnmount() {
     this.wasMounted = false;
   }
@@ -26,10 +23,9 @@ export default class Notify extends Component {
     this.addNotify(title, msg, time);
   }
 
-
   addNotify(title, msg, time) {
-    const key   = this.key++;
-    const state = Object.assign(this.state, { [key]: { title, msg, time } });
+    const key = this.key++;
+    const state = Object.assign(this.state, {[key]: {title, msg, time}});
 
     this.setState(state, () => this.countToHide(time, key));
   }
@@ -41,7 +37,7 @@ export default class Notify extends Component {
   }
 
   hideNotification(key) {
-    if( !this.wasMounted ) {
+    if (!this.wasMounted) {
       return;
     }
 
@@ -50,16 +46,17 @@ export default class Notify extends Component {
       return state;
     });
   }
-  _setStyle(){
+
+  _setStyle() {
     let position = {};
-    switch(this.props.position){
+    switch (this.props.position) {
       case 'top left':
         position = {
           top: 0,
           right: 'auto',
           bottom: 'auto',
           left: 0,
-          zIndex:1000
+          zIndex: 1000
         };
         break;
       case 'top right':
@@ -68,7 +65,7 @@ export default class Notify extends Component {
           right: 0,
           bottom: 'auto',
           left: 'auto',
-          zIndex:1000
+          zIndex: 1000
         };
         break;
       case 'top center':
@@ -76,7 +73,7 @@ export default class Notify extends Component {
           top: 0,
           right: '50%',
           left: '50%',
-          zIndex:1000
+          zIndex: 1000
         };
         break;
       case 'bottom left':
@@ -85,7 +82,7 @@ export default class Notify extends Component {
           right: 'auto',
           bottom: 0,
           left: 0,
-          zIndex:1000
+          zIndex: 1000
         };
         break;
       case 'bottom right':
@@ -94,7 +91,7 @@ export default class Notify extends Component {
           right: 0,
           bottom: 0,
           left: 'auto',
-          zIndex:1000
+          zIndex: 1000
         };
         break;
       case 'bottom center':
@@ -102,7 +99,7 @@ export default class Notify extends Component {
           right: '50%',
           left: '50%',
           bottom: 0,
-          zIndex:1000
+          zIndex: 1000
         };
         break;
       case 'middle center':
@@ -110,21 +107,21 @@ export default class Notify extends Component {
           top: '50%',
           right: '50%',
           left: '50%',
-          zIndex:1000
+          zIndex: 1000
         };
         break;
       case 'middle left':
         position = {
           top: '50%',
           left: 0,
-          zIndex:1000
+          zIndex: 1000
         };
         break;
       case 'middle right':
         position = {
           top: '50%',
           right: 0,
-          zIndex:1000
+          zIndex: 1000
         };
         break;
       default:
@@ -133,7 +130,7 @@ export default class Notify extends Component {
           right: 0,
           bottom: 0,
           left: 'auto',
-          zIndex:1000
+          zIndex: 1000
         };
         break;
     }
@@ -144,18 +141,18 @@ export default class Notify extends Component {
       right: position.right,
       bottom: position.bottom,
       left: position.left,
-      zIndex:position.zIndex
+      zIndex: position.zIndex
     };
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     this.style = this._setStyle();
   }
-  item(key) {
-    const {  title, msg } = this.state[key];
 
+  item(key) {
+    const {title, msg} = this.state[key];
     return (
-      <NotifyItem key={key}  onClick={() => this.hideNotification(key)}  {...this.props}>
+      <NotifyItem key={key} onClick={() => this.hideNotification(key)}  {...this.props}>
         <NotifyTitle  {...this.props}>{title}</NotifyTitle>
         <p>{msg}</p>
       </NotifyItem>
@@ -163,10 +160,12 @@ export default class Notify extends Component {
   }
 
   render() {
-    const { state } = this;
-    const keys      = Object.keys(state);
-    const el        = keys.map((key) => this.item(key));
+    const {state} = this;
+    const keys = Object.keys(state);
+    const el = keys.map((key) => this.item(key));
 
     return <NotifyContainer style={this.style} {...this.props} >{el}</NotifyContainer>;
   }
 }
+
+export default Notify;

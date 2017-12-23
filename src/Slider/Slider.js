@@ -1,16 +1,11 @@
-/**
- * Created by Programmer1 on 12/18/2017.
- */
-
-import React from 'react';
+import React, {Component} from 'react';
 import SliderStyled from './style/SliderStyled';
 import SliderContent from './SliderContent';
 import DotStyled from './style/DotStyled';
 import PrevButton from './style/PrevButtonStyled';
 import NextButton from './style/NextButtonStyled';
 
-
-class Slider extends React.Component {
+class Slider extends Component {
   constructor(props) {
     super(props);
     this.state = { width: '0', selectedIndex: 0 };

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import ContainerStyled from './style/ContainerStyled';
 
 class Container extends Component {
@@ -17,5 +18,11 @@ class Container extends Component {
     );
   }
 }
+
+Container.propTypes = {
+  children: PropTypes.object,
+  className: PropTypes.string,
+  style: PropTypes.object
+};
 
 export default Container;
