@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import Pagination from '../Pagination/Pagination';
 import Modal from '../Modal/Modal';
@@ -303,5 +304,49 @@ class Table extends Component {
   }
 }
 
+Table.propTypes = {
+  rowsCount: PropTypes.number.isRequired,
+  getRow: PropTypes.func.isRequired,
+  rowHasDelete: PropTypes.func,
+  rowHasEdit: PropTypes.func,
+  rowHasShow: PropTypes.func,
+  rowHasAccept: PropTypes.func,
+  columns: PropTypes.array,
+  columnSize: PropTypes.array,
+  minWidth:PropTypes.number,
+  pageSize: PropTypes.number,
+  onDeleteClick: PropTypes.func,
+  deleteMessage: PropTypes.string,
+  onRowClick: PropTypes.func,
+  onEditClick: PropTypes.func,
+  onShowClick: PropTypes.func,
+  onAcceptClick: PropTypes.func,
+  actionColumnLabel: PropTypes.string,
+  hover: PropTypes.bool,
+  striped: PropTypes.bool,
+  labelButtonEdit: PropTypes.string,
+  iconButtonEdit: PropTypes.string,
+  rowColors: PropTypes.array,
+  iconButtonSecondary: PropTypes.string,
+  labelButtonShow: PropTypes.string,
+  pageIndex: PropTypes.number,
+  onPageChanged: PropTypes.func,
+  actionNames: PropTypes.array,
+  actionValues: PropTypes.array,
+  actionIcons: PropTypes.array,
+  onActionClick: PropTypes.func,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
+  inverse: PropTypes.bool,
+  rtl: PropTypes.bool,
+  borderColor: PropTypes.string,
+  bgColor: PropTypes.string,
+  foreColor: PropTypes.string,
+  theme: PropTypes.object,
+};
 
 export default Table;

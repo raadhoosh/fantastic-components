@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import PropTypes from 'prop-types';
 import Wrapper from './style/WrapperStyled';
 import Body from './style/BodyStyled';
 import Footer from './style/FooterStyled';
@@ -35,5 +34,11 @@ class Panel extends React.Component {
     );
   }
 }
+
+Panel.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  header: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  footer: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+};
 
 export default Panel;

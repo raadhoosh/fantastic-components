@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Root from './style/RootStyled';
 import Nav from './style/NavStyled';
 import Title from './style/TitleStyled';
 import Overly from './style/OverlyStyled';
-class Drawer extends React.Component {
+class Drawer extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -110,5 +111,30 @@ class Drawer extends React.Component {
   }
 }
 
+Drawer.propTypes = {
+  style: PropTypes.object,
+  navStyle: PropTypes.object,
+  titleStyle: PropTypes.object,
+  itemStyle: PropTypes.object,
+  itemHoverStyle: PropTypes.object,
+  title: PropTypes.node,
+  children: PropTypes.node,
+  items:PropTypes.arrayOf(PropTypes.node),
+  showNav: PropTypes.bool,
+  rtl: PropTypes.bool,
+  onHideNav: PropTypes.func,
+  onShowNav: PropTypes.func,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
+  inverse: PropTypes.bool,
+  borderColor: PropTypes.string,
+  bgColor: PropTypes.string,
+  foreColor: PropTypes.string,
+  theme: PropTypes.object,
+};
 
 export default Drawer;

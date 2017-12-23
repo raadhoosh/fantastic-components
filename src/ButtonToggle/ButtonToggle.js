@@ -167,6 +167,27 @@ class ButtonToggle extends Component {
   }
 }
 
+ButtonToggle.propTypes = {
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  defaultChecked: PropTypes.bool,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  className: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  id: PropTypes.string,
+  'aria-labelledby': PropTypes.string,
+  'aria-label': PropTypes.string,
+  icons: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.shape({
+      checked: PropTypes.node,
+      unchecked: PropTypes.node,
+    }),
+  ]),
+};
 
 ButtonToggle.defaultProps = {
   icons: {

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Ul from './style/UlStyled';
 import PaginationStyled from './style/PaginationStyled';
 
@@ -207,8 +208,6 @@ const Page = (props) => {
   );
 };
 
-
-
 function range(start, end) {
   const res = [];
   for (let i = start; i < end; i++) {
@@ -217,6 +216,14 @@ function range(start, end) {
 
   return res;
 }
+
+Pagination.propTypes = {
+  isHidden: PropTypes.bool,
+  isActive: PropTypes.bool,
+  isDisabled: PropTypes.bool,
+  className: PropTypes.string,
+  onClick: PropTypes.func
+};
 
 export default Pagination;
 

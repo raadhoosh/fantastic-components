@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import Icon from '../Icon/Icon';
 import HeaderStyled from './style/HeaderStyled';
@@ -126,5 +127,39 @@ class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  onClose: PropTypes.func,
+  allowClose: PropTypes.bool,
+  isOpen: PropTypes.bool,
+  title: PropTypes.string,
+  Btn1Label: PropTypes.string,
+  Btn2Label: PropTypes.string,
+  Btn3Label: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  footerChildren: PropTypes.node,
+  Btn1Type: PropTypes.string,
+  Btn2Type: PropTypes.string,
+  Btn3Type: PropTypes.string,
+  Btn1action: PropTypes.func,
+  Btn2action: PropTypes.func,
+  Btn3action: PropTypes.func,
+  width: PropTypes.string,
+  maxWidth: PropTypes.string,
+  height: PropTypes.string,
+  style: PropTypes.object,
+  backdropStyle: PropTypes.object,
+  containerClassName: PropTypes.string,
+  backdropClassName: PropTypes.string,
+  BtnHelpAction: PropTypes.func,
+  BtnHelpToolTip: PropTypes.string,
+  spinnerBtn1: PropTypes.bool,
+  theme: PropTypes.object,
+  footer: PropTypes.object,
+  icon: PropTypes.string,
+  bgColor: PropTypes.string,
+  cancelClose: PropTypes.bool,
+  open: PropTypes.bool,
+};
 
 export default Modal;

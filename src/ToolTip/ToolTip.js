@@ -1,10 +1,7 @@
-/**
- * Created by Programmer1 on 12/14/2017.
- */
-import React from 'react';
+import React, {Component} from 'react';
 import ToolTipStyled from './style/ToolTipStyled';
 
-class Tooltip extends React.Component {
+class Tooltip extends Component {
   constructor () {
     super();
     this.state = {
@@ -31,7 +28,6 @@ class Tooltip extends React.Component {
       isVisible: false
     });
   }
-
 
   render () {
     const isVisible = this.state.isVisible ? ' is-visible' : ' is-hidden';
