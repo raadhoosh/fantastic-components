@@ -20,7 +20,7 @@ class Container extends Component {
 }
 
 Container.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   className: PropTypes.string,
   style: PropTypes.object
 };

@@ -10,7 +10,6 @@ class Row extends Component {
       children,
       style
     } = this.props;
-
     return (
       <RowStyled
         className={className}
@@ -24,7 +23,7 @@ class Row extends Component {
 }
 
 Row.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.array]),
   className: PropTypes.string,
   style: PropTypes.object
 };
