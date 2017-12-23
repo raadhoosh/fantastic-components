@@ -13,6 +13,7 @@ class Panel extends React.Component {
       footer,
       header
     } = this.props;
+    
     return (
       <Wrapper {...this.props}>
         {
@@ -36,7 +37,7 @@ class Panel extends React.Component {
 }
 
 Panel.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.array]),
   header: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   footer: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };

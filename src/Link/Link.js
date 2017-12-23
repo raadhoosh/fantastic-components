@@ -48,7 +48,7 @@ LinkWrapper.propTypes = {
   bgColor: PropTypes.string,
   icon: PropTypes.string,
   to: PropTypes.string,
-  target: PropTypes.bool
+  target: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
 };
 
 export default LinkWrapper;

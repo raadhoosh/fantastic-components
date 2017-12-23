@@ -22,7 +22,7 @@ class Col extends Component {
 }
 
 Col.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   className: PropTypes.string,
   style: PropTypes.object,
   sm: PropTypes.bool,

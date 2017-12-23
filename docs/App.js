@@ -149,12 +149,7 @@ class App extends Component {
             src={img}
           />
           <br/>
-          <Container>
-            test Container
-            <Row>
-              test row
-            </Row>
-          </Container>
+
         </Panel>
         <br/>
         <Panel header="Header" footer="Footer" secondary>

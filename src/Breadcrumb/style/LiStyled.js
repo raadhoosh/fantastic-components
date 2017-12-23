@@ -7,7 +7,7 @@ const LiStyled = styled.li`
            position: relative;
            padding: 5px 0;         
            &:after{
-           content: "\\f104";           
+           content:${(props) => (props.rtl || props.theme.rtl) ? '"\\f104"' : '"\\f105"' };          
            color: inherit;
            display: inline-block; 
            padding:0 10px;  
@@ -20,7 +20,7 @@ const LiStyled = styled.li`
            
            &:first-child:before {      
            content: "\\f009";     
-           padding-left: 10px;      
+           padding-${(props) => (props.rtl || props.theme.rtl) ? 'left' : 'right' }: 10px;      
            color: ${props => getColor(props)};}                  
            &:before, &:after{
            font: normal normal normal 16px/1 FontAwesome;

@@ -11,6 +11,7 @@ class Li extends Component {
 }
 
 Li.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.array]),
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
   info: PropTypes.bool,
@@ -24,7 +25,6 @@ Li.propTypes = {
   image: PropTypes.string,
   icon: PropTypes.string,
   text: PropTypes.string,
-  children: PropTypes.string,
   value: PropTypes.string,
   onClick: PropTypes.func,
   onChange: PropTypes.func

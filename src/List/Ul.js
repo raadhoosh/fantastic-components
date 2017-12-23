@@ -5,13 +5,12 @@ import UlStyled from './style/Ulstyled';
 class Ul extends Component {
   render() {
     const { children } = this.props;
-    
     return (<UlStyled {...this.props}>{children}</UlStyled>);
   }
 }
 
 Ul.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.array]),
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
   info: PropTypes.bool,
