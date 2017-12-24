@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ToggleThump = styled.div` 
+const ToggleThumbStyled = styled.div` 
              *{
                box-sizing: border-box;
               } 
@@ -16,4 +16,4 @@ const ToggleThump = styled.div`
                                       	
          `;
 
-export default InputStyled;
+export default ToggleThumbStyled;
