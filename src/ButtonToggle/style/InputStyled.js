@@ -15,4 +15,4 @@ const InputStyled = styled.input`
                       	
          `;
 
-export {InputStyled};
+export default InputStyled;

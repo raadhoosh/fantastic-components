@@ -16,7 +16,7 @@ import Col from '../src/Col/Col';
 import Breadcrumb from '../src/Breadcrumb/Breadcrumb';
 import Panel from '../src/Panel/Panel';
 import img from '../docs/commons/img.jpg';
-import Table from '../src/TableBasic/Table/Table';
+import TableBasic from '../src/TableBasic/Table/Table';
 import Thead from '../src/TableBasic/Thead/Thead';
 import Tr from '../src/TableBasic/Tr/Tr';
 import Th from '../src/TableBasic/Th/Th';
@@ -25,7 +25,9 @@ import Tbody from '../src/TableBasic/Tbody/Tbody';
 import ReactLink from '../src/Link/Link';
 import Slider from '../src/Slider/Slider';
 import Menu from '../src/Menu/Menu';
-import MenuResponsiv from '../src/Menu/MenuResponsive';
+import MenuResponsive from '../src/Menu/MenuResponsive';
+import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
+import Collapsible from '../src/Collapsible/Collapsible'
 
 const Home = () => (
   <div>
@@ -73,7 +75,7 @@ class App extends Component {
   render() {
     let BreadcrumbList = [
       {
-        name: 'خانه',
+        name: 'home',
         path: '/'
       },
       {
@@ -120,10 +122,31 @@ class App extends Component {
 
     return (
       <div>
-        <MenuResponsiv
+        <MenuResponsive
           mainItems={mainItems}
           style={{marginBottom: '400px'}}
         />
+        <br/>
+        <br/>
+        <Collapsible
+          trigger="Start here"
+          transitionTime={400}
+          warning
+        >
+          <p>This is the collapsible content. It can be any element or React component you like.</p>
+          <p>It can even be another Collapsible component. Check out the next section!</p>
+        </Collapsible>
+        <br/>
+        <br/>
+        <div>
+          <ButtonToggle
+            id='cheese-status'
+            defaultChecked={this.state.cheeseIsReady}
+            onChange={this.handleCheeseChange.bind(this)}
+
+          />
+          <label htmlFor='cheese-status'>Adjacent label tag</label>
+        </div>
         <br/>
         <br/>
         <Container>
@@ -230,7 +253,7 @@ class App extends Component {
         <br/>
         <br/>
         <br/>
-        <Table>
+        <TableBasic>
           <Thead
             color={'#ff0'}
           >
@@ -263,7 +286,7 @@ class App extends Component {
             </Td>
           </Tr>
           </Tbody>
-        </Table>
+        </TableBasic>
         <br/>
         <br/>
 
