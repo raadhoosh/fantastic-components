@@ -27,6 +27,7 @@ import Slider from '../src/Slider/Slider';
 import Menu from '../src/Menu/Menu';
 import MenuResponsive from '../src/Menu/MenuResponsive';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
+import Collapsible from '../src/Collapsible/Collapsible'
 
 const Home = () => (
   <div>
@@ -74,7 +75,7 @@ class App extends Component {
   render() {
     let BreadcrumbList = [
       {
-        name: 'خانه',
+        name: 'home',
         path: '/'
       },
       {
@@ -125,6 +126,16 @@ class App extends Component {
           mainItems={mainItems}
           style={{marginBottom: '400px'}}
         />
+        <br/>
+        <br/>
+        <Collapsible
+          trigger="Start here"
+          transitionTime={400}
+          warning
+        >
+          <p>This is the collapsible content. It can be any element or React component you like.</p>
+          <p>It can even be another Collapsible component. Check out the next section!</p>
+        </Collapsible>
         <br/>
         <br/>
         <div>
