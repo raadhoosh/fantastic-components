@@ -2,10 +2,9 @@
  * Created by Programmer1 on 12/4/2017.
  */
 import styled from 'styled-components';
-import { getIconColor  } from './Statics';
+import {getIconColor} from './Statics';
 
-
-const Section = styled.section`  
+const Div = styled.div`  
          box-sizing: border-box; 
          position:relative;
          direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
@@ -19,4 +18,4 @@ const Section = styled.section`
           }       
            `;
 
-export default Section;
+export default Div;

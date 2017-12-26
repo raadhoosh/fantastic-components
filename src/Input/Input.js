@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import InputStyled from './style/TextInputStyled';
 import Label from './style/LabelStyled';
-import Section from './style/SectionStyled';
+import Div from './style/DivStyled';
 import Important from './style/ImportantStyled';
 import Alert from './style/AlertStyled';
 import Icon from '../Icon/Icon';
@@ -17,7 +17,7 @@ class Input extends Component {
       icon
     } = this.props;
     return (
-      <Section style={style} {...this.props}>
+      <Div style={style} {...this.props}>
         {
           label &&
           <Label {...this.props}>
@@ -32,7 +32,7 @@ class Input extends Component {
         }
         <InputStyled {...this.props}/>
         {errorText && <Alert {...this.props}>{errorText}</Alert>}
-      </Section>
+      </Div>
     );
   }
 }
@@ -65,6 +65,5 @@ Input.propTypes = {
   foreColor: PropTypes.string,
   theme: PropTypes.object
 };
-
 
 export default Input;
