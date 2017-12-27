@@ -13,51 +13,72 @@ class Heading extends Component {
     super(props);
     this.state = {
       month: 0,
-      date: this.props.date,
+      date: this.props.date
     };
     this.nextMonth = this.nextMonth.bind(this);
     this.previousMonth = this.previousMonth.bind(this);
   }
 
   componentWillMount() {
-    let check = moment(this.state.date, 'YYYY/MM/DD');
-    let month = check.format('MMMM');
+    let NowDate = moment(this.state.date, 'YYYY/MM/DD');
+    let month = NowDate.format('MMMM');
+    let year = NowDate.format('YYYY');
     this.setState({
-      month: month
+      month: month,
+      year: year
     });
   }
 
   nextMonth() {
-    debugger;
     let dateNext = moment(this.state.date, 'YYYY/MM/DD');
     let nextDate = moment(dateNext).add(1, 'months');
-    let nextMonth = nextDate.format('MMMM')
-    debugger
+    let nextMonth = nextDate.format('MMMM');
+    let nextYear = nextDate.format('YYYY');
+    let daysOfMonth = moment(dateNext).daysInMonth();
+    let endDate = moment(dateNext).endOf('months');
+    let dow = moment(dateNext).day();
     this.setState({
       month: nextMonth,
-      date: nextDate
-
+      date: nextDate,
+      year: dow
     });
   }
 
   previousMonth() {
-
+    let dateNext = moment(this.state.date, 'YYYY/MM/DD');
+    let nextDate = moment(dateNext).add(-1, 'months');
+    let nextMonth = nextDate.format('MMMM');
+    let nextYear = nextDate.format('YYYY');
+    this.setState({
+      month: nextMonth,
+      date: nextDate,
+      year: nextYear
+    });
   }
 
   render() {
     const {month, date} = this.props;
+    const dayOfWeekCodes = [{
+      1: 'mon',
+      2: 'tue',
+      3: 'wed',
+      4: 'thu',
+      5: 'fri',
+      6: 'sat',
+      7: 'sun'
+    }]
 
     return (
       <DatePickeHeadingStyled>
         <div>
           <CurrentMonth>
-            {this.state.month}
+            {`${this.state.month} ${this.state.year}`}
           </CurrentMonth>
-          <NavigationPrevious
+          <NavigationNext
             onClick={this.nextMonth}
           />
-          <NavigationNext
-
+          <NavigationPrevious
+            onClick={this.previousMonth}
           />
         </div>
         <WeekHeaderStyled>
