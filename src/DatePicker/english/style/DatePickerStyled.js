@@ -4,8 +4,7 @@
 import styled from 'styled-components';
 
 const DatePickerStyled = styled.div`      
-      z-index: 10;      
-      width: 260px;
+      z-index: 10;    
       padding: 0;
       margin-top: 5px;      
       border-radius: 3px;      

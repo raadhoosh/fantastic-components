@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import Month from './Month';
 import DatePickeHeading from './DatePickeHeading';
 import DatePickerStyled from './style/DatePickerStyled';
@@ -12,9 +11,12 @@ class Calendar extends Component {
   }
 
   render() {
+    const {month, date} = this.props;
     return (
       <DatePickerStyled>
-        <DatePickeHeading month={'desumber'}
+        <DatePickeHeading
+          month={month}
+          date={date}
         />
         <div>
           <Month day={'desumber'}/>
@@ -24,6 +26,9 @@ class Calendar extends Component {
   }
 }
 
-Calendar.propTypes = {};
+Calendar.propTypes = {
+  month: PropTypes.string,
+  date: PropTypes.string,
+};
 
 export default Calendar

@@ -8,22 +8,30 @@ class DatePicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: moment(props.date),
+      date: moment(this.props.date),
     };
+    this.CurrentMonth = this.CurrentMonth.bind(this);
+  }
+
+  CurrentMonth() {
+    let check = moment(this.state.date, 'YYYY/MM/DD');
+    let month = check.format('MMMM');
+    let day = check.format('D');
+    let year = check.format('YYYY');
+    return `${month} ${year}`;
   }
 
   render() {
-
-    const {inputClassName} = this.props;
-
     return (
       <div>
         <div>
           <DateInput inputValue={this.state.date}
                      inputOnClick={this.toggleCalendar}
-                     inputClassName={inputClassName}
           />
-          <Calendar/>
+          <Calendar
+            month={this.CurrentMonth()}
+            date={this.state.date}
+          />
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import DayStyled from './style/DayStyled'
+import DayStyled from './style/DayStyled';
 
 class Day extends Component {
 

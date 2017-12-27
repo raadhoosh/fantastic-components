@@ -5,7 +5,7 @@ import Week from './Week';
 class Month extends Component {
   render (){
     return (
-     <Week day={'desumber'}/>
+     <Week day={''}/>
     )
   }
 }

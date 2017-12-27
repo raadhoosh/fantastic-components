@@ -141,7 +141,7 @@ class App extends Component {
         <br/>
         <br/>
         <div>
-          <h1>ورودی تاریخ ساده</h1>
+          <h1>ورودی تاریخ </h1>
          <div
            style={{maxWidth:'300px'}}
          >
