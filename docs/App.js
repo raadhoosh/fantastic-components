@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import moment from 'moment';
 import {
   BrowserRouter as Router,
   Route,
@@ -27,7 +28,10 @@ import Slider from '../src/Slider/Slider';
 import Menu from '../src/Menu/Menu';
 import MenuResponsive from '../src/Menu/MenuResponsive';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
-import Collapsible from '../src/Collapsible/Collapsible'
+import Collapsible from '../src/Collapsible/Collapsible';
+
+
+
 
 const Home = () => (
   <div>
@@ -47,7 +51,10 @@ class App extends Component {
     super(props, context);
     this.state = {
       isOpen: false,
-      cheeseIsReady: true
+      cheeseIsReady: true,
+      returnDataUrl: [],
+
+
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -119,6 +126,10 @@ class App extends Component {
       {id: 2, content: (<div style={{backgroundColor: 'gray', height: 200}}> Content 2</div>)},
       {id: 3, content: (<div style={{backgroundColor: 'darkgray', height: 200}}> Content 3</div>)}];
 
+    let crop = {
+      width: 100,
+      aspect: 100 / 88
+    };
 
     return (
       <div>
@@ -126,6 +137,14 @@ class App extends Component {
           mainItems={mainItems}
           style={{marginBottom: '400px'}}
         />
+        <br/>
+        <br/>
+
+        <br/>
+        <br/>
+        <div>
+
+        </div>
         <br/>
         <br/>
         <Collapsible
