@@ -29,8 +29,7 @@ import Menu from '../src/Menu/Menu';
 import MenuResponsive from '../src/Menu/MenuResponsive';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
-
-
+import DatePicker from '../src/DatePicker/english/DatePicker';
 
 
 const Home = () => (
@@ -53,7 +52,7 @@ class App extends Component {
       isOpen: false,
       cheeseIsReady: true,
       returnDataUrl: [],
-
+      inputValue: moment(),
 
     };
     this.openModal = this.openModal.bind(this);
@@ -139,7 +138,17 @@ class App extends Component {
         />
         <br/>
         <br/>
+        <div>
+          <h1>ورودی تاریخ </h1>
+         <div
+           style={{maxWidth:'300px'}}
+         >
+           <DatePicker
+             inputValue={this.state.inputValue}
+           />
+         </div>
 
+        </div>
         <br/>
         <br/>
         <div>
