@@ -6,7 +6,7 @@ import {getColor, getBgColor, getBorderColor} from './Statics';
 
 const HeadingStyled = styled.div`
       color:${(props) => getColor(props)};         
-      border:  1px solid ${(props) => getBorderColor(props)};
+      border-bottom: 1px solid ${(props) => getBorderColor(props)};
       text-align: center;   
       border-top-left-radius: 0.3rem;
       border-top-right-radius: 0.3rem;

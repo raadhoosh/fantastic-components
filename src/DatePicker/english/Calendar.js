@@ -44,12 +44,9 @@ class Calendar extends Component {
 
   isSelectedDay(dayNumber) {
     const { selectedDate, showDate } = this.props;
-    // console.log('selectedDate.Month . showDate.Month', moment(selectedDate).month(), moment(showDate).month() );
-    // console.log('selectedDate.year . showDate.year', moment(selectedDate).year(), moment(showDate).year() );
     const condition = moment(selectedDate).date() === dayNumber &&
       moment(selectedDate).month() === moment(showDate).month() &&
       moment(selectedDate).year() === moment(showDate).year();
-    console.log('condition',condition);
     return condition;
   }
 

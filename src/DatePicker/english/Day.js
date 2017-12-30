@@ -29,7 +29,6 @@ class Day extends Component {
         isToday={isToday}
       >
         {day}
-        {isSelected ? '.' : ''}
       </DayStyled>
     );
   }

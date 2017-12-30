@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import DateInput from './DateInput';
 import Calendar from './Calendar';
+import OutsideAlerter from '../../OutsideAlerter/OutsideAlerter';
 
 class DatePicker extends Component {
   constructor(props) {
@@ -29,7 +30,9 @@ class DatePicker extends Component {
       currentYear: initialYear,
       currentMonth: initialMonth,
       currentDay: initialDay,
-      currentWeekday: weekday
+      currentWeekday: weekday,
+      isOpen: false,
+      focused: false,
     };
     this.onShowDateChanged = this.onShowDateChanged.bind(this);
     this.onSelectedDateChanged = this.onSelectedDateChanged.bind(this);
@@ -54,23 +57,47 @@ class DatePicker extends Component {
         <div>
           <DateInput inputValue={this.state.selectedDate}
                      inputOnClick={this.toggleCalendar}
+                     onFocus={() => {
+                       this.setState({
+                         focused: true,
+                         isOpen: true
+                       });
+                     }}
+                     onBlur={() => {
+                       this.setState({
+                         focused: false
+                       });
+                     }}
           />
-          <Calendar
-            year={this.state.year}
-            month={this.state.month}
-            day={this.state.day}
-            weekDay={this.state.weekDay}
-            currentYear={this.state.currentYear}
-            currentMonth={this.state.currentMonth}
-            currentDay={this.state.currentDay}
-            currentWeekday={this.state.currentWeekday}
+          <OutsideAlerter
+            onOutsideClick={() => {
+              setTimeout(function () {
+                if (!this.state.focused) {
+                  this.setState({
+                    isOpen: false
+                  });
+                }
+              }.bind(this), 200);
+            }
+            }
+          >
+            <Calendar
+              year={this.state.year}
+              month={this.state.month}
+              day={this.state.day}
+              weekDay={this.state.weekDay}
+              currentYear={this.state.currentYear}
+              currentMonth={this.state.currentMonth}
+              currentDay={this.state.currentDay}
+              currentWeekday={this.state.currentWeekday}
 
-            onShowDateChanged={this.onShowDateChanged}
-            onSelectedDateChanged={this.onSelectedDateChanged}
+              onShowDateChanged={this.onShowDateChanged}
+              onSelectedDateChanged={this.onSelectedDateChanged}
 
-            selectedDate={this.state.selectedDate}
-            showDate={this.state.showDate}
-          />
+              selectedDate={this.state.selectedDate}
+              showDate={this.state.showDate}
+            />
+          </OutsideAlerter>
         </div>
       </div>
     );

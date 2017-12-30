@@ -10,10 +10,19 @@ const DayStyled = styled.span`
         box-sizing: border-box; 
         display: inline-block;
         width: 14.285714285714286%;  
-        font-size: 0.6em;
+        font-size: 0.8em;
+        line-height: 1.7rem;
+        border-radius: 0.3rem;
+        border: 1px solid transparent;
         
-        border: ${props => props.isSelected ? 1 : 0}px solid ${props => props.theme.primaryColor};
+        border-color: ${props => props.isSelected ? `${props.theme.primaryColor}` : 'transparent'};
         background: ${props => props.isToday ? props.theme.primaryColor : 'transparent'};
+        
+        &:hover{      
+        background-color: #f0f0f0;
+        cursor: pointer;
+        border: 1px solid transparent;
+        }
       `;
 
 export default DayStyled;
