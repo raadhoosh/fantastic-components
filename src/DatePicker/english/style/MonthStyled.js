@@ -9,7 +9,7 @@ const DayStyled = styled.span`
         text-align: center;         
         box-sizing: border-box; 
         display: inline-block;
-        width: 14.285714285714286%;  
+        width: 25%;  
         font-size: 0.8em;
         line-height: 1.7rem;
         border-radius: 0.3rem;

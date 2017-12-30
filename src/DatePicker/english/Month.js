@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import DayStyled from './style/DayStyled';
+import MonthStyled from './style/MonthStyled';
 
-class Day extends Component {
+class Month extends Component {
 
   constructor(props) {
     super(props);
@@ -13,34 +13,35 @@ class Day extends Component {
 
   handleClick(event) {
 
-    const { onDayClick, day } = this.props;
+    const { onClick, id } = this.props;
 
-    if (onDayClick) {
-      onDayClick(day);
+    if (onClick) {
+      onClick(id);
     }
   }
 
   render() {
-    const { day, isSelected, isToday ,disabled} = this.props;
+    const { name, isSelected, isToday ,disabled} = this.props;
     return (
-      <DayStyled
+      <MonthStyled
         onClick={this.handleClick}
         isSelected={isSelected}
         isToday={isToday}
         disabled={disabled}
       >
-        {day}
-      </DayStyled>
+        {name}
+      </MonthStyled>
     );
   }
 }
 
-Day.propTypes = {
-  day: PropTypes.number.isRequired,
+Month.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string,
   isToday: PropTypes.bool,
   disabled: PropTypes.bool,
   isSelected: PropTypes.bool,
-  onDayClick: PropTypes.func
+  onClick: PropTypes.func
 };
 
-export default Day;
+export default Month;

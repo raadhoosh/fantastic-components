@@ -33,9 +33,13 @@ class DatePicker extends Component {
       currentWeekday: weekday,
       isOpen: false,
       focused: false,
+      viewStyle: 'DayView' // DayView , monthView , YearView
     };
     this.onShowDateChanged = this.onShowDateChanged.bind(this);
     this.onSelectedDateChanged = this.onSelectedDateChanged.bind(this);
+    this.onViewStyleChanged = this.onViewStyleChanged.bind(this);
+    this.onMonthChanged = this.onMonthChanged.bind(this);
+    this.onYearChanged = this.onYearChanged.bind(this);
   }
 
 
@@ -47,14 +51,39 @@ class DatePicker extends Component {
 
   onSelectedDateChanged(newDate){
     this.setState({
-      selectedDate: newDate
+      selectedDate: newDate,
+      isOpen:false
     });
+  }
+
+  onMonthChanged(newMonthNumber){
+    const { showDate} = this.state;
+    const newDate = moment().date(showDate.date()).month(newMonthNumber).year(showDate.year());
+    this.setState({
+      showDate: newDate
+    });
+    this.onViewStyleChanged('DayView');
+  }
+
+  onYearChanged(newYearNumber){
+    const { showDate } = this.state;
+    const newDate = moment().date(showDate.date()).month(showDate.month()).year(newYearNumber);
+    this.setState({
+      showDate: newDate
+    });
+  }
+
+  onViewStyleChanged(newStyle){
+    if (newStyle) {
+      this.setState({
+        viewStyle: newStyle
+      });
+    }
   }
 
   render() {
     return (
-      <div>
-        <div>
+        <div style={{"position":"relative"}}>
           <DateInput inputValue={this.state.selectedDate}
                      inputOnClick={this.toggleCalendar}
                      onFocus={() => {
@@ -81,25 +110,23 @@ class DatePicker extends Component {
             }
             }
           >
+            {this.state.isOpen &&
             <Calendar
-              year={this.state.year}
-              month={this.state.month}
-              day={this.state.day}
-              weekDay={this.state.weekDay}
-              currentYear={this.state.currentYear}
-              currentMonth={this.state.currentMonth}
-              currentDay={this.state.currentDay}
-              currentWeekday={this.state.currentWeekday}
+
+              viewStyle={this.state.viewStyle}
 
               onShowDateChanged={this.onShowDateChanged}
               onSelectedDateChanged={this.onSelectedDateChanged}
-
+              onViewStyleChanged={this.onViewStyleChanged}
+              onMonthChanged={this.onMonthChanged}
+              onYearChanged={this.onYearChanged}
               selectedDate={this.state.selectedDate}
               showDate={this.state.showDate}
-            />
+              />
+            }
           </OutsideAlerter>
         </div>
-      </div>
+
     );
   }
 }
