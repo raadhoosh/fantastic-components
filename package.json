@@ -1,9 +1,9 @@
 {
-  "name": "react-component-boilerplate",
-  "description": "Boilerplate for React.js components",
-  "author": "Juho Vepsalainen",
-  "user": "survivejs",
-  "version": "6.1.2",
+  "name": "fantastic-components",
+  "description": "React.js components",
+  "author": "raadhoosh",
+  "user": "raadhoosh",
+  "version": "2.0.8",
   "scripts": {
     "start": "catalog start docs",
     "test": "jest",
@@ -57,11 +57,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/survivejs/react-component-boilerplate.git"
+    "url": "https://github.com/raadhoosh/fantastic-components.git"
   },
-  "homepage": "https://survivejs.github.io/react-component-boilerplate/",
+  "homepage": "https://github.com/raadhoosh/fantastic-components/",
   "bugs": {
-    "url": "https://github.com/survivejs/react-component-boilerplate/issues"
+    "url": "https://github.com/raadhoosh/fantastic-components/issues"
   },
   "jest": {
     "collectCoverage": true,
