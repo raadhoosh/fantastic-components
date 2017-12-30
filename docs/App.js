@@ -52,8 +52,7 @@ class App extends Component {
       isOpen: false,
       cheeseIsReady: true,
       returnDataUrl: [],
-      inputValue: moment(),
-
+      inputValue: moment.now()
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);

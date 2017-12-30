@@ -4,44 +4,43 @@ import DayStyled from './style/DayStyled';
 
 class Day extends Component {
 
-  shouldComponentUpdate(nextProps) {
-    return nextProps.selected !== this.props.selected ||
-      nextProps.disabled !== this.props.disabled ||
-      nextProps.isCurrentMonth !== this.props.isCurrentMonth;
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    event.nativeEvent.stopImmediatePropagation();
-    const { onClick, day } = this.props;
 
-    if (onClick) {
-      onClick(day);
+  handleClick(event) {
+
+    const { onDayClick, day } = this.props;
+
+    if (onDayClick) {
+      onDayClick(day);
     }
   }
 
   render() {
-    const { day, disabled } = this.props;
-
+    const { day, isSelected, isToday } = this.props;
     return (
       <DayStyled
-        onClick={this.handleClick.bind(this) }
-        disabled={disabled}
-        {...this.props}
+        onClick={this.handleClick}
+        isSelected={isSelected}
+        isToday={isToday}
       >
         {day}
+        {isSelected ? '.' : ''}
       </DayStyled>
     );
   }
 }
 
 Day.propTypes = {
-  day: PropTypes.object.isRequired,
-  isCurrentMonth: PropTypes.bool,
+  day: PropTypes.number.isRequired,
+  isToday: PropTypes.bool,
   disabled: PropTypes.bool,
-  selected: PropTypes.bool,
-  onClick: PropTypes.func
+  isSelected: PropTypes.bool,
+  onDayClick: PropTypes.func
 };
 
 export default Day;

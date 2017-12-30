@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import DateInputStyled from './style/DateInputStyled';
@@ -9,7 +9,7 @@ class DateInput extends Component {
 
     return <DateInputStyled type='text'
                             className={inputClassName}
-                            value={inputValue.format('YYYY-MM-DD')}
+                            value={inputValue.format('YYYY/MM/DD')}
                             onClick={inputOnClick}
     />;
   }
