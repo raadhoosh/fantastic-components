@@ -55,7 +55,7 @@ class Heading extends Component {
     this.setState({
       month: nextMonth,
       date: dateFirstDay,
-      year: firstDayCode
+      year: nextYear
     });
   }
 
@@ -72,22 +72,21 @@ class Heading extends Component {
   }
 
   render() {
-
     const dayOfWeekCodes = {
-      1: 'mon',
-      2: 'tue',
-      3: 'wed',
-      4: 'thu',
-      5: 'fri',
-      6: 'sat',
-      7: 'sun'
+      0: 'mon',
+      1: 'tue',
+      2: 'wed',
+      3: 'thu',
+      4: 'fri',
+      5: 'sat',
+      6: 'sun'
     }
 
     return (
       <DatePickeHeadingStyled>
         <div>
           <CurrentMonth>
-            {`${this.state.month} ${this.state.year} ${this.state.date}`}
+            {`${this.state.month} ${this.state.year}`}
           </CurrentMonth>
           <NavigationNext
             onClick={this.nextMonth}
