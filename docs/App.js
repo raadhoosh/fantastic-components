@@ -30,6 +30,7 @@ import MenuResponsive from '../src/Menu/MenuResponsive';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
 import DatePicker from '../src/DatePicker/english/DatePicker';
+import Cropper from '../src/Cropper/Cropper';
 
 
 const Home = () => (
@@ -135,6 +136,16 @@ class App extends Component {
           mainItems={mainItems}
           style={{marginBottom: '400px'}}
         />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div>
+          <Cropper
+            crop={crop}
+            returnDataUrl={(dataUrl)=>console.log('dataUrl:',dataUrl)}
+          />
+        </div>
         <br/>
         <br/>
         <div>
