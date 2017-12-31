@@ -2,7 +2,6 @@
  * Created by Programmer1 on 12/4/2017.
  */
 import styled from 'styled-components';
-
 import { getColor, getBgColor, getBorderColor } from './Statics';
 
 const UlStyled = styled.ul`
@@ -31,7 +30,5 @@ const UlStyled = styled.ul`
           background-image: -webkit-linear-gradient(top,${(props) => getBgColor(props)},${(props) => getBgColor(props)});
          }
     `;
-
-
 
 export default UlStyled;
