@@ -2,8 +2,6 @@
  * Created by Programmer1 on 12/4/2017.
  */
 import styled from 'styled-components';
-
-
 import {getColor, getBorderColor} from './Statics';
 
 const TextAriaStyled = styled.input` 

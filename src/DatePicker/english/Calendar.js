@@ -154,6 +154,7 @@ class Calendar extends Component {
               (dayNumber, i)=> {
                 return (
                   <Day
+                    key={i}
                     day={' '}
                     disabled
                   />
@@ -166,6 +167,7 @@ class Calendar extends Component {
 
                 return (
                   <Day
+                    key={i}
                     day={dayNumber}
                     isSelected={this.isSelectedDay(dayNumber)}
                     isToday={this.isToday(dayNumber)}

@@ -11,9 +11,9 @@ const DateInputStyled = styled.input`
       outline: none; 
       transition:all 0.3s ease;
       font-family: ${(props) => props.theme.fontFamily};     
-      box-shadow: inset 0 2px 2px #e9e9e9;   
-      padding: 5px;
+      box-shadow:0 1px 1px #e9e9e9 inset;        
       box-sizing: border-box; 
+      padding:7px 20px;
       `;
 
 export default DateInputStyled;

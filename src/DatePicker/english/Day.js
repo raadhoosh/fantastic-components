@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import DayStyled from './style/DayStyled';
 
@@ -13,7 +13,7 @@ class Day extends Component {
 
   handleClick(event) {
 
-    const { onDayClick, day } = this.props;
+    const {onDayClick, day} = this.props;
 
     if (onDayClick) {
       onDayClick(day);
@@ -21,7 +21,7 @@ class Day extends Component {
   }
 
   render() {
-    const { day, isSelected, isToday ,disabled} = this.props;
+    const {day, isSelected, isToday, disabled} = this.props;
     return (
       <DayStyled
         onClick={this.handleClick}
@@ -36,7 +36,7 @@ class Day extends Component {
 }
 
 Day.propTypes = {
-  day: PropTypes.number.isRequired,
+  day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   isToday: PropTypes.bool,
   disabled: PropTypes.bool,
   isSelected: PropTypes.bool,
