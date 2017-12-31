@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import defaultTheme from '../../defaultTheme';
 
 const BreadcrumbStyled = styled.div` 
          font-family: ${(props) => props.theme.fontFamily};
@@ -9,10 +10,8 @@ const BreadcrumbStyled = styled.div`
                display: inline-block;
            }
          .breadcrumb {    
-          margin-bottom: 0; 
-           direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };   
-                    
-    }
+          margin-bottom: 0;       
+            }
       `;
 
 export default BreadcrumbStyled;

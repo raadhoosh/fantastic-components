@@ -210,6 +210,7 @@ class App extends Component {
           <Input
             icon={'user'}
             errorText={'vxcvcx'}
+            value={'value'}
           />
           <br/>
           <TextAria
