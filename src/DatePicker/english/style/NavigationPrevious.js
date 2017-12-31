@@ -10,11 +10,11 @@ const NavigationPrevious = styled.span`
       text-align: center;
       cursor: pointer;
       position: absolute;
-      top: 10px;
+      top: 15px;
       width: 0;
       border: 0.45rem solid transparent;
       z-index: 1;
-      left: 10px;
+      left: 20px;
       border-right-color: ${(props) => getBorderColor(props)};
       box-sizing: border-box; 
       `;

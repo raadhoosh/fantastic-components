@@ -13,7 +13,7 @@ const WeekHeaderStyled = styled.ul`
       box-sizing: border-box; 
       width: 100%;
       text-align: center; 
-      margin: 5px auto !important; 
+      margin: 5px 5px 0 auto !important; 
        
        li{
         list-style: none;

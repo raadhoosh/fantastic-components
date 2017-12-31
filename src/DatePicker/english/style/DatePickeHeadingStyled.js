@@ -10,9 +10,9 @@ const HeadingStyled = styled.div`
       text-align: center;   
       border-top-left-radius: 0.3rem;
       border-top-right-radius: 0.3rem;
-      padding-top: 8px;
+      padding:15px 8px 10px;
       position: relative;
-      box-sizing: border-box; 
+      box-sizing: border-box;      
       `;
 
 export default HeadingStyled;

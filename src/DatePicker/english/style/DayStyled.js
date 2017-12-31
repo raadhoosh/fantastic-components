@@ -15,8 +15,8 @@ const DayStyled = styled.span`
         border-radius: 0.3rem;
         border: 1px solid transparent;
         
-        border-color: ${props => props.isSelected ? `${props.theme.primaryColor}` : 'transparent'};
-        background: ${props => props.isToday ? props.theme.primaryColor : 'transparent'};
+        border-color: ${props => props.isSelected ? getBorderColor : 'transparent'};
+        background: ${props => props.isToday ? getBgColor(props) : 'transparent'};
         ${
            props =>
              props.disabled ? '' : 
