@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getColor } from './Statics';
+import {getColor} from './Statics';
 
 const LiStyled = styled.li` 
           font-family: ${(props) => props.theme.fontFamily};
@@ -10,8 +10,15 @@ const LiStyled = styled.li`
            content:${(props) => (props.rtl || props.theme.rtl) ? '"\\f104"' : '"\\f105"' };          
            color: inherit;
            display: inline-block; 
-           padding:0 10px;  
-           cursor: pointer
+           padding:0 10px; 
+          
+           }
+           
+           a{
+            text-decoration: none;
+             &:hover{
+               text-decoration:underline;
+             }
            }
            
            &:last-child:after{
@@ -23,8 +30,9 @@ const LiStyled = styled.li`
            padding-${(props) => (props.rtl || props.theme.rtl) ? 'left' : 'right' }: 10px;      
            color: ${props => getColor(props)};}                  
            &:before, &:after{
-           font: normal normal normal 16px/1 FontAwesome;
-           cursor: pointer
+           font: normal normal normal 16px/1 FontAwesome;   
+           box-sizing: border-box; 
+           display: inline-block;       
           }`;
 
 export default LiStyled;

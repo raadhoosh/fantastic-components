@@ -6,8 +6,7 @@ import defaultTheme from '../../../defaultTheme';
 
 const DatePickerStyled = styled.div`
       position: absolute;
-      z-index: 10;    
-      padding: 10px;
+      z-index: 10;  
       margin-top: 5px;      
       border-radius: 3px;      
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);

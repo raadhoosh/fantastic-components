@@ -149,7 +149,9 @@ class Calendar extends Component {
 
             </WeekHeaderStyled>
           </DatePickeHeadingStyled>
-          <div>
+          <div
+            style={{padding:'5px'}}
+          >
             {prevmonthDays.map(
               (dayNumber, i)=> {
                 return (

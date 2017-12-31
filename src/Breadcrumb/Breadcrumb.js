@@ -2,6 +2,7 @@ import React from 'react';
 import BreadcrumbStyled from './style/BreadcrumbStyled';
 import OlStyled from './style/OlStyled';
 import LiStyled from './style/LiStyled';
+import {Link} from 'react-router-dom';
 
 class Breadcrumb extends React.Component {
   render() {
@@ -20,12 +21,13 @@ class Breadcrumb extends React.Component {
             return (
               <LiStyled
                 key={index}
-                onClick={() => {
-                  this.props.returnPath(item.path);
-                } }
                 {...this.props}
               >
-                {item.name}
+                <Link
+                  to={item.path}
+                >
+                  {item.name}
+                </Link>
               </LiStyled>
             );
           })}
