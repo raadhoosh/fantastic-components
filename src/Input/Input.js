@@ -63,7 +63,9 @@ Input.propTypes = {
   borderColor: PropTypes.string,
   bgColor: PropTypes.string,
   foreColor: PropTypes.string,
-  theme: PropTypes.object
+  theme: PropTypes.object,
+  noMargin:PropTypes.bool,
+  error:PropTypes.bool
 };
 
 export default Input;
