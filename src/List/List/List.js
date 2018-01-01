@@ -10,19 +10,18 @@ import TitleStyled from './style/TitleStyled';
 
 class List extends React.Component {
   render() {
-    const {options,title} = this.props;
+    const {options,title,rtl} = this.props;
     return (
       <HolderStyled {...this.props}>
         <TitleStyled {...this.props}> { title} </TitleStyled>
         {
           options.length > 0 &&
-          <Ul>
+          <Ul {...this.props}>
             {
               options.map((error, index) => {
                 return (
                   <ItemStyled key={index} {...this.props}>
                     {error}
-                    error header="There was some errors with your submission"
                   </ItemStyled>
                 )
               })
