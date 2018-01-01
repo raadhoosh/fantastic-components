@@ -30,7 +30,7 @@ import MenuResponsive from '../src/Menu/MenuResponsive';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
 import DatePicker from '../src/DatePicker/english/DatePicker';
-import Cropper from '../src/Cropper/Cropper';
+import CropLayer from '../src/Cropper/CropLayer';
 
 
 const Home = () => (
@@ -141,9 +141,8 @@ class App extends Component {
         <br/>
         <br/>
         <div>
-          <Cropper
-            crop={crop}
-            returnDataUrl={(dataUrl)=>console.log('dataUrl:',dataUrl)}
+          <CropLayer
+
           />
         </div>
         <br/>
@@ -221,7 +220,7 @@ class App extends Component {
           <Input
             icon={'user'}
             errorText={'vxcvcx'}
-            value={'value'}
+
           />
           <br/>
           <TextAria
@@ -278,6 +277,7 @@ class App extends Component {
                    iconTitle="envelope"
                    Btn1Label="yes"
                    footerChildren={<div><b>footer</b></div>}
+                   maxWidth='700px'
             >
 
             </Modal>

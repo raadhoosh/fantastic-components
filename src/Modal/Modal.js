@@ -73,7 +73,7 @@ class Modal extends Component {
           <i className="fa fa-info-circle" aria-hidden="true"/>
         </button>);
     }
-
+console.log('maxWidth',this.props.maxWidth)
     return (
       <div>
         <div>
@@ -81,6 +81,7 @@ class Modal extends Component {
             onClick={this.onClose}
           >
             <ModalStyled
+              maxWidth={this.props.maxWidth}
               onClick={() => this.bodyClicked = true}
             >
               <HeaderStyled className='header'>
@@ -159,7 +160,7 @@ Modal.propTypes = {
   icon: PropTypes.string,
   bgColor: PropTypes.string,
   cancelClose: PropTypes.bool,
-  open: PropTypes.bool,
+  open: PropTypes.bool
 };
 
 export default Modal;
