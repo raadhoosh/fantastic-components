@@ -51,5 +51,6 @@ module.exports = {
   Slider: require('./Slider/Slider').default,
   ButtonToggle: require('./ButtonToggle/ButtonToggle').default,
   Collapsible: require('./Collapsible/Collapsible').default,
+  List: require('./List/List/List').default,
 
 };
