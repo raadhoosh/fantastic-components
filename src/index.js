@@ -52,5 +52,5 @@ module.exports = {
   ButtonToggle: require('./ButtonToggle/ButtonToggle').default,
   Collapsible: require('./Collapsible/Collapsible').default,
   List: require('./List/List/List').default,
-
+  Window: require('./Window/Window').default
 };

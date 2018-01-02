@@ -30,7 +30,8 @@ import MenuResponsive from '../src/Menu/MenuResponsive';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
 import DatePicker from '../src/DatePicker/english/DatePicker';
-import CropLayer from '../src/Cropper/CropLayer';
+/*import CropLayer from '../src/Cropper/CropLayer';*/
+import Window from '../src/Window/Window';
 
 
 const Home = () => (
@@ -141,25 +142,29 @@ class App extends Component {
         <br/>
         <br/>
         <div>
-          <CropLayer
-
-          />
+        {/*  <CropLayer/>*/}
         </div>
         <br/>
         <br/>
         <div>
           <h1>ورودی تاریخ </h1>
-         <div
-           style={{maxWidth:'300px'}}
-         >
-           <DatePicker
-             inputValue={this.state.inputValue}
-           />
-         </div>
+          <div
+            style={{maxWidth:'300px'}}
+          >
+            <DatePicker
+              inputValue={this.state.inputValue}
+            />
+          </div>
 
         </div>
         <br/>
         <br/>
+        <div>
+          <Window/>
+        </div>
+        <br/>
+        <br/>
+
         <div>
 
         </div>
@@ -219,8 +224,10 @@ class App extends Component {
           App...
           <Input
             icon={'user'}
-            errorText={'vxcvcx'}
-
+            errorText={'error'}
+error
+            placeholder={'placeholder'}
+            noMargin
           />
           <br/>
           <TextAria
