@@ -31,8 +31,8 @@ import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
 import DatePickerFa from '../src/DatePicker/fa/DatePicker';
 import DatePicker from '../src/DatePicker/english/DatePicker';
-/*import CropLayer from '../src/Cropper/CropLayer';*/
-import Window from '../src/Window/Window';
+import Cropper from '../src/Cropper/Cropper';
+/*import Window from '../src/Window/Window';*/
 
 
 const Home = () => (
@@ -143,7 +143,7 @@ class App extends Component {
         <br/>
         <br/>
         <div>
-        {/*  <CropLayer/>*/}
+          <Cropper/>
         </div>
         <br/>
         <br/>
@@ -156,7 +156,7 @@ class App extends Component {
               <Row>
                 <Col md6>
                   <DatePicker
-                    showTime={false}
+                    showTime={true}
                     inputValue={this.state.inputValue}
                   />
                 </Col>
@@ -173,9 +173,9 @@ class App extends Component {
         </div>
         <br/>
         <br/>
-        <div>
+       {/* <div>
           <Window/>
-        </div>
+        </div>*/}
         <br/>
         <br/>
 

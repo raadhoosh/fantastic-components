@@ -114,7 +114,7 @@ class CropLayer extends Component {
     this.calc(e);
 
     const isResizing = this.onRightEdge || this.onBottomEdge || this.onTopEdge || this.onLeftEdge;
-    const parent = e.target.parentElement.nodeName.clientX;
+    const parent = e.target.parentElement.nodeName;
 
 
     this.clicked = {

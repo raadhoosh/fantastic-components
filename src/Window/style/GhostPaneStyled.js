@@ -9,7 +9,7 @@ const GhostPaneStyled = styled.div`
       width: 45%;
       height: 45%;
       top: 20%;
-      left: 20%;      
+      left: 30%;      
       position: absolute;
       margin: 0;
       padding: 0;
