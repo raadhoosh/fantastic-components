@@ -29,6 +29,7 @@ import Menu from '../src/Menu/Menu';
 import MenuResponsive from '../src/Menu/MenuResponsive';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
+import DatePickerFa from '../src/DatePicker/fa/DatePicker';
 import DatePicker from '../src/DatePicker/english/DatePicker';
 /*import CropLayer from '../src/Cropper/CropLayer';*/
 import Window from '../src/Window/Window';
@@ -151,9 +152,22 @@ class App extends Component {
           <div
             style={{maxWidth:'300px'}}
           >
-            <DatePicker
-              inputValue={this.state.inputValue}
-            />
+            <Container>
+              <Row>
+                <Col md6>
+                  <DatePicker
+                    showTime={false}
+                    inputValue={this.state.inputValue}
+                  />
+                </Col>
+                <Col md6>
+                  <DatePickerFa
+                    showTime={false}
+                    inputValue={this.state.inputValue}
+                  />
+                </Col>
+              </Row>
+            </Container>
           </div>
 
         </div>
