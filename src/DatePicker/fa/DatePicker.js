@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import moment from 'moment-jalaali';
 import DateInput from './DateInput';
 import Calendar from './Calendar';
 import OutsideAlerter from '../../OutsideAlerter/OutsideAlerter';
 
-class DatePicker extends Component {
+class DatePickerFa extends Component {
   constructor(props) {
     super(props);
 
@@ -130,7 +130,7 @@ class DatePicker extends Component {
   }
 }
 
-DatePicker.propTypes = {
+DatePickerFa.propTypes = {
   date: PropTypes.oneOfType([
     PropTypes.instanceOf(moment),
     PropTypes.instanceOf(Date)
@@ -139,11 +139,11 @@ DatePicker.propTypes = {
   showTime: PropTypes.bool
 };
 
-DatePicker.defaultProps = {
+DatePickerFa.defaultProps = {
   date: moment.now(),
   onChange: null,
   showTime: false
 };
 
-export default DatePicker;
+export default DatePickerFa;
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import moment from 'moment-jalaali';
 import Day from './Day';
 import Month from './Month';
 import DatePickerStyled from './style/DatePickerStyled';

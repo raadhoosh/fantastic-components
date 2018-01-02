@@ -86,6 +86,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "moment": "^2.20.1",
+    "moment-jalaali": "^0.7.2",
     "moment-jalali": "^0.3.9",
     "prop-types": "^15.6.0",
     "react-router-dom": "^4.2.2",
