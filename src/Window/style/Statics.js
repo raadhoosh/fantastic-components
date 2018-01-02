@@ -31,7 +31,7 @@ function getColor(props) {
   } else if (inverse) {
     ForeC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
   } else {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
   }
 
   return ForeC;
@@ -105,7 +105,7 @@ function getBgColor(props) {
   } else if (inverse) {
     bgC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.bgColor : defaultTheme.inverse.bgColor;
   } else {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
   }
   return bgC;
 }
@@ -141,7 +141,7 @@ function getBorderColor(props) {
   } else if (inverse) {
     BorderC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.borderColor : defaultTheme.inverse.borderColor;
   } else {
-    BorderC = (Object.keys(theme).length > 0 && theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
+    BorderC = (Object.keys(theme).length > 0 && theme) ? theme.primary.borderColor : defaultTheme.primary.borderColor;
   }
   return BorderC;
 }

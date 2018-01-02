@@ -5,15 +5,22 @@ import DateInputStyled from './style/DateInputStyled';
 import IconStyled from './style/IconStyled';
 
 class DateInput extends Component {
+
+  constructor(props){
+    super(props);
+    this.onEditorChange = this.onEditorChange.bind(this);
+  }
+  onEditorChange(){
+  }
   render() {
     const {inputValue, inputOnClick, inputClassName, onFocus, onBlur} = this.props;
-
     return <div
       style={{position:'relative', direction:'ltr'}}
     >
       <DateInputStyled type='text'
                        className={inputClassName}
                        value={inputValue.format('YYYY/MM/DD')}
+                       onChange={this.onEditorChange}
                        onClick={inputOnClick}
                        onFocus={onFocus}
                        onBlur={onBlur}

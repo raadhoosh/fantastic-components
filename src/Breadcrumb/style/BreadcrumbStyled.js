@@ -1,14 +1,18 @@
 import styled from 'styled-components';
-import defaultTheme from '../../defaultTheme';
+import {getColor, getBgColor, getBorderColor} from './Statics';
+
 
 const BreadcrumbStyled = styled.div` 
          font-family: ${(props) => props.theme.fontFamily};
-         background-color:#f6f6f6;  
-         border-bottom: 1px solid #f7f7f7;
-         margin: 20px 0;
+          color:${(props) => getColor(props)};
+          background-color:${(props) => getBgColor(props)}; 
+          border:  1px solid ${(props) => getBorderColor(props)};
+          margin: 20px 0;
+          
           li{
                display: inline-block;
            }
+           
          .breadcrumb {    
           margin-bottom: 0;       
             }

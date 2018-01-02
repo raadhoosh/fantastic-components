@@ -9,9 +9,11 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 let mountNode = document.getElementById("app");
 ReactDOM.render(
-  <Router>
-    <App/>
-  </Router>
+  <ThemeProvider theme={ThemeLtr}>
+    <Router>
+      <App/>
+    </Router>
+  </ThemeProvider>
   , mountNode);
 
 
