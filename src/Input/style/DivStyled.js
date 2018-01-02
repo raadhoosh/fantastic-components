@@ -8,7 +8,7 @@ const Div = styled.div`
          box-sizing: border-box; 
          position:relative;
          direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
-         margin:${(props) => (props.noMargin) ? '0px' : '20px'};
+         margin:${(props) => (props.noMargin) ? '0px' : '5px'};
          
            i{   
               box-sizing: border-box;                  

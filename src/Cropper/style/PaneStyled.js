@@ -13,8 +13,7 @@ const PaneStyled = styled.div`
       margin: 0;
       padding: 0;
       z-index: 99;
-      border: 2px solid purple;
-      background: #fefefe;  
+      border: 1px solid purple;      
       `;
 
 export default PaneStyled;

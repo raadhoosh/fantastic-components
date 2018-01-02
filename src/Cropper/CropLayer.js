@@ -114,6 +114,8 @@ class CropLayer extends Component {
     this.calc(e);
 
     const isResizing = this.onRightEdge || this.onBottomEdge || this.onTopEdge || this.onLeftEdge;
+    const parent = e.target.parentElement.nodeName.clientX;
+
 
     this.clicked = {
       x: this.x,
@@ -129,11 +131,11 @@ class CropLayer extends Component {
       onRightEdge: this.onRightEdge,
       onBottomEdge: this.onBottomEdge
     };
+    console.log('e',parent);
   }
 
   canMove() {
-    return this.x > 0 && this.x < this.b.width && this.y > 0 && this.y < this.b.height
-      && this.y < 30;
+    return this.x > 0 && this.x < this.b.width && this.y > 0 && this.y < this.b.height;
   }
 
   calc(e) {
@@ -304,7 +306,6 @@ class CropLayer extends Component {
           <TitleStyled
             innerRef={(ti) => { this.title = ti; }}
           >
-            Resize, Drag or Snap Me!
           </TitleStyled>
         </PaneStyled>
         <GhostPaneStyled
