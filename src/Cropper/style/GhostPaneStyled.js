@@ -4,13 +4,13 @@
 import styled from 'styled-components';
 
 const GhostPaneStyled = styled.div`
+      position: absolute;
       background: #999;
 	    opacity: 0.2;
       width: 30%;
       height: 60%;
       top: 20%;
-      left: 35%;      
-      position: absolute;
+      left: 35%;     
       margin: 0;
       padding: 0;
       z-index: 98; 

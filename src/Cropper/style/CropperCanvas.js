@@ -3,15 +3,11 @@
  */
 import styled from 'styled-components';
 
-const CropperCanvas = styled.div`
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 450px;
+const CropperCanvas = styled.div`                  
+      bottom: 0;     
       width: 600px;
       height: 400px;       
-      
+      margin: 0 auto;
       `;
 
 export default CropperCanvas;

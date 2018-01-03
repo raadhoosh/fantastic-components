@@ -34,6 +34,7 @@ class Cropper extends Component {
     this.onMove = this.onMove.bind(this);
     this.animate = this.animate.bind(this);
     this.onUp = this.onUp.bind(this);
+    this.loadImg = this.loadImg.bind(this);
 
 
     // Minimum resizable area
@@ -56,6 +57,8 @@ class Cropper extends Component {
     this.b = 0;
     this.x = 0;
     this.y = 0;
+    this.CropCanvas=0;
+    this.CropContainer=0;
 
     this.redraw = false;
 
@@ -80,6 +83,14 @@ class Cropper extends Component {
     document.addEventListener('touchmove', this.onTouchMove);
     document.addEventListener('touchend', this.onTouchEnd);
     this.animate();
+    this.loadImg();
+  }
+
+  loadImg() {
+    this.paneBox = this.pane.getBoundingClientRect();
+    this.CropCanvas = this.CrCanvasRef.getBoundingClientRect();
+    this.imgRef.style.left = -( this.paneBox.left - this.CropCanvas.left ) + 'px';
+    this.imgRef.style.top = -(this.paneBox.top - this.CropCanvas.top) + 'px';
   }
 
   setBounds(element, x, y, w, h) {
@@ -158,6 +169,7 @@ class Cropper extends Component {
 
     this.rightScreenEdge = window.innerWidth - MARGINS;
     this.bottomScreenEdge = window.innerHeight - MARGINS;
+    console.log('this.b',this.b)
   }
 
   onMove(ee) {
@@ -237,10 +249,13 @@ class Cropper extends Component {
       }
 
       // moving
-      this.pane.style.top = (this.e.clientY - this.clicked.y) + 'px';
+      this.CropCanvas = this.CrCanvasRef.getBoundingClientRect();
+      this.CropContainer = this.CrContainerRef.getBoundingClientRect();
+      this.pane.style.top = (this.e.clientY - this.clicked.y - this.CropContainer.top) + 'px';
       this.pane.style.left = (this.e.clientX - this.clicked.x) + 'px';
-      this.imgRef.style.left = -((this.e.clientX - this.clicked.x) - this.CrCanvasRef.style.left) + 'px';
-      this.imgRef.style.top = -(this.e.clientY - this.clicked.y) + 'px';
+      this.b = this.pane.getBoundingClientRect();
+      this.imgRef.style.left = -( this.b.left - this.CropCanvas.left ) + 'px';
+      this.imgRef.style.top = -(this.b.top - this.CropContainer.top) + 'px';
 
       return;
     }
@@ -262,7 +277,6 @@ class Cropper extends Component {
       this.pane.style.cursor = 'default';
     }
   }
-
 
   onUp(e) {
     this.calc(e);
@@ -313,7 +327,11 @@ class Cropper extends Component {
             src={image}
             style={{display: 'none'}}
           />
-          <CropperContainerStyled>
+          <CropperContainerStyled
+            innerRef={(x) => {
+              this.CrContainerRef = x;
+            }}
+          >
 
             <CropperWrapBox>
               <CropperCanvas
@@ -378,9 +396,7 @@ class Cropper extends Component {
                 }}
               />
             </div>
-
             <Overlay/>
-
           </CropperContainerStyled>
         </DivWrapperStyled>
       </div>

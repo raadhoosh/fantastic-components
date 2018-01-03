@@ -11,8 +11,8 @@ const ImgStyled = styled.img`
         max-height: none;
         display: block;
         min-height: 0;
-        min-width: 0;  
-       `;
+        min-width: 0;
+         `;
 
 
 export default ImgStyled;
