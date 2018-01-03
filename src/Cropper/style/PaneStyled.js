@@ -6,14 +6,14 @@ import {getColor, getBgColor, getBorderColor} from './Statics';
 
 const PaneStyled = styled.div`
       position: absolute;
-      width: 45%;
-      height: 45%;
+      width: 30%;
+      height: 60%;
       top: 20%;
-      left: 20%;     
+      left: 35%;     
       margin: 0;
       padding: 0;
       z-index: 99;
-      border: 1px solid purple;      
+      border: 1px solid #39f;      
       `;
 
 export default PaneStyled;

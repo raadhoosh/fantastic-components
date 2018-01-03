@@ -7,11 +7,10 @@ import {getBgColor, getBorderColor} from './Statics';
 const Image = styled.img`            
           display: block;
           max-width: 100%;
-          height: auto;
-          border:  1px solid ${(props) => getBorderColor(props)}; 
+          height: auto;         
                      
           ${(props) => props.ImageType === 'rounded' ? 'border-radius: 6px;'
-  : (props.ImageType === 'circle' ? 'border-radius: 50%;' : props.ImageType === 'thumbnail' ? `            display: inline-block;
+  : (props.ImageType === 'circle' ? 'border-radius: 50%;' : props.ImageType === 'thumbnail' ? `display: inline-block;
             padding: 4px;           
             background-color:${getBgColor(props)};     
             border:  1px solid ${getBorderColor(props)};            
