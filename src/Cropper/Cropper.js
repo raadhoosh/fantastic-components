@@ -251,11 +251,14 @@ class Cropper extends Component {
       // moving
       this.CropCanvas = this.CrCanvasRef.getBoundingClientRect();
       this.CropContainer = this.CrContainerRef.getBoundingClientRect();
-      this.pane.style.top = (this.e.clientY - this.clicked.y - this.CropContainer.top) + 'px';
-      this.pane.style.left = (this.e.clientX - this.clicked.x) + 'px';
       this.b = this.pane.getBoundingClientRect();
-      this.imgRef.style.left = -( this.b.left - this.CropCanvas.left ) + 'px';
-      this.imgRef.style.top = -(this.b.top - this.CropContainer.top) + 'px';
+      if( this.b.top >  this.CropContainer.top){
+        this.pane.style.top = (this.e.clientY - this.clicked.y - this.CropContainer.top) + 'px';
+        this.pane.style.left = (this.e.clientX - this.clicked.x) + 'px';
+        this.b = this.pane.getBoundingClientRect();
+        this.imgRef.style.left = -( this.b.left - this.CropCanvas.left ) + 'px';
+        this.imgRef.style.top = -(this.b.top - this.CropContainer.top) + 'px';
+      }
 
       return;
     }

@@ -4,8 +4,7 @@
 import styled from 'styled-components';
 
 const GhostPaneStyled = styled.div`
-      position: absolute;
-      background: #999;
+      position: absolute;      
 	    opacity: 0.2;
       width: 30%;
       height: 60%;
