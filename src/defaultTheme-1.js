@@ -10,7 +10,7 @@ const inverseColor = '#323232';
 const grayColor = '#e7e7e7';
 
 
-const defaultForeColor = '#303030';
+const defaultColorForeColor = '#303030';
 const primaryForeColor = '#ffffff';
 const secondaryForeColor = '#ffffff';
 const warningForeColor = '#ffffff';
@@ -46,6 +46,21 @@ const important = " !important";
 
 const rhThemeBlue = {
   rtl: false,
+
+  rhTheme: {
+    color: '#f7f7f7 !important',
+    backgroundColor: primaryColor + "!important",
+    primaryColor: primaryColor,
+    secondaryColor: secondaryColor,
+    warningColor: warningColor,
+    infoColor: infoColor,
+    successColor: successColor,
+    dangerColor: dangerColor,
+    inverseColor: inverseColor,
+    primaryForeColor: primaryForeColor,
+    secondaryForeColor: secondaryForeColor,
+  },
+
   fontFamily: 'IRANSans, Noto, Roboto, sans-serif' + important,
   primaryColor: primaryColor,
   secondaryColor: secondaryColor,
@@ -79,71 +94,63 @@ const rhThemeBlue = {
   darkInverseColor: darkInverseColor,
 
   default: {
-    color: '#dcdcdc',
-    textColor: '#333',
-    darkColor:'#c7c7c7',
-    lightColor:'#f9f9f9'
+    foreColor: defaultColorForeColor,
+    borderColor: defaultColor,
+    bgColor: defaultColor,
   },
   primary: {
-    color: '#337ab7',
-    textColor: '#fff',
-    darkColor:'#2e6da4',
-    lightColor:'#5891c3'
+    foreColor: primaryForeColor,
+    borderColor: primaryColor,
+    bgColor: primaryColor,
+    lightColor:lightPrimaryColor,
+    darkColor:darkPrimaryColor
+
   },
   secondary: {
-    color: '#ff23bb',
-    textColor: '#ffffff',
-    darkColor:'#991471',
-    lightColor:'#ffb3e6'
+    foreColor: secondaryForeColor,
+    borderColor: secondaryColor,
+    bgColor: secondaryColor,
+    lightColor:lightSecondaryColor,
+    darkColor:darkSecondaryColor
+
   },
   warning: {
-    color: '#ec971f',
-    textColor: '#fff',
-    darkColor:'#d58512',
-    lightColor:'#f8e1c1'
+    foreColor: warningForeColor,
+    borderColor: warningColor,
+    bgColor: warningColor,
+    lightColor:lightWarningColor,
+    darkColor:darkWarningColor
   },
   info: {
-    color: '#31b0d5',
-    textColor: '#fff',
-    darkColor:'#269abc',
-    lightColor:'#b3e1ee'
+    foreColor: infoForeColor,
+    borderColor: infoColor,
+    bgColor: infoColor,
+    lightColor:lightInfoColor,
+    darkColor:darkInfoColor
   },
   success: {
-    color: '#449d44',
-    textColor: '#fff',
-    darkColor:'#398439',
-    lightColor:'#badabb'
+    foreColor: successForeColor,
+    borderColor: successColor,
+    bgColor: successColor,
+    lightColor:lightSuccessColor,
+    darkColor:darkSuccessColor
+
   },
   danger: {
-    color: '#c9302c',
-    textColor: '#fff',
-    darkColor:'#ac2925',
-    lightColor:'#efc5c4'
+    foreColor: dangerForeColor,
+    borderColor: dangerColor,
+    bgColor: dangerColor,
+    lightColor:lightDangerColor,
+    darkColor:darkDangerColor
+  },
+  inverse: {
+    foreColor: inverseForeColor,
+    borderColor: inverseColor,
+    bgColor: inverseColor,
+    darkColor:darkInverseColor,
+    lightColor:lightInverseColor
   },
 
-  window : {
-    color: '#f3f3f3',
-    textColor: '#000',
-    darkColor:'#465a46',
-    lightColor:'#fff'
-  },
-  background:{
-    color: '#ffffff'
-  },
-
-  shadow: {
-    color: '#767676',
-    darkColor:'#414141',
-    lightColor:'#9e9e9e'
-  },
-
-  fixColors: {
-    white: '#fff',
-    black: '#000',
-    gray: '#aaa',
-    lightGray: '#d3d3d3',
-    darkGray: '#757575'
-  },
 
   rhsButton: {},
   RhsCheckBox: {},

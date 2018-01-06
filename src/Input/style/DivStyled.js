@@ -15,7 +15,7 @@ const Div = styled.div`
               color:  ${(props) => getIconColor(props)};
               position: absolute;
               ${(props) => (props.rtl || props.theme.rtl) ? 'right:10px' : 'left: 10px'};            
-              top: ${(props) => (props.label) ? '29px' : '5px'  }; 
+              top: ${(props) => (props.label) ? '29px' : '4px'  }; 
           }       
            `;
 
