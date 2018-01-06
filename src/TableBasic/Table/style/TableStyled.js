@@ -1,10 +1,6 @@
 import styled from 'styled-components';
-import {getColor, getBgColor}  from './Statics';
 
-const TableStyled = styled.table`
-                font-family: ${(props) => props.theme.fontFamily};
-                color:${(props) => getColor(props)};
-                background-color:${(props) => getBgColor(props)};
+const TableStyled = styled.table`                               
                 width: 100%;
                 max-width: 100%;
                 margin-bottom: 20px;

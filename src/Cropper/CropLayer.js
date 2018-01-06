@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import PaneStyled from './style/PaneStyled';
-import TitleStyled from './style/TitleStyled';
+import CropperFace from './style/CropperFace';
 import GhostPaneStyled from './style/GhostPaneStyled';
+import SpanStyled from './style/SpanStyled';
+import ImgBoxStyled from './style/ImgBoxStyled';
+import ImgStyled from './style/ImgStyled';
+import image from '../../docs/commons/child.jpg';
 
 // Thresholds
 const FULLSCREEN_MARGINS = -10;
@@ -10,21 +14,21 @@ const MARGINS = 4;
 
 class CropLayer extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
 
-    this.setBounds=this.setBounds.bind(this);
-    this.hintHide=this.hintHide.bind(this);
-    this.onTouchDown=this.onTouchDown.bind(this);
-    this.onTouchMove=this.onTouchMove.bind(this);
-    this.onTouchEnd=this.onTouchEnd.bind(this);
-    this.onMouseDown=this.onMouseDown.bind(this);
-    this.onDown=this.onDown.bind(this);
-    this.canMove=this.canMove.bind(this);
-    this.calc=this.calc.bind(this);
-    this.onMove=this.onMove.bind(this);
-    this.animate=this.animate.bind(this);
-    this.onUp=this.onUp.bind(this);
+    this.setBounds = this.setBounds.bind(this);
+    this.hintHide = this.hintHide.bind(this);
+    this.onTouchDown = this.onTouchDown.bind(this);
+    this.onTouchMove = this.onTouchMove.bind(this);
+    this.onTouchEnd = this.onTouchEnd.bind(this);
+    this.onMouseDown = this.onMouseDown.bind(this);
+    this.onDown = this.onDown.bind(this);
+    this.canMove = this.canMove.bind(this);
+    this.calc = this.calc.bind(this);
+    this.onMove = this.onMove.bind(this);
+    this.animate = this.animate.bind(this);
+    this.onUp = this.onUp.bind(this);
 
 
     // Minimum resizable area
@@ -58,14 +62,14 @@ class CropLayer extends Component {
 
   componentDidMount() {
     // Mouse events
-    if(this.pane) {
+    if (this.pane) {
       this.pane.addEventListener('mousedown', this.onMouseDown);
     }
     document.addEventListener('mousemove', this.onMove);
     document.addEventListener('mouseup', this.onUp);
 
     // Touch events
-    if(this.pane) {
+    if (this.pane) {
       this.pane.addEventListener('touchstart', this.onTouchDown);
     }
     document.addEventListener('touchmove', this.onTouchMove);
@@ -114,6 +118,7 @@ class CropLayer extends Component {
     this.calc(e);
 
     const isResizing = this.onRightEdge || this.onBottomEdge || this.onTopEdge || this.onLeftEdge;
+    const parent = e.target.parentElement.nodeName;
 
     this.clicked = {
       x: this.x,
@@ -129,11 +134,11 @@ class CropLayer extends Component {
       onRightEdge: this.onRightEdge,
       onBottomEdge: this.onBottomEdge
     };
+    console.log('e', parent);
   }
 
   canMove() {
-    return this.x > 0 && this.x < this.b.width && this.y > 0 && this.y < this.b.height
-      && this.y < 30;
+    return this.x > 0 && this.x < this.b.width && this.y > 0 && this.y < this.b.height;
   }
 
   calc(e) {
@@ -169,7 +174,7 @@ class CropLayer extends Component {
       if (this.clicked.onBottomEdge) this.pane.style.height = Math.max(this.y, this.minHeight) + 'px';
 
       if (this.clicked.onLeftEdge) {
-        const currentWidth = Math.max(this.clicked.cx - this.e.clientX  + this.clicked.w, this.minWidth);
+        const currentWidth = Math.max(this.clicked.cx - this.e.clientX + this.clicked.w, this.minWidth);
         if (currentWidth > this.minWidth) {
           this.pane.style.width = currentWidth + 'px';
           this.pane.style.left = this.e.clientX + 'px';
@@ -229,7 +234,9 @@ class CropLayer extends Component {
       // moving
       this.pane.style.top = (this.e.clientY - this.clicked.y) + 'px';
       this.pane.style.left = (this.e.clientX - this.clicked.x) + 'px';
-
+      this.imgRef.style.left = -(this.e.clientX - this.clicked.x - 500) + 'px';
+      this.imgRef.style.top = -(this.e.clientY - this.clicked.y) + 'px';
+      /*console.log('this.CropperCanvas.style.left', this.CropperCanvas.style.left)*/
       return;
     }
 
@@ -250,7 +257,6 @@ class CropLayer extends Component {
       this.pane.style.cursor = 'default';
     }
   }
-
 
 
   onUp(e) {
@@ -299,17 +305,54 @@ class CropLayer extends Component {
     return (
       <div>
         <PaneStyled
-          innerRef={(pa) => { this.pane = pa; }}
+          innerRef={(pa) => {
+            this.pane = pa;
+          }}
         >
-          <TitleStyled
-            innerRef={(ti) => { this.title = ti; }}
+          <ImgBoxStyled>
+            <ImgStyled
+              src={image}
+              innerRef={(im) => {
+                this.imgRef = im
+              }}
+            />
+          </ImgBoxStyled>
+          <SpanStyled
+            style={{top: '-3px', left: '50%', marginLeft: '-3px'}}
+          />
+          <SpanStyled
+            style={{top: '-3px', right: '-3px'}}
+          />
+          <SpanStyled
+            style={{top: '-3px', left: '-3px'}}
+          />
+          <SpanStyled
+            style={{top: '50%', left: '-3px', marginTop: '-3px'}}
+          />
+          <SpanStyled
+            style={{top: '50%', right: '-3px', marginTop: '-3px'}}
+          />
+          <SpanStyled
+            style={{bottom: '-3px', left: '-3px'}}
+          />
+          <SpanStyled
+            style={{bottom: '-3px', left: '50%', marginLeft: '-3px'}}
+          />
+          <SpanStyled
+            style={{bottom: '-3px', right: '-3px'}}
+          />
+          <CropperFace
+            innerRef={(ti) => {
+              this.title = ti;
+            }}
           >
-            Resize, Drag or Snap Me!
-          </TitleStyled>
+          </CropperFace>
         </PaneStyled>
         <GhostPaneStyled
-          innerRef={(gh) => { this.ghostpane = gh; }}
-         />
+          innerRef={(gh) => {
+            this.ghostpane = gh;
+          }}
+        />
       </div>
     );
   }

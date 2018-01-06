@@ -10,7 +10,7 @@ import ModalStyled from './style/ModalStyled';
 
 class Modal extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.onClose = this.onClose.bind(this);
     this.bodyClicked = false;
   }
@@ -42,8 +42,16 @@ class Modal extends Component {
       footerChildren,
       icon,
       cancelClose,
-      rtl
+      rtl,
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
     } = this.props;
+
+    const colorProps = {primary, secondary, info, success, danger, warning};
 
     let Btn1;
     let Btn2;
@@ -73,7 +81,7 @@ class Modal extends Component {
           <i className="fa fa-info-circle" aria-hidden="true"/>
         </button>);
     }
-console.log('maxWidth',this.props.maxWidth)
+
     return (
       <div>
         <div>
@@ -84,7 +92,10 @@ console.log('maxWidth',this.props.maxWidth)
               maxWidth={this.props.maxWidth}
               onClick={() => this.bodyClicked = true}
             >
-              <HeaderStyled className='header'>
+              <HeaderStyled
+                className="header"
+                {...colorProps}
+              >
                 <Icon
                   color='#fff'
                   iconClass={icon}
@@ -112,7 +123,9 @@ console.log('maxWidth',this.props.maxWidth)
                 {children}
               </ModalBodyStyle>
               {
-                (Btn1 || Btn2 || Btn3 || BtnHelp || footerChildren) && <FooterStyled>
+                (Btn1 || Btn2 || Btn3 || BtnHelp || footerChildren) && <FooterStyled
+                  {...colorProps}
+                >
                   {Btn1}
                   {Btn2}
                   {Btn3}
@@ -160,7 +173,15 @@ Modal.propTypes = {
   icon: PropTypes.string,
   bgColor: PropTypes.string,
   cancelClose: PropTypes.bool,
-  open: PropTypes.bool
+  open: PropTypes.bool,
+
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
+  inverse: PropTypes.bool,
 };
 
 export default Modal;

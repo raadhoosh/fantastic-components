@@ -10,7 +10,7 @@ function getColor(props) {
     success,
     inverse,
     foreColor,
-    theme,
+    theme
   } = props;
 
   let ForeC;
@@ -109,4 +109,4 @@ function getBorderColor(props) {
   return BorderC;
 }
 
-export {getColor, getBgColor, getBorderColor };
+export {getColor, getBgColor, getBorderColor};

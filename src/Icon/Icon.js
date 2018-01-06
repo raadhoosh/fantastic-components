@@ -43,6 +43,14 @@ Icon.propTypes = {
   xxlarg: PropTypes.bool,
   right: PropTypes.bool,
   left: PropTypes.bool,
+
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
+  inverse: PropTypes.bool,
 };
 
 export default Icon;

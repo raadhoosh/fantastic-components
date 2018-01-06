@@ -7,8 +7,7 @@ import defaultTheme from '../../defaultTheme';
 
 const TextAriaStyled = styled.input` 
                 box-sizing: border-box;   
-                display: block;
-                width: 100%;
+                display: block;                
                 height: 34px;
                 padding: 6px 12px;
                 font-size: 14px;

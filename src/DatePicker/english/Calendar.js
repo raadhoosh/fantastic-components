@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import Day from './Day';
@@ -9,6 +9,7 @@ import NavigationPrevious from './style/NavigationPrevious';
 import NavigationNext from './style/NavigationNext';
 import DatePickeHeadingStyled from './style/DatePickeHeadingStyled';
 import WeekHeaderStyled from './style/WeekHeader';
+import TimePicker from './TimePicker';
 
 
 class Calendar extends Component {
@@ -33,13 +34,17 @@ class Calendar extends Component {
   previousMonth() {
     const { showDate, onShowDateChanged } = this.props;
     const prev = moment(showDate).add(-1, 'M');
-    if (onShowDateChanged)
+    if (onShowDateChanged) {
       onShowDateChanged(prev);
+    }
   }
 
   onDayClicked(day) {
-    const { showDate, onSelectedDateChanged} = this.props;
+    const { showDate, onSelectedDateChanged, showTime} = this.props;
     const newDate = moment().date(day).month(showDate.month()).year(showDate.year());
+    if (showTime) {
+      newDate.hour(showDate.hour()).minute(showDate.minute());
+    }
     if (onSelectedDateChanged) {
       onSelectedDateChanged(newDate);
     }
@@ -47,37 +52,33 @@ class Calendar extends Component {
 
   onMonthClicked(monthNumber) {
 
-
   }
+
 
   isSelectedDay(dayNumber) {
     const { selectedDate, showDate } = this.props;
-    const condition = moment(selectedDate).date() === dayNumber &&
+    return (
+      moment(selectedDate).date() === dayNumber &&
       moment(selectedDate).month() === moment(showDate).month() &&
-      moment(selectedDate).year() === moment(showDate).year();
-    return condition;
+      moment(selectedDate).year() === moment(showDate).year()
+    );
   }
 
   isToday(dayNumber) {
     const { showDate } = this.props;
     const now = moment.now();
-    if(
+    return (
       moment(now).date() === dayNumber &&
       moment(now).month() === moment(showDate).month() &&
       moment(now).year() === moment(showDate).year()
-    ){
-      return true;
-    }
-    return false;
+    );
   }
 
 
-
-
-
-
   render() {
-    const {selectedDate, showDate, currentDate, onShowDateChanged, onViewStyleChanged, viewStyle, onMonthChanged } = this.props;
+    const {
+      showDate, onViewStyleChanged, viewStyle, onMonthChanged, showTime, onTimeSet
+    } = this.props;
     // Calculate days
 
     const month = moment(showDate).month() + 1;
@@ -88,7 +89,7 @@ class Calendar extends Component {
     const weekDayIndex = [];
     // const weekStartDayIndex = moment().startOf('isoWeek').day();
     const weekStartDayIndex = 1;
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 7; i += 1) {
       weekDayIndex[i] = (weekStartDayIndex + i) % 7;
     }
 
@@ -100,30 +101,36 @@ class Calendar extends Component {
     }
 
     const prevmonthDays = [];
-    for (let i = 0; i < firstDayWeekNumber; i++) {
+    for (let i = 0; i < firstDayWeekNumber; i += 1) {
       prevmonthDays[i] = 0;
     }
 
     const monthDays = [];
-    for (let i = 0; i < moment(showDate).daysInMonth(); i++) {
+    for (let i = 0; i < moment(showDate).daysInMonth(); i += 1) {
       monthDays[i] = (i + 1);
     }
 
     const monthNames = [];
-    for (let i = 0; i < 12 ; i++) {
+    for (let i = 0; i < 12; i += 1) {
       monthNames[i] = moment(showDate).months(i).format('MMMM');
     }
 
     return (
       <DatePickerStyled>
-        { viewStyle === 'DayView' &&
+        {viewStyle === 'DayView' &&
         <div>
+          {showTime &&
+            <TimePicker
+              date={showDate}
+              onTimeSet={onTimeSet}
+            />
+          }
           <DatePickeHeadingStyled>
             <div>
               <CurrentMonth
-              onClick={()=>
-                onViewStyleChanged('MonthView')
-              }
+                onClick={() =>
+                  onViewStyleChanged('MonthView')
+                }
               >
                 {`${monthName} ${year}`}
               </CurrentMonth>
@@ -136,37 +143,31 @@ class Calendar extends Component {
             </div>
 
             <WeekHeaderStyled>
-              {weekDayIndex.map(
-                (dayNumber, i)=> {
-                  return (
-                    <li key={i}>
-                      {moment().day(dayNumber).format('ddd')}
-                    </li>
+              {weekDayIndex.map((dayNumber, i) => {
+                return (
+                  <li key={i}>
+                    {moment().day(dayNumber).format('ddd')}
+                  </li>
                   );
-                }
-              )}
+                })}
 
 
             </WeekHeaderStyled>
           </DatePickeHeadingStyled>
           <div
-            style={{padding:'5px'}}
+            style={{ padding: '5px' }}
           >
-            {prevmonthDays.map(
-              (dayNumber, i)=> {
+            {prevmonthDays.map((dayNumber, i) => {
                 return (
                   <Day
                     key={i}
-                    day={' '}
+                    day=" "
                     disabled
                   />
                 );
-              }
-            )}
+              })}
 
-            {monthDays.map(
-              (dayNumber, i)=> {
-
+            {monthDays.map((dayNumber, i) => {
                 return (
                   <Day
                     key={i}
@@ -176,12 +177,11 @@ class Calendar extends Component {
                     onDayClick={this.onDayClicked}
                   />
                 );
-              }
-            )}
+              })}
           </div>
         </div>
         }
-        { viewStyle === 'MonthView' &&
+        {viewStyle === 'MonthView' &&
         <div>
           <DatePickeHeadingStyled>
             <div>
@@ -189,25 +189,23 @@ class Calendar extends Component {
                 {year}
               </CurrentMonth>
               <NavigationNext
-                onClick={()=>this.props.onYearChanged(moment(showDate).year()+1)}
+                onClick={() => this.props.onYearChanged(moment(showDate).year() + 1)}
               />
               <NavigationPrevious
-                onClick={()=>this.props.onYearChanged(moment(showDate).year()-1)}
+                onClick={() => this.props.onYearChanged(moment(showDate).year() - 1)}
               />
             </div>
           </DatePickeHeadingStyled>
-            {monthNames.map(
-              (mName, i)=> {
-                return (
-                  <Month
-                    id={i}
-                    name={mName}
-                    onClick={onMonthChanged}
-                  />
-                );
-              }
-            )}
-          </div>
+          {monthNames.map((mName, i) => {
+            return (
+              <Month
+                id={i}
+                name={mName}
+                onClick={onMonthChanged}
+              />
+            );
+            })}
+        </div>
         }
 
       </DatePickerStyled>
@@ -224,14 +222,27 @@ Calendar.propTypes = {
     PropTypes.instanceOf(moment),
     PropTypes.instanceOf(Date)
   ]),
-  currentDate: PropTypes.oneOfType([
-    PropTypes.instanceOf(moment),
-    PropTypes.instanceOf(Date)
-  ]),
-  onShowDateChanged:PropTypes.func,
-  onSelectedDateChanged:PropTypes.func,
-  onViewStyleChanged:PropTypes.func,
-  onMonthChanged:PropTypes.func
+  viewStyle: PropTypes.string,
+  onShowDateChanged: PropTypes.func,
+  onSelectedDateChanged: PropTypes.func,
+  onViewStyleChanged: PropTypes.func,
+  onMonthChanged: PropTypes.func,
+  onYearChanged: PropTypes.func,
+  onTimeSet: PropTypes.func,
+  showTime: PropTypes.bool
+};
+
+Calendar.defaultProps = {
+  selectedDate: null,
+  showDate: null,
+  viewStyle: null,
+  onShowDateChanged: null,
+  onSelectedDateChanged: null,
+  onViewStyleChanged: null,
+  onMonthChanged: null,
+  onYearChanged: null,
+  onTimeSet: null,
+  showTime: false
 };
 
 export default Calendar;

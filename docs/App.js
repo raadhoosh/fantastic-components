@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {ThemeProvider} from 'styled-components';
+
 import moment from 'moment';
 import {
   BrowserRouter as Router,
@@ -29,9 +31,13 @@ import Menu from '../src/Menu/Menu';
 import MenuResponsive from '../src/Menu/MenuResponsive';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
+import defaultTheme from '../src/defaultTheme';
+import defaultThemeA from '../src/defaultTheme-1';
+
+/*import DatePickerFa from '../src/DatePicker/fa/DatePicker';*/
 import DatePicker from '../src/DatePicker/english/DatePicker';
-/*import CropLayer from '../src/Cropper/CropLayer';*/
-import Window from '../src/Window/Window';
+import Cropper from '../src/Cropper/Cropper';
+/*import Window from '../src/Window/Window';*/
 
 
 const Home = () => (
@@ -133,236 +139,332 @@ class App extends Component {
 
     return (
       <div>
-        <MenuResponsive
-          mainItems={mainItems}
-          style={{marginBottom: '400px'}}
-        />
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <div>
-        {/*  <CropLayer/>*/}
-        </div>
-        <br/>
-        <br/>
-        <div>
-          <h1>ورودی تاریخ </h1>
-          <div
-            style={{maxWidth:'300px'}}
-          >
-            <DatePicker
-              inputValue={this.state.inputValue}
-            />
-          </div>
-
-        </div>
-        <br/>
-        <br/>
-        <div>
-          <Window/>
-        </div>
-        <br/>
-        <br/>
-
-        <div>
-
-        </div>
-        <br/>
-        <br/>
-        <Collapsible
-          trigger="Start here"
-          transitionTime={400}
-          warning
-        >
-          <p>This is the collapsible content. It can be any element or React component you like.</p>
-          <p>It can even be another Collapsible component. Check out the next section!</p>
-        </Collapsible>
-        <br/>
-        <br/>
-        <div>
-          <ButtonToggle
-            id='cheese-status'
-            defaultChecked={this.state.cheeseIsReady}
-            onChange={this.handleCheeseChange.bind(this)}
-
-          />
-          <label htmlFor='cheese-status'>Adjacent label tag</label>
-        </div>
-        <br/>
-        <br/>
-        <Container>
-          <Row>
-            <Col lg3>
-              <Slider interval={20000} items={items} dots/>
-            </Col>
-            <Col lg9>
-              <Slider autoPlay interval={20000} items={items}/>
-            </Col>
-          </Row>
-        </Container>
-        <Panel header="Header" footer="Footer" warning>
-          <Button
-            label={'test'}
-            primary
-            onClick={() => {
-              alert("hello")
-            }}
-          />
-          <br/>
-          <Image
-            src={img}
-          />
-          <br/>
-
-        </Panel>
-        <br/>
-        <Panel header="Header" footer="Footer" secondary>
-
-
-          <Breadcrumb items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
-          App...
-          <Input
-            icon={'user'}
-            errorText={'error'}
-error
-            placeholder={'placeholder'}
-            noMargin
-          />
-          <br/>
-          <TextAria
-            icon={'user'}
-          />
-          <br/>
-          <Icon
-            iconClass={'user'}
-            foreColor={'#f00'}
-          />
-          <br/>
-          <Button
-            label={'test'}
-            secondary
-            onClick={() => {
-              alert("hello")
-            }}
-          />
-          <br/>
-          <Image
-            src={img}
-          />
-          <br/>
-          <Container>
+        <ThemeProvider theme={defaultTheme}>
+          <div>
             <Row>
-              <Col
-                lg4
-                sm3
-                md3
-                bgColor={"#ddd"}
-              >
-                test Col
-              </Col>
-              <Col
-                lg4
-                sm3
-                md3
-              >
-                test Col
-              </Col>
-              <Col
-                lg4
-                sm3
-                md3
-              >
-                test Col
-              </Col>
+              <Button
+                label={'default'}
+              />
+              <Button
+                label={'primary'}
+                primary
+              />
+              <Button
+                label={'secondary'}
+                secondary
+              />
+              <Button
+                label={'warning'}
+                warning
+              />
+              <Button
+                label={'success'}
+                success
+              />
+              <Button
+                label={'info'}
+                info
+              />
+              <Button
+                label={'danger'}
+                danger
+              />
             </Row>
-          </Container>
+            <Row>
+              <Button
+                label={'default'}
+                inverse
+              />
+              <Button
+                label={'primary'}
+                primary
+                inverse
+              />
+              <Button
+                label={'secondary'}
+                secondary
+                inverse
+              />
+              <Button
+                label={'warning'}
+                warning
+                inverse
+              />
+              <Button
+                label={'success'}
+                success
+                inverse
+              />
+              <Button
+                label={'info'}
+                info
+                inverse
+              />
+              <Button
+                label={'danger'}
+                danger
+                inverse
+              />
+            </Row>
+          </div>
+        </ThemeProvider>
+        <ThemeProvider theme={defaultTheme}>
           <div>
-            <Modal isOpen={this.state.isOpen}
-                   onClose={() => this.closeModal()}
-                   title="title"
-                   iconTitle="envelope"
-                   Btn1Label="yes"
-                   footerChildren={<div><b>footer</b></div>}
-                   maxWidth='700px'
-            >
-
-            </Modal>
-            <Button label="open modal"
-                    primary
-                    onClick={this.openModal}
+            <MenuResponsive
+              mainItems={mainItems}
+              style={{marginBottom: '400px'}}
             />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div>
+              <Cropper/>
+            </div>
+            <br/>
+            <br/>
+            <div>
+              <h1>ورودی تاریخ </h1>
+              <div
+                style={{maxWidth: '300px'}}
+              >
+                <Container>
+                  <Row>
+                    <Col md6>
+                      <DatePicker
+                        showTime={true}
+                        inputValue={this.state.inputValue}
+                      />
+                    </Col>
+                    <Col md6>
+                      {/*  <DatePickerFa
+                    showTime={false}
+                    inputValue={this.state.inputValue}
+                  />*/}
+                    </Col>
+                  </Row>
+                </Container>
+              </div>
 
+            </div>
+            <br/>
+            <br/>
+            {/* <div>
+          <Window/>
+        </div>*/}
+            <br/>
+            <br/>
+
+            <div>
+
+            </div>
+            <br/>
+            <br/>
+            <Collapsible
+              trigger="Start here"
+              transitionTime={400}
+              warning
+            >
+              <p>This is the collapsible content. It can be any element or React component you like.</p>
+              <p>It can even be another Collapsible component. Check out the next section!</p>
+            </Collapsible>
+            <br/>
+            <br/>
+            <div>
+              <ButtonToggle
+                id='cheese-status'
+                defaultChecked={this.state.cheeseIsReady}
+                onChange={this.handleCheeseChange.bind(this)}
+
+              />
+              <label htmlFor='cheese-status'>Adjacent label tag</label>
+            </div>
+            <br/>
+            <br/>
+            <Container>
+              <Row>
+                <Col lg3>
+                  <Slider interval={20000} items={items} dots/>
+                </Col>
+                <Col lg9>
+                  <Slider autoPlay interval={20000} items={items}/>
+                </Col>
+              </Row>
+            </Container>
+            <Panel header="Header" footer="Footer" warning>
+              <Button
+                label={'test'}
+                onClick={() => {
+                  alert("hello")
+                }}
+              />
+              <Button
+                label={'test'}
+                primary
+                onClick={() => {
+                  alert("hello")
+                }}
+              />
+              <br/>
+              <Image
+                src={img}
+              />
+              <br/>
+
+            </Panel>
+            <br/>
+            <Panel header="Header" footer="Footer" secondary>
+
+
+              <Breadcrumb items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
+              App...
+              <Input
+                icon={'user'}
+                errorText={'error'}
+                success
+                placeholder={'success'}
+                noMargin
+              />
+              <br/>
+              <TextAria
+                icon={'user'}
+              />
+              <br/>
+              <Icon
+                iconClass={'user'}
+                foreColor={'#f00'}
+              />
+              <br/>
+              <Button
+                label={'test'}
+                secondary
+                onClick={() => {
+                  alert("hello")
+                }}
+              />
+              <br/>
+              <Image
+                src={img}
+              />
+              <br/>
+              <Container>
+                <Row>
+                  <Col
+                    lg4
+                    sm3
+                    md3
+                    bgColor={"#ddd"}
+                  >
+                    test Col
+                  </Col>
+                  <Col
+                    lg4
+                    sm3
+                    md3
+                  >
+                    test Col
+                  </Col>
+                  <Col
+                    lg4
+                    sm3
+                    md3
+                  >
+                    test Col
+                  </Col>
+                </Row>
+              </Container>
+              <div>
+                <Modal isOpen={this.state.isOpen}
+                       onClose={() => this.closeModal()}
+                       title="title"
+                       iconTitle="envelope"
+                       Btn1Label="yes"
+                       footerChildren={<div><b>footer</b></div>}
+                       maxWidth='700px'
+                       success
+                >
+
+                </Modal>
+                <Button label="open modal"
+                        primary
+                        onClick={this.openModal}
+                />
+
+              </div>
+            </Panel>
+
+
+            <br/>
+            <br/>
+            <br/>
+            <TableBasic>
+              <Thead>
+              <Tr
+                primary
+              >
+                <Th
+                  primary
+                >
+                  title
+                </Th>
+                <Th
+                  primary
+                >
+                  title
+                </Th>
+              </Tr>
+              </Thead>
+              <Tbody>
+              <Tr>
+                <Td>
+                  text
+                </Td>
+                <Td>
+                  text
+                </Td>
+              </Tr>
+              <Tr>
+                <Td>
+                  text
+                </Td>
+                <Td>
+                  text
+                </Td>
+              </Tr>
+              </Tbody>
+            </TableBasic>
+            <br/>
+            <br/>
+
+            <br/>
+            <br/>
+            <Router>
+              <div>
+                <ul>
+                  <li>
+                    <ReactLink
+                      to="/"
+                      icon={'home'}
+                      color={'#f00'}
+                    >Home
+                    </ReactLink>
+                  </li>
+                  <li>
+                    <ReactLink to="/about">About</ReactLink>
+                  </li>
+                </ul>
+                <hr/>
+                <Route exact path="/" component={Home}/>
+                <Route path="/about" component={About}/>
+              </div>
+            </Router>
+            <Menu
+              mainItems={mainItems}
+              style={{marginBottom: '400px'}}
+            />
           </div>
-        </Panel>
+        </ThemeProvider>
 
-
-        <br/>
-        <br/>
-        <br/>
-        <TableBasic>
-          <Thead
-            color={'#ff0'}
-          >
-          <Tr
-            primary
-          >
-            <Th>
-              title
-            </Th>
-            <Th>
-              title
-            </Th>
-          </Tr>
-          </Thead>
-          <Tbody>
-          <Tr>
-            <Td>
-              text
-            </Td>
-            <Td>
-              text
-            </Td>
-          </Tr>
-          <Tr>
-            <Td>
-              text
-            </Td>
-            <Td>
-              text
-            </Td>
-          </Tr>
-          </Tbody>
-        </TableBasic>
-        <br/>
-        <br/>
-
-        <br/>
-        <br/>
-        <Router>
-          <div>
-            <ul>
-              <li>
-                <ReactLink
-                  to="/"
-                  icon={'home'}
-                  color={'#f00'}
-                >Home
-                </ReactLink>
-              </li>
-              <li>
-                <ReactLink to="/about">About</ReactLink>
-              </li>
-            </ul>
-            <hr/>
-            <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-          </div>
-        </Router>
-        <Menu
-          mainItems={mainItems}
-          style={{marginBottom: '400px'}}
-        />
       </div>
 
     );

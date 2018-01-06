@@ -5,21 +5,24 @@ import DateInputStyled from './style/DateInputStyled';
 import IconStyled from './style/IconStyled';
 
 class DateInput extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.onEditorChange = this.onEditorChange.bind(this);
   }
-  onEditorChange(){
+
+  onEditorChange() {
   }
+
   render() {
-    const {inputValue, inputOnClick, inputClassName, onFocus, onBlur} = this.props;
+    const {
+      inputValue, inputOnClick, inputClassName, onFocus, onBlur, showTime
+    } = this.props;
     return <div
-      style={{position:'relative', direction:'ltr'}}
+      style={{position: 'relative', direction: 'ltr'}}
     >
       <DateInputStyled type='text'
                        className={inputClassName}
-                       value={inputValue.format('YYYY/MM/DD')}
+                       value={inputValue.format(showTime ? 'YYYY/MM/DD HH:mm' : 'YYYY/MM/DD')}
                        onChange={this.onEditorChange}
                        onClick={inputOnClick}
                        onFocus={onFocus}
@@ -35,11 +38,13 @@ DateInput.propTypes = {
   inputOnClick: PropTypes.func,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
-  inputClassName: PropTypes.string
+  inputClassName: PropTypes.string,
+  showTime: PropTypes.bool
 };
 
 DateInput.defaultProps = {
   inputClassName: 'datepicker__input',
+  showTime: false
 };
 
 export default DateInput;

@@ -12,7 +12,7 @@ const PaneStyled = styled.div`
       width: 45%;
       height: 45%;
       top: 20%;
-      left: 20%;     
+      left: 30%;     
       margin: 0;
       padding: 0;
       z-index: 99;

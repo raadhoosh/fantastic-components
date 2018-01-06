@@ -10,7 +10,7 @@ function getColor(props) {
     success,
     inverse,
     foreColor,
-    theme,
+    theme
   } = props;
 
   let ForeC;
