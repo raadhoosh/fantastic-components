@@ -140,7 +140,6 @@ DatePicker.propTypes = {
 };
 
 DatePicker.defaultProps = {
-  date: moment.now(),
   onChange: null,
   showTime: false
 };

@@ -150,7 +150,7 @@ class Cropper extends Component {
       onRightEdge: this.onRightEdge,
       onBottomEdge: this.onBottomEdge
     };
-    /*console.log('e', parent);*/
+
   }
 
   canMove() {
@@ -169,7 +169,6 @@ class Cropper extends Component {
 
     this.rightScreenEdge = window.innerWidth - MARGINS;
     this.bottomScreenEdge = window.innerHeight - MARGINS;
-    console.log('this.b',this.b)
   }
 
   onMove(ee) {
@@ -252,13 +251,11 @@ class Cropper extends Component {
       this.CropCanvas = this.CrCanvasRef.getBoundingClientRect();
       this.CropContainer = this.CrContainerRef.getBoundingClientRect();
       this.b = this.pane.getBoundingClientRect();
-      if( this.b.top >  this.CropContainer.top){
-        this.pane.style.top = (this.e.clientY - this.clicked.y - this.CropContainer.top) + 'px';
-        this.pane.style.left = (this.e.clientX - this.clicked.x) + 'px';
-        this.b = this.pane.getBoundingClientRect();
-        this.imgRef.style.left = -( this.b.left - this.CropCanvas.left ) + 'px';
-        this.imgRef.style.top = -(this.b.top - this.CropContainer.top) + 'px';
-      }
+      this.pane.style.top = (this.e.clientY - this.clicked.y - this.CropContainer.top) + 'px';
+      this.pane.style.left = (this.e.clientX - this.clicked.x) + 'px';
+      this.b = this.pane.getBoundingClientRect();
+      this.imgRef.style.left = -( this.b.left - this.CropCanvas.left ) + 'px';
+      this.imgRef.style.top = -(this.b.top - this.CropContainer.top) + 'px';
 
       return;
     }
