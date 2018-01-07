@@ -3,7 +3,7 @@
  */
 import styled from 'styled-components';
 
-import { getColor, getSize } from '../Statics';
+import { getColor, getSize } from './Statics';
 
 
 const SpinnerStyled = styled.i`

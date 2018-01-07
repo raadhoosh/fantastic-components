@@ -8,7 +8,6 @@ function getBgColor(props) {
     warning,
     danger,
     success,
-    inverse,
     bgColor,
     theme
   } = props;
@@ -17,21 +16,19 @@ function getBgColor(props) {
   if (bgColor) {
     bgC = bgColor;
   } else if (primary) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.color : defaultTheme.primary.color;
   } else if (secondary) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.bgColor : defaultTheme.secondary.bgColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.color : defaultTheme.secondary.color;
   } else if (info) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.info.bgColor : defaultTheme.info.bgColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.info.color : defaultTheme.info.color;
   } else if (warning) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.warning.bgColor : defaultTheme.warning.bgColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.warning.color : defaultTheme.warning.color;
   } else if (danger) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.danger.bgColor : defaultTheme.danger.bgColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.danger.color : defaultTheme.danger.color;
   } else if (success) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.success.bgColor : defaultTheme.success.bgColor;
-  } else if (inverse) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.bgColor : defaultTheme.inverse.bgColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.success.color : defaultTheme.success.color;
   } else {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primaryForeColor : defaultTheme.primaryForeColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.fixColors.white : defaultTheme.fixColors.white;
   }
   return bgC;
 }

@@ -208,7 +208,10 @@ class Collapsible extends Component {
     return (
       <CollapsibleStyled
         className={this.props.classParentString + ' ' + (this.state.isClosed ? this.props.className : this.props.openedClassName)}>
-        <HeaderStyled className={triggerClassName.trim()} onClick={this.handleTriggerClick}>{trigger}</HeaderStyled>
+        <HeaderStyled className={triggerClassName.trim()} onClick={this.handleTriggerClick}
+                      {...this.props}
+        >{trigger}
+        </HeaderStyled>
 
         {this.renderNonClickableTriggerElement()}
 

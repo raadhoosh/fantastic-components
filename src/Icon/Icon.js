@@ -12,7 +12,15 @@ class Icon extends Component {
   render() {
     const {
       iconClass,
-      rtl
+      rtl,
+      primary,
+      secondary,
+      info,
+      warning,
+      danger,
+      success,
+      inverse,
+
     } = this.props;
 
     return (
@@ -27,9 +35,9 @@ class Icon extends Component {
 }
 
 Icon.propTypes = {
+  devider: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   iconClass: PropTypes.string,
   className: PropTypes.string,
-  devider: PropTypes.bool,
   onClick: PropTypes.func,
   theme: PropTypes.object,
   style: PropTypes.object,

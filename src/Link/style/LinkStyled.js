@@ -4,7 +4,7 @@ import {getBgColor, getColor} from './Statics';
 
 const LinkWrapper = styled(Link)`       
          color:${(props) => getColor(props)};
-         background-color:${(props) => getBgColor(props)};
+         background-color:${(props) => props.bgColor ? props.bgColor : 'transparent' };
          text-decoration: none;
         `;
 
