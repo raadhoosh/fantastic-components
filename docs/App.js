@@ -33,7 +33,7 @@ import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
 import Spinner from '../src/Spinner/Spinner';
 import List from '../src/List/List/List';
-
+import BehzadiComponents from './BehzadiComponents';
 
 import defaultTheme from '../src/defaultTheme';
 import defaultThemeA from '../src/defaultTheme-1';
@@ -144,6 +144,7 @@ class App extends Component {
 
     return (
       <div>
+        <BehzadiComponents/>
         <ThemeProvider theme={defaultTheme}>
           <div>
             <Row>
