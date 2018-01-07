@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import TimeInputStyled from './style/TimeInputStyled';
-import DivWrapper from './style/DivWrapper';
+import DivWrapperTime from './style/DivWrapperTime';
 
 class TimePicker extends Component {
 
@@ -29,23 +29,32 @@ class TimePicker extends Component {
 
 
   render() {
-    const { date, onTimeSet } = this.props;
+    const { date, onTimeSet, primary, secondary, info, success, danger, warning } = this.props;
     const { editMode, hour, minute } = this.state;
+    const colorProps = {primary, secondary, info, success, danger, warning};
+
     return (
-      <DivWrapper>
+      <DivWrapperTime
+        {...colorProps}
+      >
         {
           editMode ?
             <div>
-              <TimeInputStyled
-                onChange={this.onHourChange}
-                value={hour}
-              />
-              {' : '}
-              <TimeInputStyled
-                onChange={this.onMinuteChange}
-                value={minute}
-              />
+              <div
+                style={{width: '80px', display: 'inline-block'}}
+              >
+                <TimeInputStyled
+                  onChange={this.onHourChange}
+                  value={hour}
+                />
+                {' : '}
+                <TimeInputStyled
+                  onChange={this.onMinuteChange}
+                  value={minute}
+                />
+              </div>
               <button
+                {...this.props}
                 value="..."
                 onClick={() => {
                   const newDateTime = moment(date);
@@ -62,8 +71,13 @@ class TimePicker extends Component {
             </div>
             :
             <div>
-              {`${hour} : ${minute}`}
+             <label
+               style={{width: '78px', display: 'inline-block'}}
+             >
+               {`${hour} : ${minute}`}
+             </label>
               <button
+                {...this.props}
                 value="..."
                 onClick={() => {
                   this.setState({ editMode: true });
@@ -73,7 +87,7 @@ class TimePicker extends Component {
               </button>
             </div>
         }
-      </DivWrapper>
+      </DivWrapperTime>
     );
   }
 }
@@ -83,7 +97,16 @@ TimePicker.propTypes = {
     PropTypes.instanceOf(moment),
     PropTypes.instanceOf(Date)
   ]),
-  onTimeSet: PropTypes.func
+  onTimeSet: PropTypes.func,
+
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
+  inverse: PropTypes.bool,
+
 };
 
 TimePicker.defaultProps = {

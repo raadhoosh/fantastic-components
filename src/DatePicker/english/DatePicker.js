@@ -80,8 +80,14 @@ class DatePicker extends Component {
   }
 
   render() {
+
+    const { primary, secondary, info, success, danger, warning } = this.props;
+    const colorProps = {primary, secondary, info, success, danger, warning};
+
     return (
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative' }}
+           {...colorProps}
+      >
         <DateInput
           inputValue={this.state.selectedDate}
           showTime={this.props.showTime}
@@ -136,7 +142,17 @@ DatePicker.propTypes = {
     PropTypes.instanceOf(Date)
   ]),
   onChange: PropTypes.func,
-  showTime: PropTypes.bool
+  showTime: PropTypes.bool,
+
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
+  inverse: PropTypes.bool,
+
+  colorProps: PropTypes.object,
 };
 
 DatePicker.defaultProps = {

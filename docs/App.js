@@ -261,6 +261,7 @@ class App extends Component {
                       <DatePicker
                         showTime={true}
                         inputValue={this.state.inputValue}
+                        primary
                       />
                     </Col>
                     <Col md6>
