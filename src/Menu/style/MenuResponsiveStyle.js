@@ -7,11 +7,11 @@ const Div = styled.div`
              *{
               box-sizing: border-box;
               } 
-          z-index: 9;
-          float: ${(props) => getFloat(props)};
-          display: none;  
-           @media (max-width: 768px) {
-           display: block;  
+              z-index: 9;
+              float: ${(props) => getFloat(props)};
+              display: none;  
+               @media (max-width: 768px) {
+               display: block;  
             }                               
                  
              nav.menuSimple{             
@@ -43,7 +43,7 @@ const Div = styled.div`
   };            
                         font-size: 40px !important;
                         position: absolute;                        
-                       	color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primaryColor : defaultTheme.primaryColor)};  
+                       	color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primary.color : defaultTheme.primary.color)};  
                         top: 0;
                                }       
              }                         
@@ -143,10 +143,10 @@ const Overlay = styled.div`
 
 `;
 const ButtonWrapper = styled(Button)`
-      	color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primaryColor : defaultTheme.primaryColor)}; 
+      	color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primary.color : defaultTheme.primary.color)}; 
       	
       	 i{
-      	 color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primaryColor : defaultTheme.primaryColor)};   
+      	 color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primary.color : defaultTheme.primary.color)};   
       	 }  
 `;
 

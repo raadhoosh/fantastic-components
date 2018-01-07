@@ -15,7 +15,13 @@ const Button = styled.button`
       font-family: ${(props) => props.theme.fontFamily}; 
       padding: ${(props) => paddingY(props)} ${(props) => paddingX(props)};   
       margin: ${(props) => marginY(props)} ${(props) => marginX(props)};
-      font-size: ${(props) => props.large ? '1.2rem' : (props.xSmall ? '0.5rem' : '1rem')};           
+      font-size: ${(props) => props.large ? '18px' : (props.xSmall ? '12px' : '14px')};  
+      line-height: 26px;         
+      box-sizing: border-box;
+  
+      i{
+        color:${(props) => props.inverse ? getBgColor(props) : getColor(props)};
+      }
       
       ${(props) => props.inverse ? `
        &:hover{     

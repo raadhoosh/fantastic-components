@@ -107,13 +107,13 @@ function paddingX(props) {
     large
   } = props;
 
-  let paddingX = '20px';
+  let paddingX = '12px';
   if (xSmall) {
-    paddingX = '3px';
+    paddingX = '5px';
   } else if (small) {
     paddingX = '10px';
   } else if (large) {
-    paddingX = '25px';
+    paddingX = '16px';
   }
   return paddingX;
 }
@@ -126,9 +126,9 @@ function paddingY(props) {
   } = props;
 
 
-  let paddingY = '10px';
+  let paddingY = '6px';
   if (xSmall) {
-    paddingY = '3px';
+    paddingY = '2px';
   } else if (small) {
     paddingY = '5px';
   } else if (large) {

@@ -5,8 +5,8 @@ import {getColor, getBgColor, getBorderColor} from './Statics';
 const BreadcrumbStyled = styled.div` 
          font-family: ${(props) => props.theme.fontFamily};
           color:${(props) => getColor(props)};
-          background-color:${(props) => getBgColor(props)}; 
-          border:  1px solid ${(props) => getBorderColor(props)};
+          background-color:${(props) => props.bgColor ? props.bgColor : 'transparent'};
+          border:  1px solid ${(props) => props.bgColor ? props.Color : 'transparent'};
           margin: 20px 0;
           
           li{

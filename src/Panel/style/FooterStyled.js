@@ -10,7 +10,7 @@ const FooterStyled = styled.div`
   border-top: 1px solid #dddddd;
   box-sizing: border-box;
   color: ${(props) => getColor(props)};
-  background-color:${(props) => getBgColor(props)};
+  background-color:${(props) => props.bgColor ? props.bgColor : 'transparent' };
   border-color:  ${(props) => getBorderColor(props)}; 
   border-bottom-left-radius: -1;
   border-bottom-right-radius: -1;

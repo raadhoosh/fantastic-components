@@ -8,7 +8,6 @@ function getColor(props) {
     warning,
     danger,
     success,
-    inverse,
     foreColor,
     theme,
   } = props;
@@ -17,21 +16,19 @@ function getColor(props) {
   if (foreColor) {
     ForeC = foreColor;
   } else if (primary) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.primary.foreColor : defaultTheme.primary.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.primary.textColor : defaultTheme.primary.textColor;
   } else if (secondary) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.foreColor : defaultTheme.secondary.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.textColor : defaultTheme.secondary.textColor;
   } else if (info) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.info.foreColor : defaultTheme.info.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.info.textColor : defaultTheme.info.textColor;
   } else if (warning) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.warning.foreColor : defaultTheme.warning.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.warning.textColor : defaultTheme.warning.textColor;
   } else if (danger) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.danger.foreColor : defaultTheme.danger.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.danger.textColor : defaultTheme.danger.textColor;
   } else if (success) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.success.foreColor : defaultTheme.success.foreColor;
-  } else if (inverse) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.foreColor : defaultTheme.inverse.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.success.textColor : defaultTheme.success.textColor;
   } else {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.default.textColor : theme.default.textColor;
   }
 
   return ForeC;

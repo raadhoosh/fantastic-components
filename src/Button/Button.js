@@ -48,20 +48,16 @@ class Button extends Component {
         style={style}
         value={value}
         disabled={disable}
-        large
       >
         {spinner ?
           <Spinner spin="spinner" /> :
           icon ?
             <Icon iconClass={icon} devider={icon && label}
-
                   onClick={(e) => {
                     this.spanClicked = true;
                     e.target.value = value;
                     this.onBtnClick(e);
                   }}
-
-
             />
             : null
         }

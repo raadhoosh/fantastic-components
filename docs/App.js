@@ -144,14 +144,18 @@ class App extends Component {
             <Row>
               <Button
                 label={'default'}
+                xSmall
               />
               <Button
                 label={'primary'}
                 primary
+                small
               />
+
               <Button
                 label={'secondary'}
                 secondary
+                large
               />
               <Button
                 label={'warning'}
@@ -230,7 +234,8 @@ class App extends Component {
               >
                 <Container>
                   <Row>
-                    <Col md6>
+                    <Col md12
+                    >
                       <DatePicker
                         showTime={true}
                         inputValue={this.state.inputValue}
@@ -263,7 +268,7 @@ class App extends Component {
             <Collapsible
               trigger="Start here"
               transitionTime={400}
-              warning
+              success
             >
               <p>This is the collapsible content. It can be any element or React component you like.</p>
               <p>It can even be another Collapsible component. Check out the next section!</p>
@@ -291,7 +296,7 @@ class App extends Component {
                 </Col>
               </Row>
             </Container>
-            <Panel header="Header" footer="Footer" warning>
+            <Panel header="Header" footer="Footer">
               <Button
                 label={'test'}
                 onClick={() => {
@@ -316,23 +321,44 @@ class App extends Component {
             <Panel header="Header" footer="Footer" secondary>
 
 
-              <Breadcrumb items={BreadcrumbList} returnPath={(path) => console.log('path', path)}/>
+              <Breadcrumb items={BreadcrumbList}
+                          returnPath={(path) => console.log('path', path)}
+              />
               App...
               <Input
                 icon={'user'}
                 errorText={'error'}
-                success
+                placeholder={'success'}
+                noMargin
+              />
+              <br/>
+              <Input
+                icon={'user'}
+                primary
+                label={'dhfsdif'}
+                errorText={'error'}
                 placeholder={'success'}
                 noMargin
               />
               <br/>
               <TextAria
                 icon={'user'}
+                primary
+                label={'dhfsdif'}
+                errorText={'error'}
+                placeholder={'success'}
+                noMargin
               />
               <br/>
               <Icon
+                primary
                 iconClass={'user'}
-                foreColor={'#f00'}
+              />
+              <br/>
+              <Icon
+                success
+                larg
+                iconClass={'user'}
               />
               <br/>
               <Button
@@ -387,6 +413,8 @@ class App extends Component {
                 </Modal>
                 <Button label="open modal"
                         primary
+                        small
+                        icon={'user'}
                         onClick={this.openModal}
                 />
 
