@@ -142,7 +142,8 @@ const rhThemeBlue = {
     black: '#000',
     gray: '#aaa',
     lightGray: '#d3d3d3',
-    darkGray: '#757575'
+    darkGray: '#333',
+    red:'#f00'
   },
 
   rhsButton: {},

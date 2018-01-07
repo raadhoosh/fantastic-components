@@ -14,6 +14,7 @@ const HolderStyled = styled.div`
       min-height: 1em;
       line-height: 1.4285em;
       font-size: 1em;
+      padding: 15px;
     `;
 
 export default HolderStyled;

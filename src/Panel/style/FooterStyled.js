@@ -9,7 +9,7 @@ const FooterStyled = styled.div`
   direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
   border-top: 1px solid #dddddd;
   box-sizing: border-box;
-  color: ${(props) => getColor(props)};
+  color: ${(props) => props.foreColor ? props.foreColor : (props.theme.fixColors.darkGray) };
   background-color:${(props) => props.bgColor ? props.bgColor : 'transparent' };
   border-color:  ${(props) => getBorderColor(props)}; 
   border-bottom-left-radius: -1;

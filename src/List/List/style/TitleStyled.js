@@ -9,6 +9,6 @@ const TitleStyled = styled.div`
          color:${(props) => getDarkColor(props)};
          margin:15px;
          font-size:24px;
-         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };`;
+         direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' }`;
 
 export default TitleStyled;
