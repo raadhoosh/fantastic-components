@@ -28,7 +28,7 @@ function getColor(props) {
   } else if (success) {
     ForeC = (Object.keys(theme).length > 0 && theme) ? theme.success.textColor : defaultTheme.success.textColor;
   } else {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.default.textColor : theme.default.textColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.default.textColor : defaultTheme.default.textColor;
   }
 
   return ForeC;
