@@ -353,6 +353,7 @@ class App extends Component {
               <br/>
               <Icon
                 primary
+                inverse
                 iconClass={'user'}
               />
               <br/>
