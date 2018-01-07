@@ -296,7 +296,8 @@ class App extends Component {
                 </Col>
               </Row>
             </Container>
-            <Panel header="Header" footer="Footer">
+            <Panel header="Header"
+                   footer="Footer">
               <Button
                 label={'test'}
                 onClick={() => {
