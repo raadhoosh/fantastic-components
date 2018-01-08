@@ -463,8 +463,8 @@ class App extends Component {
                        iconTitle="envelope"
                        Btn1Label="yes"
                        footerChildren={<div><b>footer</b></div>}
-                       maxWidth='700px'
-                       success
+                       maxWidth='900px'
+
                 >
 
                 </Modal>

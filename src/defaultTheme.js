@@ -124,6 +124,7 @@ const rhThemeBlue = {
   window : {
     color: '#f3f3f3',
     textColor: '#000',
+    lightTextColor: '#5a5a5a',
     darkColor:'#465a46',
     lightColor:'#fff'
   },
