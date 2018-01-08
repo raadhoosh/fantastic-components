@@ -78,6 +78,7 @@ Button.propTypes = {
   icon: PropTypes.string,
   spinner: PropTypes.bool,
   hover: PropTypes.bool,
+  disable: PropTypes.bool,
 
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
