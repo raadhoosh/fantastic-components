@@ -2,13 +2,27 @@
  * Created by Programmer1 on 12/4/2017.
  */
 import styled from 'styled-components';
-import {getBorderColor} from './Statics';
+import {getBorderColor, getBgColor, getColor} from './Statics';
 
 const LIStyled = styled.li`
-      font-family: ${(props) => props.theme.fontFamily};    
+       padding: 5px 15px;
+       cursor: pointer;
+       background-color:${(props) => getBgColor(props)}; 
+       color:${(props) => getColor(props)};
+       border: 1px solid ${(props) => getBorderColor(props)};      
+       border-top: 4px solid ${(props) => getBgColor(props)};          
+       font-family: ${(props) => props.theme.fontFamily};    
        display: inline-block ;
-       ${(props) => (props.currentTab === props.index) && `border-color: ${getBorderColor(props)};border-width: 4px 1px 0px 1px; border-style: solid; z-index: 1;background: white;`}
-      direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
+       box-sizing: border-box;
+       
+       ${(props) => (props.currentTab === props.index)
+       && `
+        border-color: ${getBorderColor(props)};        
+        border-style: solid; z-index: 1;
+        background-color:${getColor(props)};     
+        color:${getBgColor(props)};     
+        `}
+       direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr' };
      `;
 
 export default LIStyled;
