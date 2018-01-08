@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Table from '../src/Table/Table';
 import Search from '../src/Search/Search';
-
+import Pagination from '../src/Pagination/Pagination'
 
 class BehzadiComponents extends Component {
   constructor(props) {
@@ -26,6 +26,10 @@ class BehzadiComponents extends Component {
       {
         id: 4,
         title: 'title4'
+      },
+      {
+        id: 5,
+        title: 'title5'
       }
     ];
 
@@ -53,7 +57,7 @@ class BehzadiComponents extends Component {
           }}
           actionColumnLabel="action"
           deleteMessage="Are you sure?"
-          pageSize={5}
+          pageSize={2}
           hover
           striped
         />
@@ -70,10 +74,15 @@ class BehzadiComponents extends Component {
            ]}
           primary
         />
+        <Pagination
+          total={10}
+          current={2}
+          visiblePages={3}
+          secondary
+        />
       </div>
     );
   }
-
 }
 
 BehzadiComponents.propTypes = {
