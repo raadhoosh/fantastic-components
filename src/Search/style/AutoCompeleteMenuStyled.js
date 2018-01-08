@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const OutoCompeleteMenuStyled = styled.div`        
+const AutoCompeleteMenuStyled = styled.div`
         background: white;
         box-shadow: 0.1rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
         display: block;
@@ -17,4 +17,4 @@ const OutoCompeleteMenuStyled = styled.div`
         box-sizing: border-box;
       `;
 
-export default OutoCompeleteMenuStyled;
+export default AutoCompeleteMenuStyled;

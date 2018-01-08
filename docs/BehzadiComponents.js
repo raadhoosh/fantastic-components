@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Table from '../src/Table/Table';
+import Search from '../src/Search/Search';
 
 
 class BehzadiComponents extends Component {
@@ -55,6 +56,19 @@ class BehzadiComponents extends Component {
           pageSize={5}
           hover
           striped
+        />
+
+        <Search
+          suggestionList={[
+            { id: 0, value: 'Javascript' },
+            { id: 1, value: 'Python' },
+            { id: 2, value: 'C#' },
+            { id: 3, value: 'Visual Basic' },
+            { id: 4, value: 'Android' },
+            { id: 5, value: 'Swift' },
+            { id: 6, value: 'SQL' }
+           ]}
+          primary
         />
       </div>
     );

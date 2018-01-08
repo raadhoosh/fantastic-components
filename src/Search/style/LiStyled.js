@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-const LiStyled = styled.li`        
+const LiStyled = styled.li`
           cursor: pointer;
           display: flex;
           list-style: none;
@@ -14,4 +14,4 @@ const LiStyled = styled.li`
           }
       `;
 
-export default LiStyled ;
+export default LiStyled;

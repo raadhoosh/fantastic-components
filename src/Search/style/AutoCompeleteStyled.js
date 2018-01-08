@@ -4,10 +4,10 @@
 import styled from 'styled-components';
 
 
-const OutoCompeleteStyled = styled.div`        
+const AutoCompeleteStyled = styled.div`
      margin: 0;
      position: relative;
      box-sizing: border-box;
       `;
 
-export default OutoCompeleteStyled;
+export default AutoCompeleteStyled;
