@@ -17,6 +17,7 @@ class TabLabels extends Component {
                 currentTab={this.props.currentTab}
                 onTabChange={this.props.onTabChange}
                 primary={this.props.primary}
+                success={this.props.success}
                 secondary={this.props.secondary}
                 info={this.props.info}
                 warning={this.props.warning}

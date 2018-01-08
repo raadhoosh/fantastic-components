@@ -33,6 +33,9 @@ import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
 import Spinner from '../src/Spinner/Spinner';
 import List from '../src/List/List/List';
+import Radio from '../src/Radio/Radio';
+
+
 import BehzadiComponents from './BehzadiComponents';
 import AlesaadiComponents from './AlesaadiComponents';
 
@@ -40,7 +43,7 @@ import SelectInput from '../src/SelectInput/SelectInput';
 
 
 import defaultTheme from '../src/defaultTheme';
-import defaultThemeA from '../src/defaultTheme-1';
+
 
 /*import DatePickerFa from '../src/DatePicker/fa/DatePicker';*/
 import DatePicker from '../src/DatePicker/english/DatePicker';
@@ -161,6 +164,52 @@ class App extends Component {
     ];
     return (
       <div>
+
+        <Radio
+          label={'fjg'}
+        />
+
+        <Panel header="Header"
+               footer="Footer">
+          <Button
+            label={'test'}
+            onClick={() => {
+              alert("hello")
+            }}
+          />
+          <Button
+            label={'test'}
+            primary
+            onClick={() => {
+              alert("hello")
+            }}
+          />
+          <br/>
+          <Image
+            src={img}
+          />
+          <br/>
+
+        </Panel>
+
+        <Modal isOpen={this.state.isOpen}
+               onClose={() => this.closeModal()}
+               title="title"
+               iconTitle="envelope"
+               Btn1Label="yes"
+               footerChildren={<div><b>footer</b></div>}
+               maxWidth='900px'
+
+        >
+        </Modal>
+
+        <Button label="open modal"
+                primary
+                small
+                icon={'user'}
+                onClick={this.openModal}
+        />
+
         <ThemeProvider theme={defaultTheme}>
           <div>
             <AlesaadiComponents/>
@@ -476,14 +525,20 @@ class App extends Component {
                        maxWidth='900px'
 
                 >
-
                 </Modal>
-                <Button label="open modal"
-                        primary
-                        small
-                        icon={'user'}
-                        onClick={this.openModal}
-                />
+
+                <Modal isOpen={this.state.isOpen}
+                       title={'Modal'}
+                       allowClose
+                       iconTitle="envelope"
+                       Btn1Label="yes"
+                       onClose={() => this.closeModal()}
+                       footerChildren={<div><b>footer</b></div>}
+                       maxWidth={'500px'}
+
+                >
+                </Modal>
+
 
               </div>
             </Panel>
