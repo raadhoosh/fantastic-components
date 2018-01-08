@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const Important = styled.span` 
          box-sizing: border-box;    
-         color: ${(props) => props.theme.danger.bgColor};
+          color: ${(props) => (Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red};
               `;
 
 export default Important ;

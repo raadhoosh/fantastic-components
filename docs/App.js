@@ -404,6 +404,7 @@ class App extends Component {
                 errorText={'error'}
                 placeholder={'success'}
                 noMargin
+                error
               />
               <br/>
               <Icon
@@ -424,6 +425,15 @@ class App extends Component {
                 onClick={() => {
                   alert("hello")
                 }}
+              />
+              <br/>
+              <Button
+                label={'test'}
+                secondary
+                onClick={() => {
+                  alert("hello")
+                }}
+                disable
               />
               <br/>
               <Image

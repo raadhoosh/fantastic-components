@@ -33,6 +33,19 @@ const Button = styled.button`
         opacity: 0.8;
       }  
       `}
+      
+       ${(props) => props.disable ? `
+        border: 1px solid #ccc;
+        background-color: #eee;
+        color: #666666;
+        cursor: not-allowed;   
+        &:hover{     
+        background-color: #eee;
+      }     
+      ` : `
+      
+      `}
+            
       `;
 
 export default Button;
