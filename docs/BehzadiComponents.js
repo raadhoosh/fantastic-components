@@ -51,7 +51,7 @@ class BehzadiComponents extends Component {
             window.alert(`rowId: ${rowId}`);
           }}
           actionColumnLabel="action"
-          deleteMessage="Are you sure>"
+          deleteMessage="Are you sure?"
           pageSize={5}
           hover
           striped

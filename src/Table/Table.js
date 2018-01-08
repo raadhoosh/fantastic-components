@@ -174,6 +174,7 @@ class Table extends Component {
                 icon="trash"
                 style={{padding: "0", marginLeft: "5px"}}
                 {...this.props}
+                danger
               />
             );
           }
@@ -187,7 +188,6 @@ class Table extends Component {
                       onClick={this.onEditButtonClick}
                       label={this.props.labelButtonEdit}
                       icon='pencil'
-                      primary
                       style={{padding: "0", marginLeft: "5px"}}
                       {...this.props}
               />
@@ -225,7 +225,7 @@ class Table extends Component {
         <Modal
           allowClose={true}
           open={this.state.dialogIsOpen}
-          title="حذف"
+          title="Delete"
           onClose={() => this.setState({
             dialogIsOpen: false
           })}
@@ -246,10 +246,10 @@ class Table extends Component {
               });
             }
           }}
-          Btn2Type="secondary"
-          Btn1Type="primary"
-          Btn2Label={this.props.Btn2Label}
-          Btn1Label={this.props.Btn1Label}
+          Btn1Type="danger"
+          Btn2Label="Cancel"
+          Btn1Label="Delete"
+          maxWidth={480}
           Btn2action={() => this.setState({
             dialogIsOpen: false
           })}
