@@ -1,9 +1,6 @@
-/**
- * Created by Programmer1 on 12/17/2017.
- */
 import styled from 'styled-components';
 
-const OutoCompeleteWrapStyled = styled.div`        
+const AutoCompeleteWrapStyled = styled.div`
        background-color: white;
         width: 100%;
         margin-top: 0;
@@ -11,4 +8,4 @@ const OutoCompeleteWrapStyled = styled.div`
         box-sizing: border-box;
       `;
 
-export default OutoCompeleteWrapStyled ;
+export default AutoCompeleteWrapStyled;

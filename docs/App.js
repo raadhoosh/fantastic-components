@@ -31,6 +31,14 @@ import Menu from '../src/Menu/Menu';
 import MenuResponsive from '../src/Menu/MenuResponsive';
 import ButtonToggle from '../src/ButtonToggle/ButtonToggle';
 import Collapsible from '../src/Collapsible/Collapsible';
+import Spinner from '../src/Spinner/Spinner';
+import List from '../src/List/List/List';
+import BehzadiComponents from './BehzadiComponents';
+import AlesaadiComponents from './AlesaadiComponents';
+
+import SelectInput from '../src/SelectInput/SelectInput';
+
+
 import defaultTheme from '../src/defaultTheme';
 import defaultThemeA from '../src/defaultTheme-1';
 
@@ -86,6 +94,7 @@ class App extends Component {
   }
 
   render() {
+    let errorList=['Email Invalid!','Username is wrong!'];
     let BreadcrumbList = [
       {
         name: 'home',
@@ -136,11 +145,38 @@ class App extends Component {
       width: 100,
       aspect: 100 / 88
     };
-
+    let options = [
+      {
+        value: '1',
+        text: 'Java'
+      },
+      {
+        value: '2',
+        text: 'Javascript'
+      },
+      {
+        value: '3',
+        text: 'C#'
+      }
+    ];
     return (
       <div>
         <ThemeProvider theme={defaultTheme}>
           <div>
+            <AlesaadiComponents/>
+            <BehzadiComponents/>
+
+            <br/>
+            <br/>
+            <SelectInput
+              label={'primary '}
+              primary
+              options={options}
+              defaultOption={'Nothing'}
+              defaultValue={'0'}
+            />
+            <br/>
+            <br/>
             <Row>
               <Button
                 label={'default'}
@@ -220,6 +256,23 @@ class App extends Component {
             />
             <br/>
             <br/>
+            <List options={errorList}
+                  title={'List of Errors'}
+                  warning
+
+            />
+            <br/>
+            <br/>
+            <List options={errorList}
+                  title={'List of Errors'}
+
+            />
+            <br/>
+            <br/>
+            <Spinner
+              icon={'user'}
+              primary
+            />
             <br/>
             <br/>
             <div>
@@ -239,6 +292,7 @@ class App extends Component {
                       <DatePicker
                         showTime={true}
                         inputValue={this.state.inputValue}
+                        primary
                       />
                     </Col>
                     <Col md6>
@@ -328,6 +382,7 @@ class App extends Component {
               App...
               <Input
                 icon={'user'}
+                primary
                 errorText={'error'}
                 placeholder={'success'}
                 noMargin
@@ -349,6 +404,7 @@ class App extends Component {
                 errorText={'error'}
                 placeholder={'success'}
                 noMargin
+                error
               />
               <br/>
               <Icon
@@ -369,6 +425,15 @@ class App extends Component {
                 onClick={() => {
                   alert("hello")
                 }}
+              />
+              <br/>
+              <Button
+                label={'test'}
+                secondary
+                onClick={() => {
+                  alert("hello")
+                }}
+                disable
               />
               <br/>
               <Image
@@ -408,8 +473,8 @@ class App extends Component {
                        iconTitle="envelope"
                        Btn1Label="yes"
                        footerChildren={<div><b>footer</b></div>}
-                       maxWidth='700px'
-                       success
+                       maxWidth='900px'
+
                 >
 
                 </Modal>

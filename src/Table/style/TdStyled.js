@@ -7,6 +7,8 @@ const TdStyled = styled.td`
       overflow-x:auto;
       overflow-y: hidden; 
       direction: ${(props) => (props.rtl || props.theme.rtl) ? 'rtl' : 'ltr'};
+       border-top: 1px solid #eceeef;
+       border:1px solid #eee !important;
               `;
 
 

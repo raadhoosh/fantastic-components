@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 const ImportantStyled = styled.span`    
-       color: ${(props) => props.theme.danger.bgColor};
+        color: ${(props) => (Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red};
               `;
 
 export default ImportantStyled;

@@ -14,7 +14,7 @@ const Div = styled.div`
               box-sizing: border-box;                  
               color:  ${(props) => getIconColor(props)};
               position: absolute;
-              ${(props) => (props.rtl || props.theme.rtl) ? 'right:10px' : 'left: 10px'};            
+              ${(props) => (props.rtl || props.theme.rtl) ? 'right:5px' : 'left: 5px'};            
               top: ${(props) => (props.label) ? '22px' : '4px'  }; 
           }       
            `;

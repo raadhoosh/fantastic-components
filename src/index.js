@@ -54,4 +54,5 @@ module.exports = {
   List: require('./List/List/List').default,
   Window: require('./Window/Window').default,
   DatePicker: require('./DatePicker/english/DatePicker').default,
+  ToolTip: require('./ToolTip/ToolTip').default
 };

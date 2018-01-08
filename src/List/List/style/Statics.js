@@ -68,7 +68,7 @@ function getIconColor(props) {
   return ForeC;
 }
 
-function getLightBgColor(props) {
+function getBgColor(props) {
   const {
     primary,
     secondary,
@@ -76,7 +76,6 @@ function getLightBgColor(props) {
     warning,
     danger,
     success,
-    inverse,
     bgColor,
     theme
   } = props;
@@ -85,21 +84,19 @@ function getLightBgColor(props) {
   if (bgColor) {
     bgC = bgColor;
   } else if (primary) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.lightColor : defaultTheme.primary.lightColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.color : defaultTheme.primary.color;
   } else if (secondary) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.lightColor : defaultTheme.secondary.lightColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.color : defaultTheme.secondary.color;
   } else if (info) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.info.lightColor : defaultTheme.info.lightColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.info.color : defaultTheme.info.color;
   } else if (warning) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.warning.lightColor : defaultTheme.warning.lightColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.warning.color : defaultTheme.warning.color;
   } else if (danger) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.danger.lightColor : defaultTheme.danger.lightColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.danger.color : defaultTheme.danger.color;
   } else if (success) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.success.lightColor : defaultTheme.success.lightColor;
-  } else if (inverse) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.lightColor : defaultTheme.inverse.lightColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.success.color : defaultTheme.success.color;
   } else {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.lightColor : defaultTheme.primary.lightColor;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.default.color : defaultTheme.default.color;
   }
   return bgC;
 }
@@ -137,8 +134,7 @@ function getBorderColor(props) {
   return BorderC;
 }
 
-
-function getBgColor(props) {
+function getLightBgColor(props) {
   const {
     primary,
     secondary,
@@ -146,6 +142,7 @@ function getBgColor(props) {
     warning,
     danger,
     success,
+    inverse,
     bgColor,
     theme
   } = props;
@@ -154,22 +151,25 @@ function getBgColor(props) {
   if (bgColor) {
     bgC = bgColor;
   } else if (primary) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.color : defaultTheme.primary.color;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.primary.lightColor : defaultTheme.primary.lightColor;
   } else if (secondary) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.color : defaultTheme.secondary.color;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.lightColor : defaultTheme.secondary.lightColor;
   } else if (info) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.info.color : defaultTheme.info.color;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.info.lightColor : defaultTheme.info.lightColor;
   } else if (warning) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.warning.color : defaultTheme.warning.color;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.warning.lightColor : defaultTheme.warning.lightColor;
   } else if (danger) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.danger.color : defaultTheme.danger.color;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.danger.lightColor : defaultTheme.danger.lightColor;
   } else if (success) {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.success.color : defaultTheme.success.color;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.success.lightColor : defaultTheme.success.lightColor;
+  } else if (inverse) {
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.lightColor : defaultTheme.inverse.lightColor;
   } else {
-    bgC = (Object.keys(theme).length > 0 && theme) ? theme.default.color : defaultTheme.default.color;
+    bgC = (Object.keys(theme).length > 0 && theme) ? theme.default.lightColor : defaultTheme.default.lightColor;
   }
   return bgC;
 }
+
 
 function getDarkColor(props) {
   const {
@@ -202,7 +202,7 @@ function getDarkColor(props) {
   } else if (inverse) {
     ForeC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.darkColor : defaultTheme.inverse.darkColor;
   } else {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.default.textColor : defaultTheme.default.textColor;
   }
 
   return ForeC;
@@ -225,19 +225,19 @@ function getItemColor(props) {
   if (foreColor) {
     ForeC = foreColor;
   } else if (primary) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.primary.bgColor : defaultTheme.primary.bgColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.primary.color : defaultTheme.primary.color;
   } else if (secondary) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.bgColor : defaultTheme.secondary.bgColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.color : defaultTheme.secondary.color;
   } else if (info) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.info.bgColor : defaultTheme.info.bgColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.info.color : defaultTheme.info.color;
   } else if (warning) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.warning.bgColor : defaultTheme.warning.bgColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.warning.color : defaultTheme.warning.color;
   } else if (danger) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.danger.bgColor : defaultTheme.danger.foreColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.danger.color : defaultTheme.danger.color;
   } else if (success) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.success.bgColor : defaultTheme.success.bgColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.success.color : defaultTheme.success.color;
   } else if (inverse) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.bgColor : defaultTheme.inverse.bgColor;
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.inverse.color : defaultTheme.inverse.color;
   } else {
     ForeC = (Object.keys(theme).length > 0 && theme) ? theme.darkForeColor : defaultTheme.darkForeColor;
   }

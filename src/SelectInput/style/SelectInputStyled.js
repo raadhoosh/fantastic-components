@@ -7,8 +7,7 @@ import styled from 'styled-components';
 import {getColor, getBorderColor} from './Statics';
 
 const SelectInputStyled = styled.select`    
-              display: block;
-              width: 100%;
+              display: block;              
               height: 34px;
               padding: 6px 12px;
               font-size: 14px;

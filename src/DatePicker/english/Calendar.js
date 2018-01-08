@@ -123,6 +123,7 @@ class Calendar extends Component {
             <TimePicker
               date={showDate}
               onTimeSet={onTimeSet}
+              colorProps={this.props.colorProps}
             />
           }
           <DatePickeHeadingStyled>
@@ -229,7 +230,8 @@ Calendar.propTypes = {
   onMonthChanged: PropTypes.func,
   onYearChanged: PropTypes.func,
   onTimeSet: PropTypes.func,
-  showTime: PropTypes.bool
+  showTime: PropTypes.bool,
+  colorProps: PropTypes.object,
 };
 
 Calendar.defaultProps = {

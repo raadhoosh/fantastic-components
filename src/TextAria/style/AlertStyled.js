@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import defaultTheme from '../../defaultTheme';
 
 const Alert = styled.div`  
-         box-sizing: border-box;   
-          color: ${(props) => (Object.keys(props.theme).length > 0 && props.theme) ? props.theme.danger.bgColor : defaultTheme.danger.bgColor};
+          box-sizing: border-box;   
+          color: ${(props) => (Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red};
               `;
 
 

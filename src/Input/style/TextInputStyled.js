@@ -13,7 +13,7 @@ const TextAriaStyled = styled.input`
                 font-size: 14px;
                 line-height: 1.42857143;
                 color: ${(props) => getColor(props)};
-                border: 1px solid ${(props) => (props.error) ? `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.danger.bgColor : defaultTheme.danger.bgColor}` : `${getBorderColor(props)}`};
+                border: 1px solid ${(props) => (props.error) ? `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red}` : `${getBorderColor(props)}`};
                 ::placeholder {
                   color: ${(props) => (props.error) && `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.danger.bgColor : defaultTheme.danger.bgColor}`}; 
                 }
@@ -22,7 +22,7 @@ const TextAriaStyled = styled.input`
                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
                 transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
                &:focus{
-                 border-color: 1px solid ${(props) => (props.error) ? `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.danger.bgColor : defaultTheme.danger.bgColor}` : `${getBorderColor(props)}`};
+                 border-color: 1px solid ${(props) => (props.error) ? `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red}` : `${getBorderColor(props)}`};
                  outline: 0;
                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
                };

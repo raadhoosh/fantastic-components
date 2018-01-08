@@ -11,7 +11,6 @@ const IconStyled = styled.i`
          font-size:${(props) => getSize(props)}px !important;          
          display: inline-block;  
          float: ${(props) => (props.rtl || props.theme.rtl || defaultTheme.rtl) ? 'right' : 'left' };     
-         
          ${
   props => props.devider ?
     ` border-${(props.theme.rtl || defaultTheme.rtl) ? 'left' : 'right'}: 1px solid #fff;

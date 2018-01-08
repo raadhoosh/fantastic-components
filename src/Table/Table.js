@@ -41,23 +41,19 @@ class Table extends Component {
   }
 
   handlePageChanged(newPage) {
-
-    this.setState({current: newPage});
+    this.setState({ current: newPage });
     if (this.props.onPageChanged) {
       this.props.onPageChanged(newPage);
     }
-
   }
 
   onDeleteButtonClick(e) {
-
     if (this.props.deleteMessage) {
       this.setState({
         dialogIsOpen: true
       });
       this.rowIdForDelete = e.target.value;
-    }
-    else {
+    } else {
       this.props.onDeleteClick(e.target.value);
     }
   }
@@ -77,8 +73,7 @@ class Table extends Component {
 
   makeHeader() {
     if (this.props.columns) {
-
-      let headCols = [];
+      const headCols = [];
       let i;
       let index = 1;
       const index1 = 0;
@@ -100,7 +95,7 @@ class Table extends Component {
         headCols.push(
           <Th
             key={index1}
-            style={{width: '140px', textAlign: 'center'}}
+            style={{ width: '140px', textAlign: 'center' }}
             {...this.props}
           >
             {this.props.actionColumnLabel}
@@ -110,9 +105,9 @@ class Table extends Component {
 
       return (
         <Thead {...this.props}>
-        <Tr {...this.props}>
-          {headCols}
-        </Tr>
+          <Tr {...this.props}>
+            {headCols}
+          </Tr>
         </Thead>
       );
     }
@@ -121,43 +116,45 @@ class Table extends Component {
   makeRows() {
     const { getRow } = this.props;
 
-    let rows = [];
+    const rows = [];
     if (getRow) {
       let j;
-      let si = this.props.pageSize * (this.state.current);
+      const si = this.props.pageSize * (this.state.current);
       let Ei = si + this.props.pageSize;
       if (Ei > this.props.rowsCount) {
         Ei = this.props.rowsCount;
       }
       let index3 = 0;
-      for (j = si; j < Ei; j++, index3++) {
+      for (j = si; j < Ei; j += 1, index3 += 1) {
         let cells = [];
         cells = getRow(j);
-        let rowCells = [];
+        const rowCells = [];
         let i;
         let index1 = 1;
-        let index = 0;
-        for (i = 0; i < cells.length; i++, index1++) {
-          rowCells.push(<Td key={index1} style={{textAlign: 'center'}} {...this.props}>{cells[i]}</Td>
-          );
+        const index = 0;
+        for (i = 0; i < cells.length; i += 1, index1 += 1) {
+          rowCells.push(<Td key={index1} style={{ textAlign: 'center' }} {...this.props}>{cells[i]}</Td>);
         }
-        if (this.props.onDeleteClick || this.props.onEditClick || this.props.onAcceptClick || this.props.onShowClick) {
+        if (this.props.onDeleteClick || this.props.onEditClick ||
+          this.props.onAcceptClick || this.props.onShowClick) {
           let delBtn = null;
           let editBtn = null;
           let showBtn = null;
           let hasShow = true;
-          if (this.props.rowHasShow)
+          if (this.props.rowHasShow) {
             hasShow = this.props.rowHasShow(j);
+          }
 
           if (this.props.onShowClick && hasShow) {
             showBtn = (
-              <Button value={j}
-                      onClick={this.onEditShowClick}
-                      label={this.props.labelButtonShow}
-                      icon='eye'
-                      xSmall
-                      style={{padding: "8px", marginLeft: "5px"}}
-                      {...this.props}
+              <Button
+                value={j}
+                onClick={this.onEditShowClick}
+                label={this.props.labelButtonShow}
+                icon="eye"
+                xSmall
+                style={{ padding: '8px', marginLeft: '5px' }}
+                {...this.props}
               />
             );
           }
@@ -172,10 +169,9 @@ class Table extends Component {
                 value={j}
                 onClick={this.onDeleteButtonClick}
                 icon="trash"
-                secondary
-                xSmall
-                style={{padding: "8px", marginLeft: "5px"}}
+                style={{padding: "0", marginLeft: "5px"}}
                 {...this.props}
+                danger
               />
             );
           }
@@ -189,9 +185,7 @@ class Table extends Component {
                       onClick={this.onEditButtonClick}
                       label={this.props.labelButtonEdit}
                       icon='pencil'
-                      primary
-                      xSmall
-                      style={{padding: "8px", marginLeft: "5px"}}
+                      style={{padding: "0", marginLeft: "5px"}}
                       {...this.props}
               />
             );
@@ -228,7 +222,7 @@ class Table extends Component {
         <Modal
           allowClose={true}
           open={this.state.dialogIsOpen}
-          title="حذف"
+          title="Delete"
           onClose={() => this.setState({
             dialogIsOpen: false
           })}
@@ -249,10 +243,10 @@ class Table extends Component {
               });
             }
           }}
-          Btn2Type="secondary"
-          Btn1Type="primary"
-          Btn2Label={this.props.Btn2Label}
-          Btn1Label={this.props.Btn1Label}
+          Btn1Type="danger"
+          Btn2Label="Cancel"
+          Btn1Label="Delete"
+          maxWidth={480}
           Btn2action={() => this.setState({
             dialogIsOpen: false
           })}
@@ -277,24 +271,17 @@ class Table extends Component {
 
     return (
       <WrapperStyled {...this.props}>
-        <TableStyled style={{tableLayout: "fixed"}} {...this.props}>
+        <TableStyled style={{ tableLayout: 'fixed' }} {...this.props}>
           {header}
           {rows}
         </TableStyled>
         {this.props.rowsCount > this.props.pageSize &&
-        <Pagination total={totalSize}
-                    current={this.state.current}
-                    titles={{
-                      first: 'first',
-                      prev: '\u00AB',
-                      prevSet: '...',
-                      nextSet: '...',
-                      next: '\u00BB',
-                      last: 'last'
-                    }}
-                    visiblepages={1}
-                    onPageChanged={this.handlePageChanged}
-                    {...this.props}
+        <Pagination
+          total={totalSize}
+          current={this.state.current}
+          visiblepages={1}
+          onPageChanged={this.handlePageChanged}
+          {...this.props}
         />
         }
 

@@ -168,4 +168,16 @@ class Notify extends Component {
   }
 }
 
+Notify.propTypes = {
+  message: PropTypes.string,
+
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool
+};
+
+
 export default Notify;

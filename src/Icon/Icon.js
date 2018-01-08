@@ -11,16 +11,7 @@ class Icon extends Component {
 
   render() {
     const {
-      iconClass,
-      rtl,
-      primary,
-      secondary,
-      info,
-      warning,
-      danger,
-      success,
-      inverse,
-
+      iconClass
     } = this.props;
 
     return (

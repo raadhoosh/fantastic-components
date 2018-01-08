@@ -58,17 +58,29 @@ class Modal extends Component {
     let Btn3;
     let BtnHelp;
     if (Btn1action) {
-      Btn1 = (<Button label={Btn1Label}
-                      onClick={Btn1action}
-                      spinner={spinnerBtn1}
-                      primary={Btn1Type}
-
+      Btn1 = (<Button
+        label={Btn1Label}
+        onClick={Btn1action}
+        spinner={spinnerBtn1}
+        primary={Btn1Type === 'primary'}
+        secondary={Btn1Type === 'secondary'}
+        warning={Btn1Type === 'warning'}
+        danger={Btn1Type === 'danger'}
+        info={Btn1Type === 'info'}
+        success={Btn1Type === 'success'}
       />);
     }
     if (Btn2action) {
-      Btn2 = (<Button label={Btn2Label}
-                      onClick={Btn2action}
-                      secondary={Btn2Type}/>);
+      Btn2 = (<Button
+        label={Btn2Label}
+        onClick={Btn2action}
+        primary={Btn2Type === 'primary'}
+        secondary={Btn2Type === 'secondary'}
+        warning={Btn2Type === 'warning'}
+        danger={Btn2Type === 'danger'}
+        info={Btn2Type === 'info'}
+        success={Btn2Type === 'success'}
+      />);
     }
     if (Btn3action) {
       Btn3 = (<Button label={Btn3Label}
@@ -96,11 +108,14 @@ class Modal extends Component {
                 className="header"
                 {...colorProps}
               >
+                { icon &&
                 <Icon
-                  color='#fff'
+                  {...colorProps}
+                  inverse
                   iconClass={icon}
                   small
                 />
+                }
                 <label>
                   {title}
                 </label>
@@ -112,7 +127,8 @@ class Modal extends Component {
                     <Icon
                       iconClass='times'
                       xxsmall
-                      color="#fff"
+                      {...colorProps}
+                      inverse
                       onClick={this.onClose}
                       style={{cursor: 'pointer'}}
                     />
