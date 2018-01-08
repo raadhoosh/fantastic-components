@@ -41,8 +41,10 @@ class Button extends Component {
         type="submit"
         className={className}
         onClick={(e) => {
-          if (!this.spanClicked)
+          if (disable || this.props.disable) return;
+          if (!this.spanClicked){
             this.onBtnClick(e);
+          }
           this.spanClicked = false;
         }}
         style={style}
