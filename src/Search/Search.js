@@ -101,6 +101,7 @@ class Search extends Component {
     return (
       <OutoCompelete>
         <Input
+          icon={'search'}
           onKeyUp={(e) => {
             if (e.keyCode === 13) {
               this.onSearchClick.bind(this);

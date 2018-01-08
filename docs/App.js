@@ -34,6 +34,10 @@ import Collapsible from '../src/Collapsible/Collapsible';
 import Spinner from '../src/Spinner/Spinner';
 import List from '../src/List/List/List';
 import BehzadiComponents from './BehzadiComponents';
+import AlesaadiComponents from './AlesaadiComponents';
+
+import SelectInput from '../src/SelectInput/SelectInput';
+
 
 import defaultTheme from '../src/defaultTheme';
 import defaultThemeA from '../src/defaultTheme-1';
@@ -141,10 +145,36 @@ class App extends Component {
       width: 100,
       aspect: 100 / 88
     };
-
+    let options = [
+      {
+        value: '1',
+        text: 'Java'
+      },
+      {
+        value: '2',
+        text: 'Javascript'
+      },
+      {
+        value: '3',
+        text: 'C#'
+      }
+    ];
     return (
       <div>
+        <AlesaadiComponents/>
         <BehzadiComponents/>
+
+        <br/>
+        <br/>
+        <SelectInput
+          label={'primary '}
+          primary
+          options={options}
+          defaultOption={'Nothing'}
+          defaultValue={'0'}
+        />
+        <br/>
+        <br/>
         <ThemeProvider theme={defaultTheme}>
           <div>
             <Row>

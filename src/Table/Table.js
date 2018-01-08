@@ -172,9 +172,7 @@ class Table extends Component {
                 value={j}
                 onClick={this.onDeleteButtonClick}
                 icon="trash"
-                secondary
-                xSmall
-                style={{padding: "8px", marginLeft: "5px"}}
+                style={{padding: "0", marginLeft: "5px"}}
                 {...this.props}
               />
             );
@@ -190,8 +188,7 @@ class Table extends Component {
                       label={this.props.labelButtonEdit}
                       icon='pencil'
                       primary
-                      xSmall
-                      style={{padding: "8px", marginLeft: "5px"}}
+                      style={{padding: "0", marginLeft: "5px"}}
                       {...this.props}
               />
             );
