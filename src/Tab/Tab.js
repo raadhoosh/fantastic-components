@@ -28,6 +28,7 @@ class Tab extends Component {
           info={this.props.info}
           warning={this.props.warning}
           danger={this.props.danger}
+          success={this.props.success}
           inverse={this.props.inverse}
           rtl={this.props.rtl}
         />
