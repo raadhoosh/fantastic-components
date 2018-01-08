@@ -40,24 +40,26 @@ class Button extends Component {
         {...this.props}
         type="submit"
         className={className}
-        onClick = {(e) => {
+        onClick={(e) => {
           if (!this.spanClicked)
             this.onBtnClick(e);
           this.spanClicked = false;
         }}
         style={style}
         value={value}
-        disabled={disable}
+        disabled={disable || this.props.disable}
       >
         {spinner ?
-          <Spinner spin="spinner" /> :
+          <Spinner icon="spinner" /> :
           icon ?
-            <Icon iconClass={icon} devider={icon && label}
-                  onClick={(e) => {
+            <Icon
+              iconClass={icon}
+              devider={icon && label}
+              onClick={(e) => {
                     this.spanClicked = true;
                     e.target.value = value;
                     this.onBtnClick(e);
-                  }}
+              }}
             />
             : null
         }

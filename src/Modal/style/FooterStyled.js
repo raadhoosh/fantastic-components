@@ -4,8 +4,8 @@ import defaultTheme from '../../defaultTheme';
 
 const FooterStyled = styled.footer`
          border-bottom: 2px solid ${(props) => getBgColor(props)}; 
-         border-top: 1px solid ${(props) => getBgColor(props)};
-         color:${(props) => props.Color ? props.Color : (props.theme ? props.theme.window.lightTextColor : defaultTheme.window.lightTextColor )};         
+         border-top: 1px solid ${(props) => getBgColor(props)};         
+         color:${(props) => props.color ? props.color : ((Object.keys(props.theme && props.theme).length > 0 ) ? props.theme.window.lightTextColor : defaultTheme.window.lightTextColor)};         
          padding:10px 15px;
          direction: ${(props) => (props.rtl || props.theme.rtl || defaultTheme.rtl) ? 'rtl' : 'ltr' };
         `;

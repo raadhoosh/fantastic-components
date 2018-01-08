@@ -72,7 +72,14 @@ class AlesaadiComponents extends Component {
         <Tab
           tabs={tabs}
           currentTab={0}
-          primary
+          success
+        />
+        <br/>
+        <br/>
+        <Tab
+          tabs={tabs}
+          currentTab={0}
+          warning
         />
         <H1
           primary
@@ -109,6 +116,7 @@ class AlesaadiComponents extends Component {
           hover
           info
         />
+
 
       </div>
     );

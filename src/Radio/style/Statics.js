@@ -9,28 +9,27 @@ function getColor(props) {
     danger,
     success,
     foreColor,
-    theme,
+    theme
   } = props;
 
   let ForeC;
   if (foreColor) {
     ForeC = foreColor;
   } else if (primary) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.primary.textColor : defaultTheme.primary.textColor;
+    ForeC = (theme && Object.keys(theme).length > 0) ? theme.primary.textColor : defaultTheme.primary.textColor;
   } else if (secondary) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.textColor : defaultTheme.secondary.textColor;
+    ForeC = (theme && Object.keys(theme).length > 0) ? theme.secondary.textColor : defaultTheme.secondary.textColor;
   } else if (info) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.info.textColor : defaultTheme.info.textColor;
+    ForeC = (theme && Object.keys(theme).length > 0) ? theme.info.textColor : defaultTheme.info.textColor;
   } else if (warning) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.warning.textColor : defaultTheme.warning.textColor;
+    ForeC = (theme && Object.keys(theme).length > 0) ? theme.warning.textColor : defaultTheme.warning.textColor;
   } else if (danger) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.danger.textColor : defaultTheme.danger.textColor;
+    ForeC = (theme && Object.keys(theme).length > 0) ? theme.danger.textColor : defaultTheme.danger.textColor;
   } else if (success) {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.success.textColor : defaultTheme.success.textColor;
+    ForeC = (theme && Object.keys(theme).length > 0) ? theme.success.textColor : defaultTheme.success.textColor;
   } else {
-    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.default.textColor : defaultTheme.default.textColor;
+    ForeC = (theme && Object.keys(theme).length > 0) ? theme.default.textColor : defaultTheme.default.textColor;
   }
-
   return ForeC;
 }
 
