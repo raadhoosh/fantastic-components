@@ -8,7 +8,8 @@ class TabLabel extends Component {
     return (
       <LI
         onClick={()=>this.props.onTabChange(this.props.index)}
-        {...this.props} >
+        {...this.props}
+      >
         {this.props.title}
       </LI>
     );

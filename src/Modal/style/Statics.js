@@ -33,8 +33,7 @@ function getColor(props) {
 
   return ForeC;
 }
-
-function getIconColor(props) {
+function getColor(props) {
   const {
     primary,
     secondary,
@@ -61,6 +60,40 @@ function getIconColor(props) {
     ForeC = (Object.keys(theme).length > 0 && theme) ? theme.danger.textColor : defaultTheme.danger.textColor;
   } else if (success) {
     ForeC = (Object.keys(theme).length > 0 && theme) ? theme.success.textColor : defaultTheme.success.textColor;
+  } else {
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.default.textColor : defaultTheme.default.textColor;
+  }
+
+  return ForeC;
+}
+
+function getIconColor(props) {
+  const {
+    primary,
+    secondary,
+    info,
+    warning,
+    danger,
+    success,
+    foreColor,
+    theme,
+  } = props;
+
+  let ForeC;
+  if (foreColor) {
+    ForeC = foreColor;
+  } else if (primary) {
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.primary.color : defaultTheme.primary.color;
+  } else if (secondary) {
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.secondary.color : defaultTheme.secondary.color;
+  } else if (info) {
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.info.color : defaultTheme.info.color;
+  } else if (warning) {
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.warning.color : defaultTheme.warning.color;
+  } else if (danger) {
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.danger.color : defaultTheme.danger.color;
+  } else if (success) {
+    ForeC = (Object.keys(theme).length > 0 && theme) ? theme.success.color : defaultTheme.success.color;
   } else {
     ForeC = (Object.keys(theme).length > 0 && theme) ? theme.default.textColor : defaultTheme.default.textColor;
   }

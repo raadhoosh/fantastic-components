@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Table from '../src/Table/Table';
 import H1 from '../src/Headings/H1';
 import Search from '../src/Search/Search';
+import CheckBox from '../src/CheckBox/CheckBox';
+import Tab from '../src/Tab/Tab';
 
 
 class AlesaadiComponents extends Component {
@@ -55,8 +57,23 @@ class AlesaadiComponents extends Component {
         id: '6'
       },
     ];
+    const tabs = [
+      {title: 'Tab 1', content: (<div> Contetnt 1</div>)},
+      {
+        title: 'Tab 2', content: (<div> Content 2</div>)
+      },
+      {
+        title: 'Tab 3', content: (<div> Content 3</div>)
+      }
+    ];
     return (
       <div>
+        <CheckBox/>
+        <Tab
+          tabs={tabs}
+          currentTab={0}
+          primary
+        />
         <H1
           primary
         >

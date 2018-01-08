@@ -43,7 +43,15 @@ Tab.propTypes = {
   tabs: PropTypes.array,
   style: PropTypes.object,
   labelListStyle: PropTypes.object,
-  currentTab: PropTypes.number
+  currentTab: PropTypes.number,
+
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool,
+  inverse: PropTypes.bool,
 };
 
 export default Tab;
