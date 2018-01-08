@@ -161,22 +161,22 @@ class App extends Component {
     ];
     return (
       <div>
-        <AlesaadiComponents/>
-        <BehzadiComponents/>
-
-        <br/>
-        <br/>
-        <SelectInput
-          label={'primary '}
-          primary
-          options={options}
-          defaultOption={'Nothing'}
-          defaultValue={'0'}
-        />
-        <br/>
-        <br/>
         <ThemeProvider theme={defaultTheme}>
           <div>
+            <AlesaadiComponents/>
+            <BehzadiComponents/>
+
+            <br/>
+            <br/>
+            <SelectInput
+              label={'primary '}
+              primary
+              options={options}
+              defaultOption={'Nothing'}
+              defaultValue={'0'}
+            />
+            <br/>
+            <br/>
             <Row>
               <Button
                 label={'default'}
