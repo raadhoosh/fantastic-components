@@ -164,9 +164,32 @@ class App extends Component {
     ];
     return (
       <div>
+        <Modal isOpen={this.state.isOpen}
+               title={'Modal'}
+               allowClose
+               iconTitle="envelope"
+               Btn1Label="yes"
+               onClose={() => this.closeModal()}
+               footerChildren={<div><b>footer</b></div>}
+               maxWidth={'500px'}
+               primary
+               Btn2Label="No"
+               btn1action={()=>{}}
+               btnaction={()=>{}}
+               btn1type="primary"
 
+        >
+        </Modal>
         <Radio
-          label={'fjg'}
+               label={'Disabled example'}
+               disabled={true}
+               primary
+
+        />
+        <Radio
+               label={'Disabled example'}
+               disabled={true}
+
         />
 
         <Panel header="Header"
@@ -192,16 +215,7 @@ class App extends Component {
 
         </Panel>
 
-        <Modal isOpen={this.state.isOpen}
-               onClose={() => this.closeModal()}
-               title="title"
-               iconTitle="envelope"
-               Btn1Label="yes"
-               footerChildren={<div><b>footer</b></div>}
-               maxWidth='900px'
 
-        >
-        </Modal>
 
         <Button label="open modal"
                 primary
@@ -209,7 +223,91 @@ class App extends Component {
                 icon={'user'}
                 onClick={this.openModal}
         />
+        <div>
+          <AlesaadiComponents/>
+          <BehzadiComponents/>
 
+          <br/>
+          <br/>
+          <SelectInput
+            label={'primary '}
+            primary
+            options={options}
+            defaultOption={'Nothing'}
+            defaultValue={'0'}
+          />
+          <br/>
+          <br/>
+          <Row>
+            <Button
+              label={'default'}
+              xSmall
+            />
+            <Button
+              label={'primary'}
+              primary
+              small
+            />
+
+            <Button
+              label={'secondary'}
+              secondary
+              large
+            />
+            <Button
+              label={'warning'}
+              warning
+            />
+            <Button
+              label={'success'}
+              success
+            />
+            <Button
+              label={'info'}
+              info
+            />
+            <Button
+              label={'danger'}
+              danger
+            />
+          </Row>
+          <Row>
+            <Button
+              label={'default'}
+              inverse
+            />
+            <Button
+              label={'primary'}
+              primary
+              inverse
+            />
+            <Button
+              label={'secondary'}
+              secondary
+              inverse
+            />
+            <Button
+              label={'warning'}
+              warning
+              inverse
+            />
+            <Button
+              label={'success'}
+              success
+              inverse
+            />
+            <Button
+              label={'info'}
+              info
+              inverse
+            />
+            <Button
+              label={'danger'}
+              danger
+              inverse
+            />
+          </Row>
+        </div>
         <ThemeProvider theme={defaultTheme}>
           <div>
             <AlesaadiComponents/>
@@ -516,28 +614,10 @@ class App extends Component {
                 </Row>
               </Container>
               <div>
-                <Modal isOpen={this.state.isOpen}
-                       onClose={() => this.closeModal()}
-                       title="title"
-                       iconTitle="envelope"
-                       Btn1Label="yes"
-                       footerChildren={<div><b>footer</b></div>}
-                       maxWidth='900px'
 
-                >
-                </Modal>
 
-                <Modal isOpen={this.state.isOpen}
-                       title={'Modal'}
-                       allowClose
-                       iconTitle="envelope"
-                       Btn1Label="yes"
-                       onClose={() => this.closeModal()}
-                       footerChildren={<div><b>footer</b></div>}
-                       maxWidth={'500px'}
 
-                >
-                </Modal>
+
 
 
               </div>

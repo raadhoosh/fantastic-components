@@ -57,7 +57,7 @@ class Modal extends Component {
     let Btn2;
     let Btn3;
     let BtnHelp;
-    if (Btn1action) {
+    if (Btn1action || Btn1Label) {
       Btn1 = (<Button
         label={Btn1Label}
         onClick={Btn1action}
@@ -70,7 +70,7 @@ class Modal extends Component {
         success={Btn1Type === 'success'}
       />);
     }
-    if (Btn2action) {
+    if (Btn2action || Btn2Label) {
       Btn2 = (<Button
         label={Btn2Label}
         onClick={Btn2action}
