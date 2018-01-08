@@ -37,10 +37,11 @@ const Button = styled.button`
        ${(props) => props.disable ? `
         border: 1px solid #ccc;
         background-color: #eee;
-        color: #666666;
+        color: #999;
         cursor: not-allowed;   
         &:hover{     
         background-color: #eee;
+        opacity:1;
       }     
       ` : `
       
