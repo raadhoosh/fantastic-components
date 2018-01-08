@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import NotifyContainer from './style/NotifyContainerStyled';
 import NotifyItem from './style/NotifyItemStyled';
 import NotifyTitle from './style/NotifyTitleStyled';
+
 
 class Notify extends Component {
   constructor() {
@@ -170,7 +172,6 @@ class Notify extends Component {
 
 Notify.propTypes = {
   message: PropTypes.string,
-
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
   info: PropTypes.bool,
