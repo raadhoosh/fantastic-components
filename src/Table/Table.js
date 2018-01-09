@@ -262,7 +262,7 @@ class Table extends Component {
     const header = this.makeHeader();
     const rows = this.makeRows();
     const dlg = this.showDialog();
-    const totalSize = this.props.rowsCount / this.props.pageSize;
+    const totalSize = Math.ceil(this.props.rowsCount / this.props.pageSize);
     const start = (this.state.current) * this.props.pageSize;
     let end = start + this.props.pageSize - 1;
     if (end > this.props.rowsCount) {
