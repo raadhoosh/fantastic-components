@@ -4,7 +4,7 @@
 import styled from 'styled-components';
 
 
-import { getColor, getBorderColor  } from './Statics';
+import {getColor, getBorderColor} from './Statics';
 
 const TextAriaWrapper = styled.textarea`    
               box-sizing: border-box; 
@@ -24,16 +24,12 @@ const TextAriaWrapper = styled.textarea`
               height: auto;
               transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
                &:focus{
-                 border-color: 1px solid ${(props) => (props.error) ? `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red}` : `${getBorderColor(props)}`};
+                 border: 1px solid ${(props) => (props.error) ? `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red}` : `${getBorderColor(props)}`};
                  outline: 0;
                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
                };
                
-                ${props => props.icon ?
-                `padding-${props.theme.rtl ? 'right' : 'left'}:30px;`
-                : `10px`
-  }
-               
+                ${props => props.icon ? `padding-${props.theme.rtl ? 'right' : 'left'}:30px;` : 'padding: 0 10px;'}               
               `;
 
 export default TextAriaWrapper;
