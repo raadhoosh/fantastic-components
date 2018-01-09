@@ -2,8 +2,7 @@
  * Created by Programmer1 on 12/4/2017.
  */
 import styled from 'styled-components';
-
-
+import defaultTheme from '../../defaultTheme';
 import {getColor, getBorderColor} from './Statics';
 
 const TextAriaWrapper = styled.textarea`    
@@ -17,7 +16,7 @@ const TextAriaWrapper = styled.textarea`
                background-image: none;
                border: 1px solid ${(props) => (props.error) ? `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red}` : `${getBorderColor(props)}`};
                 ::placeholder {
-                  color: ${(props) => (props.error) && `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.danger.bgColor : defaultTheme.danger.bgColor}`}; 
+                  color: ${(props) => (props.error) && `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red}`}; 
                 }  
               border-radius: 4px;         
               box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -29,7 +28,7 @@ const TextAriaWrapper = styled.textarea`
                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
                };
                
-                ${props => props.icon ? `padding-${props.theme.rtl ? 'right' : 'left'}:30px;` : 'padding: 0 10px;'}               
+                ${ props => props.icon ? `padding-${props.theme.rtl ? 'right' : 'left'}:30px;` : 'padding: 0 10px;'}               
               `;
 
 export default TextAriaWrapper;

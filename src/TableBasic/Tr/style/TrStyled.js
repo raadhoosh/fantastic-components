@@ -3,7 +3,7 @@
  */
 import styled from 'styled-components';
 import {getColor, getBgColor} from './Statics';
-import defaultTheme from '../../../defaultTheme'
+import defaultTheme from '../../../defaultTheme';
 
 const TrStyled = styled.tr`
                 font-family: ${(props) => props.theme.fontFamily};
@@ -12,7 +12,7 @@ const TrStyled = styled.tr`
                 background-color: ${(props) => getBgColor(props)}; 
                 
                 &:hover{
-                   background-color: ${(props) => props.theme ? props.theme.default.lightColor : defaultTheme.default.lightColor};
+                   background-color: ${(props) => (Object.keys(props.theme).length > 0 && props.theme) ? props.theme.default.lightColor : defaultTheme.default.lightColor};
                 }                                                     
     `;
 

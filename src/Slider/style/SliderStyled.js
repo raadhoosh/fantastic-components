@@ -5,8 +5,7 @@ import styled from 'styled-components';
 
 import { getBorderColor } from './Statics';
 
-const SliderStyled = styled.div`        
-          background:pink;
+const SliderStyled = styled.div`           
           overflow-x:hidden;
           margin:0;
           padding:0;
