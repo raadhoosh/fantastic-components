@@ -147,45 +147,51 @@ class MenuResponsive extends Component {
 
     return (
 
-      <Div
-        className="navigation-wrapper"
-        {...this.props}
+      <div
+        style={{position: 'relative'}}
       >
         <ButtonBox>
           <ButtonWrapper
             icon={this.state.isShow ? 'fa fa-window-close-o' : iconClass}
             onClick={this.toggleMenu}
+            {...this.props}
           />
         </ButtonBox>
-        <nav className={`menuSimple ${!this.state.isShow ? 'sfHide' : 'sfShow' }`}>
-          <Ul className="nav sf-menu sf-js-enabled" style={{float: right ? 'right' : 'left'}}>
-            <Icon
-              iconClass='sort-asc'
-            />
-            {
-              mainItems.map((mainItem, i) => {
-                return (
-                  <MenuItem
-                    key={i}
-                    Right={right ? 'right' : 'left'}
-                    title={mainItem.title}
-                    link={mainItem.link}
-                    subItems={mainItem.subItems}
-                    language={language}
-                    icon={iconArrow}
-                  />
+        <Div
+          className="navigation-wrapper"
+          {...this.props}
+        >
 
-                )
-              })
-            }
+          <nav className={`menuSimple ${!this.state.isShow ? 'sfHide' : 'sfShow' }`}>
+            <Ul className="nav sf-menu sf-js-enabled" style={{float: right ? 'right' : 'left'}}>
+              <Icon
+                iconClass='sort-asc'
+              />
+              {
+                mainItems.map((mainItem, i) => {
+                  return (
+                    <MenuItem
+                      key={i}
+                      Right={right ? 'right' : 'left'}
+                      title={mainItem.title}
+                      link={mainItem.link}
+                      subItems={mainItem.subItems}
+                      language={language}
+                      icon={iconArrow}
+                    />
 
-          </Ul>
-        </nav>
-        <Overlay
-          onClick={this.toggleMenu}
-          style={{display: (this.state.isShow) ? 'block' : 'none'}}
-        />
-      </Div>
+                  )
+                })
+              }
+
+            </Ul>
+          </nav>
+          <Overlay
+            onClick={this.toggleMenu}
+            style={{display: (this.state.isShow) ? 'block' : 'none'}}
+          />
+        </Div>
+      </div>
 
     );
   }
