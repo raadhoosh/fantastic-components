@@ -15,7 +15,7 @@ const TextAriaStyled = styled.input`
                 color: ${(props) => getColor(props)};
                 border: 1px solid ${(props) => (props.error) ? `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red}` : `${getBorderColor(props)}`};
                 ::placeholder {
-                  color: ${(props) => (props.error) && `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.danger.bgColor : defaultTheme.danger.bgColor}`}; 
+                  color: ${(props) => (props.error) && `${(Object.keys(props.theme).length > 0 && props.theme) ? props.theme.fixColors.red : defaultTheme.fixColors.red}`}; 
                 }
                 background-image: none;                
                 border-radius: 4px;              

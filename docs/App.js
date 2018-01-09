@@ -99,7 +99,7 @@ class App extends Component {
   }
 
   render() {
-    let errorList=['Email Invalid!','Username is wrong!'];
+    let errorList = ['Email Invalid!', 'Username is wrong!'];
     let BreadcrumbList = [
       {
         name: 'home',
@@ -166,15 +166,27 @@ class App extends Component {
     ];
     return (
       <div>
+        <MenuResponsive
+          mainItems={mainItems}
+          style={{marginBottom: '400px'}}
+          success
+        />
+        <br/>
+        <Menu
+          mainItems={mainItems}
+          style={{marginBottom: '400px'}}
+          success
+        />
+        <br/>
         <Notify
           position="top right"
           title="Secondary Notify"
           time={9000}
           msg="This notification will hide in 9s "
         />
-<br/>
-  <br/>
-    <br/>
+        <br/>
+        <br/>
+        <br/>
         <ToolTip
           label={'hoveraaaaaaaaaaa'}
         >
@@ -191,21 +203,23 @@ class App extends Component {
                maxWidth={'500px'}
                primary
                Btn2Label="No"
-               btn1action={()=>{}}
-               btnaction={()=>{}}
+               btn1action={() => {
+               }}
+               btnaction={() => {
+               }}
                btn1type="primary"
 
         >
         </Modal>
         <Radio
-               label={'Disabled example'}
-               disabled={true}
-               primary
+          label={'Disabled example'}
+          disabled={true}
+          success
 
         />
         <Radio
-               label={'Disabled example'}
-               disabled={true}
+          label={'Disabled example'}
+          disabled={true}
 
         />
 
@@ -231,7 +245,6 @@ class App extends Component {
           <br/>
 
         </Panel>
-
 
 
         <Button label="open modal"
@@ -417,6 +430,7 @@ class App extends Component {
             <MenuResponsive
               mainItems={mainItems}
               style={{marginBottom: '400px'}}
+
             />
             <br/>
             <br/>
@@ -456,7 +470,7 @@ class App extends Component {
                       <DatePicker
                         showTime={true}
                         inputValue={this.state.inputValue}
-                        success
+                        info
                       />
                     </Col>
                     <Col md6>
@@ -631,10 +645,6 @@ class App extends Component {
                 </Row>
               </Container>
               <div>
-
-
-
-
 
 
               </div>
