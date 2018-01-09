@@ -112,8 +112,7 @@ class Pagination extends React.Component {
 
   handlePageChanged(num) {
     const { onPageChanged } = this.props;
-    const handler = onPageChanged;
-    if (handler) handler(num);
+    if (onPageChanged) onPageChanged(num);
   }
 
   renderPages(pair) {
