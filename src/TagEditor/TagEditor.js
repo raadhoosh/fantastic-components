@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import OutsideAlerter from '../OutsideAlerter/OutsideAlerter';
@@ -165,8 +165,16 @@ class TagEditor extends React.Component {
       suggestionList,
       showSearchButtom,
       label,
-      important
+      important,
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
     } = this.props;
+    const colorProps = {primary, secondary, info, success, danger, warning};
+
     let searchedArray = [];
     if (async) {
       searchedArray = suggestionList;
@@ -178,7 +186,7 @@ class TagEditor extends React.Component {
       searchedArray = searchedArray.slice(0, suggestionCount);
     }
     return (
-      <OutoCompelete >
+      <OutoCompelete>
         {
           this.state.tags.length > 0 &&
           <div>
@@ -186,16 +194,17 @@ class TagEditor extends React.Component {
               this.state.tags.map((t, i) => {
                 return <Button onClick={this.onClickButton}
                                key={i}
-                          value={t.id}
-                          name={t.value}
-                          icon="window-close"
-                          style={{
-                            border: 'none',
-                            padding: "8px", marginLeft: "5px"
-                          }}
-                          secondary
-                          label={t.value}
-                  />
+                               value={t.id}
+                               name={t.value}
+                               icon="window-close"
+                               style={{
+                                 border: 'none',
+                                 padding: "8px", marginLeft: "5px"
+                               }}
+                               secondary
+                               label={t.value}
+                               {...colorProps}
+                />
 
               })
             }
@@ -248,10 +257,10 @@ class TagEditor extends React.Component {
           }
           }
         >
-          { this.state.isOpen && this.state.arraySuggest.length > 0 &&
+          {this.state.isOpen && this.state.arraySuggest.length > 0 &&
           <OutoCompeleteMenu>
             <OutoCompeleteWrap>
-              <Ul >{
+              <Ul>{
                 searchedArray.map((item, i) => {
                   return (
                     <LI key={i} onClick={() => {
@@ -274,5 +283,14 @@ class TagEditor extends React.Component {
     );
   }
 }
+
+TagEditor.propTypes = {
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool
+};
 
 export default TagEditor;
