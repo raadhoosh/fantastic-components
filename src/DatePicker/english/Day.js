@@ -20,14 +20,34 @@ class Day extends Component {
 
   render() {
     const {
-      day, isSelected, isToday, disabled
+      day,
+      isSelected,
+      isToday,
+      disabled,
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
     } = this.props;
+
+    const colorProps = {
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
+    };
+
     return (
       <DayStyled
         onClick={this.handleClick}
         isSelected={isSelected}
         isToday={isToday}
         disabled={disabled}
+        {...colorProps}
       >
         {day}
       </DayStyled>
@@ -40,7 +60,13 @@ Day.propTypes = {
   isToday: PropTypes.bool,
   disabled: PropTypes.bool,
   isSelected: PropTypes.bool,
-  onDayClick: PropTypes.func
+  onDayClick: PropTypes.func,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool
 };
 
 Day.defaultProps = {

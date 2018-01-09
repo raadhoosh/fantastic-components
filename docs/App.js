@@ -34,6 +34,8 @@ import Collapsible from '../src/Collapsible/Collapsible';
 import Spinner from '../src/Spinner/Spinner';
 import List from '../src/List/List/List';
 import Radio from '../src/Radio/Radio';
+import Notify from '../src/Notify/Notify';
+import ToolTip from '../src/ToolTip/ToolTip';
 
 
 import BehzadiComponents from './BehzadiComponents';
@@ -164,6 +166,21 @@ class App extends Component {
     ];
     return (
       <div>
+        <Notify
+          position="top right"
+          title="Secondary Notify"
+          time={9000}
+          msg="This notification will hide in 9s "
+        />
+<br/>
+  <br/>
+    <br/>
+        <ToolTip
+          label={'hoveraaaaaaaaaaa'}
+        >
+          hover me
+        </ToolTip>
+
         <Modal isOpen={this.state.isOpen}
                title={'Modal'}
                allowClose
@@ -439,7 +456,7 @@ class App extends Component {
                       <DatePicker
                         showTime={true}
                         inputValue={this.state.inputValue}
-                        primary
+                        success
                       />
                     </Col>
                     <Col md6>

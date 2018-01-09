@@ -81,8 +81,23 @@ class DatePicker extends Component {
 
   render() {
 
-    const { primary, secondary, info, success, danger, warning } = this.props;
-    const colorProps = {primary, secondary, info, success, danger, warning};
+    const {
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning,
+    } = this.props;
+
+    const colorProps = {
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
+    };
 
     return (
       <div style={{ position: 'relative' }}
@@ -127,6 +142,7 @@ class DatePicker extends Component {
             showDate={this.state.showDate}
             showTime={this.props.showTime}
             onTimeSet={this.onTimeSet}
+            {...colorProps}
           />
           }
         </OutsideAlerter>
@@ -149,10 +165,7 @@ DatePicker.propTypes = {
   info: PropTypes.bool,
   warning: PropTypes.bool,
   danger: PropTypes.bool,
-  success: PropTypes.bool,
-  inverse: PropTypes.bool,
-
-  colorProps: PropTypes.object,
+  success: PropTypes.bool
 };
 
 DatePicker.defaultProps = {

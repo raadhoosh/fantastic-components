@@ -11,8 +11,7 @@ const DivWrapperTime = styled.div`
       background: ${props => getBgColor(props)};
       
       i{
-        color: ${props => getColor(props)};
-        
+        color: ${props => getColor(props)};        
         &:hover{
           opacity: 0.7; 
         }
@@ -36,6 +35,12 @@ const DivWrapperTime = styled.div`
       input{
        height: 22px;
        box-shadow: none;
+       text-align: center;
+      }
+      
+      label{
+      color: ${props => getColor(props)};
+      text-align: center;
       }
       
       `;

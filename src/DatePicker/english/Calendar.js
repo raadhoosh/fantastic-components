@@ -77,9 +77,29 @@ class Calendar extends Component {
 
   render() {
     const {
-      showDate, onViewStyleChanged, viewStyle, onMonthChanged, showTime, onTimeSet
+      showDate,
+      onViewStyleChanged,
+      viewStyle,
+      onMonthChanged,
+      showTime,
+      onTimeSet,
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
     } = this.props;
     // Calculate days
+
+    const colorProps = {
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
+    };
 
     const month = moment(showDate).month() + 1;
     const monthName = moment.months(month - 1);
@@ -123,7 +143,7 @@ class Calendar extends Component {
             <TimePicker
               date={showDate}
               onTimeSet={onTimeSet}
-              colorProps={this.props.colorProps}
+              {...colorProps}
             />
           }
           <DatePickeHeadingStyled>
@@ -136,9 +156,11 @@ class Calendar extends Component {
                 {`${monthName} ${year}`}
               </CurrentMonth>
               <NavigationNext
+                {...colorProps}
                 onClick={this.nextMonth}
               />
               <NavigationPrevious
+                {...colorProps}
                 onClick={this.previousMonth}
               />
             </div>
@@ -176,6 +198,7 @@ class Calendar extends Component {
                     isSelected={this.isSelectedDay(dayNumber)}
                     isToday={this.isToday(dayNumber)}
                     onDayClick={this.onDayClicked}
+                    {...colorProps}
                   />
                 );
               })}
@@ -231,7 +254,13 @@ Calendar.propTypes = {
   onYearChanged: PropTypes.func,
   onTimeSet: PropTypes.func,
   showTime: PropTypes.bool,
-  colorProps: PropTypes.object,
+
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool
 };
 
 Calendar.defaultProps = {
