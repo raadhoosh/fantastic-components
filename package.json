@@ -3,7 +3,7 @@
   "description": "React.js components",
   "author": "raadhoosh",
   "user": "raadhoosh",
-  "version": "2.0.8",
+  "version": "2.0.20",
   "scripts": {
     "start": "catalog start docs",
     "test": "jest",

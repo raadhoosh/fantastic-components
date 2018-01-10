@@ -44,7 +44,7 @@ class Breadcrumb extends React.Component {
 }
 Breadcrumb.propTypes = {
   /** array of objects */
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  items: PropTypes.array.isRequired,
   /** rtl is true component show  in right side of the window, default is false (from left side). */
   rtl: PropTypes.bool,
   /** Boolean indicating whether the component renders with Theme.primary color */

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ButtonStyled from './style/ButtonStyled';
 import Icon from '../Icon/Icon';
@@ -12,24 +12,15 @@ class Button extends Component {
   }
 
   onBtnClick(e) {
-    const {onClick} = this.props;
+    const { onClick } = this.props;
     onClick && onClick(e);
   }
 
 
   render() {
-
     const {
-      label,
-      style,
-      className,
-      icon,
-      value,
-      spinner,
-      children
+      label, icon, value, spinner, children
     } = this.props;
-
-
     let disable = false;
     if (spinner !== null && spinner === true) {
       disable = true;
@@ -39,21 +30,19 @@ class Button extends Component {
       <ButtonStyled
         {...this.props}
         type="submit"
-        className={className}
         onClick={(e) => {
           if (disable || this.props.disable) return;
-          if (!this.spanClicked){
+          if (!this.spanClicked) {
             this.onBtnClick(e);
           }
           this.spanClicked = false;
         }}
-        style={style}
         value={value}
         disabled={disable || this.props.disable}
       >
-        {spinner ?
+        { spinner ?
           <Spinner icon="spinner" /> :
-          icon ?
+          icon &&
             <Icon
               iconClass={icon}
               devider={icon && label}
@@ -63,7 +52,6 @@ class Button extends Component {
                     this.onBtnClick(e);
               }}
             />
-            : null
         }
         {label}
         {children}
@@ -73,37 +61,77 @@ class Button extends Component {
 }
 
 Button.propTypes = {
+  /** function to be called when the button is clicked. */
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  /** function to be called when the button is clicked. */
   onClick: PropTypes.func,
-  id: PropTypes.number,
+  /** The value of the button. */
   value: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
-
+  /** Text to display inside the button. */
   label: PropTypes.string,
+  /** function to be called when the button is clicked. */
   icon: PropTypes.string,
+  /** function to be called when the button is clicked. */
   spinner: PropTypes.bool,
-  hover: PropTypes.bool,
+  /** function to be called when the button is clicked. */
   disable: PropTypes.bool,
-
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
-  info: PropTypes.bool,
-  warning: PropTypes.bool,
-  danger: PropTypes.bool,
-  success: PropTypes.bool,
+  /** function to be called when the button is clicked. */
   inverse: PropTypes.bool,
-
+  /** function to be called when the button is clicked. */
   xSmall: PropTypes.bool,
+  /** function to be called when the button is clicked. */
   small: PropTypes.bool,
+  /** function to be called when the button is clicked. */
   large: PropTypes.bool,
-
+  /** rtl is true component show  in right side of the window, default is false (from left side). */
+  rtl: PropTypes.bool,
+  /** Boolean indicating whether the component renders with Theme.primary color */
+  primary: PropTypes.bool,
+  /** Boolean indicating whether the component renders with Theme.secondary color */
+  secondary: PropTypes.bool,
+  /** Boolean indicating whether the component renders with Theme.info color */
+  info: PropTypes.bool,
+  /** Boolean indicating whether the component renders with Theme.warning color  */
+  warning: PropTypes.bool,
+  /** Boolean indicating whether the component renders with Theme.danger color  */
+  danger: PropTypes.bool,
+  /** Boolean indicating whether the component renders with Theme.success color */
+  success: PropTypes.bool,
+  /** The inline-styles for the root element. */
   style: PropTypes.object,
+  /** The className for the root element. */
   className: PropTypes.string,
-
-  borderColor: PropTypes.string,
-  bgColor: PropTypes.string,
+  /** The color renders with Theme.foreColor . */
   foreColor: PropTypes.string,
-  theme: PropTypes.object
+  /** The border color renders with Theme.foreColor .. */
+  borderColor: PropTypes.string,
+  /** The background color renders with Theme.foreColor . */
+  bgColor: PropTypes.string,
 };
-
+Button.defaultProps = {
+  children:{},
+  rtl: false,
+  primary: false,
+  secondary: false,
+  info: false,
+  warning: false,
+  danger: false,
+  success: false,
+  style: {},
+  borderColor: {},
+  bgColor: {},
+  inverse: false,
+  disable: false,
+  spinner: false,
+  onClick: () => {},
+  label: '',
+  icon: null,
+  value: '',
+  xSmall: false,
+  large: false,
+  small: false,
+  className: '',
+  foreColor: ''
+};
 export default Button;
 
