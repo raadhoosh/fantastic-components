@@ -36,6 +36,7 @@ import List from '../src/List/List/List';
 import Radio from '../src/Radio/Radio';
 import Notify from '../src/Notify/Notify';
 import ToolTip from '../src/ToolTip/ToolTip';
+import CheckBox from '../src/CheckBox/CheckBox';
 
 
 import BehzadiComponents from './BehzadiComponents';
@@ -168,6 +169,19 @@ class App extends Component {
       <div style={{
         padding:'50px'
       }}>
+
+        <CheckBox
+          label={'check'}
+          primary
+          inverse
+          color={'#f00'}
+        />
+        <br/>
+        <br/>
+        <CheckBox
+          label={'check'}
+          warning
+        />
         <br/>
         <br/>
 

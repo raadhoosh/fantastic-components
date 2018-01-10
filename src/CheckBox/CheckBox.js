@@ -1,26 +1,48 @@
-import React ,{Component} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import CheckBoxStyled from './style/CheckBoxStyled';
 import Label from './style/LabelStyled';
 import SectionStyled from './style/SectionStyled';
+import SpanStyled from './style/SpanStyled';
 
 class CheckBox extends Component {
   render() {
     const {
       label,
-      children
+      children,
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning,
+      inverse
     } = this.props;
+
+    const colorProps = {
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning,
+      inverse
+    };
+
     return (
-    <SectionStyled {...this.props}>
-      <Label {...this.props}>
-        <CheckBoxStyled
-          type="checkbox"
-          {...this.props}
-        />
-        {label}
-        {children}
-      </Label>
-    </SectionStyled>
+      <SectionStyled {...this.props}>
+        <Label {...this.props}>
+          <CheckBoxStyled
+            type="checkbox"
+            {...this.props}
+          />
+          <SpanStyled
+            {...colorProps}
+          />
+          {label}
+          {children}
+        </Label>
+      </SectionStyled>
     );
   }
 }
