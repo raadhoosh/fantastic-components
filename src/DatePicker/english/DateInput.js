@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import Input from '../../../src/Input/Input';
+import Input from '../../Input/Input';
 
 class DateInput extends Component {
   constructor(props) {
