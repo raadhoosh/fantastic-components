@@ -279,7 +279,6 @@ class Table extends Component {
         <Pagination
           total={totalSize}
           current={this.state.current}
-          visiblepages={1}
           onPageChanged={this.handlePageChanged}
           {...this.props}
         />

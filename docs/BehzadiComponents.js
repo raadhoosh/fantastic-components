@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Table from '../src/Table/Table';
 import Search from '../src/Search/Search';
-import Pagination from '../src/Pagination/Pagination'
+import Pagination from '../src/Pagination/Pagination';
+import {Button} from '../src/';
 
 class BehzadiComponents extends Component {
   constructor(props) {
@@ -30,6 +31,14 @@ class BehzadiComponents extends Component {
       {
         id: 5,
         title: 'title5'
+      },
+      {
+        id: 6,
+        title: 'title6'
+      },
+      {
+        id: 7,
+        title: 'title7'
       }
     ];
 
@@ -79,6 +88,43 @@ class BehzadiComponents extends Component {
           current={2}
           visiblePages={3}
           secondary
+        />
+
+        <Table
+          rowsCount={tableElements.length}
+          columns={[
+            "id",
+            "title"
+          ]}
+          columnSize={[
+            '30%',
+            '30%',
+          ]}
+          getRow={(rowId) => {
+            let id = tableElements[rowId].id;
+            let title = tableElements[rowId].title;
+            return [
+              id,
+              title,
+            ];
+          }}
+          onEditClick={(rowId) => {
+            console.log('rowId:', rowId);
+          }}
+          onDeleteClick={(rowId) => {
+            console.log('rowId:', rowId);
+          }}
+          actionColumnLabel="action"
+          deleteMessage="Are you sure>"
+          pageSize={3}
+          hover
+          striped
+        />
+        <Button
+          label="Disabled"
+          icon="user"
+          info
+          disable
         />
       </div>
     );
