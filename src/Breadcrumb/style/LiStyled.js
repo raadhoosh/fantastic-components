@@ -13,7 +13,6 @@ const LiStyled = styled.li`
            padding:0 10px; 
           
            }
-           
            a{
             text-decoration: none;
              &:hover{
@@ -24,7 +23,6 @@ const LiStyled = styled.li`
            &:last-child:after{
            content: "";         
            }
-           
            &:first-child:before {      
            content: "\\f009";     
            padding-${(props) => (props.rtl || props.theme.rtl) ? 'left' : 'right' }: 10px;      
