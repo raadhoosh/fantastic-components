@@ -4,28 +4,28 @@
 import styled from 'styled-components';
 import {getColor, getBgColor, getBorderColor} from './Statics';
 
-const DayStyled = styled.span`        
-        color:${props => getColor(props)};  
+const DayStyled = styled.span`       
         text-align: center;         
         box-sizing: border-box; 
         display: inline-block;
-        width: 25%;  
-        font-size: 0.8em;
+        width: 33.33%;  
+        padding: 10px;
+        font-size: 0.9em;
         line-height: 1.7rem;
         border-radius: 0.3rem;
-        border: 1px solid transparent;
-        
-        border-color: ${props => props.isSelected ? `${props.theme.primaryColor}` : 'transparent'};
-        background: ${props => props.isToday ? props.theme.primaryColor : 'transparent'};
+        border:1px solid ${props => props.isCurrentMonth ? getBorderColor(props) : 'transparent'};
+        color:${props => props.isSelected ? getColor(props) : ''};       
+        background: ${props => props.isSelected ? getBgColor(props) : 'transparent'};
         ${
-           props =>
-             props.disabled ? '' : 
-               `&:hover{      
-                    background-color: #f0f0f0;
+  props =>
+    props.disabled ? '' :
+      `&:hover{      
+                    background-color: #eee;
                     cursor: pointer;
-                    border: 1px solid transparent;
+                    border: 1px solid transparent;   
+                    color: #333;                 
                 `
-         }
+  }
         
         }
       `;

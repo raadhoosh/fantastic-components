@@ -5,8 +5,11 @@ import styled from 'styled-components';
 import {getColor} from './Statics';
 
 const CurrentMonth = styled.span`
-      color:${(props) => getColor(props)};       
+        color:${(props) => getColor(props)};       
         box-sizing: border-box; 
+        position: relative;
+        cursor: pointer;
+        top: 5px;
       `;
 
 export default CurrentMonth;

@@ -41,16 +41,22 @@ class TimePicker extends Component {
           editMode ?
             <div>
               <div
-                style={{width: '80px', display: 'inline-block'}}
+                style={{width: '150px', display: 'inline-block'}}
               >
                 <TimeInputStyled
                   onChange={this.onHourChange}
                   value={hour}
+                  type={'number'}
+                  min={'0'}
+                  max={'23'}
                 />
                 {' : '}
                 <TimeInputStyled
                   onChange={this.onMinuteChange}
                   value={minute}
+                  type={'number'}
+                  min={'0'}
+                  max={'59'}
                 />
               </div>
               <button
@@ -72,7 +78,7 @@ class TimePicker extends Component {
             :
             <div>
              <label
-               style={{width: '78px', display: 'inline-block'}}
+               style={{width: '148px', display: 'inline-block'}}
              >
                {`${hour} : ${minute}`}
              </label>

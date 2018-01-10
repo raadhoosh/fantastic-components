@@ -165,8 +165,28 @@ class App extends Component {
       }
     ];
     return (
-      <div>
+      <div style={{
+        padding:'50px'
+      }}>
+        <br/>
+        <br/>
 
+        <ToolTip
+          label={'hoverahoverahoverahoverahovera'}
+          primary
+        >
+          hover me
+        </ToolTip>
+        <br/>
+        <br/>
+        <ToolTip
+          label={'hoveraaaaaaaaaaa'}
+success
+        >
+          <Button>
+            hover me
+          </Button>
+        </ToolTip>
         <div>
           <MenuResponsive
             mainItems={mainItems}

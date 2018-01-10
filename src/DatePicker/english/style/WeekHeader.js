@@ -14,10 +14,11 @@ const WeekHeaderStyled = styled.ul`
       width: 100%;
       text-align: center; 
       margin: 5px 5px 0 auto !important; 
+      clear: both;
        
        li{
         list-style: none;
-        color:${(props) => getColor(props)};  
+        color:${(props) => getBgColor(props)};  
         text-align: center;         
         box-sizing: border-box; 
         display: inline-block;

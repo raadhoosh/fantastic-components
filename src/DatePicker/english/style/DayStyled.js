@@ -21,7 +21,8 @@ const DayStyled = styled.span`
                `&:hover{      
                     background-color: #eee;
                     cursor: pointer;
-                    border: 1px solid transparent;                    
+                    border: 1px solid transparent;   
+                    color: #333;                 
                 `
          }
         

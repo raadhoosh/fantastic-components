@@ -11,7 +11,7 @@ const TimeInputStyled = styled.input`
       box-shadow:0 1px 1px #e9e9e9 inset;        
       box-sizing: border-box; 
       padding:2px;
-      width:30px;
+      width:50px;
       height: 30px;
       `;
 
