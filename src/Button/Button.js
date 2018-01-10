@@ -69,22 +69,20 @@ Button.propTypes = {
   value: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   /** Text to display inside the button. */
   label: PropTypes.string,
-  /** function to be called when the button is clicked. */
+  /** The name of icon from Awsome Font icon set */
   icon: PropTypes.string,
-  /** function to be called when the button is clicked. */
+  /** The button shows an spinner instead of icon and will be disabled while it's **true**  */
   spinner: PropTypes.bool,
-  /** function to be called when the button is clicked. */
+  /** disabled Button! */
   disable: PropTypes.bool,
   /** function to be called when the button is clicked. */
   inverse: PropTypes.bool,
-  /** function to be called when the button is clicked. */
+  /** resize the button */
   xSmall: PropTypes.bool,
-  /** function to be called when the button is clicked. */
+  /** resize the button */
   small: PropTypes.bool,
-  /** function to be called when the button is clicked. */
+  /** resize the button  */
   large: PropTypes.bool,
-  /** rtl is true component show  in right side of the window, default is false (from left side). */
-  rtl: PropTypes.bool,
   /** Boolean indicating whether the component renders with Theme.primary color */
   primary: PropTypes.bool,
   /** Boolean indicating whether the component renders with Theme.secondary color */
@@ -101,11 +99,11 @@ Button.propTypes = {
   style: PropTypes.object,
   /** The className for the root element. */
   className: PropTypes.string,
-  /** The color renders with Theme.foreColor . */
+  /** changes color of the text and icon*/
   foreColor: PropTypes.string,
-  /** The border color renders with Theme.foreColor .. */
+  /** changes the color of border */
   borderColor: PropTypes.string,
-  /** The background color renders with Theme.foreColor . */
+  /** changes the background color. */
   bgColor: PropTypes.string,
 };
 Button.defaultProps = {

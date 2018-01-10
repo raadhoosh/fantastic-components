@@ -14,27 +14,19 @@ Example usage:
 |:------            |:------   |:---------|:-------------|
 | label          | String    |    -    | String    Text to display inside the button|
 | onClick           | function |-| function to be called when the button is clicked.|
-| className              | String  |-|Class name for the button. (default: .btn). |
-| style              | Object  |-|Styles are passed as an object |
-| id              | String  |-|The id of the button. |
+| className              | String  |''|The className for the root element. |
+| style              | Object  | {} |The inline-styles for the root element. |
 | value              | String  |-|The value of the button. |
 | icon              | String  |-|The name of icon from Awsome Font icon set |
 | spinner              | boolean  |-|The button shows an spinner insted of icon and will be disabled while it's **true** |
-
-
-
-## Styling Props
-
-Use these props for styling.
-
-__One of each item can be used at the same time__
-
-|  Name             |  Type    |  Default |  Description |
-|:------            |:------   |:---------|:-------------|
-| primary , secondary , info , warning , danger , success , reverse   | boolean    |    default theme color    | shows the button with theme selected colors|
+| primary              | Boolean  |false|Boolean indicating whether the component renders with Theme.primary color|
+| secondary              | Boolean  |false|Boolean indicating whether the component renders with Theme.secondary color |
+| info              | Boolean  |false|Boolean indicating whether the component renders with Theme.info color |
+| warning              | Boolean  |false|Boolean indicating whether the component renders with Theme.warning color |
+| danger              | Boolean  |false|Boolean indicating whether the component renders with Theme.danger color |
+| success              | Boolean  |false|Boolean indicating whether the component renders with Theme.success color |
+| foreColor              | Boolean  |false| The color renders with Theme.foreColor .  |
 | xSmall , small , large  | boolean    |    default theme size    | resize the button|
-| foreColor  | boolean    |    -    | changes color of the text and icon|
-| borderColor  | boolean    |    -    | changes the color of border|
-| bgColor  | boolean    |    -    | changes the background color|
-| hover  | boolean    |    -    | changes the hover color a little lighter or darker than the bgColor|
+
+
 
