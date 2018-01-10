@@ -22,6 +22,8 @@ class Calendar extends Component {
     this.isToday = this.isToday.bind(this);
     this.isSelectedDay = this.isSelectedDay.bind(this);
     this.onMonthClicked = this.onMonthClicked.bind(this);
+    this.isSelectedMonth = this.isSelectedMonth.bind(this);
+    this.isCurrentMonth = this.isCurrentMonth.bind(this);
   }
 
 
@@ -70,6 +72,23 @@ class Calendar extends Component {
     return (
       moment(now).date() === dayNumber &&
       moment(now).month() === moment(showDate).month() &&
+      moment(now).year() === moment(showDate).year()
+    );
+  }
+
+  isSelectedMonth(monthId) {
+    const { selectedDate, showDate } = this.props;
+    return (
+      moment(selectedDate).month() === monthId &&
+      moment(selectedDate).year() === moment(showDate).year()
+    );
+  }
+
+  isCurrentMonth(monthId) {
+    const { showDate } = this.props;
+    const now = moment.now();
+    return (
+      moment(now).month() === monthId &&
       moment(now).year() === moment(showDate).year()
     );
   }
@@ -146,7 +165,9 @@ class Calendar extends Component {
               {...colorProps}
             />
           }
-          <DatePickeHeadingStyled>
+          <DatePickeHeadingStyled
+            {...colorProps}
+          >
             <div>
               <CurrentMonth
                 onClick={() =>
@@ -165,7 +186,9 @@ class Calendar extends Component {
               />
             </div>
 
-            <WeekHeaderStyled>
+            <WeekHeaderStyled
+              {...colorProps}
+            >
               {weekDayIndex.map((dayNumber, i) => {
                 return (
                   <li key={i}>
@@ -206,16 +229,22 @@ class Calendar extends Component {
         </div>
         }
         {viewStyle === 'MonthView' &&
-        <div>
-          <DatePickeHeadingStyled>
+        <div
+          style={{padding: '10px'}}
+        >
+          <DatePickeHeadingStyled
+            style={{marginBottom:'10px'}}
+          >
             <div>
               <CurrentMonth>
                 {year}
               </CurrentMonth>
               <NavigationNext
+                {...colorProps}
                 onClick={() => this.props.onYearChanged(moment(showDate).year() + 1)}
               />
               <NavigationPrevious
+                {...colorProps}
                 onClick={() => this.props.onYearChanged(moment(showDate).year() - 1)}
               />
             </div>
@@ -226,6 +255,9 @@ class Calendar extends Component {
                 id={i}
                 name={mName}
                 onClick={onMonthChanged}
+                isSelected={this.isSelectedMonth(i)}
+                isCurrentMonth={this.isCurrentMonth(i)}
+                {...colorProps}
               />
             );
             })}

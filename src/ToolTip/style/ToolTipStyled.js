@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { getBgColor } from './Statics';
+import styled, {keyframes} from 'styled-components';
+import {getBgColor, getColor} from './Statics';
 
 const fade = keyframes`
   0%,
@@ -14,32 +14,50 @@ const fade = keyframes`
   }
 `;
 const ToolTipStyled = styled.div` 
-    position: relative;
-   &.is-visible {
-          span {
-              padding: .5em;
-              animation:${`${fade} 1s infinite ease`};
-              animation-delay: 10s;
-              opacity: 1;
-              visibility: visible;
-              background-color:  ${(props) => getBgColor(props)};   
-              border-radius: 2px;
-              box-shadow: 0 3px 16px rgba(black, 0.15);     
-          }
+      position: relative;
+      display: inline-block;
+      
+      span{
+      visibility: hidden;      
+      display: inline-block;
+      background-color: ${(props) => getBgColor(props)};
+      color: ${(props) => getColor(props)};
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 8px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      ${(props) => props.theme.rtl
+    ? `
+   right:0;`
+    : `left:0;`
+  }   ;      
+      opacity: 0;
+      transition: opacity 1s;
+      
+      &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+       ${(props) => props.theme.rtl
+     ?`
+       right:20px;`
+      : `left:20px;`
+  }   ;   
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: ${(props) => getBgColor(props)} transparent transparent transparent;    
+  }      
       }
-      &.is-hidden {
-          span {
-              transform: translateY(100%) translateX(-50%);
-              opacity: 0;
-              visibility: hidden;
-              transition: transform $transTime ease, 
-                          opacity $transTime, 
-                          visibility $transTime $transTime;
-              &:after {
-                  top: 0;
-              }
-          }
+            
+      &:hover span{
+        visibility: visible;
+        opacity: 1;
       }
+    
+  
       `;
 
 export default ToolTipStyled;

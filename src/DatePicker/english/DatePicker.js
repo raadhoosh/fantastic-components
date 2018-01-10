@@ -126,8 +126,9 @@ class DatePicker extends Component {
                 this.setState({
                   isOpen: false
                 });
+                this.onViewStyleChanged('DayView');
               }
-            }, 200);
+            }, 50);
           }
           }
         >

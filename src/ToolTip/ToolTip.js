@@ -36,11 +36,10 @@ class Tooltip extends Component {
     return (
       <ToolTipStyled
         className={className}
-
         {...this.props}
         onMouseEnter={this.handleMouseEnter.bind(this)}
         onMouseLeave={this.handleMouseLeave.bind(this)}>
-        <span  >{this.props.label}</span>
+        <span>{this.props.label}</span>
         {this.props.children}
       </ToolTipStyled>
     );

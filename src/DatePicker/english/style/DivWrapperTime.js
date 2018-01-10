@@ -5,10 +5,13 @@ import styled from 'styled-components';
 import {getColor, getBgColor, getBorderColor} from './Statics';
 
 const DivWrapperTime = styled.div`
+      box-sizing: border-box;
+      min-height: 42px;
       text-align: center;
-      padding: 5px 5px;
+      padding: 8px 5px;
       border-bottom: 1px solid ${props => getBorderColor(props)};
       background: ${props => getBgColor(props)};
+     
       
       i{
         color: ${props => getColor(props)};        
@@ -41,6 +44,8 @@ const DivWrapperTime = styled.div`
       label{
       color: ${props => getColor(props)};
       text-align: center;
+      font-size: 20px;
+      font-weight: 600;
       }
       
       `;

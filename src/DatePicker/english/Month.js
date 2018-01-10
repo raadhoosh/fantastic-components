@@ -21,13 +21,35 @@ class Month extends Component {
   }
 
   render() {
-    const { name, isSelected, isToday ,disabled} = this.props;
+    const {
+      name,
+      isSelected,
+      isCurrentMonth,
+      disabled,
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
+    } = this.props;
+
+    const colorProps = {
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
+    };
+
     return (
       <MonthStyled
         onClick={this.handleClick}
         isSelected={isSelected}
-        isToday={isToday}
+        isCurrentMonth={isCurrentMonth}
         disabled={disabled}
+        {...colorProps}
       >
         {name}
       </MonthStyled>
@@ -38,10 +60,16 @@ class Month extends Component {
 Month.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string,
-  isToday: PropTypes.bool,
+  isCurrentMonth: PropTypes.bool,
   disabled: PropTypes.bool,
   isSelected: PropTypes.bool,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool
 };
 
 export default Month;
