@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Label from './style/LabelStyled';
+import Span from './style/SpanStyled';
 import RadioStyled from './style/RadioStyled';
 class Radio extends Component {
   constructor(props, context) {
@@ -21,7 +22,8 @@ class Radio extends Component {
     const {
       label,
       name,
-      checked,index
+      checked,
+      disabled
     }=this.props;
 
     return (
@@ -32,8 +34,13 @@ class Radio extends Component {
                      name={name}
                      onChange={this.onSelect}
                      checked={checked}
+                     disabled={disabled}
         />
-        {label}
+        <Span
+          {...this.props}
+        >
+          {label}
+        </Span>
       </Label>
     )
   }
@@ -51,6 +58,7 @@ Radio.propTypes = {
 
   className: PropTypes.string,
   inline: PropTypes.bool,
+  disabled: PropTypes.bool,
 
   primary: PropTypes.bool,
   secondary: PropTypes.bool,

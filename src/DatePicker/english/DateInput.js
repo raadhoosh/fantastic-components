@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import DateInputStyled from './style/DateInputStyled';
-import IconStyled from './style/IconStyled';
+import Input from '../../../src/Input/Input';
 
 class DateInput extends Component {
   constructor(props) {
@@ -15,20 +14,31 @@ class DateInput extends Component {
 
   render() {
     const {
-      inputValue, inputOnClick, inputClassName, onFocus, onBlur, showTime
+      inputValue,
+      inputOnClick,
+      onFocus,
+      onBlur,
+      showTime,
+      primary,
+      secondary,
+      info,
+      success,
+      danger,
+      warning
+
     } = this.props;
     return <div
       style={{position: 'relative', direction: 'ltr'}}
     >
-      <DateInputStyled type='text'
-                       className={inputClassName}
-                       value={inputValue.format(showTime ? 'YYYY/MM/DD HH:mm' : 'YYYY/MM/DD')}
-                       onChange={this.onEditorChange}
-                       onClick={inputOnClick}
-                       onFocus={onFocus}
-                       onBlur={onBlur}
+      <Input
+        value={inputValue.format(showTime ? 'YYYY/MM/DD HH:mm' : 'YYYY/MM/DD')}
+        onChange={this.onEditorChange}
+        onClick={inputOnClick}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        icon={'calendar'}
+        {...this.props}
       />
-      <IconStyled className="fa fa-calendar" aria-hidden="true"/>
     </div>
   }
 }
@@ -39,7 +49,13 @@ DateInput.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   inputClassName: PropTypes.string,
-  showTime: PropTypes.bool
+  showTime: PropTypes.bool,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  info: PropTypes.bool,
+  warning: PropTypes.bool,
+  danger: PropTypes.bool,
+  success: PropTypes.bool
 };
 
 DateInput.defaultProps = {
