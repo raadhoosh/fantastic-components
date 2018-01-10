@@ -16,10 +16,8 @@ const DayStyled = styled.span`
         border:1px solid ${props => props.isCurrentMonth ? getBorderColor(props) : 'transparent'};
         color:${props => props.isSelected ? getColor(props) : ''};       
         background: ${props => props.isSelected ? getBgColor(props) : 'transparent'};
-        ${
-  props =>
-    props.disabled ? '' :
-      `&:hover{      
+        ${props => props.disabled ? '' :
+    `&:hover{      
                     background-color: #eee;
                     cursor: pointer;
                     border: 1px solid transparent;   
