@@ -229,9 +229,9 @@ function range(start, end) {
 }
 
 Pagination.propTypes = {
-  total: PropTypes.string.isRequired,
-  current: PropTypes.string.isRequired,
-  visiblePages: PropTypes.string,
+  total: PropTypes.number.isRequired,
+  current: PropTypes.number.isRequired,
+  visiblePages: PropTypes.number,
   isDisabled: PropTypes.bool,
   className: PropTypes.string,
   onClick: PropTypes.func,

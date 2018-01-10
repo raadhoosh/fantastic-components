@@ -76,7 +76,7 @@ Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   onClick: PropTypes.func,
   id: PropTypes.number,
-  value: PropTypes.object,
+  value: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
 
   label: PropTypes.string,
   icon: PropTypes.string,
