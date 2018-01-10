@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {getBgColor, getColor} from './StaticsMenu';
+import {getBgColor, getColor, getBorderColor} from './StaticsMenu';
 
 const Div = styled.div`           
              
@@ -31,10 +31,14 @@ const Div = styled.div`
                     margin: 0;
                     min-width: 12em;
                     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-                    transition: all 0.4s ease-in-out;
+                    transition: all 0.2s ease-in-out;
                     background: transparent; 
                     visibility: hidden;
-                    opacity: 0;                             
+                    opacity: 0;  
+                    
+                    a{
+                    border-bottom:1px solid ${(props) => getBorderColor(props)}; 
+                    }                           
                    }                                     
               
                    &:hover > ul {  
@@ -45,7 +49,11 @@ const Div = styled.div`
                }
              
              nav > ul > li {
-               float: ${(props) => (props.theme.rtl) ? 'right' : 'left' } !important;
+                float: ${(props) => (props.theme.rtl) ? 'right' : 'left' } !important;  
+                
+                a{
+                 border-left:1px solid ${(props) => getBorderColor(props)}; 
+                }             	
              }
           
           	a {
@@ -61,9 +69,8 @@ const Div = styled.div`
                 transition: all 0.2s ease-in; 
                 
                 &:hover {
-                  color: #232323;
-                  background-color: #f3f4f4;
-                  transition: all 0.4s ease-in-out;
+                  opacity: 0.8;
+                  transition: all 0.2s ease-in-out;
                   }             	              
                	
                	i{

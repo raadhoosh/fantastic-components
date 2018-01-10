@@ -50,7 +50,7 @@ import defaultTheme from '../src/defaultTheme';
 /*import DatePickerFa from '../src/DatePicker/fa/DatePicker';*/
 import DatePicker from '../src/DatePicker/english/DatePicker';
 import Cropper from '../src/Cropper/Cropper';
-/*import Window from '../src/Window/Window';*/
+import Window from '../src/Window/Window';
 
 
 const Home = () => (
@@ -99,7 +99,7 @@ class App extends Component {
   }
 
   render() {
-    let errorList=['Email Invalid!','Username is wrong!'];
+    let errorList = ['Email Invalid!', 'Username is wrong!'];
     let BreadcrumbList = [
       {
         name: 'home',
@@ -166,15 +166,343 @@ class App extends Component {
     ];
     return (
       <div>
+
+        <div>
+          <MenuResponsive
+            mainItems={mainItems}
+            style={{marginBottom: '400px'}}
+
+          />
+          <br/>
+          <br/>
+          <List options={errorList}
+                title={'List of Errors'}
+                warning
+
+          />
+          <br/>
+          <br/>
+          <List options={errorList}
+                title={'List of Errors'}
+
+          />
+          <br/>
+          <br/>
+          <Spinner
+            icon={'user'}
+            primary
+          />
+          <br/>
+          <br/>
+          <div>
+            <Cropper/>
+          </div>
+          <br/>
+          <br/>
+          <div>
+            <h1>ورودی تاریخ </h1>
+            <div
+              style={{maxWidth: '300px'}}
+            >
+              <Container>
+                <Row>
+                  <Col md12
+                  >
+                    <DatePicker
+                      showTime={true}
+                      inputValue={this.state.inputValue}
+                      success
+                    />
+                  </Col>
+                  <Col md6>
+                    {/*  <DatePickerFa
+                    showTime={false}
+                    inputValue={this.state.inputValue}
+                  />*/}
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+
+          </div>
+          <br/>
+          <br/>
+           <div>
+          <Window
+            primary
+          />
+        </div>
+          <br/>
+          <br/>
+
+          <div>
+
+          </div>
+          <br/>
+          <br/>
+          <Collapsible
+            trigger="Start here"
+            transitionTime={400}
+            success
+          >
+            <p>This is the collapsible content. It can be any element or React component you like.</p>
+            <p>It can even be another Collapsible component. Check out the next section!</p>
+          </Collapsible>
+          <br/>
+          <br/>
+          <div>
+            <ButtonToggle
+              id='cheese-status'
+              defaultChecked={this.state.cheeseIsReady}
+              onChange={this.handleCheeseChange.bind(this)}
+
+            />
+            <label htmlFor='cheese-status'>Adjacent label tag</label>
+          </div>
+          <br/>
+          <br/>
+          <Container>
+            <Row>
+              <Col lg3>
+                <Slider interval={20000} items={items} dots/>
+              </Col>
+              <Col lg9>
+                <Slider autoPlay interval={20000} items={items}/>
+              </Col>
+            </Row>
+          </Container>
+          <Panel header="Header"
+                 footer="Footer">
+            <Button
+              label={'test'}
+              onClick={() => {
+                alert("hello")
+              }}
+            />
+            <Button
+              label={'test'}
+              primary
+              onClick={() => {
+                alert("hello")
+              }}
+            />
+            <br/>
+            <Image
+              src={img}
+            />
+            <br/>
+
+          </Panel>
+          <br/>
+          <Panel header="Header" footer="Footer" secondary>
+
+
+            <Breadcrumb items={BreadcrumbList}
+                        returnPath={(path) => console.log('path', path)}
+            />
+            App...
+            <Input
+              icon={'user'}
+              primary
+              errorText={'error'}
+              placeholder={'success'}
+              noMargin
+            />
+            <br/>
+            <Input
+              icon={'user'}
+              primary
+              label={'dhfsdif'}
+              errorText={'error'}
+              placeholder={'success'}
+              noMargin
+            />
+            <br/>
+            <TextAria
+              icon={'user'}
+              primary
+              label={'dhfsdif'}
+              errorText={'error'}
+              placeholder={'success'}
+              noMargin
+              error
+            />
+            <br/>
+            <Icon
+              primary
+              inverse
+              iconClass={'user'}
+            />
+            <br/>
+            <Icon
+              success
+              larg
+              iconClass={'user'}
+            />
+            <br/>
+            <Button
+              label={'test'}
+              secondary
+              onClick={() => {
+                alert("hello")
+              }}
+            />
+            <br/>
+            <Button
+              label={'test'}
+              secondary
+              onClick={() => {
+                alert("hello")
+              }}
+              disable
+            />
+            <br/>
+            <Image
+              src={img}
+            />
+            <br/>
+            <Container>
+              <Row>
+                <Col
+                  lg4
+                  sm3
+                  md3
+                  bgColor={"#ddd"}
+                >
+                  test Col
+                </Col>
+                <Col
+                  lg4
+                  sm3
+                  md3
+                >
+                  test Col
+                </Col>
+                <Col
+                  lg4
+                  sm3
+                  md3
+                >
+                  test Col
+                </Col>
+              </Row>
+            </Container>
+            <div>
+
+
+            </div>
+          </Panel>
+
+
+          <br/>
+          <br/>
+          <br/>
+          <TableBasic>
+            <Thead>
+            <Tr
+              primary
+            >
+              <Th
+                primary
+              >
+                title
+              </Th>
+              <Th
+                primary
+              >
+                title
+              </Th>
+            </Tr>
+            </Thead>
+            <Tbody>
+            <Tr>
+              <Td>
+                text
+              </Td>
+              <Td>
+                text
+              </Td>
+            </Tr>
+            <Tr>
+              <Td>
+                text
+              </Td>
+              <Td>
+                text
+              </Td>
+            </Tr>
+            </Tbody>
+          </TableBasic>
+          <br/>
+          <br/>
+
+          <br/>
+          <br/>
+          <Router>
+            <div>
+              <ul>
+                <li>
+                  <ReactLink
+                    to="/"
+                    icon={'home'}
+                    color={'#f00'}
+                  >Home
+                  </ReactLink>
+                </li>
+                <li>
+                  <ReactLink to="/about">About</ReactLink>
+                </li>
+              </ul>
+              <hr/>
+              <Route exact path="/" component={Home}/>
+              <Route path="/about" component={About}/>
+            </div>
+          </Router>
+          <Menu
+            mainItems={mainItems}
+            style={{marginBottom: '400px'}}
+          />
+        </div>
+
+        <Radio
+          label={'Disabled example'}
+          name={'name'}
+          warning
+          disabled
+        />
+        <Radio
+          label={'Disabled example'}
+          name={'name1'}
+          info
+          checked
+        />
+        <Radio
+          label={'Disabled example'}
+          name={'name1'}
+          danger
+        />
+        <br/>
+        <MenuResponsive
+          mainItems={mainItems}
+          style={{marginBottom: '400px'}}
+          success
+        />
+        <br/>
+        <Menu
+          mainItems={mainItems}
+          style={{marginBottom: '400px'}}
+          success
+        />
+        <br/>
         <Notify
           position="top right"
           title="Secondary Notify"
           time={9000}
           msg="This notification will hide in 9s "
         />
-<br/>
-  <br/>
-    <br/>
+        <br/>
+        <br/>
+        <br/>
         <ToolTip
           label={'hoveraaaaaaaaaaa'}
         >
@@ -191,21 +519,23 @@ class App extends Component {
                maxWidth={'500px'}
                primary
                Btn2Label="No"
-               btn1action={()=>{}}
-               btnaction={()=>{}}
+               btn1action={() => {
+               }}
+               btnaction={() => {
+               }}
                btn1type="primary"
 
         >
         </Modal>
         <Radio
-               label={'Disabled example'}
-               disabled={true}
-               primary
+          label={'Disabled example'}
+          disabled={true}
+          success
 
         />
         <Radio
-               label={'Disabled example'}
-               disabled={true}
+          label={'Disabled example'}
+          disabled={true}
 
         />
 
@@ -231,7 +561,6 @@ class App extends Component {
           <br/>
 
         </Panel>
-
 
 
         <Button label="open modal"
@@ -417,6 +746,7 @@ class App extends Component {
             <MenuResponsive
               mainItems={mainItems}
               style={{marginBottom: '400px'}}
+
             />
             <br/>
             <br/>
@@ -456,7 +786,7 @@ class App extends Component {
                       <DatePicker
                         showTime={true}
                         inputValue={this.state.inputValue}
-                        success
+                        info
                       />
                     </Col>
                     <Col md6>
@@ -631,10 +961,6 @@ class App extends Component {
                 </Row>
               </Container>
               <div>
-
-
-
-
 
 
               </div>

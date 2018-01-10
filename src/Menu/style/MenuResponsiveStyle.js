@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {getFloat, getColor, getBgColor, getBorderColor} from './StaticsMenuResponsive';
-import defaultTheme from '../../defaultTheme';
 import Button from '../../Button/Button';
 
 const Div = styled.div` 
@@ -8,14 +7,9 @@ const Div = styled.div`
               box-sizing: border-box;
               } 
               z-index: 9;
-              float: ${(props) => getFloat(props)};
-              display: none;  
-               @media (max-width: 768px) {
-               display: block;  
-            }                               
+              float: ${(props) => getFloat(props)};                                                    
                  
-             nav.menuSimple{             
-     @media (max-width: 768px) {  
+             nav.menuSimple{            
              width:100%;
              transition: all 0.2s ease-in;
              position:absolute;
@@ -43,7 +37,7 @@ const Div = styled.div`
   };            
                         font-size: 40px !important;
                         position: absolute;                        
-                       	color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primary.color : defaultTheme.primary.color)};  
+                       	color:${(props) => getBgColor(props)};   
                         top: 0;
                                }       
              }                         
@@ -57,11 +51,8 @@ const Div = styled.div`
                	      position:relative;
                       padding-top:0;
                       border-bottom:0;
-                      box-shadow: 0 0 6px 12px rgba(0, 0, 0, 0.1) inset; 
-                      
-                      a{
-                       background-color:'#f2f2f2'; 
-                      }                      
+                      box-shadow: 0 0 6px 12px rgba(0, 0, 0, 0.1) inset;                     
+                                          
                	    }                              	 
                	   
                	a, span{
@@ -69,14 +60,13 @@ const Div = styled.div`
                	white-space: nowrap;
                	padding:15px 30px;
                	color:${(props) => getColor(props)};
-               	background-color:${(props) => getBgColor(props)};
-               	
+               	background-color:${(props) => getBgColor(props)};               	
                	transition:all 0.2s ease-in;
-               	border-bottom:1px solid ${(props) => getBorderColor(props)};               	            	
+               	border-bottom:1px solid ${(props) => getBorderColor(props)};
+               	opacity: 0.9;               	            	
                	
                	&:hover{               	 
-               	 background-color:${(props) => getBgColor(props)};               	 
-               	 color:${(props) => getColor(props)};
+               	opacity: 1;
                     }
                	}
                	
@@ -92,10 +82,10 @@ const Div = styled.div`
                	}
 }
        	            	              	          	
-        }    
+          
            }   
                       
-         @media (max-width: 768px) {  
+         
              .sfHide{
                 visibility: hidden;
                 opacity: 0;                
@@ -105,7 +95,7 @@ const Div = styled.div`
                 visibility: visible;
                 opacity: 1;               
               };
-             } 
+             
                	
          `;
 
@@ -117,7 +107,7 @@ const ButtonBox = styled.div`
            padding: 0 !important;
          }     
        
-        @media (max-width: 768px) {  
+        
            display:block;
            overflow:hidden;
            width: 28px;
@@ -129,7 +119,7 @@ const ButtonBox = styled.div`
            border-color:transparent;
            padding: 0;           
                 }
-       }         
+               
      `;
 
 const Overlay = styled.div`
@@ -143,10 +133,10 @@ const Overlay = styled.div`
 
 `;
 const ButtonWrapper = styled(Button)`
-      	color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primary.color : defaultTheme.primary.color)}; 
+      	color:${(props) => getBgColor(props)};   
       	
       	 i{
-      	 color:${(props) => props.color ? props.color : ((Object.keys(props.theme).length > 0 && props.theme) ? props.theme.primary.color : defaultTheme.primary.color)};   
+         	color:${(props) => getBgColor(props)};   
       	 }  
 `;
 

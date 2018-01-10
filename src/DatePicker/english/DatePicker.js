@@ -104,6 +104,7 @@ class DatePicker extends Component {
            {...colorProps}
       >
         <DateInput
+          {...this.props}
           inputValue={this.state.selectedDate}
           showTime={this.props.showTime}
           onFocus={() => {
