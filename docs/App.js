@@ -167,7 +167,7 @@ class App extends Component {
     ];
     return (
       <div style={{
-        padding:'50px'
+        padding: '50px'
       }}>
 
         <CheckBox
@@ -184,7 +184,12 @@ class App extends Component {
         />
         <br/>
         <br/>
-
+        <Button
+          label={'Button'}
+          primary
+        />
+        <br/>
+        <br/>
         <ToolTip
           label={'hoverahoverahoverahoverahovera'}
           primary
@@ -195,11 +200,14 @@ class App extends Component {
         <br/>
         <ToolTip
           label={'hoveraaaaaaaaaaa'}
-success
+          success
         >
-          <Button>
-            hover me
-          </Button>
+          <Button
+            label={' hover me'}
+            success
+          />
+
+
         </ToolTip>
         <div>
           <MenuResponsive
@@ -261,11 +269,11 @@ success
           </div>
           <br/>
           <br/>
-           <div>
-          <Window
-            primary
-          />
-        </div>
+          <div>
+            <Window
+              primary
+            />
+          </div>
           <br/>
           <br/>
 
@@ -820,7 +828,7 @@ success
                       <DatePicker
                         showTime={true}
                         inputValue={this.state.inputValue}
-                        info
+                        info={true}
                       />
                     </Col>
                     <Col md6>
@@ -914,6 +922,8 @@ success
                 errorText={'error'}
                 placeholder={'success'}
                 noMargin
+                onChange={() => {
+                }}
               />
               <br/>
               <Input
@@ -923,6 +933,8 @@ success
                 errorText={'error'}
                 placeholder={'success'}
                 noMargin
+                onChange={() => {
+                }}
               />
               <br/>
               <TextAria

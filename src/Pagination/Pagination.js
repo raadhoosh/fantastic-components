@@ -215,7 +215,8 @@ Page.propTypes = {
   isHidden: PropTypes.bool,
   isActive: PropTypes.bool,
   onClick: PropTypes.func,
-  children: PropTypes.object
+  children: PropTypes.oneOfType([PropTypes.object,PropTypes.number, PropTypes.string]),
+
 };
 
 
