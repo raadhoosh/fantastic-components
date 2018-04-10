@@ -66,24 +66,20 @@ class Button extends Component {
             : null
         }
         {label}
-        {children}
       </ButtonStyled>
     );
   }
 }
 
 Button.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   onClick: PropTypes.func,
   id: PropTypes.number,
   value: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
-
   label: PropTypes.string,
   icon: PropTypes.string,
   spinner: PropTypes.bool,
   hover: PropTypes.bool,
   disable: PropTypes.bool,
-
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
   info: PropTypes.bool,
@@ -91,14 +87,11 @@ Button.propTypes = {
   danger: PropTypes.bool,
   success: PropTypes.bool,
   inverse: PropTypes.bool,
-
   xSmall: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
-
   style: PropTypes.object,
   className: PropTypes.string,
-
   borderColor: PropTypes.string,
   bgColor: PropTypes.string,
   foreColor: PropTypes.string,
