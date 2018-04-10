@@ -44,7 +44,7 @@ class Breadcrumb extends React.Component {
 }
 Breadcrumb.propTypes = {
   /** array of objects */
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  items: PropTypes.array.isRequired,
   /** rtl is true component show  in right side of the window, default is false (from left side). */
   rtl: PropTypes.bool,
   /** Boolean indicating whether the component renders with Theme.primary color */
@@ -59,8 +59,6 @@ Breadcrumb.propTypes = {
   danger: PropTypes.bool,
   /** Boolean indicating whether the component renders with Theme.success color */
   success: PropTypes.bool,
-  /** The inline-styles for the root element. */
-  style: PropTypes.object,
   /** The className for the root element. */
   className: PropTypes.string,
   /** The color renders with Theme.foreColor . */
@@ -74,7 +72,6 @@ Breadcrumb.defaultProps = {
   warning: false,
   danger: false,
   success: false,
-  style: {},
   className: '',
   foreColor: ''
 };
