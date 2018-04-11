@@ -64,6 +64,7 @@ Input.propTypes = {
   bgColor: PropTypes.string,
   foreColor: PropTypes.string,
   theme: PropTypes.object,
+  style: PropTypes.object,
   noMargin:PropTypes.bool,
   error:PropTypes.bool
 };
