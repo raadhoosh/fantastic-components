@@ -37,6 +37,7 @@ import Radio from '../src/Radio/Radio';
 import Notify from '../src/Notify/Notify';
 import ToolTip from '../src/ToolTip/ToolTip';
 import CheckBox from '../src/CheckBox/CheckBox';
+import Table from '../src/Table/Table';
 
 
 import BehzadiComponents from './BehzadiComponents';
@@ -74,7 +75,37 @@ class App extends Component {
       isOpen: false,
       cheeseIsReady: true,
       returnDataUrl: [],
-      inputValue: moment.now()
+      inputValue: moment.now(),
+      admins: [
+        {
+          id: 1,
+          firstName: 'Asim',
+          lastName: 'Brown',
+          email: 'asim.brown@gmail.com'
+
+        },
+        {
+          id: 2,
+          firstName: 'Hamid',
+          lastName: 'Ghasempour',
+          email: 'hamid.ghasempour@gmail.com'
+
+        },
+        {
+          id: 3,
+          firstName: 'Nassim',
+          lastName: 'Mehri',
+          email: 'Nassim.mehri@gmail.com'
+
+        },
+        {
+          id: 4,
+          firstName: 'Sajjad',
+          lastName: 'Mohammadi',
+          email: 'sajjad.mohammadi@gmail.com'
+
+        }
+      ]
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -169,6 +200,45 @@ class App extends Component {
       <div style={{
         padding: '50px'
       }}>
+        <br/>
+        <Table
+          rowsCount={this.state.admins.length}
+          columns={[
+            'Firstname',
+            'Lastname',
+            'Email'
+          ]}
+
+          getRow={(rowId) => {
+
+            let firstName = this.state.admins[rowId].firstName;
+            let lastName = this.state.admins[rowId].lastName;
+            let email = this.state.admins[rowId].email;
+
+            return [
+              firstName,
+              lastName,
+              email
+
+            ];
+          }}
+          iconButtonEdit='fa fa-pencil'
+          onEditClick={(rowId) => {
+
+          }}
+          pageSize={15}
+
+          onDeleteClick={(rowId) => {
+
+          }}
+
+          onShowClick={(rowId) => {
+
+          }}
+          success
+
+        />
+        <br/>
 
         <CheckBox
           label={'check'}

@@ -5,7 +5,6 @@ import Pagination from '../Pagination/Pagination';
 import Modal from '../Modal/Modal';
 
 
-
 import Th from './style/ThStyled';
 import Tr from './style/TrStyled';
 import Thead from './style/TheadStyled';
@@ -41,7 +40,7 @@ class Table extends Component {
   }
 
   handlePageChanged(newPage) {
-    this.setState({ current: newPage });
+    this.setState({current: newPage});
     if (this.props.onPageChanged) {
       this.props.onPageChanged(newPage);
     }
@@ -95,7 +94,7 @@ class Table extends Component {
         headCols.push(
           <Th
             key={index1}
-            style={{ width: '140px', textAlign: 'center' }}
+            style={{width: '140px', textAlign: 'center'}}
             {...this.props}
           >
             {this.props.actionColumnLabel}
@@ -105,16 +104,16 @@ class Table extends Component {
 
       return (
         <Thead {...this.props}>
-          <Tr {...this.props}>
-            {headCols}
-          </Tr>
+        <Tr {...this.props}>
+          {headCols}
+        </Tr>
         </Thead>
       );
     }
   }
 
   makeRows() {
-    const { getRow } = this.props;
+    const {getRow} = this.props;
 
     const rows = [];
     if (getRow) {
@@ -133,7 +132,7 @@ class Table extends Component {
         let index1 = 1;
         const index = 0;
         for (i = 0; i < cells.length; i += 1, index1 += 1) {
-          rowCells.push(<Td key={index1} style={{ textAlign: 'center' }} {...this.props}>{cells[i]}</Td>);
+          rowCells.push(<Td key={index1} style={{textAlign: 'center'}} {...this.props}>{cells[i]}</Td>);
         }
         if (this.props.onDeleteClick || this.props.onEditClick ||
           this.props.onAcceptClick || this.props.onShowClick) {
@@ -152,9 +151,9 @@ class Table extends Component {
                 onClick={this.onEditShowClick}
                 label={this.props.labelButtonShow}
                 icon="eye"
-                xSmall
-                style={{ padding: '8px', marginLeft: '5px' }}
+                style={{padding: '0', marginLeft: '5px'}}
                 {...this.props}
+                xSmall
               />
             );
           }
@@ -171,6 +170,7 @@ class Table extends Component {
                 icon="trash"
                 style={{padding: "0", marginLeft: "5px"}}
                 {...this.props}
+                xSmall
                 danger
               />
             );
@@ -181,12 +181,14 @@ class Table extends Component {
 
           if (this.props.onEditClick && hasEdit) {
             editBtn = (
-              <Button value={j}
-                      onClick={this.onEditButtonClick}
-                      label={this.props.labelButtonEdit}
-                      icon='pencil'
-                      style={{padding: "0", marginLeft: "5px"}}
-                      {...this.props}
+              <Button
+                value={j}
+                onClick={this.onEditButtonClick}
+                label={this.props.labelButtonEdit}
+                icon='pencil'
+                style={{padding: "0", marginLeft: "5px"}}
+                {...this.props}
+                xSmall
               />
             );
           }
@@ -271,7 +273,7 @@ class Table extends Component {
 
     return (
       <WrapperStyled {...this.props}>
-        <TableStyled style={{ tableLayout: 'fixed' }} {...this.props}>
+        <TableStyled style={{tableLayout: 'fixed'}} {...this.props}>
           {header}
           {rows}
         </TableStyled>
@@ -299,7 +301,7 @@ Table.propTypes = {
   rowHasAccept: PropTypes.func,
   columns: PropTypes.array,
   columnSize: PropTypes.array,
-  minWidth:PropTypes.number,
+  minWidth: PropTypes.number,
   pageSize: PropTypes.number,
   onDeleteClick: PropTypes.func,
   deleteMessage: PropTypes.string,
